@@ -19,36 +19,36 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.signup(user);
   }
 
-  renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
-  }
+  // renderErrors() {
+  //   return(
+  //     <ul>
+  //       {this.props.errors.map((error, i) => (
+  //         <li key={`error-${i}`}>
+  //           {error}
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
 
   render() {
     return (
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
+      <div className="session-form-container">
+        <form onSubmit={this.handleSubmit} className="session-form-box">
           TESTING THE LOGIN SESH
           <br/>
           Please {this.props.formType} or {this.props.navLink}
           {this.renderErrors()}
-          <div className="login-form">
+          <div className="session-form">
             <br/>
-            <label>Username:
+            <label>Email:
               <input type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-                className="login-input"
+                value={this.state.email}
+                onChange={this.update('email')}
+                className="session-input"
               />
             </label>
             <br/>
@@ -56,7 +56,7 @@ class SessionForm extends React.Component {
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
-                className="login-input"
+                className="session-input"
               />
             </label>
             <br/>
