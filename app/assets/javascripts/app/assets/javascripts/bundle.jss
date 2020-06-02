@@ -169,33 +169,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
- // document.addEventListener('DOMContentLoaded', () => {
-//   // let store;
-//   // if (window.currentUser) {
-//   //   const { currentUser } = window;
-//   //   const { id } = currentUser;
-//   //   const preloadedState = { 
-//   //     entitities: {
-//   //       users: {
-//   //         [id]: currentUser
-//   //       }
-//   //     },
-//   //     session: { id }
-//   //     };
-//   //   store = configureStore(preloadedState);
-//   //   delete window.currentUser;
-//   // } else {
-//   //   store = configureStore();
-//   // }
-//   const root = document.getElementById('root');
-//   ReactDOM.render(<h1>I Work</h1>, root);
-// });
 
-document.addEventListener("DOMContentLoaded", function () {
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Hello, world!"), document.getElementById('root'));
+
+document.addEventListener('DOMContentLoaded', function () {
+  var store;
+
+  if (window.currentUser) {
+    var _window = window,
+        currentUser = _window.currentUser;
+    var id = currentUser.id;
+    var preloadedState = {
+      entitities: {
+        users: _defineProperty({}, id, currentUser)
+      },
+      session: {
+        id: id
+      }
+    };
+    store = Object(_store_store__WEBPACK_IMPORTED_MODULE_3__["default"])(preloadedState);
+    delete window.currentUser;
+  } else {
+    store = Object(_store_store__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  }
+
+  var root = document.getElementById('root');
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "I Work"), root);
 });
 
 /***/ }),
@@ -214,8 +216,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./session_form/signup_form_container */ "./frontend/components/session_form/signup_form_container.jsx");
-!(function webpackMissingModule() { var e = new Error("Cannot find module './search/search_container'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-
 
 
 

@@ -6,37 +6,29 @@ import configureStore from './store/store';
 
 
 
-// document.addEventListener('DOMContentLoaded', () => {
-//   // let store;
-//   // if (window.currentUser) {
-//   //   const { currentUser } = window;
-//   //   const { id } = currentUser;
-//   //   const preloadedState = { 
-//   //     entitities: {
-//   //       users: {
-//   //         [id]: currentUser
-//   //       }
-//   //     },
-//   //     session: { id }
-//   //     };
-//   //   store = configureStore(preloadedState);
+document.addEventListener('DOMContentLoaded', () => {
+  // let store;
+  // if (window.currentUser) {
+  //   const { currentUser } = window;
+  //   const { id } = currentUser;
+  //   const preloadedState = { 
+  //     entitities: {
+  //       users: {
+  //         [id]: currentUser
+  //       }
+  //     },
+  //     session: { id }
+  //     };
+    let store = configureStore();
   
-//   //   delete window.currentUser;
+  //   delete window.currentUser;
 
-//   // } else {
-//   //   store = configureStore();
-//   // }
-//   const root = document.getElementById('root');
-//   ReactDOM.render(<h1>I Work</h1>, root);
-// });
-
-
-
-document.addEventListener("DOMContentLoaded", () => {
+  // } else {
+  //   store = configureStore();
+  // }
+  const root = document.getElementById('root');
+  ReactDOM.render(<Root store={store} />, root);
+});
 
 
-  ReactDOM.render(
-    <h1>Hello, world!</h1>,
-    document.getElementById('root')
-  );
-})
+

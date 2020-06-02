@@ -9,7 +9,6 @@ import {
 } from 'react-router-dom';
 
 import SignUpFormContainer from './session_form/signup_form_container';
-import SearchContainer from './search/search_container';
 
 const App = () => (
   <div>
@@ -19,7 +18,7 @@ const App = () => (
       </Link>
     </header>
     <Switch>
-      <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+      <Route exact path="/signup" component={SignUpFormContainer} />
 
     </Switch>
   </div>
