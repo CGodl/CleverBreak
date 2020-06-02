@@ -1,4 +1,5 @@
 import React from 'react';
+import GreetingContainer from "./greeting/greeting_container";
 import { Provider } from 'react-redux';
 import {
   Route,
@@ -14,11 +15,12 @@ const App = () => (
   <div>
     <header>
       <Link to="/signup" className="header-link">
-        <button>Sign Up</button>
+        <GreetingContainer />
       </Link>
     </header>
     <Switch>
       <Route exact path="/signup" component={SignupFormContainer} />
+      {/* <Route exact path="/login" component={LoginFormContainer} /> */}
     </Switch>
   </div>
 );
