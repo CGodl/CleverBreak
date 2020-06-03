@@ -1,9 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      name: '',
       email: '',
       password: ''
     };
@@ -22,37 +24,35 @@ class SessionForm extends React.Component {
     this.props.signup(user);
   }
 
-  // renderErrors() {
-  //   return(
-  //     <ul>
-  //       {this.props.errors.map((error, i) => (
-  //         <li key={`error-${i}`}>
-  //           {error}
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   );
-  // }
 
   render() {
     return (
       <div className="session-form-container">
         <form onSubmit={this.handleSubmit} className="session-form-box">
-          Hi there! My name is
+          <p>Introduce Yourself</p>
           <br/>
-          Please {this.props.formType} or {this.props.navLink}
-          {/* {this.renderErrors()} */}
+          <br/>
           <div className="session-form">
+            <label>Hi there! My name is
+              <br/>
+              <input type="text"
+                value={this.state.name}
+                onChange={this.update('name')}
+                className="session-input"
+              />
+            </label>
             <br/>
-            <label>Email:
+            <label>Here's my email address:
+              <br/>
               <input type="text"
                 value={this.state.email}
                 onChange={this.update('email')}
                 className="session-input"
               />
             </label>
+              <br/>
+            <label>And here's my password:
             <br/>
-            <label>Password:
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
@@ -63,6 +63,8 @@ class SessionForm extends React.Component {
             <input className="session-submit" type="submit" value={this.props.formType} />
           </div>
         </form>
+        <Link to={'/tos'}>By signing up, you accept the Cleverbreak Terms of Service.</Link>
+        
       </div>
     );
   }

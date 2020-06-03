@@ -1,4 +1,5 @@
 gem 'jquery-rails'
+gem 'rails-ujs'
 
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
