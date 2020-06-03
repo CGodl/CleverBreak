@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
-import history from '../history'
-//import Logo from '../../../app/assets/images/splitwise_logo.png'
+import history from '../history';
+//import Image from 'react-bootstrap/Image';
+//import Logo from '../../assets/splitwise_logo.png'
 
 
 class Greeting extends React.Component {
@@ -15,9 +16,8 @@ class Greeting extends React.Component {
       <nav>
 
         <header className='splash-nav'>
-          {/* <img src={Logo} alt="THE LOGO ISNT LOADING" /> */}
-          {/* <img src={require('../../../app/assets/images/splitwise_logo.png')}/> */}
-
+          {/* <Image src="../../assets/splitwise_logo.png" fluid />
+          <img style={{height:'auto',width:'100%'}} src={ require('../../assets/splitwise_logo.png') }/> */}
           <Link to={'/signup'}><button className='signup-btn' type='button'>Sign up</button></Link>
           <Link to={'/login'}><button className='login-btn' type='button'>Log in</button></Link>
         </header>
