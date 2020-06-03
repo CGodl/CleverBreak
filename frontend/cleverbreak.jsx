@@ -8,6 +8,7 @@ import * as SessionApi from './util/session_api_util'
 
 
 document.addEventListener('DOMContentLoaded', () => {
+    debugger
     const store = configureStore();
 
     window.getState = store.getState;

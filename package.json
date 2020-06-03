@@ -7,6 +7,7 @@
     "@babel/preset-react": "^7.10.1",
     "babel-loader": "^8.1.0",
     "bootstrap": "^4.5.0",
+    "jquery": "^3.5.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
@@ -44,5 +45,9 @@
   "engines": {
     "node": "10.13.0",
     "npm": "6.4.1"
+  },
+  "devDependencies": {
+    "file-loader": "^6.0.0",
+    "image-webpack-loader": "^6.0.0"
   }
 }

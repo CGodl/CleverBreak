@@ -1,0 +1,21 @@
+
+.login-introduce-welcome {
+  font-size: 18px;
+  color: #999;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+
+}
+
+.login-form-container {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  margin-left: 100px;
+
+}
+
+.login-input {
+  height: 24px;
+  width: 247px;
+}

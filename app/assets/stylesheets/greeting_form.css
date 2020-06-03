@@ -1,23 +1,39 @@
-.signup-btn {
-  background-color: #1CC29F;
-  color: white;
-  font-family: 'Montserrat' 800, sans-serif;
-  font-size: 20px;
-  padding: 50 30 50 30;
-  margin-left: 15px;
-  border-radius: 15%;
-  height: 50px;
-  width: 100px;
-  text-emphasis: bold;
-  border: none;
-  
+.splash-nav {
+  margin-top: 20px;
+
+
 }
+
+
+
+
 
 .login-btn {
   color: #1CC29F;
   background-color: white;
-  font-family: 'Montserrat' 800, sans-serif;
-  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
   border: none;
+  text-emphasis: bold;
+  float: right;
+  margin-top: 16px;
+}
 
+.signup-btn {
+  background-color: #1CC29F;
+  color: white;
+  padding: 50 30 50 30;
+  margin-left: 15px;
+  border-radius: 7%;
+  height: 50px;
+  width: 100px;
+  text-emphasis: bold;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  float: right;
+  border: none;
+  text-emphasis: bold;
+  margin-right: 80px;
 }

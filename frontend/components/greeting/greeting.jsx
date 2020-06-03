@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import history from '../history'
+//import Logo from '../../../app/assets/images/splitwise_logo.png'
 
 
 class Greeting extends React.Component {
@@ -11,17 +12,18 @@ class Greeting extends React.Component {
 
   render () {
     return (
-      <splash>
+      <nav>
 
-        <header>
+        <header className='splash-nav'>
+          {/* <img src={Logo} alt="THE LOGO ISNT LOADING" /> */}
+          {/* <img src={require('../../../app/assets/images/splitwise_logo.png')}/> */}
 
-          
-          <Link to={'/login'}><button className='login-btn' type='button'>Log in</button></Link>
           <Link to={'/signup'}><button className='signup-btn' type='button'>Sign up</button></Link>
+          <Link to={'/login'}><button className='login-btn' type='button'>Log in</button></Link>
         </header>
 
       
-      </splash>
+      </nav>
     )
     }
   }
