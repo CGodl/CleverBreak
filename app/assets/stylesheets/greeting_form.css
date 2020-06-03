@@ -1,0 +1,23 @@
+.signup-btn {
+  background-color: #1CC29F;
+  color: white;
+  font-family: 'Montserrat' 800, sans-serif;
+  font-size: 20px;
+  padding: 50 30 50 30;
+  margin-left: 15px;
+  border-radius: 15%;
+  height: 50px;
+  width: 100px;
+  text-emphasis: bold;
+  border: none;
+  
+}
+
+.login-btn {
+  color: #1CC29F;
+  background-color: white;
+  font-family: 'Montserrat' 800, sans-serif;
+  font-size: 20px;
+  border: none;
+
+}

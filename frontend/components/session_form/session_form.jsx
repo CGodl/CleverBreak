@@ -29,7 +29,7 @@ class SessionForm extends React.Component {
     return (
       <div className="session-form-container">
         <form onSubmit={this.handleSubmit} className="session-form-box">
-          <p>Introduce Yourself</p>
+          <p className='signup-introduce-welcome'>Introduce Yourself</p>
           <br/>
           <br/>
           <div className="session-form">
@@ -60,7 +60,7 @@ class SessionForm extends React.Component {
               />
             </label>
             <br/>
-            <input className="session-submit" type="submit" value={this.props.formType} />
+            <button className="session-submit" type='submit'>Sign me up!</button>
           </div>
         </form>
         <Link to={'/tos'}>By signing up, you accept the Cleverbreak Terms of Service.</Link>

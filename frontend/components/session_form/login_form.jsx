@@ -26,11 +26,12 @@ class LoginForm extends React.Component {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          <h2>Welcome to Splitwise</h2>
+          <h2 className='signup-introduce-welcome'>Welcome to Splitwise</h2>
           <br/>
           <div className="login-form">
             <br/>
             <label>Email:
+              <br/>
               <input type="text"
                 value={this.state.email}
                 onChange={this.update('email')}
@@ -39,6 +40,7 @@ class LoginForm extends React.Component {
             </label>
             <br/>
             <label>Password:
+              <br/>
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
@@ -49,6 +51,7 @@ class LoginForm extends React.Component {
             <input className="login-submit" type="submit" value={this.props.formType} />
           </div>
         </form>
+        <p>Forgot your password? Click here</p>
       </div>
     );
   }

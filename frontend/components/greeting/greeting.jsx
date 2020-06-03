@@ -11,10 +11,17 @@ class Greeting extends React.Component {
 
   render () {
     return (
-      <h1>    
-      <Link to={'/login'}><button className='login-btn' type='button'>Log in</button></Link>
-      <Link to={'/signup'}><button className='signup-btn' type='button'>Sign Up</button></Link>
-      </h1>
+      <splash>
+
+        <header>
+
+          
+          <Link to={'/login'}><button className='login-btn' type='button'>Log in</button></Link>
+          <Link to={'/signup'}><button className='signup-btn' type='button'>Sign up</button></Link>
+        </header>
+
+      
+      </splash>
     )
     }
   }
