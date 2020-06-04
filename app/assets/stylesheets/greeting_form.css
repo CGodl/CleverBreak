@@ -1,4 +1,22 @@
+.greeting-container {}
+
+
 .splash-nav {
+  top: 0;
+  display: flex;
+  min-height: 12vh;
+  flex-direction: row-reverse;
+}
+
+.logo-link {
+  background-image:  url('./images/Greeting_logo_link.png');
+  background-size: cover;
+  flex-direction: row;
+  height: 60px;
+  width: 200px;
+  order: 1;
+  
+  margin-right: 900px;
   margin-top: 20px;
 
 
@@ -7,15 +25,17 @@
 
 .login-btn {
   color: #1CC29F;
-  background-color: white;
+  background-color: transparent;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 14px;
   border: none;
   text-emphasis: bold;
   float: right;
-  margin-top: 16px;
+  margin-top: 37px;
   outline: none;
+  margin-left: 1px;
+  cursor: pointer;
 
 }
 
@@ -25,8 +45,8 @@
   padding: 50 30 50 30;
   margin-left: 15px;
   border-radius: 5px;
-  height: 46px;
-  width: 95px;
+  height: 43px;
+  width: 90px;
   text-emphasis: bold;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
@@ -34,7 +54,8 @@
   float: right;
   border: none;
   text-emphasis: bold;
-  margin-right: 85px;
+  margin-right: 116px;
+  margin-top: 25px;
   box-shadow: 0 2px 0 0 rgba(55,59,63,0.5);
 }
 
@@ -42,6 +63,95 @@
   box-shadow: none;
   position: relative;
   top: 1px;
+
+}
+
+.greeting-body {
+
+
+}
+
+.greeting-body-top {
+  background-image:  url('./images/Greeting_background.png');
+  background-size: cover;
+  height: 500px;
+  margin-top: 50px;
+
+}
+
+.greeting-body-mid-left {
+  background-image:  url('./images/Greeting_background.png');
+  background-size: 1000px;
+  background-position: center 0px;
+  background-color: #373b3f;
+  height: 645px;
+  width: 50%;
+  float:left;
+}
+
+
+.greeting-body-mid-right {
+  background-image:  url('./images/Greeting_background.png');
+  background-size: cover;
+  background-color: #1cc29f;
+  height: 645px;
+  width: 50%;
+  float: right;
+}
+
+.greeting-body-low-left {
+  background-image:  url('./images/Greeting_background.png');
+  background-size: cover;
+  background-color: #f67240;
+  height: 703px;
+  width: 50%;
+  float:left;
+}
+
+.greeting-body-low-right {
+  background-image:  url('./images/Greeting_background.png');
+  background-size: cover;
+  background-color: #373b3f;
+  height: 703px;
+  width: 50%;
+  float: right;
+}
+
+.greeting-body-bottom {
+  background-image:  url('./images/Greeting_background.png');
+  background-size: cover;
+  background-color: #8656cd;
+  height: 700px;
+  width: 100%;
+  float: left;
+
+}
+
+.greeting-bottom-list-container {
+  position: relative;
+  background-color: red;
+  height: 200px;
+
+
+
+}
+
+.greeting-bottom-lists {
+
+
+}
+
+.footer-background {
+  background-image: url('./images/Greeting_bottom.png');
+  background-size: cover;
+
+  width: 100%; 
+  
+  background-color: black;
+  display: flex;
+  min-height: 16vh;
+  flex-direction: column;
+
 
 }
 
