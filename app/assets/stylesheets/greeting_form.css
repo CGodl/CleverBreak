@@ -84,7 +84,7 @@
 
 .greeting-body-mid-left {
   background-image:  url('./images/Greeting_background.png');
-  background-size: 1000px;
+  background-size: 1250px;
   background-position: center 0px;
   background-color: #373b3f;
   height: 645px;
@@ -96,7 +96,8 @@
 
 .greeting-body-mid-right {
   background-image:  url('./images/Greeting_background.png');
-  background-size: cover;
+  background-position: center 0px;
+  background-size: 1250px;
   background-color: #1cc29f;
   height: 645px;
   width: 50%;
@@ -105,7 +106,8 @@
 
 .greeting-body-low-left {
   background-image:  url('./images/Greeting_background.png');
-  background-size: cover;
+  background-position: center 0px;
+  background-size: 1250px;
   background-color: #f67240;
   height: 645px;
   width: 50%;
@@ -114,7 +116,8 @@
 
 .greeting-body-low-right {
   background-image:  url('./images/Greeting_background.png');
-  background-size: cover;
+  background-position: center 0px;
+  background-size: 1250px;
   background-color: #373b3f;
   height: 645px;
   width: 50%;

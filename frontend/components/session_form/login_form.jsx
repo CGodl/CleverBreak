@@ -38,16 +38,15 @@ class LoginForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <label className='login-introduce-welcome'>Welcome to Splitwise</label>
           <div className="login-form">
-            <label className='login-form-text'>Email address
+            <p className='login-form-text'>Email address</p>
               <br/>
               <input type="text"
                 value={this.state.email}
                 onChange={this.update('email')}
                 className='login-input-box'
               />
-            </label>
             <br/>
-            <label className='login-form-text'>Password</label>
+            <p className='login-form-text'>Password</p>
               <br/>
               <input type="password"
                 className='login-input'
@@ -55,7 +54,6 @@ class LoginForm extends React.Component {
                 onChange={this.update('password')}
                 className='login-input-box'
               />
-            
             <br/>
             <input className="login-submit" type="submit" value={this.props.formType} />
           </div>
@@ -63,11 +61,10 @@ class LoginForm extends React.Component {
         <br/>
         <footer className='login-footer'>
           <nav className='rights-reserved'>
-          <p>Made with ☻ in Providence, RI, USA</p>
-          <p>Copyright © 2020 Splitwise, Inc. All rights reserved.</p>
-
-
+          <p className='new-york-city'>Made with ☻ in NYC, NY, USA</p>
+          <p className='copyright'>Copyright © 2020 Splitwise, Inc. All rights reserved.</p>
           </nav>
+{/* 
           <ul className='login-footer-list'>
             <li><Link to={'/'}>About</Link></li>
             <li><Link to={'/'}>Jobs</Link></li>
@@ -77,7 +74,7 @@ class LoginForm extends React.Component {
             <li><Link to={'/'}>Press</Link></li>
             <li><Link to={'/'}>API</Link></li>
             <li><Link to={'/'}>Contact Us</Link></li>
-          </ul>
+          </ul> */}
         </footer>
       </div>
     );
