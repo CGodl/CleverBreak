@@ -19,8 +19,5 @@ const mDTP = dispatch => {
 
 
 
-export default connect(
-  mSTP,
-  mDTP
-)(Greeting);
+export default connect(mSTP,mDTP)(Greeting);
 

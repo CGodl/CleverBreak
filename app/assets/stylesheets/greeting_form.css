@@ -271,23 +271,38 @@
   display: block;
   height: 100%;
   width: 100%;
+}
 
-
+.greeting-bottom-list-container ul{
+  display: inline-block;
 
 }
 
+
+
+
+
 .greeting-bottom-list-left {
+  list-style-image: url('./images/house_icon.png');
+  margin-left: 10%;
+  
+
 
 
 
 }
 
 .greeting-bottom-list-center {
+  list-style-image: url('./images/house_icon.png');
+  margin-left: 20%;
+  
 
 
 }
 
 .greeting-bottom-list-right {
+  list-style-image: url('./images/diamond_icon.png');
+  margin-left: 20%;
 
 
 }

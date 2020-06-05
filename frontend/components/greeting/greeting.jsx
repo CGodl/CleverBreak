@@ -2,8 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import history from '../history';
-//import Image from 'react-bootstrap/Image';
-//import Logo from '../../assets/splitwise_logo.png'
+
 
 
 class Greeting extends React.Component {
@@ -53,7 +52,6 @@ class Greeting extends React.Component {
             <p className='greeting-body-img-bottom'></p>
           </nav>
           <nav className='greeting-bottom-list-container'>
-            <ul className='greeting-bottom-lists'>
             <ul className='greeting-bottom-list-left'>
               <li>Add groups and friends</li>
               <li>Split expenses, record debts</li>
@@ -84,7 +82,6 @@ class Greeting extends React.Component {
               <li>Save default splits</li>
               <li>Early access to new features</li>
             </ul>
-            </ul>
             <ul>
               <li>Core features</li>
               <li>Pro features</li>
@@ -102,21 +99,6 @@ class Greeting extends React.Component {
 
 
 
-// const Greeting = ({ user, logout }) => {
-//   console.log(user)
-//   const sessionLinks = () => (
-//     <nav className="login-signup">
-
-//     </nav>
-//   );
-//   const personalGreeting = () => (
-//     <hgroup className="header-group">
-//       <h2 className="header-name">Hi, {user.email}!</h2>
-//       <button className="header-button" onClick={logout}>Log Out</button>
-//     </hgroup>
-//   );
-
-// };
 
 
 export default Greeting;
