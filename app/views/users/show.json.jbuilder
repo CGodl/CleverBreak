@@ -1,4 +1,4 @@
-json.partial! './user.json.jbuilder', user: @user
+json.partial! './user', user: @user
 
 
 ####COME BACK TO THIS

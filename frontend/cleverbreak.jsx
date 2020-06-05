@@ -2,14 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
-import * as SessionApi from './util/session_api_util'
 
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    debugger
     let store;
     if (window.currentUser) {
+      console.log('WERE HERE')
       const preloadedState = {
         session: { id: window.currentUser.id },
         entities: {
@@ -24,10 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.getState = store.getState;
     window.dispatch = store.dispatch;
-    window.login = SessionApi.login;
-    window.signup = SessionApi.signup;
-    window.logout = SessionApi.logout;
-    window.store = store
+
 
 
 

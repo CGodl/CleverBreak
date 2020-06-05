@@ -23,9 +23,6 @@ const mSTP = ({ errors }) => {
   };
 };
 
-
-
-
 const mDTP = (dispatch, ownProps) => {
   return {
     login: user => dispatch(login(user)),

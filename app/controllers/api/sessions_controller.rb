@@ -9,7 +9,7 @@ class Api::SessionsController < ApplicationController
       
       login(@user)
       #render "api/session/"
-      render json: ['YOU MADE IT']
+      render json: [@user]
     else
       render json: ["Whoops! We couldn’t find an account for that email address and password."], status: 401
     end
