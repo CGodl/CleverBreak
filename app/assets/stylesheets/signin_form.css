@@ -6,6 +6,17 @@
   font-weight: bold;
 }
 
+.sign-in-logo {
+  position: absolute;
+  right: 1000px;
+  background-image: url('./images/login-main-logo');
+  background-size: contain;
+  height: 100px;
+  width: 100px;
+
+
+}
+
 .session-form-container {
   position: absolute;
   left: 650px;

@@ -4,17 +4,6 @@ import { Link } from 'react-router-dom';
 import { login } from '../../actions/session_actions';
 import LoginForm from './login_form';
 
-
-
-// const mSTP = (state, ownProps) => {
-
-//   return {
-//     errors: state.errors.session,
-//     formType: 'login'
-//   }
-
-// }
-
 const mSTP = ({ errors }) => {
   return {
     errors: errors.session,

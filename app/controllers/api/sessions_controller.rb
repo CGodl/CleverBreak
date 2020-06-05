@@ -8,8 +8,7 @@ class Api::SessionsController < ApplicationController
     if @user
       
       login(@user)
-      #render "api/session/"
-      render json: [@user]
+      render 'api/users/show'
     else
       render json: ["Whoops! We couldn’t find an account for that email address and password."], status: 401
     end
@@ -21,7 +20,7 @@ class Api::SessionsController < ApplicationController
       logout
       render {}
     else
-      render json: ["Nobody signed in"], status: 404
+      render json: ["Not signed in"], status: 404
     end
   end
 end

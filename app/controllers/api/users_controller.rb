@@ -4,10 +4,15 @@ class Api::UsersController < ApplicationController
 
     if @user.save
       login(@user)
-      render :index
+      render 'api/users/show'
     else
       render json: @user.errors.full_messages, status: 422
     end
+  end
+
+  def show
+    @user = User.find_by(params[:id])
+    render :show
   end
 
   private
