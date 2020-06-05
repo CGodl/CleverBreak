@@ -15,18 +15,15 @@ class Greeting extends React.Component {
     return (
       <html className='greeting-container'>
         <header className='splash-nav'>
-          {/* <Image src="../../assets/splitwise_logo.png" fluid />
-          <img style={{height:'auto',width:'100%'}} src={ require('../../assets/splitwise_logo.png') }/> */}
           <Link to={'/signup'}><button className='signup-btn' type='button'>Sign up</button></Link>
           <Link to={'/login'}><button className='login-btn' type='button'>Log in</button></Link>
           <Link to={'/'} className='logo-link'></Link>
-          {/* <Link to={'/'}><nav className='logo-link'></nav></Link> */}
         </header>
 
         <body className = 'greeting-body'>
           <nav className='greeting-body-top'>
-            <p>Less stress when sharing expenses</p>
-            <Link to={'/signup'}><button className='signup-btn' type='button'>Sign up</button></Link>
+            <p className='top-title'>Less stress when sharing expenses</p>
+            <Link to={'/signup'}><button className='signup-btn-body' type='button'>Sign up</button></Link>
             <p>Keep track of your shared expenses and balances with housemates, trips, groups, friends, and family.</p>
             <p></p>
           </nav>
