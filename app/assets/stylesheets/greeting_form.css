@@ -1,4 +1,7 @@
-.greeting-container {}
+.greeting-container {
+
+
+}
 
 
 .splash-nav {
@@ -67,7 +70,7 @@
 }
 
 .greeting-body {
-
+  position: relative;
 
 }
 
@@ -90,6 +93,7 @@
 }
 
 
+
 .greeting-body-mid-right {
   background-image:  url('./images/Greeting_background.png');
   background-size: cover;
@@ -103,7 +107,7 @@
   background-image:  url('./images/Greeting_background.png');
   background-size: cover;
   background-color: #f67240;
-  height: 703px;
+  height: 645px;
   width: 50%;
   float:left;
 }
@@ -112,10 +116,89 @@
   background-image:  url('./images/Greeting_background.png');
   background-size: cover;
   background-color: #373b3f;
-  height: 703px;
+  height: 645px;
   width: 50%;
   float: right;
 }
+
+.greeting-body-title {
+  text-align: center;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 50px;
+  
+  
+}
+
+.greeting-body-img-top-left {
+  background-image:  url('./images/top-left-image.png');
+  background-size: contain;
+  z-index: 1;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  
+  height: 543px;
+  width: 324px;
+}
+
+.greeting-body-img-top-right {
+  background-image:  url('./images/top-right-image.png');
+  background-size: contain;
+  z-index: 1;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  
+  height: 543px;
+  width: 324px;
+
+}
+
+.greeting-body-img-mid-left {
+  background-image:  url('./images/mid-left-image.png');
+  background-size: contain;
+  z-index: 1;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  
+  height: 543px;
+  width: 324px;
+
+}
+
+.greeting-body-img-mid-right {
+  background-image:  url('./images/mid-right-image.png');
+  background-size: contain;
+  z-index: 1;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  
+  height: 543px;
+  width: 324px;
+
+}
+
+.greeting-body-text {
+  text-align: center;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  
+
+}
+
+
+
 
 .greeting-body-bottom {
   background-image:  url('./images/Greeting_background.png');
@@ -128,18 +211,30 @@
 }
 
 .greeting-bottom-list-container {
-  position: relative;
-  background-color: red;
-  height: 200px;
+  display: block;
+  height: 100%;
+  width: 100%;
 
 
 
 }
 
-.greeting-bottom-lists {
+.greeting-bottom-list-left {
+
 
 
 }
+
+.greeting-bottom-list-center {
+
+
+}
+
+.greeting-bottom-list-right {
+
+
+}
+
 
 .footer-background {
   background-image: url('./images/Greeting_bottom.png');
@@ -154,4 +249,5 @@
 
 
 }
+
 

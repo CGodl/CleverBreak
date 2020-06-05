@@ -6,14 +6,25 @@ import LoginForm from './login_form';
 
 
 
-const mSTP = (state, ownProps) => {
+// const mSTP = (state, ownProps) => {
 
+//   return {
+//     errors: state.errors.session,
+//     formType: 'login'
+//   }
+
+// }
+
+const mSTP = ({ errors }) => {
   return {
-    errors: state.errors.session,
-    formType: 'login'
-  }
+    errors: errors.session,
+    formType: 'login',
+    navLink: <Link to="/signup">sign up instead</Link>,
+  };
+};
 
-}
+
+
 
 const mDTP = (dispatch, ownProps) => {
   return {

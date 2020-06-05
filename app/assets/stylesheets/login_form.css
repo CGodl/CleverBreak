@@ -62,13 +62,18 @@
   color: #999;
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
-  position: relative;
+  position: absolute;
   left: 680px;
   top: 200px;
 }
 
+.login-form-text {
+  margin-bottom: 5px;
+
+}
+
 .login-form {
-  position: absolute;
+  position: relative;
   left: 700px;
   top: 200px;
   margin-top: 20px;
@@ -118,6 +123,16 @@
   height: 74px;
 
 
+}
+
+.login-main-logo {
+  background-image: url(./images/login-main-logo.png);
+  background-size: cover;
+  position: absolute;
+  height: 201px;
+  width: 201px;
+  top: 109px;
+  left: 466px;
 }
 
 .login-footer.list {

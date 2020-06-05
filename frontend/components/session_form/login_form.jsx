@@ -34,10 +34,11 @@ class LoginForm extends React.Component {
             <Link to={'/signup'}><button className='log-page-signup-btn' type='button'>Sign up</button></Link>
           </nav>
         </header>
+        <nav className='login-main-logo'></nav>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <label className='login-introduce-welcome'>Welcome to Splitwise</label>
           <div className="login-form">
-            <label>Email address
+            <label className='login-form-text'>Email address
               <br/>
               <input type="text"
                 value={this.state.email}
@@ -46,7 +47,7 @@ class LoginForm extends React.Component {
               />
             </label>
             <br/>
-            <label>Password
+            <label className='login-form-text'>Password</label>
               <br/>
               <input type="password"
                 className='login-input'
@@ -54,7 +55,7 @@ class LoginForm extends React.Component {
                 onChange={this.update('password')}
                 className='login-input-box'
               />
-            </label>
+            
             <br/>
             <input className="login-submit" type="submit" value={this.props.formType} />
           </div>

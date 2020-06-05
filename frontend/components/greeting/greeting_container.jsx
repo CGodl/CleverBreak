@@ -3,9 +3,9 @@ import { logout } from '../../actions/session_actions';
 import Greeting from './greeting';
 
 
-const mSTP = ( state, ownProps ) => {
+const mSTP = ( { session, entities: { users } }) => {
   return {
-    currentUser: state.entities.users[state.session.id]
+    currentUser: users[session.id]
   };
 };
 

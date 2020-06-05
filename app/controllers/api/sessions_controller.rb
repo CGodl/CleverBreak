@@ -6,8 +6,10 @@ class Api::SessionsController < ApplicationController
     )
 
     if @user
+      
       login(@user)
-      render "api/session/"
+      #render "api/session/"
+      render json: ['YOU MADE IT']
     else
       render json: ["Whoops! We couldn’t find an account for that email address and password."], status: 401
     end
