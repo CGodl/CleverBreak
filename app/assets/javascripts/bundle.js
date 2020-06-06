@@ -217,6 +217,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./session_form/signup_form_container */ "./frontend/components/session_form/signup_form_container.jsx");
 /* harmony import */ var _session_form_login_form_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./session_form/login_form_container */ "./frontend/components/session_form/login_form_container.jsx");
 /* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.jsx");
+/* harmony import */ var _dashboard_dashboard_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./dashboard/dashboard_page */ "./frontend/components/dashboard/dashboard_page.jsx");
+
 
 
 
@@ -237,10 +239,76 @@ var App = function App() {
     exact: true,
     path: "/login",
     component: _session_form_login_form_container__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
+    exact: true,
+    path: "/dashboard",
+    component: _dashboard_dashboard_page__WEBPACK_IMPORTED_MODULE_6__["default"]
   })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
+
+/***/ }),
+
+/***/ "./frontend/components/dashboard/dashboard_page.jsx":
+/*!**********************************************************!*\
+  !*** ./frontend/components/dashboard/dashboard_page.jsx ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _nav_bar_navbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../nav_bar/navbar */ "./frontend/components/nav_bar/navbar.jsx");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+var Dashboard = /*#__PURE__*/function (_React$Component) {
+  _inherits(Dashboard, _React$Component);
+
+  var _super = _createSuper(Dashboard);
+
+  function Dashboard(props) {
+    _classCallCheck(this, Dashboard);
+
+    return _super.call(this, props);
+  }
+
+  _createClass(Dashboard, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_bar_navbar__WEBPACK_IMPORTED_MODULE_1__["default"], null);
+    }
+  }]);
+
+  return Dashboard;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Dashboard);
 
 /***/ }),
 
@@ -434,6 +502,51 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var history__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! history */ "./node_modules/history/esm/history.js");
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(history__WEBPACK_IMPORTED_MODULE_0__["createBrowserHistory"])());
+
+/***/ }),
+
+/***/ "./frontend/components/nav_bar/navbar.jsx":
+/*!************************************************!*\
+  !*** ./frontend/components/nav_bar/navbar.jsx ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _signed_in_drop__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./signed_in_drop */ "./frontend/components/nav_bar/signed_in_drop.jsx");
+
+
+
+
+var Navbar = function Navbar() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+    className: "nav-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "nav-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: '/',
+    className: "brand-logo"
+  }, "Cleverbreak"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "nav-btn nav-right"
+  }, "NAME HERE"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_signed_in_drop__WEBPACK_IMPORTED_MODULE_2__["default"], null)));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Navbar);
+
+/***/ }),
+
+/***/ "./frontend/components/nav_bar/signed_in_drop.jsx":
+/*!********************************************************!*\
+  !*** ./frontend/components/nav_bar/signed_in_drop.jsx ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/frontend/components/nav_bar/signed_in_drop.jsx: Unexpected token (7:8)\n\n\u001b[0m \u001b[90m  5 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  6 | \u001b[39m\u001b[36mclass\u001b[39m \u001b[33mSignedInDropdown\u001b[39m \u001b[36mextends\u001b[39m \u001b[33mReact\u001b[39m\u001b[33m.\u001b[39m\u001b[33mComponent\u001b[39m {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  7 | \u001b[39m  \u001b[36mclass\u001b[39m \u001b[33mLoginForm\u001b[39m \u001b[36mextends\u001b[39m \u001b[33mReact\u001b[39m\u001b[33m.\u001b[39m\u001b[33mComponent\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  8 | \u001b[39m    constructor(props) {\u001b[0m\n\u001b[0m \u001b[90m  9 | \u001b[39m      \u001b[36msuper\u001b[39m(props)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 10 | \u001b[39m      \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mstate \u001b[33m=\u001b[39m {\u001b[0m\n    at Object._raise (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:746:17)\n    at Object.raiseWithData (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:739:17)\n    at Object.raise (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:733:17)\n    at Object.unexpected (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:8807:16)\n    at Object.parseClassMemberWithIsStatic (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:12122:12)\n    at Object.parseClassMember (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:12015:10)\n    at withTopicForbiddingContext (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:11960:14)\n    at Object.withTopicForbiddingContext (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:11031:14)\n    at Object.parseClassBody (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:11937:10)\n    at Object.parseClass (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:11911:22)\n    at Object.parseStatementContent (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:11198:21)\n    at Object.parseStatement (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:11156:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:11731:25)\n    at Object.parseBlockBody (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:11717:10)\n    at Object.parseTopLevel (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:11087:10)\n    at Object.parse (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:12768:10)\n    at parse (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:12821:38)\n    at parser (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/core/lib/parser/index.js:54:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/core/lib/transformation/normalize-file.js:93:38)\n    at normalizeFile.next (<anonymous>)\n    at run (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/core/lib/transformation/index.js:31:50)\n    at run.next (<anonymous>)\n    at Function.transform (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/core/lib/transform.js:27:41)\n    at transform.next (<anonymous>)\n    at step (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/gensync/index.js:254:32)\n    at gen.next (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/gensync/index.js:266:13)\n    at async.call.value (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/gensync/index.js:216:11)");
 
 /***/ }),
 
@@ -44200,7 +44313,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// import 'bootstrap/dist/css/bootstrap.min.css';
 Object(_utils_batch__WEBPACK_IMPORTED_MODULE_7__["setBatch"])(_utils_reactBatchedUpdates__WEBPACK_IMPORTED_MODULE_8__["unstable_batchedUpdates"]);
 
 

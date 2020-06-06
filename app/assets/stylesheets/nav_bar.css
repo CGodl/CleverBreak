@@ -1,0 +1,21 @@
+
+
+.nav-wrapper {
+  display: flex;
+  background-color: #5bc5a7;
+  box-shadow: 0 0 3px rgba(0,0,0,0.5);
+  height: 34px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav-btn {
+  color: red;
+
+}
+
+.nav-right {
+  order: 1;
+  align-items: flex-end;
+
+}
