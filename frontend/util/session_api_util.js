@@ -8,6 +8,7 @@ export const signup = user => {
 
 
 export const login = user => {
+  // debugger
   return $.ajax({
     type: 'POST',
     url: '/api/session',
