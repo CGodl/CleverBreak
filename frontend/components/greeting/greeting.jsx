@@ -72,6 +72,7 @@ class Greeting extends React.Component {
               <li>100+ currencies</li>
               <li>Payment integrations</li>
             </ul>
+            
             <ul className='greeting-bottom-list-right'>
               <li>A totally ad-free experience</li>
               <li>Currency conversion</li>

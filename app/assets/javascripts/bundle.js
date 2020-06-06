@@ -44200,6 +44200,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// import 'bootstrap/dist/css/bootstrap.min.css';
 Object(_utils_batch__WEBPACK_IMPORTED_MODULE_7__["setBatch"])(_utils_reactBatchedUpdates__WEBPACK_IMPORTED_MODULE_8__["unstable_batchedUpdates"]);
 
 
