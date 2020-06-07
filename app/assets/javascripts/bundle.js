@@ -393,12 +393,13 @@ var Greeting = /*#__PURE__*/function (_React$Component) {
         className: "greeting-body-top"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "top-title"
-      }, "Less stress when sharing expenses"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, "Less stress when sharing expenses INSERT TEXT"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "top-text"
+      }, "Keep track of your shared expenses and balances with housemates, trips, groups, friends, and family."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: '/signup'
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "signup-btn-body",
-        type: "button"
-      }, "Sign up")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Keep track of your shared expenses and balances with housemates, trips, groups, friends, and family."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+        className: "signup-btn-body"
+      }, "Sign up"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "greeting-body-mid-left"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "greeting-body-title"
@@ -756,6 +757,7 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
       password: ''
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.demoAcct = _this.demoAcct.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -774,6 +776,16 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
       e.preventDefault(); // debugger
 
       var user = Object.assign({}, this.state);
+      this.props.login(user);
+    }
+  }, {
+    key: "demoAcct",
+    value: function demoAcct(e) {
+      e.preventDefault();
+      var user = {
+        email: 'anemail@yahoo.com',
+        password: 'password123'
+      };
       this.props.login(user);
     }
   }, {
@@ -826,7 +838,10 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
         className: "login-submit",
         type: "submit",
         value: this.props.formType
-      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "demo-btn",
+        onClick: this.demoAcct
+      }, "Demo Account"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
         className: "login-footer"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "rights-reserved"

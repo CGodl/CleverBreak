@@ -10,6 +10,8 @@ class LoginForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoAcct = this.demoAcct.bind(this);
+
   }
 
   update(field) {
@@ -22,6 +24,12 @@ class LoginForm extends React.Component {
     e.preventDefault();
     // debugger
     const user = Object.assign({}, this.state);
+    this.props.login(user);
+  }
+
+  demoAcct(e) {
+    e.preventDefault();
+    const user = { email: 'anemail@yahoo.com', password: 'password123' }
     this.props.login(user);
   }
 
@@ -58,6 +66,7 @@ class LoginForm extends React.Component {
               />
             <br/>
             <input className="login-submit" type="submit" value={this.props.formType} />
+            <button className='demo-btn'onClick={this.demoAcct}>Demo Account</button>
           </div>
         </form>
         <br/>
