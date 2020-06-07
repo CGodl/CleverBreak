@@ -1,28 +1,42 @@
-
-
 .nav-wrapper {
   background-color: #5bc5a7;
   box-shadow: 0 0 3px rgba(0,0,0,0.5);
   height: 34px;
 }
 
-
-
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 6px 17%;
+  padding: 3px 17%;
   
+}
+
+.splitwise-logo{
+  background-image: url('./images/logo-green-back.png');
+  background-size: contain;
+ 
+  height: 28px;
+  width: 119px;
 }
 
 .nav-btn {
   background-color: transparent;
   cursor: pointer;
+  border: none;
+  position: relative;
 
 }
 
-.nav-right {
-  order: 1;
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 300px;
+  z-index: 2;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14);
+  z-index: 2;
+
 
 }
