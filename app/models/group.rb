@@ -1,11 +1,8 @@
-class Comment < ApplicationRecord
-
+class Group < ApplicationRecord
 
   belongs_to :author,
     foreign_key: :author_id,
-    class_name :User
-
-
+    class_name: :User
 
 
 end

@@ -24,12 +24,13 @@ class LoginForm extends React.Component {
     e.preventDefault();
     // debugger
     const user = Object.assign({}, this.state);
-    this.props.login(user);
+    this.props.login(user)
+    .catch(err => { console.log(err) })
   }
 
   demoAcct(e) {
     e.preventDefault();
-    const user = { email: 'anemail@yahoo.com', password: 'password123' }
+    const user = { email: `anemail@yahoo.com`, password: `password123` }
     this.props.login(user);
   }
 
@@ -46,7 +47,7 @@ class LoginForm extends React.Component {
         </header>
         <nav className='login-main-logo'></nav>
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          <label className='login-introduce-welcome'>Welcome to Splitwise</label>
+          <label className='login-introduce-welcome'>Welcome to Cleverbreak</label>
           <div className="login-form">
             <p className='login-form-text'>Email address</p>
               <br/>

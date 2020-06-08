@@ -36,7 +36,7 @@ class SignupForm extends React.Component {
           <br/>
           <br/>
           <div className="session-form">
-            <label>Hi there! My name is
+            <label className='hi-my-name'>Hi there! My name is
               <br/>
               <input type="text"
                 value={this.state.name}
@@ -44,24 +44,26 @@ class SignupForm extends React.Component {
                 className="session-input"
               />
             </label>
-            <br/>
-            <label>Here's my email address:
+            <nav className='email-password-field'>
               <br/>
-              <input type="text"
-                value={this.state.email}
-                onChange={this.update('email')}
-                className="session-input"
-              />
-            </label>
+              <label>Here's my email address:
+                <br/>
+                <input type="text"
+                  value={this.state.email}
+                  onChange={this.update('email')}
+                  className="session-input"
+                />
+              </label>
+                <br/>
+              <label>And here's my password:
               <br/>
-            <label>And here's my password:
-            <br/>
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="session-input"
-              />
-            </label>
+                <input type="password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  className="session-input"
+                />
+              </label>
+            </nav>
             <br/>
             <button className="session-submit" type='submit'>Sign me up!</button>
           </div>
