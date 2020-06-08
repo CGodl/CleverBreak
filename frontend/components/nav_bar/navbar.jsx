@@ -1,8 +1,13 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+<<<<<<< HEAD
 import SignedInDropdown from './signed_in_drop';
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown'
+=======
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+>>>>>>> authentication
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -23,12 +28,21 @@ class Navbar extends React.Component {
           <ul className="nav-container">
             <li><Link to={'/'}><p className='splitwise-logo'></p></Link></li>
             <li><Dropdown>
+<<<<<<< HEAD
                <Dropdown.Toggle variant="success" className="nav-btn">
                 {this.props.name}
               </Dropdown.Toggle>
               <Dropdown.Menu className='nav-dropdown'>
                 <Dropdown.Item>Your Account</Dropdown.Item>
                 <Dropdown.Item>Create a Group</Dropdown.Item>
+=======
+              <Dropdown.Toggle variant="success" className="nav-btn">
+                {this.state.name}
+              </Dropdown.Toggle>
+              <Dropdown.Menu className='nav-dropdown'>
+                <Dropdown.Item href="#/action-1">Your Account</Dropdown.Item>
+                <Dropdown.Item href="#/action-2">Create a Group</Dropdown.Item>
+>>>>>>> authentication
                 <Dropdown.Item>Fairness Calculators</Dropdown.Item>
                 <Dropdown.Item onClick={this.props.logout}>Log Out</Dropdown.Item>
               </Dropdown.Menu>
