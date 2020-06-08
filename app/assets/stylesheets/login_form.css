@@ -90,6 +90,7 @@
 .login-form-text {
   color: #333333;
   font: 18px 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  position: absolute;
 
 
 }
@@ -126,6 +127,7 @@
 .error-msgs {
   background-color: red;
   color: black;
+  font-size: 16px;
 
 }
 

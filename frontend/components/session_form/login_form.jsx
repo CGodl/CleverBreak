@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       email: '',
       password: ''
@@ -12,7 +13,6 @@ class LoginForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoAcct = this.demoAcct.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
-    window.props = this.props;
 
   }
 
@@ -35,6 +35,19 @@ class LoginForm extends React.Component {
     this.props.login(user);
   }
 
+  renderErrors() {
+    console.log('THIS HITS')
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
 
   render() {
     return (
@@ -49,7 +62,9 @@ class LoginForm extends React.Component {
         </header>
         <nav className='login-main-logo'></nav>
         <form onSubmit={this.handleSubmit} className="login-form-box">
+          <label className='error-msgs'>{this.renderErrors()}</label>
           <label className='login-introduce-welcome'>Welcome to Splitwise</label>
+          
           <div className="login-form">
             <p className='login-form-text'>Email address</p>
               <br/>
