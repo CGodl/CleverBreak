@@ -28,6 +28,10 @@ class LoginForm extends React.Component {
     this.props.login(user);
   }
 
+  componentDidMount() {
+    this.props.clearErrors();
+  }
+
   demoAcct(e) {
     e.preventDefault();
     const user = { email: 'anemail@yahoo.com', password: 'password123' }
@@ -84,8 +88,8 @@ class LoginForm extends React.Component {
                 className='login-input-box'
               />
             <br/>
-            <input className="login-submit" type="submit" value={this.props.formType} />
-            <button className='demo-btn'onClick={this.demoAcct}>Demo Account</button>
+            <input className="login-submit" type="submit" value={'Login'} />
+            <button className='demo-btn' onClick={this.demoAcct}>Demo Account</button>
           </div>
         </form>
         <br/>

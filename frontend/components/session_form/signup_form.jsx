@@ -34,14 +34,18 @@ class SignupForm extends React.Component {
     <nav className='signup-errors'>
       <label>The following errors occured:
         <ul>
-          {this.props.errors.map((error) => (
-            <li>    • {error}</li>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>    • {error}</li>
           ))}
         </ul>
         </label>
      </nav>
       
     );
+  }
+
+  componentDidMount() {
+    this.props.clearErrors();
   }
 
 
