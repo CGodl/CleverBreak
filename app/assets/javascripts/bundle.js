@@ -576,23 +576,17 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "splitwise-logo"
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "nav-btn nav-right",
+        className: "nav-btn nav-right"
+      }, this.state.name))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Dropdown, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Dropdown.Toggle, {
+        variant: "success",
+        id: "dropdown-basic"
+      }, "Dropdown Button"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Dropdown.Menu, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Dropdown.Item, {
+        href: "#/action-1"
+      }, "Action"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Dropdown.Item, {
+        href: "#/action-2"
+      }, "Another action"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Dropdown.Item, null, "Fairness Calculators"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Dropdown.Item, {
         onClick: this.props.logout
-      }, this.state.name))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "nav-dropdown"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
-        to: '/',
-        className: "your-account"
-      }, "Your Account")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
-        to: '/',
-        className: "brand-logo"
-      }, "Create a group")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
-        to: '/',
-        className: "brand-logo"
-      }, "Fairness Calculators")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
-        to: '/',
-        className: "brand-logo"
-      }, "Log Out"))))));
+      }, "Log Out")))));
     }
   }]);
 

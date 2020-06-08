@@ -16,17 +16,20 @@ class Navbar extends React.Component {
         <nav className='nav-wrapper'>
           <ul className="nav-container">
             <li><Link to={'/'}><p className='splitwise-logo'></p></Link></li>
-            <li><button className='nav-btn nav-right' onClick={this.props.logout}>{this.state.name}</button></li>
+            <li><button className='nav-btn nav-right' >{this.state.name}</button></li>
 
           </ul>
-          <div>
-          <ul className="nav-dropdown">
-            <li><NavLink to={'/'} className='your-account'>Your Account</NavLink></li>
-            <li><NavLink to={'/'} className='brand-logo'>Create a group</NavLink></li>
-            <li><NavLink to={'/'} className='brand-logo'>Fairness Calculators</NavLink></li>
-            <li><NavLink to={'/'} className='brand-logo'>Log Out</NavLink></li>
-          </ul>
-        </div>
+        <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic">
+              Dropdown Button
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+            <Dropdown.Item>Fairness Calculators</Dropdown.Item>
+            <Dropdown.Item onClick={this.props.logout}>Log Out</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
         </nav>
       </header>
     )
