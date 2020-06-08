@@ -723,9 +723,8 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
       password: ''
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
-    _this.demoAcct = _this.demoAcct.bind(_assertThisInitialized(_this));
-    _this.renderErrors = _this.renderErrors.bind(_assertThisInitialized(_this));
-    window.props = _this.props;
+    _this.demoAcct = _this.demoAcct.bind(_assertThisInitialized(_this)); // this.renderErrors = this.renderErrors.bind(this);
+
     return _this;
   }
 
