@@ -1,7 +1,7 @@
 class Transaction < ApplicationRecord
 
 
-  belongs_to :bill
+  belongs_to :bill,
     foreign_key: :bill_id,
     class_name: :Bill
 
