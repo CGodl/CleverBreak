@@ -17,7 +17,7 @@ class Navbar extends React.Component {
           <ul className="nav-container">
             <li><Link to={'/'}><p className='splitwise-logo'></p></Link></li>
             {/* <li><button className='nav-btn nav-right'>{this.state.name}</button></li> */}
-            <li><button  onClick={this.props.logout} className='nav-btn nav-right'>Log Out</button></li>
+            <li><button  onClick={this.props.logout} className='nav-btn'>Log Out</button></li>
               {/* <ul className="nav-dropdown">
                 <li><NavLink to={'/'} className='your-account'>Your Account</NavLink></li>
                 <li><NavLink to={'/'} className='brand-logo'>Create a group</NavLink></li>

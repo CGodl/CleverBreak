@@ -8,15 +8,6 @@
 
 }
 
-/* .sign-in-logo {
-  position: relative;
-  top: 170px;
-  right: 245px;
-  background-image: url('./images/login-main-logo');
-  background-size: contain;
-  height: 220px;
-  width: 220px;
-} */
 
 .sign-in-logo {
   position: fixed;

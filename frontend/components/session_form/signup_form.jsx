@@ -89,9 +89,7 @@ class SignupForm extends React.Component {
             <br/>
             <button className="session-submit" type='submit'>Sign me up!</button>
           </div>
-        </form>
-        <Link to={'/tos'}>By signing up, you accept the Cleverbreak Terms of Service.</Link>
-        
+        </form>      
       </div>
     );
   }

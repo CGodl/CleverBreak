@@ -588,7 +588,7 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
         className: "splitwise-logo"
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.props.logout,
-        className: "nav-btn nav-right"
+        className: "nav-btn"
       }, "Log Out")))));
     }
   }]);
@@ -1025,9 +1025,7 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "session-submit",
         type: "submit"
-      }, "Sign me up!"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: '/tos'
-      }, "By signing up, you accept the Cleverbreak Terms of Service."));
+      }, "Sign me up!"))));
     }
   }]);
 
@@ -1173,7 +1171,7 @@ var sessionErrorsReducer = function sessionErrorsReducer() {
       return _nullErrors;
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["CLEAR_ERRORS"]:
-      return [];
+      return _nullErrors;
 
     default:
       return state;
