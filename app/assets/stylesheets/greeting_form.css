@@ -37,9 +37,7 @@
 
 .signup-btn-body:hover {
   box-shadow: none;
-  position: relative;
-  top: 1px;
-
+  margin-top: 1px;
 }
 
 
