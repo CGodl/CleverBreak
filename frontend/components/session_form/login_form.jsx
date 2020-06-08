@@ -24,7 +24,6 @@ class LoginForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // debugger
     const user = Object.assign({}, this.state);
     this.props.login(user);
   }
@@ -36,7 +35,6 @@ class LoginForm extends React.Component {
   }
 
   renderErrors() {
-    console.log('THIS HITS')
     return(
       <ul>
         {this.props.errors.map((error, i) => (
@@ -47,7 +45,6 @@ class LoginForm extends React.Component {
       </ul>
     );
   }
-
 
   render() {
     return (
@@ -62,7 +59,10 @@ class LoginForm extends React.Component {
         </header>
         <nav className='login-main-logo'></nav>
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          <label className='error-msgs'>{this.renderErrors()}</label>
+          <label 
+            className={this.props.errors.length > 0 ? 'error-msgs' : ''}>{ this.renderErrors()} 
+              {/* <Link className='x-button'>x</Link> */}
+          </label>
           <label className='login-introduce-welcome'>Welcome to Splitwise</label>
           
           <div className="login-form">

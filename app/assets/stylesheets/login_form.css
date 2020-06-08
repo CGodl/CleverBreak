@@ -15,8 +15,6 @@
   float: left;
   margin-top: 9px;
   margin-left: 248px;
-
-
 }
 
 .login-page-btns {
@@ -125,11 +123,33 @@
 }
 
 .error-msgs {
-  background-color: red;
-  color: black;
-  font-size: 16px;
-
+  border-color: #b34;
+  background: #c45;
+  color: #fff;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  height: 40px;
+  width: 1000px;
+  position: fixed;
+  top: 48px;
+  left: 250px;
+  border-radius: 0 0 4px 4px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
 }
+
+.x-button {
+  color: #fff;
+  font-size: 14px;
+}
+
+.x-button::before {
+  visibility: none;
+}
+
+
+
 
 .demo-btn {
   background-color: whitesmoke;
