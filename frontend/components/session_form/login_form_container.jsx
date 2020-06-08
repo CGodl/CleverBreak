@@ -1,20 +1,20 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { login } from '../../actions/session_actions';
+import { login, receiveErrors } from '../../actions/session_actions';
 import LoginForm from './login_form';
 
-const mSTP = ({ errors }) => {
+const mSTP = (state) => {
   return {
-    errors: errors.session,
+    errors: state.errors.session,
     formType: 'login',
-    navLink: <Link to="/signup">sign up instead</Link>,
   };
 };
 
-const mDTP = (dispatch, ownProps) => {
+const mDTP = (dispatch) => {
   return {
     login: user => dispatch(login(user)),
+    receiveError: error => dispatch(receiveError(error))
   };
 };
 

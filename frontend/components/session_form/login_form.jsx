@@ -11,6 +11,8 @@ class LoginForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoAcct = this.demoAcct.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
+    window.props = this.props;
 
   }
 
@@ -33,6 +35,7 @@ class LoginForm extends React.Component {
     const user = { email: `anemail@yahoo.com`, password: `password123` }
     this.props.login(user);
   }
+
 
   render() {
     return (
@@ -76,17 +79,6 @@ class LoginForm extends React.Component {
           <p className='new-york-city'>Made with ☻ in NYC, NY, USA</p>
           <p className='copyright'>Copyright © 2020 Splitwise, Inc. All rights reserved.</p>
           </nav>
-{/* 
-          <ul className='login-footer-list'>
-            <li><Link to={'/'}>About</Link></li>
-            <li><Link to={'/'}>Jobs</Link></li>
-            <li><Link to={'/'}>Calculators</Link></li>
-            <li><Link to={'/'}>Blog</Link></li>
-            <li><Link to={'/'}>Terms</Link></li>
-            <li><Link to={'/'}>Press</Link></li>
-            <li><Link to={'/'}>API</Link></li>
-            <li><Link to={'/'}>Contact Us</Link></li>
-          </ul> */}
         </footer>
       </div>
     );
