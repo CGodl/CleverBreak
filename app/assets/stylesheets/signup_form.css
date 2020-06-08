@@ -24,6 +24,13 @@
   position: relative;
   left: 650px;
   top: 120px;
+  font-size: 20px;
+}
+
+.session-input {
+  height: 40px;
+  width: 300px;
+
 }
 
 .signup-errors {
