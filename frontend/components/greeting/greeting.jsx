@@ -17,7 +17,7 @@ class Greeting extends React.Component {
           <Link to={'/login'}><button className='login-btn' type='button'>Log in</button></Link>
           <Link to={'/'} className='logo-link'></Link>
         </header>
-
+        
         <body className = 'greeting-body'>
           <nav className='greeting-body-top'>
             <p className='top-title'>Less stress when sharing expenses ON ANYTHING</p>
@@ -45,46 +45,52 @@ class Greeting extends React.Component {
             <p className='greeting-body-img img-mid-right'></p>
           </nav>
           <nav className='greeting-body-bottom'>
-            <h2>Get even more with PRO</h2>
-            <p className='greeting-body-text-bottom'>Get even more organized with receipt scanning, charts and graphs, currency conversion, and more!</p>
+            <div className ='greeting-bottom-body-text'>
+              <p className= 'greeting-bottom-body-title'>Get even more with PRO</p>
+              <p className='greeting-bottom-body-textbody'>Get even more organized with receipt scanning, charts and graphs, currency conversion, and more!</p>
+              <Link to={'/signup'}><button className='bottom-signup-btn' type='button'>Sign up</button></Link>
+            </div>
             <p className='greeting-body-img-bottom'></p>
           </nav>
           <nav className='greeting-bottom-list-container'>
-            <h2 className='greeting-bottom-title'>The whole nine yards</h2>
-            <ul className='greeting-bottom-list-left'>
-              <li>Add groups and friends</li>
-              <li>Split expenses, record debts</li>
-              <li>Equal or unequal splits</li>
-              <li>Split by % or shares</li>
-              <li>Calculate total balances</li>
-              <li>Suggested repayments</li>
-              <li>Simplify debts</li>
-              <li>Recurring expenses</li>
-            </ul>
-            <ul className='greeting-bottom-list-center'>
-              <li>Offline mode</li>
-              <li>Cloud sync</li>
-              <li>Spending totals</li>
-              <li>Categorize expenses</li>
-              <li>Easy CSV exports</li>
-              <li>7+ languages</li>
-              <li>100+ currencies</li>
-              <li>Payment integrations</li>
-            </ul>
-            
-            <ul className='greeting-bottom-list-right'>
-              <li>A totally ad-free experience</li>
-              <li>Currency conversion</li>
-              <li>Receipt scanning</li>
-              <li>Itemization</li>
-              <li>Charts and graphs</li>
-              <li>Expense search</li>
-              <li>Save default splits</li>
-              <li>Early access to new features</li>
-            </ul>
-            <ul>
+          <p className='greeting-bottom-title'>The whole nine yards</p>
+            <nav className='greeting-bottom-main-section'>
+              <ul className='greeting-bottom-list-left'>
+                <li>Add groups and friends</li>
+                <li>Split expenses, record debts</li>
+                <li>Equal or unequal splits</li>
+                <li>Split by % or shares</li>
+                <li>Calculate total balances</li>
+                <li>Suggested repayments</li>
+                <li>Simplify debts</li>
+                <li>Recurring expenses</li>
+              </ul>
+              <ul className='greeting-bottom-list-center'>
+                <li>Offline mode</li>
+                <li>Cloud sync</li>
+                <li>Spending totals</li>
+                <li>Categorize expenses</li>
+                <li>Easy CSV exports</li>
+                <li>7+ languages</li>
+                <li>100+ currencies</li>
+                <li>Payment integrations</li>
+              </ul>
+              <ul className='greeting-bottom-list-right'>
+                <li>A totally ad-free experience</li>
+                <li>Currency conversion</li>
+                <li>Receipt scanning</li>
+                <li>Itemization</li>
+                <li>Charts and graphs</li>
+                <li>Expense search</li>
+                <li>Save default splits</li>
+                <li>Early access to new features</li>
+              </ul>
+            </nav>
+            <ul className='core-pro-features'>
               <li>Core features</li>
               <li>Pro features</li>
+              <li><a href='www.google.com'>Linkedin</a></li>
+              <li><a href='https://github.com/CGodl/'>Github</a></li>
             </ul>
           </nav>
         </body>

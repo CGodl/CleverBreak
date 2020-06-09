@@ -498,21 +498,38 @@ var Greeting = /*#__PURE__*/function (_React$Component) {
         className: "greeting-body-img img-mid-right"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "greeting-body-bottom"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Get even more with PRO"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "greeting-body-text-bottom"
-      }, "Get even more organized with receipt scanning, charts and graphs, currency conversion, and more!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "greeting-bottom-body-text"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "greeting-bottom-body-title"
+      }, "Get even more with PRO"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "greeting-bottom-body-textbody"
+      }, "Get even more organized with receipt scanning, charts and graphs, currency conversion, and more!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: '/signup'
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "bottom-signup-btn",
+        type: "button"
+      }, "Sign up"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "greeting-body-img-bottom"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "greeting-bottom-list-container"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "greeting-bottom-title"
-      }, "The whole nine yards"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      }, "The whole nine yards"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+        className: "greeting-bottom-main-section"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "greeting-bottom-list-left"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Add groups and friends"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Split expenses, record debts"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Equal or unequal splits"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Split by % or shares"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Calculate total balances"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Suggested repayments"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Simplify debts"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Recurring expenses")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "greeting-bottom-list-center"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Offline mode"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Cloud sync"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Spending totals"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Categorize expenses"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Easy CSV exports"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "7+ languages"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "100+ currencies"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Payment integrations")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "greeting-bottom-list-right"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "A totally ad-free experience"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Currency conversion"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Receipt scanning"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Itemization"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Charts and graphs"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Expense search"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Save default splits"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Early access to new features")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Core features"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Pro features")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "A totally ad-free experience"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Currency conversion"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Receipt scanning"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Itemization"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Charts and graphs"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Expense search"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Save default splits"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Early access to new features"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "core-pro-features"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Core features"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Pro features"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "www.google.com"
+      }, "Linkedin")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://github.com/CGodl/"
+      }, "Github"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
         className: "footer-background"
       }));
     }
@@ -738,13 +755,8 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
       password: ''
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
-<<<<<<< HEAD
-    _this.demoAcct = _this.demoAcct.bind(_assertThisInitialized(_this)); // this.renderErrors = this.renderErrors.bind(this);
-
-=======
     _this.demoAcct = _this.demoAcct.bind(_assertThisInitialized(_this));
     _this.renderErrors = _this.renderErrors.bind(_assertThisInitialized(_this));
->>>>>>> authentication
     return _this;
   }
 
@@ -776,13 +788,8 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
     value: function demoAcct(e) {
       e.preventDefault();
       var user = {
-<<<<<<< HEAD
-        email: "anemail@yahoo.com",
-        password: "password123"
-=======
         email: 'TestEmail@hmail.com',
         password: 'abc12345'
->>>>>>> authentication
       };
       this.props.login(user);
     }
@@ -803,7 +810,7 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
         className: "login-page-btn-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: '/login'
+        to: '/'
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "green-logo"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
@@ -818,7 +825,8 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "log-page-signup-btn",
         type: "button"
-      }, "Sign up")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+      }, "Sign up")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: '/',
         className: "login-main-logo"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit,
@@ -827,7 +835,7 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
         className: this.props.errors.length > 0 ? 'error-msgs' : ''
       }, this.renderErrors()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "login-introduce-welcome"
-      }, "Welcome to Cleverbreak"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Welcome to Splitwise"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-form"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "login-form-text"
@@ -838,12 +846,12 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
         className: "login-input-box"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "login-form-text"
-      }, "Password"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", _defineProperty({
+      }, "Password"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "password",
-        className: "login-input",
         value: this.state.password,
-        onChange: this.update('password')
-      }, "className", "login-input-box")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onChange: this.update('password'),
+        className: "login-input-box"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "login-submit",
         type: "submit",
         value: 'Login'
@@ -930,141 +938,9 @@ var mDTP = function mDTP(dispatch) {
   !*** ./frontend/components/session_form/signup_form.jsx ***!
   \**********************************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-
-
-
-var SignupForm = /*#__PURE__*/function (_React$Component) {
-  _inherits(SignupForm, _React$Component);
-
-  var _super = _createSuper(SignupForm);
-
-  function SignupForm(props) {
-    var _this;
-
-    _classCallCheck(this, SignupForm);
-
-    _this = _super.call(this, props);
-    _this.state = {
-      name: '',
-      email: '',
-      password: ''
-    };
-    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
-    _this.renderErrors = _this.renderErrors.bind(_assertThisInitialized(_this));
-    return _this;
-  }
-
-  _createClass(SignupForm, [{
-    key: "update",
-    value: function update(field) {
-      var _this2 = this;
-
-      return function (e) {
-        return _this2.setState(_defineProperty({}, field, e.currentTarget.value));
-      };
-    }
-  }, {
-    key: "handleSubmit",
-    value: function handleSubmit(e) {
-      var _this3 = this;
-
-      e.preventDefault();
-      var user = Object.assign({}, this.state);
-      this.props.signup(user).then(function () {
-        return _this3.props.history.push('/dashboard');
-      }); // .catch(this.errorCheck = true)
-    }
-  }, {
-    key: "renderErrors",
-    value: function renderErrors() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-        className: "signup-errors"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "The following errors occured:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.errors.map(function (error, i) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          key: "error-".concat(i)
-        }, "    \u2022 ", error);
-      }))));
-    }
-  }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.props.clearErrors();
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "session-form-container"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "sign-in-logo"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        onSubmit: this.handleSubmit,
-        className: "session-form-box"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "signup-introduce-welcome"
-      }, "Introduce Yourself"), this.props.errors.length > 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, this.renderErrors()) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "session-form"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "hi-my-name"
-      }, "Hi there! My name is", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        value: this.state.name,
-        onChange: this.update('name'),
-        className: "session-input"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-        className: "email-password-field"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Here's my email address:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        value: this.state.email,
-        onChange: this.update('email'),
-        className: "session-input"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "And here's my password:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "password",
-        value: this.state.password,
-        onChange: this.update('password'),
-        className: "session-input"
-      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "session-submit",
-        type: "submit"
-      }, "Sign me up!"))));
-    }
-  }]);
-
-  return SignupForm;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["default"] = (SignupForm);
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/frontend/components/session_form/signup_form.jsx: Expected corresponding JSX closing tag for <label> (93:12)\n\n\u001b[0m \u001b[90m 91 | \u001b[39m                \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 92 | \u001b[39m              \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mlabel\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 93 | \u001b[39m            \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mnav\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 94 | \u001b[39m            \u001b[33m<\u001b[39m\u001b[33mbr\u001b[39m\u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 95 | \u001b[39m            \u001b[33m<\u001b[39m\u001b[33mbutton\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"session-submit\"\u001b[39m type\u001b[33m=\u001b[39m\u001b[32m'submit'\u001b[39m\u001b[33m>\u001b[39m\u001b[33mSign\u001b[39m me up\u001b[33m!\u001b[39m\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mbutton\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 96 | \u001b[39m          \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n    at Object._raise (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:746:17)\n    at Object.raiseWithData (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:739:17)\n    at Object.raise (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:733:17)\n    at Object.jsxParseElementAt (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:4600:16)\n    at Object.jsxParseElementAt (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:4568:32)\n    at Object.jsxParseElementAt (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:4568:32)\n    at Object.jsxParseElementAt (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:4568:32)\n    at Object.jsxParseElement (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:4626:17)\n    at Object.parseExprAtom (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:4633:19)\n    at Object.parseExprSubscripts (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:9656:23)\n    at Object.parseMaybeUnary (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:9636:21)\n    at Object.parseExprOps (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:9506:23)\n    at Object.parseMaybeConditional (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:9479:23)\n    at Object.parseMaybeAssign (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:9434:21)\n    at Object.parseParenAndDistinguishExpression (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:10267:28)\n    at Object.parseExprAtom (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:10007:21)\n    at Object.parseExprAtom (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:4638:20)\n    at Object.parseExprSubscripts (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:9656:23)\n    at Object.parseMaybeUnary (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:9636:21)\n    at Object.parseExprOps (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:9506:23)\n    at Object.parseMaybeConditional (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:9479:23)\n    at Object.parseMaybeAssign (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:9434:21)\n    at Object.parseExpression (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:9386:23)\n    at Object.parseReturnStatement (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:11523:28)\n    at Object.parseStatementContent (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:11204:21)\n    at Object.parseStatement (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:11156:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:11731:25)\n    at Object.parseBlockBody (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:11717:10)\n    at Object.parseBlock (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:11701:10)\n    at Object.parseFunctionBody (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:10708:24)");
 
 /***/ }),
 

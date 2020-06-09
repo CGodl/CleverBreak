@@ -53,22 +53,25 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div className="session-form-container">
-        <p className='sign-in-logo'></p>
+        {/* <img className='sign-in-logo' src={require('../../../app/assets/stylesheets/images/login-main-logo.png')} /> */}
+        {/* <figure className='sign-in-logo'></figure> */}
+        <Link to={'/'} className={'sign-in-logo-location'}><p className='sign-in-logo'></p></Link>
         <form onSubmit={this.handleSubmit} className="session-form-box">
           <p className='signup-introduce-welcome'>Introduce Yourself</p>
             {this.props.errors.length > 0 ? <label>{this.renderErrors()}</label> : null}
           <br/>
-          <br/>
           <div className="session-form">
-            <label className='hi-my-name'>Hi there! My name is
+            <label className='signup-title'>Hi there! My name is </label>
+              <br></br>
               <br/>
               <input type="text"
                 value={this.state.name}
                 onChange={this.update('name')}
                 className="session-input"
               />
-            </label>
-            <nav className='email-password-field'>
+            
+            <br/>
+            <label>Here's my email address:
               <br/>
               <label>Here's my email address:
                 <br/>

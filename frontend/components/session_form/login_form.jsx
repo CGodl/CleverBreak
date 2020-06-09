@@ -55,14 +55,14 @@ class LoginForm extends React.Component {
     return (
       <div className="login-form-container">
         <header className='login-page-btn-container'>
-          <Link to={'/login'}><p className='green-logo'></p></Link>
+          <Link to={'/'}><p className='green-logo'></p></Link>
           <nav className='login-page-btns'>
             <Link to={'/login'}><button className='log-page-login-btn' type='button'>Log in</button></Link>
             &nbsp;or&nbsp;
             <Link to={'/signup'}><button className='log-page-signup-btn' type='button'>Sign up</button></Link>
           </nav>
         </header>
-        <nav className='login-main-logo'></nav>
+        <Link to={'/'} className='login-main-logo'></Link>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <label 
             className={this.props.errors.length > 0 ? 'error-msgs' : ''}>{ this.renderErrors()} 
@@ -82,7 +82,6 @@ class LoginForm extends React.Component {
             <p className='login-form-text'>Password</p>
               <br/>
               <input type="password"
-                className='login-input'
                 value={this.state.password}
                 onChange={this.update('password')}
                 className='login-input-box'
