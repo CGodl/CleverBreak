@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-class Api::FriendsController < ApplicationController
-
-
-
-
-
-=======
 class FriendsController < ApplicationController 
 
   def create
@@ -29,6 +21,5 @@ class FriendsController < ApplicationController
 
   end
 
->>>>>>> authentication
 
 end
