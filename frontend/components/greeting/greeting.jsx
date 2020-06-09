@@ -47,13 +47,14 @@ class Greeting extends React.Component {
           </nav>
           <nav className='greeting-body-bottom'>
             <div className ='greeting-bottom-body-text'>
-              <h2>Get even more with PRO</h2>
-              <p className='greeting-body-text'>Get even more organized with receipt scanning, charts and graphs, currency conversion, and more!</p>
+              <p className= 'greeting-bottom-body-title'>Get even more with PRO</p>
+              <p className='greeting-bottom-body-textbody'>Get even more organized with receipt scanning, charts and graphs, currency conversion, and more!</p>
+              <Link to={'/signup'}><button className='bottom-signup-btn' type='button'>Sign up</button></Link>
             </div>
             <p className='greeting-body-img-bottom'></p>
           </nav>
           <nav className='greeting-bottom-list-container'>
-          <label className='greeting-bottom-title'>The whole nine yards</label>
+          <p className='greeting-bottom-title'>The whole nine yards</p>
             <nav className='greeting-bottom-main-section'>
               <ul className='greeting-bottom-list-left'>
                 <li>Add groups and friends</li>

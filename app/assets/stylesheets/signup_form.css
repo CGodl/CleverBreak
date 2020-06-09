@@ -1,4 +1,5 @@
 .signup-introduce-welcome {
+  margin-top: 33%;
   font-size: 16px;
   font-weight: 600;
   text-transform: uppercase;
@@ -7,17 +8,20 @@
 }
 
 .sign-in-logo {
-
   background-image: url('./images/login-main-logo');
   background-size: contain;
+  background-repeat: none;
   height: 205px;
-  width: 205px;
+  width: 200px;
+
+  cursor: pointer;
+  border: black 1px;
 }
 
 .sign-in-logo-location {
-  position: relative;
-  right: 234px;
-  top: 200px;
+  position: fixed;
+  left: 445px;
+  top: 100px;
 
 }
 
@@ -28,10 +32,12 @@
 }
 
 .signup-title {
+  position: fixed;
   font-size: 23px;
   color: #333333;
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin-bottom: 2px;
+  
 }
 
 .session-form {
@@ -43,6 +49,8 @@
 .session-input {
   height: 40px;
   width: 300px;
+  font-size: 20px;
+  color: grey;
 }
 
 .signup-errors {

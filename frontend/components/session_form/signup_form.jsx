@@ -53,6 +53,8 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div className="session-form-container">
+        {/* <img className='sign-in-logo' src={require('../../../app/assets/stylesheets/images/login-main-logo.png')} /> */}
+        {/* <figure className='sign-in-logo'></figure> */}
         <Link to={'/'} className={'sign-in-logo-location'}><p className='sign-in-logo'></p></Link>
         <form onSubmit={this.handleSubmit} className="session-form-box">
           <p className='signup-introduce-welcome'>Introduce Yourself</p>

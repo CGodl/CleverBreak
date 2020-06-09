@@ -183,7 +183,21 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 24px;
   font-weight: 600;
-  margin-top: 50px; 
+  margin-top: 52px;
+  margin-bottom: 7px;
+}
+
+.greeting-bottom-body-textbody {
+  text-align: center;
+  width: 33%;
+  margin-top: 1%;
+  margin-left: -50px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+
+
 }
 
 
@@ -258,8 +272,8 @@
   display: block;
   margin-left: 64%;
   margin-right: 13.6%;
-  margin-top: 10%;
-  margin-bottom: 1%;
+  margin-top: -16.42%;
+  margin-bottom: 0%;
   overflow: hidden;
   height: 543px;
   width: 324px;
@@ -295,7 +309,27 @@
 
 }
 
+
+
+.greeting-bottom-body-text {
+  margin-left: 15%;
+  color: white;
+
+
+}
+
+.greeting-bottom-body-title {
+  font-size: 28px;
+  margin-top: 20%;
+  font-weight: 700;
+
+
+
+}
+
+
 .greeting-bottom-list-container {
+  height: 100%;
   display: relative;
   width: 100%;
 }
@@ -313,13 +347,25 @@
   font-size: 40px;
   margin-left: 35%;
   font-family: 'Montserrat', sans-serif;
+  margin-bottom: 2%;
 
 }
 
 .greeting-bottom-main-section {
   display: flex;
   justify-content: space-between;
+}
 
+.bottom-signup-btn {
+  background-color: transparent;
+  border-radius: 5px; 
+  color: white;
+  border: 1px solid white;
+  height: 53px;
+  width: 150px;
+  margin-left: 6%;
+  margin-top: 2%;
+  font-size: 20px;
 
 }
 
@@ -395,6 +441,11 @@
   font-size: 24px;
   vertical-align: top;
   display:inline-block;
+  border-top: 1px solid lightblue;
+  border-bottom: 1px solid lightblue;
+  margin-top: 4px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 
 
 }
@@ -450,8 +501,6 @@
   display: flex;
   min-height: 16vh;
   flex-direction: column;
-
-
 }
 
 
