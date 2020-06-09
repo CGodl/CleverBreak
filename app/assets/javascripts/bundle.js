@@ -1171,7 +1171,7 @@ var sessionErrorsReducer = function sessionErrorsReducer() {
       return _nullErrors;
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["CLEAR_ERRORS"]:
-      return _nullErrors;
+      return [];
 
     default:
       return state;
