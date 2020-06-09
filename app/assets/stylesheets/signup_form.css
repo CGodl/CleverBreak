@@ -60,6 +60,11 @@
   line-height: 25px;
 }
 
+.signup-errors label ul li {
+  margin-left: 30px;
+
+}
+
 .session-submit {
   margin-top: 10px;
   background-color: #ff652f;

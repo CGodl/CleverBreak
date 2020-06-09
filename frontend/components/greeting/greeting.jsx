@@ -46,8 +46,10 @@ class Greeting extends React.Component {
             <p className='greeting-body-img-mid-right'></p>
           </nav>
           <nav className='greeting-body-bottom'>
-            <h2>Get even more with PRO</h2>
-            <p className='greeting-body-text'>Get even more organized with receipt scanning, charts and graphs, currency conversion, and more!</p>
+            <div className ='greeting-bottom-body-text'>
+              <h2>Get even more with PRO</h2>
+              <p className='greeting-body-text'>Get even more organized with receipt scanning, charts and graphs, currency conversion, and more!</p>
+            </div>
             <p className='greeting-body-img-bottom'></p>
           </nav>
           <nav className='greeting-bottom-list-container'>
@@ -84,9 +86,11 @@ class Greeting extends React.Component {
                 <li>Early access to new features</li>
               </ul>
             </nav>
-            <ul>
+            <ul className='core-pro-features'>
               <li>Core features</li>
               <li>Pro features</li>
+              <li><a href='www.google.com'>Linkedin</a></li>
+              <li><a href='https://github.com/CGodl/'>Github</a></li>
             </ul>
           </nav>
         </body>

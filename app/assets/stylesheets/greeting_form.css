@@ -270,11 +270,12 @@
 }
 
 .greeting-body-text {
-  text-align: center;
   color: white;
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   font-weight: 600;
+  /* width: 45%; */
+  margin-left: 18%;
   
 
 }
@@ -295,10 +296,10 @@
 }
 
 .greeting-bottom-list-container {
-  display: 
-  height: 1000px
+  display: relative;
   width: 100%;
 }
+
 
 .greeting-bottom-list-container ul{
   display: inline-block;
@@ -310,7 +311,8 @@
 
 .greeting-bottom-title {
   font-size: 40px;
-  margin-left: 30%;
+  margin-left: 35%;
+  font-family: 'Montserrat', sans-serif;
 
 }
 
@@ -376,15 +378,65 @@
   background-image: url('./images/diamond_icon.png');
   background-size: cover;
   resize: both;
-  height: 19px;
+  height: 20px;
   width: 20px;
   vertical-align: middle;
   display: inline-block;
-  margin-top: -3px;
+  margin-top: -7px;
   margin-right: 4px;
 }
 
 
+
+.core-pro-features {
+
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  vertical-align: top;
+  display:inline-block;
+
+
+}
+
+.core-pro-features li{
+  display:inline;
+  
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.core-pro-features li a{
+  color: #1cc29f;
+  text-decoration: none;
+}
+
+
+
+.core-pro-features li:first-child:before {
+  content: '';
+  background-image: url('./images/house_icon.png');
+  background-size: cover;
+  resize: both;
+  height: 19px;
+  width: 20px;
+  vertical-align: middle;
+  display: inline-block;
+
+}
+
+.core-pro-features li:nth-child(2):before {
+  content: '';
+  background-image: url('./images/diamond_icon.png');
+  background-size: cover;
+  resize: both;
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+  display: inline-block;
+  margin-top: -7px;
+  margin-right: 4px;
+}
 
 
 
