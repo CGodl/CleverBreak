@@ -407,7 +407,7 @@ var Greeting = /*#__PURE__*/function (_React$Component) {
         className: "greeting-body-top"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "top-title"
-      }, "Less stress when sharing expenses INSERT TEXT"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }, "Less stress when sharing expenses ON ANYTHING"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "top-text"
       }, "Keep track of your shared expenses and balances with housemates, trips, groups, friends, and family."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: '/signup'
@@ -753,8 +753,8 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
     value: function demoAcct(e) {
       e.preventDefault();
       var user = {
-        email: 'anemail@yahoo.com',
-        password: 'password123'
+        email: 'TestEmail@hmail.com',
+        password: 'abc12345'
       };
       this.props.login(user);
     }

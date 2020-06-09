@@ -21,7 +21,7 @@ class Greeting extends React.Component {
 
         <body className = 'greeting-body'>
           <nav className='greeting-body-top'>
-            <p className='top-title'>Less stress when sharing expenses INSERT TEXT</p>
+            <p className='top-title'>Less stress when sharing expenses ON ANYTHING</p>
             <p className='top-text'>Keep track of your shared expenses and balances with housemates, trips, groups, friends, and family.</p>
             <Link to={'/signup'}><button className='signup-btn-body'>Sign up</button></Link>
           </nav>
