@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_06_07_170638) do
+=======
+ActiveRecord::Schema.define(version: 2020_06_09_010113) do
+>>>>>>> authentication
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +39,7 @@ ActiveRecord::Schema.define(version: 2020_06_07_170638) do
 
   create_table "friends", force: :cascade do |t|
     t.integer "author_id", null: false
+<<<<<<< HEAD
     t.integer "friend_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -57,6 +62,9 @@ ActiveRecord::Schema.define(version: 2020_06_07_170638) do
   create_table "transactions", force: :cascade do |t|
     t.integer "bill_id", null: false
     t.integer "user_id"
+=======
+    t.integer "friend_is", null: false
+>>>>>>> authentication
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

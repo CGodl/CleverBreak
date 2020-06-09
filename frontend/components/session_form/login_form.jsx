@@ -5,13 +5,18 @@ import { Link } from 'react-router-dom';
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       email: '',
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoAcct = this.demoAcct.bind(this);
+<<<<<<< HEAD
     // this.renderErrors = this.renderErrors.bind(this);
+=======
+    this.renderErrors = this.renderErrors.bind(this);
+>>>>>>> authentication
 
   }
 
@@ -23,16 +28,35 @@ class LoginForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // debugger
     const user = Object.assign({}, this.state);
     this.props.login(user)
     .catch(err => { console.log(err) })
   }
 
+  componentDidMount() {
+    this.props.clearErrors();
+  }
+
   demoAcct(e) {
     e.preventDefault();
+<<<<<<< HEAD
     const user = { email: `anemail@yahoo.com`, password: `password123` }
+=======
+    const user = { email: 'TestEmail@hmail.com', password: 'abc12345' }
+>>>>>>> authentication
     this.props.login(user);
+  }
+
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
 
@@ -49,7 +73,16 @@ class LoginForm extends React.Component {
         </header>
         <nav className='login-main-logo'></nav>
         <form onSubmit={this.handleSubmit} className="login-form-box">
+<<<<<<< HEAD
           <label className='login-introduce-welcome'>Welcome to Cleverbreak</label>
+=======
+          <label 
+            className={this.props.errors.length > 0 ? 'error-msgs' : ''}>{ this.renderErrors()} 
+              {/* <Link className='x-button'>x</Link> */}
+          </label>
+          <label className='login-introduce-welcome'>Welcome to Splitwise</label>
+          
+>>>>>>> authentication
           <div className="login-form">
             <p className='login-form-text'>Email address</p>
               <br/>
@@ -68,8 +101,8 @@ class LoginForm extends React.Component {
                 className='login-input-box'
               />
             <br/>
-            <input className="login-submit" type="submit" value={this.props.formType} />
-            <button className='demo-btn'onClick={this.demoAcct}>Demo Account</button>
+            <input className="login-submit" type="submit" value={'Login'} />
+            <button className='demo-btn' onClick={this.demoAcct}>Demo Account</button>
           </div>
         </form>
         <br/>

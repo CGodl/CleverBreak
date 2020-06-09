@@ -1,0 +1,51 @@
+ 
+.signup-introduce-welcome {
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #999;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+}
+
+
+.sign-in-logo {
+  position: fixed;
+  left: 420px;
+  top: 100px;
+  background-image: url('./images/login-main-logo');
+  background-size: contain;
+  height: 205px;
+  width: 205px;
+}
+
+
+.session-form-container {
+  position: relative;
+  left: 650px;
+  top: 120px;
+  font-size: 20px;
+}
+
+.session-input {
+  height: 40px;
+  width: 300px;
+
+}
+
+.signup-errors {
+  padding: 5px 10px;
+  border-color: #b34;
+  background: #c45;
+  text-shadow: 0 -1px #9a2a38;
+  color: #fff;
+
+  position: relative;
+  font-size: 18px;
+  width: 325px;
+  height: 130px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  line-height: 25px;
+
+}

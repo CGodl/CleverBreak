@@ -15,8 +15,6 @@
   float: left;
   margin-top: 9px;
   margin-left: 248px;
-
-
 }
 
 .login-page-btns {
@@ -89,9 +87,9 @@
 
 .login-form-text {
   color: #333333;
-  font: 18px 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
-
+  font: 17px 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  position: absolute;
+  line-height: 10px;
 }
 
 .login-input-box {
@@ -124,13 +122,53 @@
 }
 
 .error-msgs {
-  background-color: red;
-  color: black;
-
+  border-color: #b34;
+  background: #c45;
+  color: #fff;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  height: 40px;
+  width: 1000px;
+  position: fixed;
+  top: 48px;
+  left: 250px;
+  border-radius: 0 0 4px 4px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
 }
 
+.x-button {
+  color: #fff;
+  font-size: 14px;
+}
+
+.x-button::before {
+  visibility: none;
+}
+
+
+
+
 .demo-btn {
-  background-color: whitesmoke;
+  position: absolute;
+  margin-top: 10px;
+  background-color: #5bc5a7;
+  text-shadow: 0 -1px 0 #5bc5a7;
+  color: white;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font: 18px;
+  height: 40px;
+  width: 80px;
+  border-width: 1px;
+  border-radius: 4px;
+  border-color: 1px;
+  border-top-color: rgba(0, 0, 0, 0.1);
+  border-right-color: rgba(0, 0, 0, 0.1);
+  border-bottom-color: rgba(0, 0, 0, 0.25);
+  border-left-color: rgba(0, 0, 0, 0.1);
+  padding-bottom: 5px;
+  margin-left: 10px;
 
 
 }

@@ -10,6 +10,7 @@ class SignupForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   update(field) {
@@ -23,8 +24,30 @@ class SignupForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.signup(user)
       .then(() => this.props.history.push('/dashboard'))
+      // .catch(this.errorCheck = true)
 
   }
+
+  renderErrors() {
+    return(
+     
+    <nav className='signup-errors'>
+      <label>The following errors occured:
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>    • {error}</li>
+          ))}
+        </ul>
+        </label>
+     </nav>
+      
+    );
+  }
+
+  componentDidMount() {
+    this.props.clearErrors();
+  }
+
 
 
   render() {
@@ -33,6 +56,7 @@ class SignupForm extends React.Component {
         <p className='sign-in-logo'></p>
         <form onSubmit={this.handleSubmit} className="session-form-box">
           <p className='signup-introduce-welcome'>Introduce Yourself</p>
+            {this.props.errors.length > 0 ? <label>{this.renderErrors()}</label> : null}
           <br/>
           <br/>
           <div className="session-form">
@@ -67,9 +91,7 @@ class SignupForm extends React.Component {
             <br/>
             <button className="session-submit" type='submit'>Sign me up!</button>
           </div>
-        </form>
-        <Link to={'/tos'}>By signing up, you accept the Cleverbreak Terms of Service.</Link>
-        
+        </form>      
       </div>
     );
   }
