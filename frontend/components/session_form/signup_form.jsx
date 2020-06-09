@@ -53,21 +53,21 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div className="session-form-container">
-        <p className='sign-in-logo'></p>
+        <Link to={'/'} className={'sign-in-logo-location'}><p className='sign-in-logo'></p></Link>
         <form onSubmit={this.handleSubmit} className="session-form-box">
           <p className='signup-introduce-welcome'>Introduce Yourself</p>
             {this.props.errors.length > 0 ? <label>{this.renderErrors()}</label> : null}
           <br/>
-          <br/>
           <div className="session-form">
-            <label>Hi there! My name is
+            <label className='signup-title'>Hi there! My name is </label>
+              <br></br>
               <br/>
               <input type="text"
                 value={this.state.name}
                 onChange={this.update('name')}
                 className="session-input"
               />
-            </label>
+            
             <br/>
             <label>Here's my email address:
               <br/>

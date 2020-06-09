@@ -1,36 +1,48 @@
- 
 .signup-introduce-welcome {
   font-size: 16px;
   font-weight: 600;
   text-transform: uppercase;
   color: #999;
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
 }
 
-
 .sign-in-logo {
-  position: fixed;
-  left: 420px;
-  top: 100px;
+
   background-image: url('./images/login-main-logo');
   background-size: contain;
   height: 205px;
   width: 205px;
 }
 
+.sign-in-logo-location {
+  position: relative;
+  right: 234px;
+  top: 200px;
+
+}
 
 .session-form-container {
-  position: relative;
-  left: 650px;
-  top: 120px;
-  font-size: 20px;
+  position: absolute;
+  margin-left: 46%;
+  margin-right: 54%;
+}
+
+.signup-title {
+  font-size: 23px;
+  color: #333333;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin-bottom: 2px;
+}
+
+.session-form {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
 }
 
 .session-input {
   height: 40px;
   width: 300px;
-
 }
 
 .signup-errors {
@@ -39,7 +51,6 @@
   background: #c45;
   text-shadow: 0 -1px #9a2a38;
   color: #fff;
-
   position: relative;
   font-size: 18px;
   width: 325px;
@@ -47,5 +58,29 @@
   margin-top: 10px;
   margin-bottom: 10px;
   line-height: 25px;
+}
+
+.session-submit {
+  margin-top: 10px;
+  background-color: #ff652f;
+  text-shadow: 0 -1px 0 #c83400;
+  color: white;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 23px;
+  height: 60px;
+  width: 150px;
+  border-width: 1px;
+  border-radius: 4px;
+  border-color: 1px;
+  border-top-color: rgba(0, 0, 0, 0.1);
+  border-right-color: rgba(0, 0, 0, 0.1);
+  border-bottom-color: rgba(0, 0, 0, 0.25);
+  border-left-color: rgba(0, 0, 0, 0.1);
+  padding-bottom: 5px;
+}
+
+.session-submit:hover {
+  outline: none;
+  box-shadow: none;
 
 }
