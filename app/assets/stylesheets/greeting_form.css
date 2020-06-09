@@ -290,12 +290,7 @@
   font-weight: 600;
   /* width: 45%; */
   margin-left: 18%;
-  
-
 }
-
-
-
 
 .greeting-body-bottom {
   background-image:  url('./images/Greeting_background.png');
@@ -305,7 +300,6 @@
   width: 100%;
   float: left;
   position: relative;
-  
 
 }
 
@@ -446,13 +440,10 @@
   margin-top: 4px;
   padding-top: 5px;
   padding-bottom: 5px;
-
-
 }
 
 .core-pro-features li{
   display:inline;
-  
   margin-left: 50px;
   margin-right: 50px;
 }
