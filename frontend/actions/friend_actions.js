@@ -1,8 +1,8 @@
 import * as friendApiUtil from '../util/friend_api_util'
 
 
-export const RECEIVE_FRIEND = 'RECEIVE_FRIEND'
-export const REMOVE_FRIEND = 'REMOVE_FRIEND'
+export const RECEIVE_FRIENDSHIP = 'RECEIVE_FRIENDSHIP'
+export const REMOVE_FRIENDSHIP = 'REMOVE_FRIENDSHIP'
 
 
 const receiveFriend = friend => {
@@ -12,10 +12,9 @@ const receiveFriend = friend => {
   };
 }
 
-const removeFriend = friend => {
+const removeFriend = () => {
   return {
-    type: RECEIVE_FRIENDSHIP,
-    friend
+    type: REMOVE_FRIENDSHIP,
   };
 }
 

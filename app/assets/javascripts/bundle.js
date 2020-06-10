@@ -86,6 +86,54 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./frontend/actions/friend_actions.js":
+/*!********************************************!*\
+  !*** ./frontend/actions/friend_actions.js ***!
+  \********************************************/
+/*! exports provided: RECEIVE_FRIENDSHIP, REMOVE_FRIENDSHIP, addFriend, deleteFriend */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_FRIENDSHIP", function() { return RECEIVE_FRIENDSHIP; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_FRIENDSHIP", function() { return REMOVE_FRIENDSHIP; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addFriend", function() { return addFriend; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteFriend", function() { return deleteFriend; });
+/* harmony import */ var _util_friend_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/friend_api_util */ "./frontend/util/friend_api_util.js");
+
+var RECEIVE_FRIENDSHIP = 'RECEIVE_FRIENDSHIP';
+var REMOVE_FRIENDSHIP = 'REMOVE_FRIENDSHIP';
+
+var receiveFriend = function receiveFriend(friend) {
+  return {
+    type: RECEIVE_FRIENDSHIP,
+    friend: friend
+  };
+};
+
+var removeFriend = function removeFriend() {
+  return {
+    type: REMOVE_FRIENDSHIP
+  };
+};
+
+var addFriend = function addFriend(friend) {
+  return function (dispatch) {
+    return _util_friend_api_util__WEBPACK_IMPORTED_MODULE_0__["createFriend"](friend).then(function (friend) {
+      return dispatch(receiveFriend(friend));
+    });
+  };
+};
+var deleteFriend = function deleteFriend(friend) {
+  return function (dispatch) {
+    return _util_friend_api_util__WEBPACK_IMPORTED_MODULE_0__["destroyFriend"](friend).then(function (friend) {
+      return dispatch(removeFriend(friend));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/session_actions.js":
 /*!*********************************************!*\
   !*** ./frontend/actions/session_actions.js ***!
@@ -1125,6 +1173,39 @@ var errorsReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"]
 
 /***/ }),
 
+/***/ "./frontend/reducers/friends_reducer.js":
+/*!**********************************************!*\
+  !*** ./frontend/reducers/friends_reducer.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_friend_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/friend_actions */ "./frontend/actions/friend_actions.js");
+
+
+var friendsReducer = function friendsReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_friend_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_FRIENDSHIP"]:
+      return;
+
+    case _actions_friend_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_FRIENDSHIP"]:
+      return {};
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (friendsReducer);
+
+/***/ }),
+
 /***/ "./frontend/reducers/root_reducer.js":
 /*!*******************************************!*\
   !*** ./frontend/reducers/root_reducer.js ***!
@@ -1138,6 +1219,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _session_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./session_reducer */ "./frontend/reducers/session_reducer.js");
 /* harmony import */ var _entities_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./entities_reducer */ "./frontend/reducers/entities_reducer.js");
 /* harmony import */ var _errors_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./errors_reducer */ "./frontend/reducers/errors_reducer.js");
+/* harmony import */ var _friends_reducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./friends_reducer */ "./frontend/reducers/friends_reducer.js");
+
 
 
 
@@ -1145,7 +1228,8 @@ __webpack_require__.r(__webpack_exports__);
 var rootReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   entities: _entities_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
   session: _session_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
-  errors: _errors_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
+  errors: _errors_reducer__WEBPACK_IMPORTED_MODULE_3__["default"],
+  friends: _friends_reducer__WEBPACK_IMPORTED_MODULE_4__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (rootReducer);
 
@@ -1284,6 +1368,35 @@ var configureStore = function configureStore() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);
+
+/***/ }),
+
+/***/ "./frontend/util/friend_api_util.js":
+/*!******************************************!*\
+  !*** ./frontend/util/friend_api_util.js ***!
+  \******************************************/
+/*! exports provided: createFriend, destroyFriend */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createFriend", function() { return createFriend; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "destroyFriend", function() { return destroyFriend; });
+var createFriend = function createFriend(friend) {
+  return $.ajax({
+    type: 'POST',
+    url: 'api/friends',
+    data: {
+      friend: friend
+    }
+  });
+};
+var destroyFriend = function destroyFriend() {
+  return $.ajax({
+    type: 'DELETE',
+    url: 'api/friends'
+  });
+};
 
 /***/ }),
 

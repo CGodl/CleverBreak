@@ -12,12 +12,16 @@ class FriendsController < ApplicationController
   def destroy
     @friend = Friend.find(params[:user_id])
     @friend.destroy
+    render 'api/friends/index'
   end
 
 
   def show
-    if params[:id]
-      @friend = Friend.where(user_id: params[:author_id])
+    @friend = Friend.find(params[:id])
+    if @friend
+      render :show
+    else
+      render json: ["Unable to find user"]
     end
   end
 
