@@ -1,3 +1,4 @@
+  
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -73,24 +74,21 @@ class SignupForm extends React.Component {
             <br/>
             <label>Here's my email address:
               <br/>
-              <label>Here's my email address:
-                <br/>
-                <input type="text"
-                  value={this.state.email}
-                  onChange={this.update('email')}
-                  className="session-input"
-                />
-              </label>
-                <br/>
-              <label>And here's my password:
+              <input type="text"
+                value={this.state.email}
+                onChange={this.update('email')}
+                className="session-input"
+              />
+            </label>
               <br/>
-                <input type="password"
-                  value={this.state.password}
-                  onChange={this.update('password')}
-                  className="session-input"
-                />
-              </label>
-            </nav>
+            <label>And here's my password:
+            <br/>
+              <input type="password"
+                value={this.state.password}
+                onChange={this.update('password')}
+                className="session-input"
+              />
+            </label>
             <br/>
             <button className="session-submit" type='submit'>Sign me up!</button>
           </div>

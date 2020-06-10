@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 import history from '../history';
 
 
@@ -27,22 +28,22 @@ class Greeting extends React.Component {
           <nav className='greeting-body-mid-left'>
             <h2 className='greeting-body-title'>Track balances</h2>
             <p className='greeting-body-text'>Keep track of shared expenses, balances, and who owes who.</p>
-            <p className='greeting-body-img img-top-left'></p>
+            <p className='greeting-body-img-top-left'></p>
           </nav>
           <nav className='greeting-body-mid-right'>
             <h2 className='greeting-body-title'>Organize expenses</h2>
             <p className='greeting-body-text'>Split expenses with any group: trips, housemates, friends, and family.</p>
-            <p className='greeting-body-img img-top-right'></p>
+            <p className='greeting-body-img-top-right'></p>
           </nav>
           <nav className='greeting-body-low-left'>
             <h2 className='greeting-body-title'>Add expenses easily</h2>
             <p className='greeting-body-text'>Quickly add expenses on the go before you forget who paid.</p>
-            <p className='greeting-body-img img-mid-left'></p>
+            <p className='greeting-body-img-mid-left'></p>
           </nav>
           <nav className='greeting-body-low-right'>
             <h2 className='greeting-body-title'>Pay friends back</h2>
             <p className='greeting-body-text'>Settle up with a friend and record any cash or online payment.</p>
-            <p className='greeting-body-img img-mid-right'></p>
+            <p className='greeting-body-img-mid-right'></p>
           </nav>
           <nav className='greeting-body-bottom'>
             <div className ='greeting-bottom-body-text'>
