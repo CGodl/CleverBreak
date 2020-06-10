@@ -21,10 +21,10 @@ const removeFriend = friend => {
 
 export const addFriend = friend => dispatch => {
   return friendApiUtil.createFriend(friend)
-    .then(friend => (dispatch(receiveFriend)))
+    .then(friend => (dispatch(receiveFriend(friend))))
 }
 
 export const deleteFriend = friend => dispatch => {
   return friendApiUtil.destroyFriend(friend)
-    .then(friend => (dispatch(receiveFriend(friend))))
+    .then(friend => (dispatch(removeFriend(friend))))
 }

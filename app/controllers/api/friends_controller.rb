@@ -24,7 +24,9 @@ class FriendsController < ApplicationController
 
 
   def index
-    @friend = Friend.find_by(params[:id])
+    # @friend = Friend.find_by(params[:user_id])
+    @friends 
+
 
   end
 

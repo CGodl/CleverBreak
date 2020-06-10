@@ -485,11 +485,8 @@
   background-size: cover;
 
   width: 100%; 
-  
   background-color: black;
-  display: flex;
   min-height: 16.02vh;
-  flex-direction: column;
 }
 
 
