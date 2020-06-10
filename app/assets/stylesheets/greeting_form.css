@@ -229,10 +229,8 @@
   margin-top: 10%;
   bottom: 0;
 
-  
   height: 543px;
   width: 324px;
-
 }
 
 .greeting-body-img-mid-left {
@@ -490,7 +488,7 @@
   
   background-color: black;
   display: flex;
-  min-height: 16vh;
+  min-height: 16.02vh;
   flex-direction: column;
 }
 
