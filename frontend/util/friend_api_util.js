@@ -2,7 +2,7 @@ export const createFriend = friend => {
   return $.ajax({
     type: 'POST',
     url: 'api/friends',
-    data: friend
+    data: { friend }
   })
 }
 
