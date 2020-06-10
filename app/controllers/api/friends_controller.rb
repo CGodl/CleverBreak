@@ -2,9 +2,9 @@ class FriendsController < ApplicationController
 
   def create
     @friend = Friend.new
-    @friend.author_id = current_user.id
-    @friend.user_id = params[:id]
-    unless @follow.save
+    @friend.author_id = current_user.id #ME
+    @friend.friend_id = params[:id] #THEM
+    unless @friend.save
       render json: ["Unable to establish friendship"]
     end
   end

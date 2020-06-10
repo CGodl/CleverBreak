@@ -5,8 +5,8 @@ class Friend < ApplicationRecord
     foreign_key: :author_id,
     class_name: :User
 
-  belongs_to :user,
-    foreign_key: :user_id,
+  belongs_to :friend,
+    foreign_key: :friend,
     class_name: :User
 
 
