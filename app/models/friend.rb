@@ -1,12 +1,12 @@
 class Friend < ApplicationRecord
 
 
-  belongs_to :author,
-    foreign_key: :author_id,
+  belongs_to :requestor,
+    foreign_key: :requestor_id,
     class_name: :User
 
-  belongs_to :friend,
-    foreign_key: :friend,
+  belongs_to :requested,
+    foreign_key: :requested_id,
     class_name: :User
 
 

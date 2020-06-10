@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../nav_bar/navbar'
+import FriendForm from '../friendship/friend_form'
 
 
 
@@ -23,7 +24,7 @@ class Dashboard extends React.Component {
 
         <body className='dashboard-main'>
           <nav className='dashboard-main-nav-left'>
-            <p>LEFT</p>
+            <p><FriendForm /></p>
 
 
           </nav>

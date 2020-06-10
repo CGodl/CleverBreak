@@ -9,7 +9,14 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-  # has_many :friends,
+  has_many :friendships,
+    foreign_key: :requested_id,
+    class_name: :Friend
+
+  has_many :friendees,
+    foreign_key: :requestor_id,
+    class_name: :Friend
+
     
     
 
