@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 class FriendForm extends React.Component {
   constructor(props) {
@@ -23,12 +24,12 @@ class FriendForm extends React.Component {
     return (
       <span className='friend-main-container'>
         <label className='friend-title'>
-            FRIENDS <button>➕add</button>
+            FRIENDS <button>add</button>
         </label>
           <ul>
             {
               friends.map(friend => (
-                <li>{allUsers[friend].name}</li>
+                <li>👤 {allUsers[friend].name}</li>
               ))
             }
           </ul>

@@ -14,14 +14,14 @@ class Greeting extends React.Component {
 
   render () {
     return (
-      <html className='greeting-container'>
+      <div className='greeting-container'>
         <header className='splash-nav'>
           <Link to={'/signup'}><button className='signup-btn' type='button'>Sign up</button></Link>
           <Link to={'/login'}><button className='login-btn' type='button'>Log in</button></Link>
           <Link to={'/'} className='logo-link'></Link>
         </header>
         
-        <body className = 'greeting-body'>
+        <div className = 'greeting-body'>
           <nav className='greeting-body-top'>
             <p className='top-title'>Less stress when sharing expenses ON ANYTHING</p>
             <p className='top-text'>Keep track of your shared expenses and balances with housemates, trips, groups, friends, and family.</p>
@@ -96,9 +96,9 @@ class Greeting extends React.Component {
               <li><a href='https://github.com/CGodl/'>Github</a></li>
             </ul>
           </nav>
-        </body>
+        </div>
         <footer className='footer-background'></footer>
-      </html>
+      </div>
     )
     }
   }

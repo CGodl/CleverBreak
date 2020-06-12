@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create([{name: 'TestAcct', email: 'TestEmail@hmail.com', password: 'abc12345'}, 
-            {name: 'dummyFriend', email: 'dummyEmail@gmail.com', password: 'abc12345'},
+            {name: 'Johnny Cash', email: 'dummyEmail@gmail.com', password: 'abc12345'},
             {name: 'Leto', email: 'letoEmail@gmail.com', password: 'abc12345'},
             {name: 'Arnie', email: 'AnieEmail@gmail.com', password: 'abc12345'},
             {name: 'JoJo', email: 'JoEmail@gmail.com', password: 'abc12345'},
@@ -19,6 +19,5 @@ Friend.create([{requestor_id: 1, requested_id: 2},
                 {requestor_id: 1, requested_id: 4},
                 {requestor_id: 1, requested_id: 5},
                 {requestor_id: 6, requested_id: 1},
-                {requestor_id: 4, requested_id: 1},
                 {requestor_id: 2, requested_id: 3},
                 ])
