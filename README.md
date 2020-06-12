@@ -26,10 +26,6 @@ Users can log-in and log out
 
 
 
-
-
-
-
 ## Demo Account
 As an alternative to registering, a demo account feature is implemented on the login page
 
@@ -38,7 +34,7 @@ As an alternative to registering, a demo account feature is implemented on the l
 ## Friends
 Users can view list of friends
 
-
+---------------
 Things you may want to cover:
 
 * Ruby version
