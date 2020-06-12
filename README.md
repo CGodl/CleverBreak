@@ -1,8 +1,6 @@
 # Cleverbreak: The clever bill-splitting option
 Cleverbreak is an application designed to connect with friends to send, receive, and track outstanding expenses. Users will also be able to create groups, centered around anything from monthly rent to vacation plans, to centralize expenses.
 
-
-
 ## Technologies
 The following technologies were used in the production of Cleverbreak:
   * Ruby 2.5.1p57
@@ -19,7 +17,6 @@ Currently, Cleverbreak has the following features implemented:
 New users have the ability to register an account on the sign-in page.
 New user accounts require a minimum of a name, an email address, and a password
 Users can log-in and log out
-
 
 ## Demo Account
 As an alternative to registering, a demo account feature is implemented on the login page
