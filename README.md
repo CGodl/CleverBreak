@@ -3,6 +3,8 @@ Cleverbreak is an application designed to connect with friends to send, receive,
 
 See: https://cleverbreak.herokuapp.com/#/
 
+![Splash Page](./readme_images/splashPage.png)
+
 ## Technologies
 The following technologies were used in the production of Cleverbreak:
   * Ruby 2.5.1p57
