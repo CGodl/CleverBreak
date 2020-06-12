@@ -31,6 +31,8 @@ Users can log-in and log out
 ## Demo Account
 As an alternative to registering, a demo account feature is implemented on the login page
 
+![Demo Example](./readme_images/demoEx.png)
+
 ## Friends
 Users can view list of friends
 
