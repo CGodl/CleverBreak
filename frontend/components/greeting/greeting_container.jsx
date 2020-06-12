@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import Greeting from './greeting';
+import { receiveAllUsers } from '../../actions/session_actions';
 
 
 const mSTP = ( { session, entities: { users } }) => {
@@ -13,7 +14,8 @@ const mSTP = ( { session, entities: { users } }) => {
 const mDTP = dispatch => {
   
   return {
-  logout: () => dispatch(logout())
+  logout: () => dispatch(logout()),
+  receiveAllUsers: () => dispatch(receiveAllUsers()),
   }
 };
 

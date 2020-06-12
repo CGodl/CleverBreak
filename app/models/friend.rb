@@ -1,4 +1,5 @@
 class Friend < ApplicationRecord
+  validates :requestor_id, :requested_id, presence: true
 
 
   belongs_to :requestor,

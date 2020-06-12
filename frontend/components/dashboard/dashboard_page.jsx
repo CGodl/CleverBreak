@@ -1,9 +1,7 @@
 import React from 'react';
 import Navbar from '../nav_bar/navbar'
 import FriendForm from '../friendship/friend_form'
-
-
-
+import FriendFormContainer from '../friendship/friend_container'
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -11,12 +9,17 @@ class Dashboard extends React.Component {
     this.state = this.props.user;
   }
 
+  componentWillMount() {
+    this.props.receiveAllUsers()
+    this.props.requestFriends();
+  }
+
 
   render () {
     const { user, logout} = this.props
 
     return (
-      <span>
+      <html>
         <Navbar 
             name={this.state.name}
             logout={this.props.logout}
@@ -24,9 +27,8 @@ class Dashboard extends React.Component {
 
         <body className='dashboard-main'>
           <nav className='dashboard-main-nav-left'>
-            <p><FriendForm /></p>
-
-
+            <p><FriendFormContainer /></p>
+            LEFT
           </nav>
           <main className='dashboard-main-center'>
             <p>TEST</p>
@@ -35,7 +37,9 @@ class Dashboard extends React.Component {
 
           </main>
           <nav className='dashboard-main-nav-right'>
-            <p>RIGHT</p>
+
+
+            <p>Subscribe to Splitwise Pro for no ads, currency conversion, charts, search, and more.</p>
 
 
           </nav>
@@ -52,7 +56,7 @@ class Dashboard extends React.Component {
 
 
 
-      </span>
+      </html>
     )
 
 

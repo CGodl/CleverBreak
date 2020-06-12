@@ -15,6 +15,11 @@ class Api::UsersController < ApplicationController
     render :show #API USERS SHOW. SAME AS 
   end
 
+  def index
+    @users = User.all
+    render :index
+  end
+
   private
 
   def user_params

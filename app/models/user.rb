@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-
   attr_reader :password
 
   validates :email, :password_digest, :session_token, presence: true
@@ -9,16 +8,26 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-  has_many :friendships,
+  has_many :sent_friend_requests,
     foreign_key: :requested_id,
     class_name: :Friend
 
-  has_many :friendees,
+  has_many :received_friend_requests,
     foreign_key: :requestor_id,
     class_name: :Friend
 
-    
-    
+  has_many :friendors, #Array of Ids
+    through: :sent_friend_requests,
+    source: :requestor
+
+  has_many :friendees,
+    through: :received_friend_requests,
+    source: :requested
+
+
+  def friends #ensures uniqueness by combining friendor and friendee
+    friendors + friendees
+  end
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)

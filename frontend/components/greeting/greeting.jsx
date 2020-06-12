@@ -8,6 +8,10 @@ class Greeting extends React.Component {
     super(props)
   }
 
+  componentDidMount() {
+    this.props.receiveAllUsers();
+  }
+
   render () {
     return (
       <html className='greeting-container'>

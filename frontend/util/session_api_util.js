@@ -22,3 +22,11 @@ export const logout = () => {
     url: '/api/session'
   })
 };
+
+export const fetchAllUsers = () => {
+  return $.ajax({
+    url: '/api/users'
+
+  })
+
+}

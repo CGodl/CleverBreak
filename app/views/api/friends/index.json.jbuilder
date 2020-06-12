@@ -1,3 +1,5 @@
-json.array! @friends do |friend|
-  json.partial! 'api/friends/friend', friend: friend
+@friends.each do |friend|
+  json.set! friend.id do
+    json.partial! '/api/users/user', user: friend
+  end
 end

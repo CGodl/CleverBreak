@@ -1,37 +1,42 @@
-class FriendsController < ApplicationController 
-
+class Api::FriendsController < ApplicationController 
+  before_action :require_logged_in
+  
   def create
-    @friend = Friend.new
-    @friend.requestor_id = current_user.id #ME
-    @friend.requested_id = params[:id] #THEM
-    unless @friend.save
+    requested_friend = User.find_by(email: [:email])
+    # requested_friend = User.find_by(email: ["dummyEmail@gmail.com"])
+    already_friend = Friend.find_by({requestor_id: current_user.id, requested_id: requested_friend.id })
+    #Make sure the opposite also returns false
+
+    if requested_friend && !already_friend
+      friend = Friend.new({requestor_id: current_user.id, requested_id: requested_friend.id })
+      # debugger
+      if friend.save
+        render 'api/friends/show'
+      end
+    else
+      # debugger
       render json: ["Unable to establish friendship"]
     end
   end
 
   def destroy
-    @friend = Friend.find(params[:user_id])
-    @friend.destroy
+    friend = Friend.find(requestor_id: current_user.id, requested_id: params[:id])
+      # @friend = current_user.Friend.find_by(requested_id: params[:id])
+    friend.destroy
     render 'api/friends/index'
   end
 
-
   def show
-    @friend = Friend.find(params[:id])
-    if @friend
+    friend = Friend.find(params[:id])
+    if friend
       render :show
     else
       render json: ["Unable to find user"]
     end
   end
 
-
-
   def index
-    # @friend = Friend.find_by(params[:user_id])
-    @friends 
-
-
+    @friends = current_user.friends
   end
 
 
