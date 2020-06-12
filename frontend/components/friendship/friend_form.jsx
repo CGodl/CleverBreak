@@ -3,21 +3,18 @@ import React from 'react';
 class FriendForm extends React.Component {
   constructor(props) {
     super(props)
-
   }
 
   componentWillMount() {
-    debugger
     this.props.receiveAllUsers()
+
   }
 
 
-  // componentDidMount() {
-  //   this.props.getFriends()
-  // }
-
   render () {
-    const { friends } = this.props;
+    const { allUsers, friends } = this.props;
+    window.allUsers = allUsers
+    window.friends = friends
 
     if (!friends) {
       return null
@@ -25,19 +22,19 @@ class FriendForm extends React.Component {
 
     return (
       <span className='friend-main-container'>
-        <label className='friend-title'>FRIENDS
-          <button>➕add</button>
-
+        <label className='friend-title'>
+            FRIENDS <button>➕add</button>
+        </label>
           <ul>
             {
               friends.map(friend => (
-                <li>{friend.name}</li>
+                <li>{allUsers[friend].name}</li>
               ))
             }
           </ul>
           
 
-        </label>
+  
       </span>
     )
   }

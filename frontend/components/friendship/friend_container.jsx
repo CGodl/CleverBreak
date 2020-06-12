@@ -19,9 +19,11 @@ const mSTP = state => {
   debugger
   // const friends = curUser.friendIds.map(id => state.entities.users[id])
   const friends = curUser.friendIds
+  const allUsers = state.entities.users
   debugger
   return {
-      friends
+      friends,
+      allUsers
   }
 }
 

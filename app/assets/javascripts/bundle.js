@@ -524,9 +524,11 @@ var mSTP = function mSTP(state) {
   debugger; // const friends = curUser.friendIds.map(id => state.entities.users[id])
 
   var friends = curUser.friendIds;
+  var allUsers = state.entities.users;
   debugger;
   return {
-    friends: friends
+    friends: friends,
+    allUsers: allUsers
   };
 };
 
@@ -598,16 +600,16 @@ var FriendForm = /*#__PURE__*/function (_React$Component) {
   _createClass(FriendForm, [{
     key: "componentWillMount",
     value: function componentWillMount() {
-      debugger;
       this.props.receiveAllUsers();
-    } // componentDidMount() {
-    //   this.props.getFriends()
-    // }
-
+    }
   }, {
     key: "render",
     value: function render() {
-      var friends = this.props.friends;
+      var _this$props = this.props,
+          allUsers = _this$props.allUsers,
+          friends = _this$props.friends;
+      window.allUsers = allUsers;
+      window.friends = friends;
 
       if (!friends) {
         return null;
@@ -617,9 +619,9 @@ var FriendForm = /*#__PURE__*/function (_React$Component) {
         className: "friend-main-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "friend-title"
-      }, "FRIENDS", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "\u2795add"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, friends.map(function (friend) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, friend.name);
-      }))));
+      }, "FRIENDS ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "\u2795add")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, friends.map(function (friend) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, allUsers[friend].name);
+      })));
     }
   }]);
 
