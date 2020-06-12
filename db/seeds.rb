@@ -18,7 +18,7 @@ Friend.create([{requestor_id: 1, requested_id: 2},
                 {requestor_id: 1, requested_id: 3},
                 {requestor_id: 1, requested_id: 4},
                 {requestor_id: 1, requested_id: 5},
-                {requestor_id: 3, requested_id: 1},
+                {requestor_id: 6, requested_id: 1},
                 {requestor_id: 4, requested_id: 1},
                 {requestor_id: 2, requested_id: 3},
                 ])
