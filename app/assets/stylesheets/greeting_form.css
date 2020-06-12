@@ -120,8 +120,6 @@ background-image:  url('./images/Greeting_background.png');
 background-size: cover;
 background-position: center 0px;
 height: 594px;
-
-
 }
 
 .top-title {
@@ -133,6 +131,22 @@ margin-bottom: 15px;
 
 
 }
+
+
+.main-logo-front-page {
+  height: 500px;
+  width: 500px;
+  background-image: url('./images/login-main-logo.png');
+  background-size: cover;
+  mix-blend-mode: multiply;
+  margin-left: 710px;
+  position: relative;
+  margin-top: -14%;
+
+
+
+}
+
 
 .greeting-body-mid-left {
 background-image:  url('./images/Greeting_background.png');
