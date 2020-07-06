@@ -32,7 +32,7 @@ const mDTP = dispatch => {
   debugger
   return {
     addFriend: friend => dispatch(addFriend(friend)),
-    removeFriend: () => dispatch(removeFriend(friend)),
+    // removeFriend: () => dispatch(removeFriend(friend)),
     receiveAllUsers: () => dispatch(receiveAllUsers()),
   }
 }

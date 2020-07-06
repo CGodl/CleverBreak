@@ -546,9 +546,7 @@ var mDTP = function mDTP(dispatch) {
     addFriend: function addFriend(friend) {
       return dispatch(Object(_actions_friend_actions__WEBPACK_IMPORTED_MODULE_2__["addFriend"])(friend));
     },
-    removeFriend: function removeFriend() {
-      return dispatch(Object(_actions_friend_actions__WEBPACK_IMPORTED_MODULE_2__["removeFriend"])(friend));
-    },
+    // removeFriend: () => dispatch(removeFriend(friend)),
     receiveAllUsers: function receiveAllUsers() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["receiveAllUsers"])());
     }
