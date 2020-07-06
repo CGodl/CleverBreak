@@ -1024,9 +1024,13 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
+      var _this3 = this;
+
       e.preventDefault();
       var user = Object.assign({}, this.state);
-      this.props.login(user)["catch"](function (err) {
+      this.props.login(user).then(function () {
+        return _this3.props.history.push('/dashboard');
+      })["catch"](function (err) {
         console.log(err);
       });
     }
