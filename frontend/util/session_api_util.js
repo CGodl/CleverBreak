@@ -7,7 +7,6 @@ export const signup = user => {
   })
 };
 
-
 export const login = user => {
   // debugger
   return $.ajax({
@@ -27,7 +26,5 @@ export const logout = () => {
 export const fetchAllUsers = () => {
   return $.ajax({
     url: '/api/users'
-
   })
-
-}
+};
