@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'cleverbreak@fakemail.com'
+  default from: 'cleverbreakacct@gmail.com'
   layout 'mailer'
 end

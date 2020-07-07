@@ -3,7 +3,9 @@ class NewUserMailerPreview < ActionMailer::Preview
 
   # Preview this email at http://localhost:3000/rails/mailers/new_user_mailer/signup_confirmation
   def signup_confirmation
-    NewUserMailer.signup_confirmation
+    @user = User.last
+    @greeting
+    NewUserMailer.signup_confirmation(@user)
   end
 
   # Preview this email at http://localhost:3000/rails/mailers/new_user_mailer/invite_friend
