@@ -54,6 +54,8 @@ export const logout = () => dispatch => {
     .then(user => (dispatch(logoutCurrentUser())))
 };
 
+
+
 export const clearErrors = () => ({
   type: CLEAR_ERRORS
 })
