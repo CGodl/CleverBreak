@@ -234,7 +234,8 @@ var logout = function logout() {
       return dispatch(logoutCurrentUser());
     });
   };
-};
+}; // YOU WERE STUCK ON SESSION RETURNING NULL
+
 var clearErrors = function clearErrors() {
   return {
     type: CLEAR_ERRORS
