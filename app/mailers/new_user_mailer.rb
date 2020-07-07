@@ -8,11 +8,12 @@ class NewUserMailer < ApplicationMailer
     mail to: user.email, subject: "Welcome to Cleverbreak"
   end
   
-  def invite_friend
+
+
+  def invite_friend(user)
     @greeting = "Hi"
     
-    @email_text = `Hello there, #{user} has just invited you to join Cleverbreak.`
-    # mail to: "to@example.org", subjec
+    @email_text = `Hello there, #{user.name} has just invited you to join Cleverbreak.`
   end
 
   
