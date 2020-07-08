@@ -11,11 +11,10 @@ class FriendInviteBox extends React.Component {
     return (
       <span className='friend-invite-box-container'>
         <form >
-          <title>Invite friends</title>
+          <p>Invite friends</p>
           <input 
             type='text'
           />
-
           <button type='submit'>Send invite</button>
         </form>
       </span>
@@ -30,4 +29,4 @@ class FriendInviteBox extends React.Component {
 
 }
 
-export default FriendInviteBox
+export default FriendInviteBox;

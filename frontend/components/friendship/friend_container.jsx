@@ -4,15 +4,6 @@ import { addFriend, removeFriend } from '../../actions/friend_actions';
 import FriendForm from './friend_form';
 import { receiveAllUsers } from '../../actions/session_actions';
 
-
-// const mSTP = state => {
-//   debugger
-//   return {
-//     friends: Object.values(state.friends)
-//   }
-// }
-
-
 const mSTP = state => {
   debugger
   const curUser = state.entities.users[state.session.id] 

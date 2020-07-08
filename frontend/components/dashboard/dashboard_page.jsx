@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../nav_bar/navbar'
 import FriendForm from '../friendship/friend_form'
 import FriendFormContainer from '../friendship/friend_container'
+import FriendInviteBox from '../friendship/friend_invite_box_main'
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -28,6 +29,7 @@ class Dashboard extends React.Component {
         <body className='dashboard-main'>
           <nav className='dashboard-main-nav-left'>
             <p><FriendFormContainer /></p>
+            <p><FriendInviteBox /></p>
           </nav>
           <main className='dashboard-main-center'>
             <div className ='dashboard-main-center-top'>

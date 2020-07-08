@@ -11,7 +11,6 @@ class FriendForm extends React.Component {
 
   }
 
-
   render () {
     const { allUsers, friends } = this.props;
     window.allUsers = allUsers
