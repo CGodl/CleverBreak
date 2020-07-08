@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
@@ -51,9 +50,6 @@ class LoginForm extends React.Component {
     );
   }
 
-
-
-  
   render() {
     return (
       <div className="login-form-container">
@@ -98,7 +94,7 @@ class LoginForm extends React.Component {
         <footer className='login-footer'>
           <nav className='rights-reserved'>
           <p className='new-york-city'>Made with ☻ in NYC, NY, USA</p>
-          <p className='copyright'>Copyright © 2020 Splitwise, Inc. All rights reserved.</p>
+          <p className='copyright'>Copyright © 2020 Cleverbreak, Inc. All rights reserved.</p>
           </nav>
         </footer>
       </div>

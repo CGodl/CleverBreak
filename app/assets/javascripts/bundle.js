@@ -687,10 +687,10 @@ var FriendInviteBox = /*#__PURE__*/function (_React$Component) {
 
   var _super = _createSuper(FriendInviteBox);
 
-  function FriendInviteBox() {
+  function FriendInviteBox(props) {
     _classCallCheck(this, FriendInviteBox);
 
-    return _super.apply(this, arguments);
+    return _super.call(this, props);
   }
 
   _createClass(FriendInviteBox, [{
@@ -1195,7 +1195,7 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
         className: "new-york-city"
       }, "Made with \u263B in NYC, NY, USA"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "copyright"
-      }, "Copyright \xA9 2020 Splitwise, Inc. All rights reserved."))));
+      }, "Copyright \xA9 2020 Cleverbreak, Inc. All rights reserved."))));
     }
   }]);
 

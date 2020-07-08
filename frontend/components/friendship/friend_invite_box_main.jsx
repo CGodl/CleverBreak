@@ -1,12 +1,12 @@
 import React from 'react';
 
-
-
-
-
 class FriendInviteBox extends React.Component {
+  constructor(props) {
+    super(props)
+  }
 
   render () {
+
 
     return (
       <span className='friend-invite-box-container'>
@@ -21,10 +21,7 @@ class FriendInviteBox extends React.Component {
 
 
 
-    )
-
-
-    
+    ) 
   }
 
 }
