@@ -1,5 +1,5 @@
 import { RECEIVE_FRIENDSHIP, RECEIVE_FRIENDSHIPS, REMOVE_FRIENDSHIP } from '../actions/friend_actions'
-import { RECEIVE_ALL_USERS } from "../actions/session_actions";
+// import { RECEIVE_ALL_USERS } from "../actions/session_actions";
 
 
 const friendsReducer = (state = {}, action) => {

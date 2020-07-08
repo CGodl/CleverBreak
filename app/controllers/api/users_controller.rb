@@ -3,6 +3,7 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      NewUserMailer.signup_confirmation(@user).deliver
       login(@user)
       render 'api/users/show' #API USERS SHOW 
     else

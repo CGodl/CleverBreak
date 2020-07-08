@@ -90,7 +90,7 @@
 /*!********************************************!*\
   !*** ./frontend/actions/friend_actions.js ***!
   \********************************************/
-/*! exports provided: RECEIVE_FRIENDSHIP, RECEIVE_FRIENDSHIPS, REMOVE_FRIENDSHIP, addFriend, requestFriends, deleteFriend */
+/*! exports provided: RECEIVE_FRIENDSHIP, RECEIVE_FRIENDSHIPS, REMOVE_FRIENDSHIP, addFriend, requestFriend, requestFriends, deleteFriend */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -99,6 +99,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_FRIENDSHIPS", function() { return RECEIVE_FRIENDSHIPS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_FRIENDSHIP", function() { return REMOVE_FRIENDSHIP; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addFriend", function() { return addFriend; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "requestFriend", function() { return requestFriend; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "requestFriends", function() { return requestFriends; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteFriend", function() { return deleteFriend; });
 /* harmony import */ var _util_friend_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/friend_api_util */ "./frontend/util/friend_api_util.js");
@@ -134,6 +135,13 @@ var addFriend = function addFriend(friend) {
     debugger;
     return _util_friend_api_util__WEBPACK_IMPORTED_MODULE_0__["createFriend"](friend).then(function (friend) {
       return dispatch(receiveFriend(friend));
+    });
+  };
+};
+var requestFriend = function requestFriend(id) {
+  return function (dispatch) {
+    return _util_friend_api_util__WEBPACK_IMPORTED_MODULE_0__["getFriend"](id).then(function (id) {
+      return dispatch(receiveFriend(id));
     });
   };
 };
@@ -211,6 +219,7 @@ var receiveUsers = function receiveUsers(users) {
 
 var signup = function signup(user) {
   return function (dispatch) {
+    debugger;
     return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["signup"](user).then(function (user) {
       return dispatch(receiveCurrentUser(user));
     }, function (err) {
@@ -233,7 +242,8 @@ var logout = function logout() {
       return dispatch(logoutCurrentUser());
     });
   };
-};
+}; // YOU WERE STUCK ON SESSION RETURNING NULL
+
 var clearErrors = function clearErrors() {
   return {
     type: CLEAR_ERRORS
@@ -416,6 +426,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _nav_bar_navbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../nav_bar/navbar */ "./frontend/components/nav_bar/navbar.jsx");
 /* harmony import */ var _friendship_friend_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../friendship/friend_form */ "./frontend/components/friendship/friend_form.jsx");
 /* harmony import */ var _friendship_friend_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../friendship/friend_container */ "./frontend/components/friendship/friend_container.jsx");
+/* harmony import */ var _friendship_friend_invite_box_main__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../friendship/friend_invite_box_main */ "./frontend/components/friendship/friend_invite_box_main.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -437,6 +448,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
 
 
 
@@ -477,7 +489,7 @@ var Dashboard = /*#__PURE__*/function (_React$Component) {
         className: "dashboard-main"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "dashboard-main-nav-left"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friendship_friend_container__WEBPACK_IMPORTED_MODULE_3__["default"], null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friendship_friend_container__WEBPACK_IMPORTED_MODULE_3__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friendship_friend_invite_box_main__WEBPACK_IMPORTED_MODULE_4__["default"], null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
         className: "dashboard-main-center"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-main-center-top"
@@ -519,12 +531,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // const mSTP = state => {
-//   debugger
-//   return {
-//     friends: Object.values(state.friends)
-//   }
-// }
+
 
 var mSTP = function mSTP(state) {
   debugger;
@@ -546,9 +553,7 @@ var mDTP = function mDTP(dispatch) {
     addFriend: function addFriend(friend) {
       return dispatch(Object(_actions_friend_actions__WEBPACK_IMPORTED_MODULE_2__["addFriend"])(friend));
     },
-    removeFriend: function removeFriend() {
-      return dispatch(Object(_actions_friend_actions__WEBPACK_IMPORTED_MODULE_2__["removeFriend"])(friend));
-    },
+    // removeFriend: () => dispatch(removeFriend(friend)),
     receiveAllUsers: function receiveAllUsers() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["receiveAllUsers"])());
     }
@@ -639,6 +644,72 @@ var FriendForm = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (FriendForm);
+
+/***/ }),
+
+/***/ "./frontend/components/friendship/friend_invite_box_main.jsx":
+/*!*******************************************************************!*\
+  !*** ./frontend/components/friendship/friend_invite_box_main.jsx ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+var FriendInviteBox = /*#__PURE__*/function (_React$Component) {
+  _inherits(FriendInviteBox, _React$Component);
+
+  var _super = _createSuper(FriendInviteBox);
+
+  function FriendInviteBox() {
+    _classCallCheck(this, FriendInviteBox);
+
+    return _super.apply(this, arguments);
+  }
+
+  _createClass(FriendInviteBox, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "friend-invite-box-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Invite friends"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "submit"
+      }, "Send invite")));
+    }
+  }]);
+
+  return FriendInviteBox;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (FriendInviteBox);
 
 /***/ }),
 
@@ -1026,9 +1097,13 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
+      var _this3 = this;
+
       e.preventDefault();
       var user = Object.assign({}, this.state);
-      this.props.login(user)["catch"](function (err) {
+      this.props.login(user).then(function () {
+        return _this3.props.history.push('/dashboard');
+      })["catch"](function (err) {
         console.log(err);
       });
     }
@@ -1415,11 +1490,9 @@ var errorsReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"]
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_friend_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/friend_actions */ "./frontend/actions/friend_actions.js");
-/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-
-
+ // import { RECEIVE_ALL_USERS } from "../actions/session_actions";
 
 var friendsReducer = function friendsReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
@@ -1468,8 +1541,7 @@ __webpack_require__.r(__webpack_exports__);
 var rootReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   entities: _entities_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
   session: _session_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
-  errors: _errors_reducer__WEBPACK_IMPORTED_MODULE_3__["default"] // friends: friendsReducer
-
+  errors: _errors_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (rootReducer);
 
@@ -1492,6 +1564,7 @@ var sessionErrorsReducer = function sessionErrorsReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _nullErrors;
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
+  debugger;
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_SESSION_ERRORS"]:
@@ -1531,6 +1604,7 @@ var sessionReducer = function sessionReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _nullUser;
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
+  debugger;
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
@@ -1617,13 +1691,14 @@ var configureStore = function configureStore() {
 /*!******************************************!*\
   !*** ./frontend/util/friend_api_util.js ***!
   \******************************************/
-/*! exports provided: createFriend, destroyFriend, getFriends */
+/*! exports provided: createFriend, destroyFriend, getFriend, getFriends */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createFriend", function() { return createFriend; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "destroyFriend", function() { return destroyFriend; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getFriend", function() { return getFriend; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getFriends", function() { return getFriends; });
 var createFriend = function createFriend(friend) {
   return $.ajax({
@@ -1639,6 +1714,13 @@ var destroyFriend = function destroyFriend() {
   return $.ajax({
     type: 'DELETE',
     url: '/api/friends'
+  });
+};
+var getFriend = function getFriend(id) {
+  debugger;
+  return $.ajax({
+    type: 'GET',
+    url: "/api/friends/".concat(id)
   });
 };
 var getFriends = function getFriends() {
@@ -1727,6 +1809,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllUsers", function() { return fetchAllUsers; });
 var signup = function signup(user) {
+  debugger;
   return $.ajax({
     type: 'POST',
     url: '/api/users',

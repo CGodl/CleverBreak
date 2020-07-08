@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 class FriendForm extends React.Component {
   constructor(props) {
@@ -10,7 +10,6 @@ class FriendForm extends React.Component {
     this.props.receiveAllUsers()
 
   }
-
 
   render () {
     const { allUsers, friends } = this.props;

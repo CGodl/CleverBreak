@@ -1,11 +1,11 @@
 export const signup = user => {
+  debugger
   return $.ajax({
     type: 'POST',
     url: '/api/users',
     data: { user }
   })
 };
-
 
 export const login = user => {
   // debugger
@@ -26,7 +26,5 @@ export const logout = () => {
 export const fetchAllUsers = () => {
   return $.ajax({
     url: '/api/users'
-
   })
-
-}
+};

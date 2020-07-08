@@ -26,17 +26,14 @@ const receiveErrors = errors => {
 }};
 
 const receiveUsers = users => {
-
   return {
     type: RECEIVE_ALL_USERS,
     users
   }
 }
 
-
-
 export const signup = user => dispatch => {
-  
+  debugger
   return SessionAPIUtil.signup(user)
     .then(user => (dispatch(receiveCurrentUser(user))
     ), err => (dispatch(receiveErrors(err.responseJSON))))
@@ -53,6 +50,8 @@ export const logout = () => dispatch => {
   return SessionAPIUtil.logout()
     .then(user => (dispatch(logoutCurrentUser())))
 };
+
+// YOU WERE STUCK ON SESSION RETURNING NULL
 
 export const clearErrors = () => ({
   type: CLEAR_ERRORS
