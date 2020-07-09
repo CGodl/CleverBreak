@@ -9,6 +9,7 @@
 #  updated_at      :datetime         not null
 #  name            :string
 #  email           :string           not null
+#  receipt_id      :integer
 #
 class User < ApplicationRecord
   attr_reader :password
@@ -35,6 +36,17 @@ class User < ApplicationRecord
   has_many :friendees,
     through: :received_friend_requests,
     source: :requested
+
+  has_many :bills,
+    foreign_key: :author_id,
+    class_name: :User
+
+  belongs_to :receipt,
+    optional: true,
+    foreign_key: :receipt_id,
+    class_name: :Bill
+
+
 
 
   def friends #ensures uniqueness by combining friendor and friendee

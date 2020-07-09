@@ -12,4 +12,15 @@
 #  updated_at  :datetime         not null
 #
 class Bill < ApplicationRecord
+  validates :author_id, presence: true
+
+  belongs_to :author,
+    foreign_key: :author_id,
+    class_name: :User
+
+  has_many :recepients,
+    foreign_key: :receipt_id,
+    class_name: :User
+
+
 end

@@ -9,6 +9,7 @@
 #  updated_at      :datetime         not null
 #  name            :string
 #  email           :string           not null
+#  receipt_id      :integer
 #
 
 # This model initially had no columns defined. If you add columns to the

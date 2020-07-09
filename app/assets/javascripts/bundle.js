@@ -426,7 +426,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _nav_bar_navbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../nav_bar/navbar */ "./frontend/components/nav_bar/navbar.jsx");
 /* harmony import */ var _friendship_friend_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../friendship/friend_form */ "./frontend/components/friendship/friend_form.jsx");
 /* harmony import */ var _friendship_friend_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../friendship/friend_container */ "./frontend/components/friendship/friend_container.jsx");
-/* harmony import */ var _friendship_friend_invite_box_main__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../friendship/friend_invite_box_main */ "./frontend/components/friendship/friend_invite_box_main.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -452,8 +451,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-
-
+ // import FriendInviteBox from '../friendship/'
 
 var Dashboard = /*#__PURE__*/function (_React$Component) {
   _inherits(Dashboard, _React$Component);
@@ -489,7 +487,7 @@ var Dashboard = /*#__PURE__*/function (_React$Component) {
         className: "dashboard-main"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "dashboard-main-nav-left"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friendship_friend_container__WEBPACK_IMPORTED_MODULE_3__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friendship_friend_invite_box_main__WEBPACK_IMPORTED_MODULE_4__["default"], null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friendship_friend_container__WEBPACK_IMPORTED_MODULE_3__["default"], null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
         className: "dashboard-main-center"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-main-center-top"
@@ -644,17 +642,6 @@ var FriendForm = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (FriendForm);
-
-/***/ }),
-
-/***/ "./frontend/components/friendship/friend_invite_box_main.jsx":
-/*!*******************************************************************!*\
-  !*** ./frontend/components/friendship/friend_invite_box_main.jsx ***!
-  \*******************************************************************/
-/*! exports provided: default */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/frontend/components/friendship/friend_invite_box_main.jsx: Unexpected token (8:18)\n\n\u001b[0m \u001b[90m  6 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  7 | \u001b[39m    \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mstate \u001b[33m=\u001b[39m {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 | \u001b[39m      inviteEmail \u001b[33m=\u001b[39m \u001b[32m''\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  9 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 10 | \u001b[39m    }\u001b[0m\n\u001b[0m \u001b[90m 11 | \u001b[39m\u001b[0m\n    at Object._raise (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:746:17)\n    at Object.raiseWithData (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:739:17)\n    at Object.raise (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:733:17)\n    at Object.unexpected (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:8807:16)\n    at Object.checkExpressionErrors (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:8905:12)\n    at Object.parseMaybeAssign (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:9469:12)\n    at Object.parseMaybeAssign (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:9466:25)\n    at Object.parseExpression (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:9386:23)\n    at Object.parseStatementContent (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:11285:23)\n    at Object.parseStatement (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:11156:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:11731:25)\n    at Object.parseBlockBody (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:11717:10)\n    at Object.parseBlock (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:11701:10)\n    at Object.parseFunctionBody (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:10708:24)\n    at Object.parseFunctionBodyAndFinish (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:10691:10)\n    at Object.parseMethod (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:10653:10)\n    at Object.pushClassMethod (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:12156:30)\n    at Object.parseClassMemberWithIsStatic (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:12073:12)\n    at Object.parseClassMember (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:12015:10)\n    at withTopicForbiddingContext (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:11960:14)\n    at Object.withTopicForbiddingContext (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:11031:14)\n    at Object.parseClassBody (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:11937:10)\n    at Object.parseClass (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:11911:22)\n    at Object.parseStatementContent (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:11198:21)\n    at Object.parseStatement (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:11156:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:11731:25)\n    at Object.parseBlockBody (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:11717:10)\n    at Object.parseTopLevel (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:11087:10)\n    at Object.parse (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:12768:10)\n    at parse (/Users/cgoose/Documents/coding_folder/AA_projects_class/Cleverbreak/node_modules/@babel/parser/lib/index.js:12821:38)");
 
 /***/ }),
 
@@ -1774,6 +1761,7 @@ var login = function login(user) {
   });
 };
 var logout = function logout() {
+  debugger;
   return $.ajax({
     type: 'DELETE',
     url: '/api/session'
