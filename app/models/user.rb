@@ -39,7 +39,7 @@ class User < ApplicationRecord
 
   has_many :bills,
     foreign_key: :author_id,
-    class_name: :User
+    class_name: :Bill
 
   belongs_to :receipt,
     optional: true,

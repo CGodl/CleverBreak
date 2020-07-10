@@ -11,8 +11,9 @@ class Dashboard extends React.Component {
   }
 
   componentWillMount() {
-    this.props.receiveAllUsers()
+    this.props.receiveAllUsers();
     this.props.requestFriends();
+    this.props.requestBills();
   }
 
 

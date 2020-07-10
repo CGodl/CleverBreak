@@ -17,4 +17,4 @@
 //   };
 // };
 
-// export default connect(mSTP, mDTP)(Navbar);
+// export default connect(mSTP, mDTP)(Navbar);2

@@ -3,6 +3,7 @@ import React from 'react';
 import { logout, receiveAllUsers } from '../../actions/session_actions';
 import Dashboard from './dashboard_page';
 import { requestFriends } from "../../actions/friend_actions"
+import { requestBills } from "../../actions/bill_actions"
 
 
 const mSTP = (state) => {
@@ -16,6 +17,7 @@ const mDTP = (dispatch) => {
     logout: () => dispatch(logout()),
     receiveAllUsers: () => dispatch(receiveAllUsers()),
     requestFriends: () => dispatch(requestFriends()),
+    requestBills: () => dispatch(requestBills())
   };
 };
 

@@ -86,6 +86,71 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./frontend/actions/bill_actions.js":
+/*!******************************************!*\
+  !*** ./frontend/actions/bill_actions.js ***!
+  \******************************************/
+/*! exports provided: RECEIVE_BILL, RECEIVE_ALL_BILLS, REMOVE_BILL, addBill, requestBills, deleteBill */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_BILL", function() { return RECEIVE_BILL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ALL_BILLS", function() { return RECEIVE_ALL_BILLS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_BILL", function() { return REMOVE_BILL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addBill", function() { return addBill; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "requestBills", function() { return requestBills; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteBill", function() { return deleteBill; });
+/* harmony import */ var _util_bill_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/bill_api_util */ "./frontend/util/bill_api_util.js");
+
+var RECEIVE_BILL = 'RECEIVE_BILL';
+var RECEIVE_ALL_BILLS = 'RECEIVE_ALL_BILLS';
+var REMOVE_BILL = 'REMOVE_BILL';
+
+var receiveBill = function receiveBill(bill) {
+  return {
+    type: RECEIVE_BILL,
+    bill: bill
+  };
+};
+
+var receiveBills = function receiveBills(bills) {
+  return {
+    type: RECEIVE_BILLS,
+    bills: bills
+  };
+};
+
+var removeBill = function removeBill() {
+  return {
+    type: REMOVE_BILL
+  };
+};
+
+var addBill = function addBill(bill) {
+  return function (dispatch) {
+    return _util_bill_api_util__WEBPACK_IMPORTED_MODULE_0__["createBill"](bill).then(function (bill) {
+      return dispatch(receiveBill(bill));
+    });
+  };
+};
+var requestBills = function requestBills() {
+  return function (dispatch) {
+    return _util_bill_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchAllBills"]().then(function () {
+      return dispatch(receiveBills());
+    });
+  };
+};
+var deleteBill = function deleteBill(bill) {
+  return function (dispatch) {
+    return _util_bill_api_util__WEBPACK_IMPORTED_MODULE_0__["destroyBill"](friend).then(function (bill) {
+      return dispatch(removeBill(bill));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/friend_actions.js":
 /*!********************************************!*\
   !*** ./frontend/actions/friend_actions.js ***!
@@ -109,7 +174,7 @@ var RECEIVE_FRIENDSHIPS = 'RECEIVE_FRIENDSHIPS';
 var REMOVE_FRIENDSHIP = 'REMOVE_FRIENDSHIP';
 
 var receiveFriend = function receiveFriend(friend) {
-  debugger;
+  // //debugger
   return {
     type: RECEIVE_FRIENDSHIP,
     friend: friend
@@ -124,7 +189,7 @@ var receiveFriends = function receiveFriends(friends) {
 };
 
 var removeFriend = function removeFriend() {
-  debugger;
+  //debugger
   return {
     type: REMOVE_FRIENDSHIP
   };
@@ -132,7 +197,7 @@ var removeFriend = function removeFriend() {
 
 var addFriend = function addFriend(friend) {
   return function (dispatch) {
-    debugger;
+    //debugger
     return _util_friend_api_util__WEBPACK_IMPORTED_MODULE_0__["createFriend"](friend).then(function (friend) {
       return dispatch(receiveFriend(friend));
     });
@@ -154,7 +219,7 @@ var requestFriends = function requestFriends() {
 };
 var deleteFriend = function deleteFriend(friend) {
   return function (dispatch) {
-    debugger;
+    //debugger
     return _util_friend_api_util__WEBPACK_IMPORTED_MODULE_0__["destroyFriend"](friend).then(function (friend) {
       return dispatch(removeFriend(friend));
     });
@@ -219,7 +284,7 @@ var receiveUsers = function receiveUsers(users) {
 
 var signup = function signup(user) {
   return function (dispatch) {
-    debugger;
+    //debugger
     return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["signup"](user).then(function (user) {
       return dispatch(receiveCurrentUser(user));
     }, function (err) {
@@ -252,7 +317,7 @@ var clearErrors = function clearErrors() {
 var receiveAllUsers = function receiveAllUsers() {
   return function (dispatch) {
     return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchAllUsers"]().then(function (users) {
-      debugger;
+      //debugger
       dispatch(receiveUsers(users));
     });
   };
@@ -276,19 +341,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
 /* harmony import */ var _util_friend_api_util__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./util/friend_api_util */ "./frontend/util/friend_api_util.js");
+/* harmony import */ var _util_bill_api_util__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./util/bill_api_util */ "./frontend/util/bill_api_util.js");
+/* harmony import */ var _util_session_api_util__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./util/session_api_util */ "./frontend/util/session_api_util.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
 
 
- //debugger;
+
+
+ ////debugger;
 
 document.addEventListener('DOMContentLoaded', function () {
-  var store; //debugger;
+  var store; ////debugger;
 
   if (window.currentUser) {
-    //debugger;
+    ////debugger;
     var preloadedState = {
       entities: {
         users: _defineProperty({}, window.currentUser.id, window.currentUser)
@@ -296,13 +365,13 @@ document.addEventListener('DOMContentLoaded', function () {
       session: {
         id: window.currentUser.id
       }
-    }; //debugger;
+    }; ////debugger;
 
     store = Object(_store_store__WEBPACK_IMPORTED_MODULE_3__["default"])(preloadedState);
     delete window.currentUser;
   } else {
     store = Object(_store_store__WEBPACK_IMPORTED_MODULE_3__["default"])();
-  } //debugger;
+  } ////debugger;
 
 
   window.getState = store.getState;
@@ -310,6 +379,8 @@ document.addEventListener('DOMContentLoaded', function () {
   window.createFriend = _util_friend_api_util__WEBPACK_IMPORTED_MODULE_4__["createFriend"];
   window.destroyFriend = _util_friend_api_util__WEBPACK_IMPORTED_MODULE_4__["destroyFriend"];
   window.getFriends = _util_friend_api_util__WEBPACK_IMPORTED_MODULE_4__["getFriends"];
+  window.fetchAllBills = _util_bill_api_util__WEBPACK_IMPORTED_MODULE_5__["fetchAllBills"];
+  window.fetchAllUsers = _util_session_api_util__WEBPACK_IMPORTED_MODULE_6__["fetchAllUsers"];
   var root = document.getElementById('root');
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_2__["default"], {
     store: store
@@ -382,6 +453,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
 /* harmony import */ var _dashboard_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dashboard_page */ "./frontend/components/dashboard/dashboard_page.jsx");
 /* harmony import */ var _actions_friend_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/friend_actions */ "./frontend/actions/friend_actions.js");
+/* harmony import */ var _actions_bill_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/bill_actions */ "./frontend/actions/bill_actions.js");
+
 
 
 
@@ -404,6 +477,9 @@ var mDTP = function mDTP(dispatch) {
     },
     requestFriends: function requestFriends() {
       return dispatch(Object(_actions_friend_actions__WEBPACK_IMPORTED_MODULE_4__["requestFriends"])());
+    },
+    requestBills: function requestBills() {
+      return dispatch(Object(_actions_bill_actions__WEBPACK_IMPORTED_MODULE_5__["requestBills"])());
     }
   };
 };
@@ -473,6 +549,7 @@ var Dashboard = /*#__PURE__*/function (_React$Component) {
     value: function componentWillMount() {
       this.props.receiveAllUsers();
       this.props.requestFriends();
+      this.props.requestBills();
     }
   }, {
     key: "render",
@@ -532,13 +609,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state) {
-  debugger;
-  var curUser = state.entities.users[state.session.id];
-  debugger; // const friends = curUser.friendIds.map(id => state.entities.users[id])
+  //debugger
+  var curUser = state.entities.users[state.session.id]; //debugger
+  // const friends = curUser.friendIds.map(id => state.entities.users[id])
 
   var friends = curUser.friendIds;
-  var allUsers = state.entities.users;
-  debugger;
+  var allUsers = state.entities.users; //debugger
+
   return {
     friends: friends,
     allUsers: allUsers
@@ -546,7 +623,7 @@ var mSTP = function mSTP(state) {
 };
 
 var mDTP = function mDTP(dispatch) {
-  debugger;
+  //debugger
   return {
     addFriend: function addFriend(friend) {
       return dispatch(Object(_actions_friend_actions__WEBPACK_IMPORTED_MODULE_2__["addFriend"])(friend));
@@ -1369,6 +1446,45 @@ var mDTP = function mDTP(dispatch, ownProps) {
 
 /***/ }),
 
+/***/ "./frontend/reducers/bills_reducer.js":
+/*!********************************************!*\
+  !*** ./frontend/reducers/bills_reducer.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_bill_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/bill_actions */ "./frontend/actions/bill_actions.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+var billsReducer = function billsReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+  var newState = Object.assign({}, state);
+
+  switch (action.type) {
+    case _actions_bill_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_BILL"]:
+      return Object.assign({}, newState, _defineProperty({}, action.bill.id, action.bill));
+
+    case _actions_bill_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_BILLS"]:
+      return action.bills;
+
+    case _actions_bill_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_BILL"]:
+      return {};
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (billsReducer);
+
+/***/ }),
+
 /***/ "./frontend/reducers/entities_reducer.js":
 /*!***********************************************!*\
   !*** ./frontend/reducers/entities_reducer.js ***!
@@ -1381,12 +1497,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _users_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./users_reducer */ "./frontend/reducers/users_reducer.js");
 /* harmony import */ var _friends_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./friends_reducer */ "./frontend/reducers/friends_reducer.js");
+/* harmony import */ var _bills_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./bills_reducer */ "./frontend/reducers/bills_reducer.js");
+
 
 
 
 var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
-  friends: _friends_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
+  friends: _friends_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
+  bills: _bills_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
 
@@ -1495,8 +1614,7 @@ var _nullErrors = [];
 var sessionErrorsReducer = function sessionErrorsReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _nullErrors;
   var action = arguments.length > 1 ? arguments[1] : undefined;
-  Object.freeze(state);
-  debugger;
+  Object.freeze(state); //debugger
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_SESSION_ERRORS"]:
@@ -1535,8 +1653,7 @@ var _nullUser = {
 var sessionReducer = function sessionReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _nullUser;
   var action = arguments.length > 1 ? arguments[1] : undefined;
-  Object.freeze(state);
-  debugger;
+  Object.freeze(state); //debugger
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
@@ -1619,6 +1736,42 @@ var configureStore = function configureStore() {
 
 /***/ }),
 
+/***/ "./frontend/util/bill_api_util.js":
+/*!****************************************!*\
+  !*** ./frontend/util/bill_api_util.js ***!
+  \****************************************/
+/*! exports provided: createBill, destroyBill, fetchAllBills */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createBill", function() { return createBill; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "destroyBill", function() { return destroyBill; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllBills", function() { return fetchAllBills; });
+var createBill = function createBill(bill) {
+  return $.ajax({
+    type: 'POST',
+    url: '/api/bills',
+    data: {
+      bill: bill
+    }
+  });
+};
+var destroyBill = function destroyBill() {
+  return $.ajax({
+    type: 'DELETE',
+    url: '/api/bills'
+  });
+};
+var fetchAllBills = function fetchAllBills() {
+  return $.ajax({
+    type: 'GET',
+    url: '/api/bills'
+  });
+};
+
+/***/ }),
+
 /***/ "./frontend/util/friend_api_util.js":
 /*!******************************************!*\
   !*** ./frontend/util/friend_api_util.js ***!
@@ -1649,14 +1802,14 @@ var destroyFriend = function destroyFriend() {
   });
 };
 var getFriend = function getFriend(id) {
-  debugger;
+  //debugger
   return $.ajax({
     type: 'GET',
     url: "/api/friends/".concat(id)
   });
 };
 var getFriends = function getFriends() {
-  debugger;
+  //debugger
   return $.ajax({
     type: 'GET',
     url: '/api/friends'
@@ -1741,7 +1894,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllUsers", function() { return fetchAllUsers; });
 var signup = function signup(user) {
-  debugger;
+  //debugger
   return $.ajax({
     type: 'POST',
     url: '/api/users',
@@ -1751,7 +1904,7 @@ var signup = function signup(user) {
   });
 };
 var login = function login(user) {
-  // debugger
+  // //debugger
   return $.ajax({
     type: 'POST',
     url: '/api/session',
@@ -1761,7 +1914,7 @@ var login = function login(user) {
   });
 };
 var logout = function logout() {
-  debugger;
+  //debugger
   return $.ajax({
     type: 'DELETE',
     url: '/api/session'

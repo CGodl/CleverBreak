@@ -1,4 +1,4 @@
-class BillsController < ApplicationController 
+class Api::BillsController < ApplicationController 
 
   def create
     if Bill.last.history_id == nil
@@ -7,27 +7,58 @@ class BillsController < ApplicationController
       last_history_id = Bill.last.history_id
     end
 
-    
     receipients = User.find_by(email: [:email])
-    @bill = Bill.new(bill_params)
-                      
-                      
-              
+
+    billed_user = User.find_by(email: [:email])
+    ##### ADD STRONG PARAMS #####
+    if billed_user
+      bill = Bill.new(bill_params)
+      if bill.save 
+        bill.history_id = (last_history_id + 1)
+        render :show
+      end
+    end
 
 
-
-
-
+    
+    
+    if @bill.save!
+      # render '/api/bills/show'
+        render :show
+      
+      # @bill[:recepients] = receipients
+    else
+      render json: ["Could not create bill"]
+    end
   end
 
-
-
   def destroy
+    @bill = Bill.find_by(bill: [:id]) 
+
+    if @bill
+      @bill.destroy
+    else
+      render json: ['bill could not be found']
+    end
 
   end
 
   def index
-    @bills = current_user.bills
+    # @bills = current_user.bills
+    # //debugger
+    @bills = Bill.all
+    render :index
+    # //debugger
+  end
+
+  def show
+    bill = Bill.find(params[:id])
+    if bill
+      render :show
+    else
+      render json: ["Unable to find bill"]
+    end
+
 
   end
 
