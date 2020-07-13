@@ -6,10 +6,11 @@
 #  author_id   :integer          not null
 #  history_id  :integer          not null
 #  group_id    :integer
-#  cost        :decimal(, )      not null
 #  description :text             not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  cost        :decimal(7, 2)
+#  receipt_id  :integer
 #
 
 # This model initially had no columns defined. If you add columns to the

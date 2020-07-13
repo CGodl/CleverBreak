@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2020_07_13_215612) do
     t.datetime "updated_at", null: false
     t.decimal "cost", precision: 7, scale: 2
     t.integer "recipient_id"
+    t.integer "receipt_id"
   end
 
   create_table "comments", force: :cascade do |t|

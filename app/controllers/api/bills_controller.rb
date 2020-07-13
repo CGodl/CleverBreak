@@ -32,6 +32,10 @@ class Api::BillsController < ApplicationController
     end
   end
 
+
+
+
+
   def destroy
     @bill = Bill.find_by(bill: [:id]) 
 
@@ -67,7 +71,7 @@ class Api::BillsController < ApplicationController
   private
 
   def bill_params
-    params.require(:bills).permit(:author_id, :history_id, :group_id, :cost, :description, :updated_at)
+    params.require(:bills).permit(:author_id, :history_id, :receipt_id, :group_id, :cost, :description, :updated_at)
   end
 
 end

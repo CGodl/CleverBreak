@@ -9,7 +9,6 @@
 #  updated_at      :datetime         not null
 #  name            :string
 #  email           :string           not null
-#  receipt_id      :integer
 #
 class User < ApplicationRecord
   attr_reader :password
