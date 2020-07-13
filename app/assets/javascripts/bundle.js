@@ -136,6 +136,7 @@ var addBill = function addBill(bill) {
 };
 var requestBills = function requestBills() {
   return function (dispatch) {
+    debugger;
     return _util_bill_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchAllBills"]().then(function () {
       return dispatch(receiveBills());
     });
@@ -549,7 +550,9 @@ var Dashboard = /*#__PURE__*/function (_React$Component) {
     value: function componentWillMount() {
       this.props.receiveAllUsers();
       this.props.requestFriends();
+      debugger;
       this.props.requestBills();
+      debugger;
     }
   }, {
     key: "render",
@@ -1471,6 +1474,7 @@ var billsReducer = function billsReducer() {
       return Object.assign({}, newState, _defineProperty({}, action.bill.id, action.bill));
 
     case _actions_bill_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_BILLS"]:
+      debugger;
       return action.bills;
 
     case _actions_bill_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_BILL"]:
@@ -1764,6 +1768,7 @@ var destroyBill = function destroyBill() {
   });
 };
 var fetchAllBills = function fetchAllBills() {
+  debugger;
   return $.ajax({
     type: 'GET',
     url: '/api/bills'

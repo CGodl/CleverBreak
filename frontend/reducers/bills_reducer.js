@@ -8,6 +8,7 @@ const billsReducer = (state = {}, action) => {
     case RECEIVE_BILL:
       return Object.assign({}, newState, {[action.bill.id]: action.bill})
     case RECEIVE_ALL_BILLS:
+      debugger
       return action.bills;
     case REMOVE_BILL:
       return {}

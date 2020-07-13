@@ -18,9 +18,12 @@ class Bill < ApplicationRecord
     foreign_key: :author_id,
     class_name: :User
 
-  has_many :recepients, #This is an array of ids
-    foreign_key: :receipt_id,
-    class_name: :User
+  has_many :transactions, #This is an array of ids
+    foreign_key: :bill_id,
+    class_name: :Transaction
 
+  has_many :receipients,
+    through: :transactions,
+    source: :User
 
 end

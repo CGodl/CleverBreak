@@ -34,7 +34,7 @@ export const addBill = bill => dispatch => {
 }
 
 export const requestBills = () => dispatch => {
-
+  debugger
   return billApiUtil.fetchAllBills()
     .then(() => dispatch(receiveBills()))
 

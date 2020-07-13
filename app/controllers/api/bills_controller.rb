@@ -1,35 +1,28 @@
 class Api::BillsController < ApplicationController 
 
   def create
-    if Bill.last.history_id == nil
-      last_history_id = 0
-    else
-      last_history_id = Bill.last.history_id
-    end
-
     receipients = User.find_by(email: [:email])
-
-    billed_user = User.find_by(email: [:email])
+    # billed_user = User.find_by(email: [:email])
     ##### ADD STRONG PARAMS #####
-    if billed_user
-      bill = Bill.new(bill_params)
+
+    authors_ident = current_user.id
+
+
+    
+    bill = Bill.new({
+        author_id: bill_params[authors_ident],
+        history_id: bill_params[:history_id],
+        group_id: bill_params[:group_id],
+        description: bill_params[:description],
+        cost: bill_params[:cost],
+        updated_at: bill_params[:updated_at]
+    })
+
       if bill.save 
-        bill.history_id = (last_history_id + 1)
         render :show
+      else
+        render json: ["Could not create bill"]
       end
-    end
-
-
-    
-    
-    if @bill.save!
-      # render '/api/bills/show'
-        render :show
-      
-      # @bill[:recepients] = receipients
-    else
-      render json: ["Could not create bill"]
-    end
   end
 
   def destroy
@@ -56,10 +49,8 @@ class Api::BillsController < ApplicationController
     if bill
       render :show
     else
-      render json: ["Unable to find bill"]
+      render json: ["Unable to find user"]
     end
-
-
   end
 
 
@@ -68,5 +59,4 @@ class Api::BillsController < ApplicationController
   def bill_params
     params.require(:bills).permit(:author_id, :history_id, :group_id, :cost, :description, :updated_at)
   end
-
 end

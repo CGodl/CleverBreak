@@ -37,16 +37,19 @@ class User < ApplicationRecord
     through: :received_friend_requests,
     source: :requested
 
-  has_many :bills,
+  has_many :authored_bills,
     foreign_key: :author_id,
     class_name: :Bill
 
-  belongs_to :receipt,
-    optional: true,
-    foreign_key: :receipt_id,
-    class_name: :Bill
+  has_many :transactions,
+    foreign_key: :user_id,
+    class_name: :Transaction
 
+  has_many :receipts,
+    through: :transactions,
+    source: :Bill
 
+    ###ADD THRU ASSOC. to BILLS
 
 
   def friends #ensures uniqueness by combining friendor and friendee

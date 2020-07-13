@@ -15,7 +15,7 @@ class Membership < ApplicationRecord
     foreign_key: :user_id,
     class_name: :User
 
-  belongs_to :user,
+  belongs_to :group,
     foreign_key: :group_id,
     class_name: :Group
 

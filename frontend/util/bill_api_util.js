@@ -18,7 +18,7 @@ export const destroyBill = () => {
 }
 
 export const fetchAllBills = () => {
-
+  debugger
   return $.ajax({
     type: 'GET',
     url: '/api/bills'
