@@ -1,32 +1,11 @@
 class Api::BillsController < ApplicationController 
 
   def create
-    # if Bill.last.history_id == nil
-    #   last_history_id = 0
-    # else
-    #   last_history_id = Bill.last.history_id
-    # end
-
-    # receipients = User.find_by(email: [:email])
-
-    # billed_user = User.find_by(email: [:email])
-    ##### ADD STRONG PARAMS #####
-
       @bill = Bill.new(bill_params)
-      # if bill.save 
-      #   render :show
-      # else
-      #   ['Could not find bill']
-      # end
 
-
-    
-    
     if @bill.save!
-      # render '/api/bills/show'
         render :show
-      
-      # @bill[:recepients] = receipients
+    
     else
       render json: ["Could not create bill"]
     end
