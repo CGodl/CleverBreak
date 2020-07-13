@@ -1,23 +1,23 @@
 class Api::BillsController < ApplicationController 
 
   def create
-    if Bill.last.history_id == nil
-      last_history_id = 0
-    else
-      last_history_id = Bill.last.history_id
-    end
+    # if Bill.last.history_id == nil
+    #   last_history_id = 0
+    # else
+    #   last_history_id = Bill.last.history_id
+    # end
 
-    receipients = User.find_by(email: [:email])
+    # receipients = User.find_by(email: [:email])
 
-    billed_user = User.find_by(email: [:email])
+    # billed_user = User.find_by(email: [:email])
     ##### ADD STRONG PARAMS #####
-    if billed_user
-      bill = Bill.new(bill_params)
-      if bill.save 
-        bill.history_id = (last_history_id + 1)
-        render :show
-      end
-    end
+
+      @bill = Bill.new(bill_params)
+      # if bill.save 
+      #   render :show
+      # else
+      #   ['Could not find bill']
+      # end
 
 
     
@@ -53,6 +53,7 @@ class Api::BillsController < ApplicationController
 
   def show
     bill = Bill.find(params[:id])
+    debugger
     if bill
       render :show
     else
