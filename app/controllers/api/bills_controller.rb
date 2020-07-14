@@ -29,14 +29,14 @@ class Api::BillsController < ApplicationController
   def index
     # @bills = current_user.bills
     # //debugger
-    @bills = Bill.all
-    render :index
+    # debugger
+    @bills = current_user.bills
     # //debugger
   end
 
   def show
     bill = Bill.find(params[:id])
-    debugger
+    # debugger
     if bill
       render :show
     else
