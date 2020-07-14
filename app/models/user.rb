@@ -47,13 +47,12 @@ class User < ApplicationRecord
     class_name: :Bill
 
   has_many :billers,
-    through: :sent_bill_requests,
-    source: :author
-  
-  has_many :billees,
     through: :received_bill_requests,
-    source: :recepients
-
+    source: :author
+    
+    has_many :billees,
+      through: :sent_bill_requests,
+      source: :recipients
 
 
   def friends #ensures uniqueness by combining friendor and friendee

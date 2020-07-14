@@ -19,7 +19,7 @@ class Bill < ApplicationRecord
     foreign_key: :author_id,
     class_name: :User
 
-    belongs_to :recepients, #This is an array of ids
+    belongs_to :recipients, #This is an array of ids
     foreign_key: :recipient_id,
     class_name: :User
 
