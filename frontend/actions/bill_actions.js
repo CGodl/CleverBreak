@@ -15,7 +15,7 @@ const receiveBill = bill => {
 const receiveBills = bills => {
 
   return {
-    type: RECEIVE_BILLS,
+    type: RECEIVE_ALL_BILLS,
     bills
   };
 }
@@ -36,7 +36,7 @@ export const addBill = bill => dispatch => {
 export const requestBills = () => dispatch => {
 
   return billApiUtil.fetchAllBills()
-    .then(() => dispatch(receiveBills()))
+    .then((bills) => dispatch(receiveBills(bills)))
 
 }
 

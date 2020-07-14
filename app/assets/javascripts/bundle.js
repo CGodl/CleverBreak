@@ -116,7 +116,7 @@ var receiveBill = function receiveBill(bill) {
 
 var receiveBills = function receiveBills(bills) {
   return {
-    type: RECEIVE_BILLS,
+    type: RECEIVE_ALL_BILLS,
     bills: bills
   };
 };
@@ -136,8 +136,8 @@ var addBill = function addBill(bill) {
 };
 var requestBills = function requestBills() {
   return function (dispatch) {
-    return _util_bill_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchAllBills"]().then(function () {
-      return dispatch(receiveBills());
+    return _util_bill_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchAllBills"]().then(function (bills) {
+      return dispatch(receiveBills(bills));
     });
   };
 };
