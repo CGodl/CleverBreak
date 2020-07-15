@@ -14,24 +14,17 @@ class Api::BillsController < ApplicationController
                      recipient_id: bill_params[:recipient_id],
                      history_id: current_history_id,
                      group_id: bill_params[:group_id],
+                     cost: bill_params[:cost],
                      description: bill_params[:description],
                      updated_at: bill_params[:updated_at]
                       })
 
-
-
-        
     if @bill.save!
         render :show
-    
     else
       render json: ["Could not create bill"]
     end
   end
-
-
-
-
 
   def destroy
     @bill = Bill.find_by(bill: [:id]) 
@@ -45,16 +38,12 @@ class Api::BillsController < ApplicationController
   end
 
   def index
-    # @bills = current_user.bills
-    # //debugger
-    # debugger
     @bills = current_user.bills
-    # //debugger
   end
 
   def show
     bill = Bill.find(params[:id])
-    # debugger
+
     if bill
       render :show
     else
