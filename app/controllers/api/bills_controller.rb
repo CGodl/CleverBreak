@@ -1,8 +1,26 @@
 class Api::BillsController < ApplicationController 
 
   def create
-      @bill = Bill.new(bill_params)
+    recipients = User.find_by(email: [:email])
 
+    if Bill.last.history_id == nil
+      current_history_id = 0
+    else
+      current_history_id = Bill.last.history_id + 1
+    end
+
+      # @bill = Bill.new(bill_params)
+    @bill = Bill.new({author_id: current_user.id,
+                     recipient_id: bill_params[:recipient_id],
+                     history_id: current_history_id,
+                     group_id: bill_params[:group_id],
+                     description: bill_params[:description],
+                     updated_at: bill_params[:updated_at]
+                      })
+
+
+
+        
     if @bill.save!
         render :show
     

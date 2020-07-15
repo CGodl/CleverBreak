@@ -60,6 +60,10 @@ class User < ApplicationRecord
   end
 
   def bills
+    sent_bill_requests + received_bill_requests
+  end
+
+  def bill_names
     billers + billees
   end
 
