@@ -1,17 +1,18 @@
 import React from 'react';
 
-
-
-const bill_modal = (props) => {
-
+function BillPage({modal, closeModal}) {
+ 
   return (
-    <div className='bill-modal-container'>
-      <p>Add an expense</p>
-      <p>With you and:</p>
-      <p>Enter a Description:</p>
-      <p>Enter a cost:</p>
-      <button>Cancel</button>
-      <button>Save</button>
-    </div>
-  )
+      <div className='bill-modal-container'>
+          <p>Add an expense</p>
+          <p>With you and:</p>
+          <p>Enter a Description:</p>
+          <p>Enter a cost:</p>
+          <button>Cancel</button>
+          <button>Save</button>
+      </div>
+
+  );
 }
+
+export default BillPage;

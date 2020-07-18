@@ -1,13 +1,18 @@
 import React from 'react';
-import Navbar from '../nav_bar/navbar'
-import FriendForm from '../friendship/friend_form'
-import FriendFormContainer from '../friendship/friend_container'
+import Navbar from '../nav_bar/navbar';
+import FriendForm from '../friendship/friend_form';
+import FriendFormContainer from '../friendship/friend_container';
+import openModal from '../../actions/modal_actions'
 // import FriendInviteBox from '../friendship/'
+import billModal from '../bill/bill_container';
 
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.user;
+
+    this.openTheModal = this.openTheModal.bind(this);
+    
   }
 
   componentWillMount() {
@@ -16,10 +21,13 @@ class Dashboard extends React.Component {
     this.props.requestBills();
   }
 
+  openTheModal() {
+    this.props.openModal('bill')
+  }
 
   render () {
-    const { user, logout} = this.props
-
+    const { user, logout } = this.props;
+    
     return (
       <html>
         <Navbar 
@@ -35,7 +43,7 @@ class Dashboard extends React.Component {
           <main className='dashboard-main-center'>
             <div className ='dashboard-main-center-top'>
               <label>Dashboard</label>
-              <button className='expense-btn'>Add an expense</button>
+              <button className='expense-btn' onClick={this.openTheModal}>Add an expense</button>
               <button className='settle-btn'>Settle up</button>
             </div>
           </main>
