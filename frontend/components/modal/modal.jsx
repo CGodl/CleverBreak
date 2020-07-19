@@ -1,5 +1,5 @@
 import React from 'react';
-import BillPage from '../bill/bill_modal'
+import BillPage from '../bill/bill_modal_container'
 
 function Modal({modal, closeModal}) {
   if (!modal) {
