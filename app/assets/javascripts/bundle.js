@@ -520,8 +520,7 @@ var BillPage = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       description: '',
       cost: '',
-      recipient_id: '',
-      group_id: ''
+      recipient_id: ''
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
@@ -541,6 +540,7 @@ var BillPage = /*#__PURE__*/function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       var bill = Object.assign({}, this.state);
+      console.log(bill);
       this.props.addBill(bill).then(this.props.closeModal);
     }
   }, {
@@ -552,8 +552,8 @@ var BillPage = /*#__PURE__*/function (_React$Component) {
         onSubmit: this.handleSubmit
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Add an expense"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "With you and:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
-        value: this.state.group_id,
-        onChange: this.update('group_id')
+        value: this.state.recipient_id,
+        onChange: this.update('recipient_id')
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Enter a Description:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.description,
@@ -561,7 +561,7 @@ var BillPage = /*#__PURE__*/function (_React$Component) {
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Enter a cost:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.cost,
-        onCHange: this.update('cost')
+        onChange: this.update('cost')
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: closeModal
       }, "Cancel"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Save"));
@@ -610,7 +610,7 @@ var mDTP = function mDTP(dispatch) {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["closeModal"])());
     },
     addBill: function addBill(bill) {
-      return dispatch(Object(_actions_bill_actions__WEBPACK_IMPORTED_MODULE_4__["default"])(bill));
+      return dispatch(Object(_actions_bill_actions__WEBPACK_IMPORTED_MODULE_4__["addBill"])(bill));
     }
   };
 };

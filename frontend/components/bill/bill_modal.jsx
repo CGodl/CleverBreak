@@ -8,8 +8,7 @@ class BillPage extends React.Component {
     this.state = {
       description: '',
       cost: '',
-      recipient_id: '',
-      group_id: ''
+      recipient_id: ''
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,6 +25,7 @@ class BillPage extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const bill = Object.assign({}, this.state);
+    console.log(bill);
     this.props.addBill(bill).then(this.props.closeModal);
   };
 
@@ -41,8 +41,8 @@ class BillPage extends React.Component {
           <label>With you and:
             <input 
               type='text'
-              value={this.state.group_id}
-              onChange={this.update('group_id')}
+              value={this.state.recipient_id}
+              onChange={this.update('recipient_id')}
               />
           </label>
           <label>Enter a Description:
@@ -56,7 +56,7 @@ class BillPage extends React.Component {
             <input 
               type='text'
               value={this.state.cost}
-              onCHange={this.update('cost')}
+              onChange={this.update('cost')}
               />
           </label>
 

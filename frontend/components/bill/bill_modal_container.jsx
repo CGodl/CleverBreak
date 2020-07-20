@@ -5,7 +5,7 @@ import BillPage from './bill_modal';
 // import { requestFriends } from "../../actions/friend_actions";
 // import { requestBills } from "../../actions/bill_actions";
 import { closeModal } from '../../actions/modal_actions';
-import addBill from '../../actions/bill_actions'
+import { addBill } from '../../actions/bill_actions'
 
 
 
