@@ -6,7 +6,7 @@ class BillPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      description: '',
+      description: 'Enter a Description',
       cost: '',
       recipient_id: '',
       group_id: ''
@@ -46,7 +46,7 @@ class BillPage extends React.Component {
               onChange={this.update('recipient_id')}
               />
           </label>
-          <label>Enter a Description:
+          <label>
             <input 
               type='text'
               value={this.state.description}
