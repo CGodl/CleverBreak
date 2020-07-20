@@ -9,8 +9,10 @@ class Api::BillsController < ApplicationController
       current_history_id = Bill.last.history_id + 1
     end
 
-      # @bill = Bill.new(bill_params)
+    current_user_id = current_user.id
 
+      # @bill = Bill.new(bill_params)
+      debugger
     @bill = Bill.new({author_id: current_user.id,
                      recipient_id: bill_params[:recipient_id],
                      history_id: current_history_id,
@@ -19,6 +21,8 @@ class Api::BillsController < ApplicationController
                      description: bill_params[:description],
                      updated_at: bill_params[:updated_at]
                       })
+
+      
       debugger
     if @bill.save!
         render :show

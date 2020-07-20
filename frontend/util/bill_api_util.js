@@ -1,11 +1,11 @@
 
 
-export const createBill = bill => {
+export const createBill = bills => {
 
   return $.ajax({
     type: 'POST',
     url: '/api/bills',
-    data: { bill }
+    data: { bills } //Needs to match
   })
 };
 

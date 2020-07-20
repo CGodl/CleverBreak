@@ -520,7 +520,8 @@ var BillPage = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       description: '',
       cost: '',
-      recipient_id: ''
+      recipient_id: '',
+      group_id: ''
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
@@ -562,6 +563,10 @@ var BillPage = /*#__PURE__*/function (_React$Component) {
         type: "text",
         value: this.state.cost,
         onChange: this.update('cost')
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Enter a group, if any:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        value: this.state.group_id,
+        onChange: this.update('group_id')
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: closeModal
       }, "Cancel"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Save"));
@@ -2079,13 +2084,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createBill", function() { return createBill; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "destroyBill", function() { return destroyBill; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllBills", function() { return fetchAllBills; });
-var createBill = function createBill(bill) {
+var createBill = function createBill(bills) {
   return $.ajax({
     type: 'POST',
     url: '/api/bills',
     data: {
-      bill: bill
-    }
+      bills: bills
+    } //Needs to match
+
   });
 };
 var destroyBill = function destroyBill() {

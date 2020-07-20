@@ -8,11 +8,12 @@ class BillPage extends React.Component {
     this.state = {
       description: '',
       cost: '',
-      recipient_id: ''
-    }
+      recipient_id: '',
+      group_id: ''
+    };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
+  };
 
 
 
@@ -57,6 +58,13 @@ class BillPage extends React.Component {
               type='text'
               value={this.state.cost}
               onChange={this.update('cost')}
+              />
+          </label>
+          <label>Enter a group, if any:
+            <input 
+              type='text'
+              value={this.state.group_id}
+              onChange={this.update('group_id')}
               />
           </label>
 
