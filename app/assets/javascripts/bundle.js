@@ -541,7 +541,7 @@ var BillPage = /*#__PURE__*/function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       var bill = Object.assign({}, this.state);
-      this.props.processForm(bill).then(this.props.closeModal);
+      this.props.addBill(bill).then(this.props.closeModal);
     }
   }, {
     key: "render",
@@ -589,19 +589,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _bill_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./bill_modal */ "./frontend/components/bill/bill_modal.jsx");
 /* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+/* harmony import */ var _actions_bill_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/bill_actions */ "./frontend/actions/bill_actions.js");
 
  // import { logout, receiveAllUsers } from '../../actions/session_actions';
 
  // import { requestFriends } from "../../actions/friend_actions";
 // import { requestBills } from "../../actions/bill_actions";
-// import { openModal } from '../../actions/modal_actions';
 
 
 
-var mSTP = function mSTP(state) {
-  return {
-    user: state.entities.users[state.session.id]
-  };
+
+var mSTP = function mSTP(state) {// return {
+  //   user: state.entities.users[state.session.id],
+  // }
 };
 
 var mDTP = function mDTP(dispatch) {
@@ -609,19 +609,9 @@ var mDTP = function mDTP(dispatch) {
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["closeModal"])());
     },
-    addBill: function (_addBill) {
-      function addBill(_x) {
-        return _addBill.apply(this, arguments);
-      }
-
-      addBill.toString = function () {
-        return _addBill.toString();
-      };
-
-      return addBill;
-    }(function (bill) {
-      return dispatch(addBill(bill));
-    })
+    addBill: function addBill(bill) {
+      return dispatch(Object(_actions_bill_actions__WEBPACK_IMPORTED_MODULE_4__["default"])(bill));
+    }
   };
 };
 

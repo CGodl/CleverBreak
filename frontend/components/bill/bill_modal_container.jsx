@@ -4,15 +4,15 @@ import { connect } from 'react-redux';
 import BillPage from './bill_modal';
 // import { requestFriends } from "../../actions/friend_actions";
 // import { requestBills } from "../../actions/bill_actions";
-// import { openModal } from '../../actions/modal_actions';
 import { closeModal } from '../../actions/modal_actions';
+import addBill from '../../actions/bill_actions'
 
 
 
 const mSTP = (state) => {
-  return {
-    user: state.entities.users[state.session.id],
-  }
+  // return {
+  //   user: state.entities.users[state.session.id],
+  // }
 }
 
 const mDTP = (dispatch) => {

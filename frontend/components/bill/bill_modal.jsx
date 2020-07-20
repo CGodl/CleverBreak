@@ -26,7 +26,7 @@ class BillPage extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const bill = Object.assign({}, this.state);
-    this.props.processForm(bill).then(this.props.closeModal);
+    this.props.addBill(bill).then(this.props.closeModal);
   };
 
 
