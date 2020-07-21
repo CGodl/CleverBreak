@@ -2,6 +2,7 @@
 @bills.each do |bill|
   # debugger
   json.set! bill.id do
+    json.author_id bill.author_id
     json.description bill.description
     json.cost bill.cost
     json.recepient_id bill.recipient_id

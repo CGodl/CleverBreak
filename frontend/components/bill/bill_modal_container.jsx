@@ -9,11 +9,11 @@ import { addBill } from '../../actions/bill_actions'
 
 
 
-const mSTP = (state) => {
-  // return {
-  //   user: state.entities.users[state.session.id],
-  // }
-}
+// const mSTP = (state) => {
+//   // return {
+//   //   user: state.entities.users[state.session.id],
+//   // }
+// }
 
 const mDTP = (dispatch) => {
   return {
