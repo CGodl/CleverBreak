@@ -1,4 +1,1 @@
-json.partial! './api/users/user.json.jbuilder', user: @user
-json.friendIds do
-  json.array! @user.friends.pluck(:id)
-end
+json.partial! './api/users/user', user: @user

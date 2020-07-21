@@ -28,17 +28,43 @@ class User < ApplicationRecord
     foreign_key: :requestor_id,
     class_name: :Friend
 
-  has_many :friendors, #Array of Ids
+  has_many :friendors, #Array of Ids #requested me as a friend
     through: :sent_friend_requests,
     source: :requestor
 
-  has_many :friendees,
+  has_many :friendees, #People I requested as friends
     through: :received_friend_requests,
     source: :requested
 
 
+    
+  has_many :sent_bill_requests,
+    foreign_key: :author_id,
+    class_name: :Bill
+  
+  has_many :received_bill_requests,
+    foreign_key: :recipient_id,
+    class_name: :Bill
+
+  has_many :billers,
+    through: :received_bill_requests,
+    source: :author
+    
+    has_many :billees,
+      through: :sent_bill_requests,
+      source: :recipients
+
+
   def friends #ensures uniqueness by combining friendor and friendee
-    friendors + friendees
+    friendors + friendees #concat two arrays
+  end
+
+  def bills
+    sent_bill_requests + received_bill_requests
+  end
+
+  def bill_names
+    billers + billees
   end
 
   def self.find_by_credentials(email, password)

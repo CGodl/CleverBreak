@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 class FriendForm extends React.Component {
   constructor(props) {
     super(props)
+
+    
   }
 
   componentWillMount() {
@@ -13,8 +14,8 @@ class FriendForm extends React.Component {
 
   render () {
     const { allUsers, friends } = this.props;
-    window.allUsers = allUsers
-    window.friends = friends
+    // window.allUsers = allUsers
+    // window.friends = friends
 
     if (!friends) {
       return null

@@ -3,18 +3,17 @@ class Api::FriendsController < ApplicationController
   
   def create
     requested_friend = User.find_by(email: [:email])
-    # requested_friend = User.find_by(email: ["dummyEmail@gmail.com"])
     already_friend = Friend.find_by({requestor_id: current_user.id, requested_id: requested_friend.id })
     #Make sure the opposite also returns false
 
     if requested_friend && !already_friend
       friend = Friend.new({requestor_id: current_user.id, requested_id: requested_friend.id })
-      # debugger
+      # //debugger
       if friend.save
         render 'api/friends/show'
       end
     else
-      # debugger
+      # //debugger
       render json: ["Unable to establish friendship"]
     end
   end

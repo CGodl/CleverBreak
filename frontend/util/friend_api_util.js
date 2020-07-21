@@ -15,7 +15,7 @@ export const destroyFriend = () => {
 };
 
 export const getFriend = id => {
-  debugger
+  //debugger
   return $.ajax ({  
     type: 'GET',
     url: `/api/friends/${id}`
@@ -23,7 +23,7 @@ export const getFriend = id => {
 };
 
 export const getFriends = () => {
-  debugger
+  //debugger
   return $.ajax ({  
     type: 'GET',
     url: '/api/friends'

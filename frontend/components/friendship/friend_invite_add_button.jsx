@@ -1,11 +1,11 @@
 
 
-class FriendInviteAddBtn extends React.Component {
+// class FriendInviteAddBtn extends React.Component {
 
-  render () {
+//   render () {
 
 
     
-  }
+//   }
 
-}
+// }

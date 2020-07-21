@@ -1,24 +1,33 @@
 import React from 'react';
-import Navbar from '../nav_bar/navbar'
-import FriendForm from '../friendship/friend_form'
-import FriendFormContainer from '../friendship/friend_container'
-import FriendInviteBox from '../friendship/friend_invite_box_main'
+import Navbar from '../nav_bar/navbar';
+import FriendForm from '../friendship/friend_form';
+import FriendFormContainer from '../friendship/friend_container';
+import openModal from '../../actions/modal_actions'
+// import FriendInviteBox from '../friendship/'
+import billModal from '../bill/bill_modal_container';
 
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.user;
+
+    this.openTheModal = this.openTheModal.bind(this);
+    
   }
 
   componentWillMount() {
-    this.props.receiveAllUsers()
+    this.props.receiveAllUsers();
     this.props.requestFriends();
+    this.props.requestBills();
   }
 
+  openTheModal() {
+    this.props.openModal('bill')
+  }
 
   render () {
-    const { user, logout} = this.props
-
+    const { user, logout } = this.props;
+    
     return (
       <html>
         <Navbar 
@@ -29,12 +38,12 @@ class Dashboard extends React.Component {
         <body className='dashboard-main'>
           <nav className='dashboard-main-nav-left'>
             <p><FriendFormContainer /></p>
-            <p><FriendInviteBox /></p>
+            {/* <p><FriendInviteBox /></p> */}
           </nav>
           <main className='dashboard-main-center'>
             <div className ='dashboard-main-center-top'>
               <label>Dashboard</label>
-              <button className='expense-btn'>Add an expense</button>
+              <button className='expense-btn' onClick={this.openTheModal}>Add an expense</button>
               <button className='settle-btn'>Settle up</button>
             </div>
           </main>
@@ -69,4 +78,4 @@ class Dashboard extends React.Component {
 
 }
 
-export default Dashboard
+export default Dashboard;

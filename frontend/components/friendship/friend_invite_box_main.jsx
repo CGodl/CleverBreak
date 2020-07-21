@@ -5,14 +5,11 @@ class FriendInviteBox extends React.Component {
     super(props)
 
     this.state = {
-      inviteEmail = ''
-
+      inviteEmail: ''
     }
-
-  }
+  };
 
   render () {
-
 
     return (
       <span className='friend-invite-box-container'>
