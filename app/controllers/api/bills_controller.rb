@@ -3,7 +3,7 @@ class Api::BillsController < ApplicationController
   def create
     recipients = User.find_by(email: [:email])
 
-    if Bill.last.history_id == nil
+    if Bill.last == nil
       current_history_id = 0
     else
       current_history_id = Bill.last.history_id + 1
@@ -12,7 +12,7 @@ class Api::BillsController < ApplicationController
     current_user_id = current_user.id
 
       # @bill = Bill.new(bill_params)
-      debugger
+      //debugger
     @bill = Bill.new({author_id: current_user.id,
                      recipient_id: bill_params[:recipient_id],
                      history_id: current_history_id,
@@ -23,7 +23,7 @@ class Api::BillsController < ApplicationController
                       })
 
       
-      debugger
+      //debugger
     if @bill.save!
         render :show
     else

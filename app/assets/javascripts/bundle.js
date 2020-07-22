@@ -174,7 +174,7 @@ var RECEIVE_FRIENDSHIPS = 'RECEIVE_FRIENDSHIPS';
 var REMOVE_FRIENDSHIP = 'REMOVE_FRIENDSHIP';
 
 var receiveFriend = function receiveFriend(friend) {
-  // //debugger
+  // ////debugger
   return {
     type: RECEIVE_FRIENDSHIP,
     friend: friend
@@ -189,7 +189,7 @@ var receiveFriends = function receiveFriends(friends) {
 };
 
 var removeFriend = function removeFriend() {
-  //debugger
+  ////debugger
   return {
     type: REMOVE_FRIENDSHIP
   };
@@ -197,7 +197,7 @@ var removeFriend = function removeFriend() {
 
 var addFriend = function addFriend(friend) {
   return function (dispatch) {
-    //debugger
+    ////debugger
     return _util_friend_api_util__WEBPACK_IMPORTED_MODULE_0__["createFriend"](friend).then(function (friend) {
       return dispatch(receiveFriend(friend));
     });
@@ -219,7 +219,7 @@ var requestFriends = function requestFriends() {
 };
 var deleteFriend = function deleteFriend(friend) {
   return function (dispatch) {
-    //debugger
+    ////debugger
     return _util_friend_api_util__WEBPACK_IMPORTED_MODULE_0__["destroyFriend"](friend).then(function (friend) {
       return dispatch(removeFriend(friend));
     });
@@ -313,7 +313,7 @@ var receiveUsers = function receiveUsers(users) {
 
 var signup = function signup(user) {
   return function (dispatch) {
-    //debugger
+    ////debugger
     return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["signup"](user).then(function (user) {
       return dispatch(receiveCurrentUser(user));
     }, function (err) {
@@ -346,7 +346,7 @@ var clearErrors = function clearErrors() {
 var receiveAllUsers = function receiveAllUsers() {
   return function (dispatch) {
     return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchAllUsers"]().then(function (users) {
-      //debugger
+      ////debugger
       dispatch(receiveUsers(users));
     });
   };
@@ -380,13 +380,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
- ////debugger;
+ //////debugger;
 
 document.addEventListener('DOMContentLoaded', function () {
-  var store; ////debugger;
+  var store; //////debugger;
 
   if (window.currentUser) {
-    ////debugger;
+    //////debugger;
     var preloadedState = {
       entities: {
         users: _defineProperty({}, window.currentUser.id, window.currentUser)
@@ -394,13 +394,13 @@ document.addEventListener('DOMContentLoaded', function () {
       session: {
         id: window.currentUser.id
       }
-    }; ////debugger;
+    }; //////debugger;
 
     store = Object(_store_store__WEBPACK_IMPORTED_MODULE_3__["default"])(preloadedState);
     delete window.currentUser;
   } else {
     store = Object(_store_store__WEBPACK_IMPORTED_MODULE_3__["default"])();
-  } ////debugger;
+  } //////debugger;
 
 
   window.getState = store.getState;
@@ -491,7 +491,7 @@ var Activity = /*#__PURE__*/function (_React$Component) {
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "recent-activity-main-container"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, curUserBillIds.map(function (billId) {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, curUserBillIds.length != 0 ? curUserBillIds.map(function (billId) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: billId
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -499,7 +499,7 @@ var Activity = /*#__PURE__*/function (_React$Component) {
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: console.log('button Works')
         }, curUser.id === bills[billId].author_id ? 'You' : allUsers[bills[billId].author_id].name, " added \"", bills[billId].description, "\" The difference is ", bills[billId].cost)));
-      })));
+      }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "No Bills Found")));
     }
   }]);
 
@@ -635,7 +635,7 @@ var AllExpenses = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, curUserBillIds.map(function (billId) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: billId
-        }, allUsers[bills[billId].author_id].name, " added \"", bills[billId].description, "\" The difference is ", bills[billId].cost);
+        }, bills[billId].description, allUsers[bills[billId].author_id].name, " added The difference is ", bills[billId].cost);
       })));
     }
   }]);
@@ -1105,12 +1105,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state) {
-  //debugger
-  var curUser = state.entities.users[state.session.id]; //debugger
+  ////debugger
+  var curUser = state.entities.users[state.session.id]; ////debugger
   // const friends = curUser.friendIds.map(id => state.entities.users[id])
 
   var friends = curUser.friendIds;
-  var allUsers = state.entities.users; //debugger
+  var allUsers = state.entities.users; ////debugger
 
   return {
     friends: friends,
@@ -1119,7 +1119,7 @@ var mSTP = function mSTP(state) {
 };
 
 var mDTP = function mDTP(dispatch) {
-  //debugger
+  ////debugger
   return {
     addFriend: function addFriend(friend) {
       return dispatch(Object(_actions_friend_actions__WEBPACK_IMPORTED_MODULE_2__["addFriend"])(friend));
@@ -2221,7 +2221,7 @@ var _nullErrors = [];
 var sessionErrorsReducer = function sessionErrorsReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _nullErrors;
   var action = arguments.length > 1 ? arguments[1] : undefined;
-  Object.freeze(state); //debugger
+  Object.freeze(state); ////debugger
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_SESSION_ERRORS"]:
@@ -2260,7 +2260,7 @@ var _nullUser = {
 var sessionReducer = function sessionReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _nullUser;
   var action = arguments.length > 1 ? arguments[1] : undefined;
-  Object.freeze(state); //debugger
+  Object.freeze(state); ////debugger
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
@@ -2429,14 +2429,14 @@ var destroyFriend = function destroyFriend() {
   });
 };
 var getFriend = function getFriend(id) {
-  //debugger
+  ////debugger
   return $.ajax({
     type: 'GET',
     url: "/api/friends/".concat(id)
   });
 };
 var getFriends = function getFriends() {
-  //debugger
+  ////debugger
   return $.ajax({
     type: 'GET',
     url: '/api/friends'
@@ -2521,7 +2521,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllUsers", function() { return fetchAllUsers; });
 var signup = function signup(user) {
-  //debugger
+  ////debugger
   return $.ajax({
     type: 'POST',
     url: '/api/users',
@@ -2531,7 +2531,7 @@ var signup = function signup(user) {
   });
 };
 var login = function login(user) {
-  // //debugger
+  // ////debugger
   return $.ajax({
     type: 'POST',
     url: '/api/session',
@@ -2541,7 +2541,7 @@ var login = function login(user) {
   });
 };
 var logout = function logout() {
-  //debugger
+  ////debugger
   return $.ajax({
     type: 'DELETE',
     url: '/api/session'
