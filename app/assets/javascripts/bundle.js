@@ -813,6 +813,7 @@ var BillPage = /*#__PURE__*/function (_React$Component) {
     _this = _super.call(this, props);
     _this.state = {
       description: 'Enter a Description',
+      author_payor: true,
       cost: '',
       recipient_id: '',
       group_id: ''
@@ -841,7 +842,15 @@ var BillPage = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var closeModal = this.props.closeModal;
+      var closeModal = this.props.closeModal; // const toggleNameAndBoolean = () => {
+      //   // switch (this.state.author_payor) {
+      //   //   case true:
+      //   //     this.state.author_payor = false
+      //   //     return curUser
+      //   //   case
+      //   // }
+      // }
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "bill-modal-container",
         onSubmit: this.handleSubmit
@@ -853,15 +862,11 @@ var BillPage = /*#__PURE__*/function (_React$Component) {
         type: "text",
         value: this.state.description,
         onChange: this.update('description')
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Enter a cost:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "$", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.cost,
         onChange: this.update('cost')
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Enter a group, if any:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        value: this.state.group_id,
-        onChange: this.update('group_id')
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Paid by "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: closeModal
       }, "Cancel"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Save"));
     }

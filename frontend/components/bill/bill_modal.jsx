@@ -7,6 +7,7 @@ class BillPage extends React.Component {
     super(props);
     this.state = {
       description: 'Enter a Description',
+      author_payor: true,
       cost: '',
       recipient_id: '',
       group_id: ''
@@ -36,6 +37,21 @@ class BillPage extends React.Component {
   render () {
     const { closeModal } = this.props;
 
+    // const toggleNameAndBoolean = () => {
+    //   // switch (this.state.author_payor) {
+    //   //   case true:
+    //   //     this.state.author_payor = false
+    //   //     return curUser
+    //   //   case
+
+
+
+    //   // }
+
+
+
+    // }
+
       return (
         <form className='bill-modal-container' onSubmit={this.handleSubmit}>
           <p>Add an expense</p>
@@ -53,20 +69,21 @@ class BillPage extends React.Component {
               onChange={this.update('description')}
               />
           </label>
-          <label>Enter a cost:
+          <label>$
             <input 
               type='text'
               value={this.state.cost}
               onChange={this.update('cost')}
               />
           </label>
-          <label>Enter a group, if any:
+          <p>Paid by {}</p>
+          {/* <label>Enter a group, if any:
             <input 
               type='text'
               value={this.state.group_id}
               onChange={this.update('group_id')}
               />
-          </label>
+          </label> */}
 
           <button onClick={closeModal}>Cancel</button>
           <button>Save</button>

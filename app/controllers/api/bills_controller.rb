@@ -11,9 +11,8 @@ class Api::BillsController < ApplicationController
 
     current_user_id = current_user.id
 
-      # @bill = Bill.new(bill_params)
-      //debugger
     @bill = Bill.new({author_id: current_user.id,
+                      author_payor: bill_params[:author_payor],
                      recipient_id: bill_params[:recipient_id],
                      history_id: current_history_id,
                      group_id: bill_params[:group_id],
@@ -23,7 +22,6 @@ class Api::BillsController < ApplicationController
                       })
 
       
-      //debugger
     if @bill.save!
         render :show
     else
@@ -62,7 +60,7 @@ class Api::BillsController < ApplicationController
   private
 
   def bill_params
-    params.require(:bills).permit(:author_id, :history_id, :recipient_id, :group_id, :cost, :description, :updated_at)
+    params.require(:bills).permit(:author_id, :history_id, :author_payor, :recipient_id, :group_id, :cost, :description, :updated_at)
   end
 
 end
