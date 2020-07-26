@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class BillShow extends React.Component {
   constructor(props) {
     super(props)
@@ -17,12 +16,9 @@ class BillShow extends React.Component {
     return (
       <div className='all-bill-show-container'>
         <button onClick={this.toggleBillDisplay} className='all-expenses-btn'>
-                    {bills[billId].description}
-
-                    {allUsers[bills[billId].author_id].name} added 
-                
-                The difference is {bills[billId].cost}
-                
+          {bills[billId].description}
+          {allUsers[bills[billId].author_id].name} added 
+          The difference is {bills[billId].cost}       
         </button>
         <div className={this.state.isButtonActive ? 'bill-show-toggle-on' : 'bill-show-toggle-off'}>
           <div>
@@ -33,15 +29,7 @@ class BillShow extends React.Component {
             Added by {allUsers[bills[billId].author_id].name} on {bills[billId].created_at}
           </div>
         </div>
-        <div>
-
-        </div>
-
       </div>
-
-
-
-
     )
 
 
