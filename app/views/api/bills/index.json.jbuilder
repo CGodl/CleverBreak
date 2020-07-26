@@ -7,6 +7,8 @@
     json.description bill.description
     json.cost bill.cost
     json.recepient_id bill.recipient_id
+    json.updated_at bill.updated_at
+    json.created_at bill.created_at
     
     # json.test user.name
     # json.partial! '/api/users/user', user: bill ###

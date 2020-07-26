@@ -14,6 +14,7 @@ class BillPage extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.toggleBoolean = this.toggleBoolean.bind(this);
   };
 
 
@@ -31,27 +32,30 @@ class BillPage extends React.Component {
     this.props.addBill(bill).then(this.props.closeModal);
   };
 
+  toggleBoolean(e) {
+    e.preventDefault();
+    
+    switch (this.state.author_payor) {
+      case true:
+        this.setState({author_payor: false})
+        console.log(this.state.author_payor);
+        break;
+      case false:
+        this.setState({author_payor: true})
+        console.log(this.state.author_payor)
+        break;
+      default:
+        break;
+    }
+  }
+
 
 
 
   render () {
-    const { closeModal } = this.props;
-
-    // const toggleNameAndBoolean = () => {
-    //   // switch (this.state.author_payor) {
-    //   //   case true:
-    //   //     this.state.author_payor = false
-    //   //     return curUser
-    //   //   case
-
-
-
-    //   // }
-
-
-
-    // }
-
+    const { friends, closeModal } = this.props;
+    console.log(friends)
+    
       return (
         <form className='bill-modal-container' onSubmit={this.handleSubmit}>
           <p>Add an expense</p>
@@ -76,7 +80,7 @@ class BillPage extends React.Component {
               onChange={this.update('cost')}
               />
           </label>
-          <p>Paid by {}</p>
+      <p>Paid by <button className='payor-btn' onClick={this.toggleBoolean}>{this.state.author_payor ? 'You' : (this.state.recipient_id ? friends[this.state.recipient_id].name : 'No Name Provided')}</button></p>
           {/* <label>Enter a group, if any:
             <input 
               type='text'

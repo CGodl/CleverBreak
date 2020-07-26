@@ -18,7 +18,8 @@ class Api::BillsController < ApplicationController
                      group_id: bill_params[:group_id],
                      cost: bill_params[:cost],
                      description: bill_params[:description],
-                     updated_at: bill_params[:updated_at]
+                     updated_at: bill_params[:updated_at],
+                     created_at: bill_params[:created_at]
                       })
 
       
@@ -60,7 +61,7 @@ class Api::BillsController < ApplicationController
   private
 
   def bill_params
-    params.require(:bills).permit(:author_id, :history_id, :author_payor, :recipient_id, :group_id, :cost, :description, :updated_at)
+    params.require(:bills).permit(:author_id, :history_id, :author_payor, :recipient_id, :group_id, :cost, :description, :updated_at, :created_at)
   end
 
 end

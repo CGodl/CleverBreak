@@ -26,7 +26,7 @@ const mDTP = dispatch => {
   return {
     requestBills: () => dispatch(requestBills()),
     receiveAllUsers: () => dispatch(receiveAllUsers()),
-    // requestFriends: () => dispatch(requestFriends())
+    requestFriends: () => dispatch(requestFriends())
   }
 }
 

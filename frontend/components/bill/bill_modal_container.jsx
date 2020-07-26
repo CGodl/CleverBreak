@@ -2,25 +2,25 @@ import React from 'react';
 import { connect } from 'react-redux';
 // import { logout, receiveAllUsers } from '../../actions/session_actions';
 import BillPage from './bill_modal';
-// import { requestFriends } from "../../actions/friend_actions";
+import { requestFriends, requestFriend } from "../../actions/friend_actions";
 // import { requestBills } from "../../actions/bill_actions";
 import { closeModal } from '../../actions/modal_actions';
 import { addBill } from '../../actions/bill_actions'
 
 
 
-// const mSTP = (state) => {
-//   // return {
-//   //   user: state.entities.users[state.session.id],
-//   // }
-// }
+const mSTP = (state) => {
+  return {
+    friends: state.entities.friends,
+  }
+}
 
 const mDTP = (dispatch) => {
   return {
     closeModal: () => dispatch(closeModal()),
-    addBill: (bill) => dispatch(addBill(bill))
-
+    addBill: (bill) => dispatch(addBill(bill)),
+    // requestFriends: (friends) => dispatch(requestFriends(friends))
   };
 };
 
-export default connect(null, mDTP)(BillPage);
+export default connect(mSTP, mDTP)(BillPage);
