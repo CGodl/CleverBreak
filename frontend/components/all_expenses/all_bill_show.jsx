@@ -4,18 +4,34 @@ import React from 'react';
 class BillShow extends React.Component {
   constructor(props) {
     super(props)
+    this.state = { isButtonActive: false }
+    this.toggleBillDisplay = this.toggleBillDisplay.bind(this)
   }
+
+  toggleBillDisplay() {
+    this.setState({isButtonActive: !this.state.isButtonActive})
+  };
 
   render () {
     const { bills, allUsers, curUserBillIds, billId } = this.props
     return (
       <div className='all-bill-show-container'>
-        <div>
-          {bills[billId].description}
-          <br/>
-          {bills[billId].cost}
-          <br/>
-          Added by {allUsers[bills[billId].author_id].name} on {bills[billId].created_at}
+        <button onClick={this.toggleBillDisplay} className='all-expenses-btn'>
+                    {bills[billId].description}
+
+                    {allUsers[bills[billId].author_id].name} added 
+                
+                The difference is {bills[billId].cost}
+                
+        </button>
+        <div className={this.state.isButtonActive ? 'bill-show-toggle-on' : 'bill-show-toggle-off'}>
+          <div>
+            {bills[billId].description}
+            <br/>
+            {bills[billId].cost}
+            <br/>
+            Added by {allUsers[bills[billId].author_id].name} on {bills[billId].created_at}
+          </div>
         </div>
         <div>
 

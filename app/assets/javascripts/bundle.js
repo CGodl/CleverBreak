@@ -604,12 +604,26 @@ var BillShow = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(BillShow);
 
   function BillShow(props) {
+    var _this;
+
     _classCallCheck(this, BillShow);
 
-    return _super.call(this, props);
+    _this = _super.call(this, props);
+    _this.state = {
+      isButtonActive: false
+    };
+    _this.toggleBillDisplay = _this.toggleBillDisplay.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(BillShow, [{
+    key: "toggleBillDisplay",
+    value: function toggleBillDisplay() {
+      this.setState({
+        isButtonActive: !this.state.isButtonActive
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,
@@ -619,7 +633,12 @@ var BillShow = /*#__PURE__*/function (_React$Component) {
           billId = _this$props.billId;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "all-bill-show-container"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, bills[billId].description, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), bills[billId].cost, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Added by ", allUsers[bills[billId].author_id].name, " on ", bills[billId].created_at), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.toggleBillDisplay,
+        className: "all-expenses-btn"
+      }, bills[billId].description, allUsers[bills[billId].author_id].name, " added The difference is ", bills[billId].cost), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: this.state.isButtonActive ? 'bill-show-toggle-on' : 'bill-show-toggle-off'
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, bills[billId].description, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), bills[billId].cost, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Added by ", allUsers[bills[billId].author_id].name, " on ", bills[billId].created_at)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null));
     }
   }]);
 
@@ -674,16 +693,9 @@ var AllExpenses = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(AllExpenses);
 
   function AllExpenses(props) {
-    var _this;
-
     _classCallCheck(this, AllExpenses);
 
-    _this = _super.call(this, props);
-    _this.state = {
-      isButtonActive: false
-    };
-    _this.toggleBillDisplay = _this.toggleBillDisplay.bind(_assertThisInitialized(_this));
-    return _this;
+    return _super.call(this, props);
   }
 
   _createClass(AllExpenses, [{
@@ -693,17 +705,8 @@ var AllExpenses = /*#__PURE__*/function (_React$Component) {
       this.props.receiveAllUsers();
     }
   }, {
-    key: "toggleBillDisplay",
-    value: function toggleBillDisplay() {
-      this.setState({
-        isButtonActive: !this.state.isButtonActive
-      });
-    }
-  }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
-
       var _this$props = this.props,
           allUsers = _this$props.allUsers,
           bills = _this$props.bills,
@@ -721,17 +724,12 @@ var AllExpenses = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, curUserBillIds.map(function (billId) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: billId
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          onClick: _this2.toggleBillDisplay,
-          className: "all-expenses-btn"
-        }, bills[billId].description, allUsers[bills[billId].author_id].name, " added The difference is ", bills[billId].cost), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: _this2.state.isButtonActive ? 'bill-show-toggle-on' : 'bill-show-toggle-off'
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_all_bill_show__WEBPACK_IMPORTED_MODULE_1__["default"], {
           bills: bills,
           allUsers: allUsers,
           curUserBillIds: curUserBillIds,
           billId: billId
-        })));
+        }));
       })));
     }
   }]);
