@@ -12,7 +12,10 @@ class BillShow extends React.Component {
   };
 
   render () {
-    const { bills, allUsers, curUserBillIds, billId } = this.props
+    const { bills, deleteBill, allUsers, curUserBillIds, billId } = this.props;
+
+
+
     return (
       <div className='all-bill-show-container'>
         <button onClick={this.toggleBillDisplay} className='all-expenses-btn'>
@@ -29,7 +32,7 @@ class BillShow extends React.Component {
             Added by {allUsers[bills[billId].author_id].name} on {bills[billId].created_at}
             <br/>
             Last updated on {bills[billId].updated_at}
-            <button> value={Edit an Expense (Does nothing for now)</button>
+            <button onClick={() => deleteBill(billId)}>X</button>
           </div>
         </div>
       </div>

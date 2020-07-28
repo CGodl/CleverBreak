@@ -10,7 +10,8 @@ const billsReducer = (state = {}, action) => {
     case RECEIVE_ALL_BILLS:
       return action.bills;
     case REMOVE_BILL:
-      return {}
+      delete newState[action.billId];
+      return newState;
     default:
       return state;
   }

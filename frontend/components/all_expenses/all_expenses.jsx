@@ -31,7 +31,8 @@ class AllExpenses extends React.Component {
                     bills={bills}
                     allUsers={allUsers}
                     curUserBillIds={curUserBillIds}
-                    billId={billId}    
+                    billId={billId}  
+                    deleteBill={this.props.deleteBill}  
                   />
                 </li>
               ))

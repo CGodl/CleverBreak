@@ -9,11 +9,11 @@ export const createBill = bills => {
   })
 };
 
-export const destroyBill = () => {
+export const destroyBill = (billId) => {
 
   return $.ajax({
     type: 'DELETE',
-    url: '/api/bills',
+    url: `/api/bills/${billId}`
   })
 };
 

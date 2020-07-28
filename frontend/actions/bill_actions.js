@@ -20,10 +20,11 @@ const receiveBills = bills => {
   };
 }
 
-const removeBill = () => {
+const removeBill = billId => {
 
   return {
     type: REMOVE_BILL,
+    billId
   };
 }
 
@@ -45,8 +46,8 @@ export const updateBill = bill => dispatch => {
     .then(bill => dispatch(receiveBill(bill)))
 }
 
-export const deleteBill = bill => dispatch => {
+export const deleteBill = billId => dispatch => {
 
-  return billApiUtil.destroyBill(friend)
-    .then(bill => dispatch(removeBill(bill)))
+  return billApiUtil.destroyBill(billId)
+    .then(() => dispatch(removeBill(billId)))
 }

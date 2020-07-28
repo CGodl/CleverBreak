@@ -1,7 +1,7 @@
 class Api::BillsController < ApplicationController 
 
   def create
-    recipients = User.find_by(email: [:email])
+    recipients = User.find_by(id: [:id])
 
     if Bill.last == nil
       current_history_id = 0
@@ -70,12 +70,14 @@ class Api::BillsController < ApplicationController
   end
 
   def destroy
-    @bill = current_user.bills.find(params[:id])
-
+    # @bill = current_user.bills.find(params[:id])
+    @bill = Bill.find(params[:id])
+    # debugger
     if @bill.destroy
       render :show
     else
       render json: ['Bill could not be deleted']
+    end
 
   end
 
