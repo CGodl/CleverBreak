@@ -27,6 +27,9 @@ class BillShow extends React.Component {
             {bills[billId].cost}
             <br/>
             Added by {allUsers[bills[billId].author_id].name} on {bills[billId].created_at}
+            <br/>
+            Last updated on {bills[billId].updated_at}
+            <button>Edit an Expense (Does nothing for now)</button>
           </div>
         </div>
       </div>

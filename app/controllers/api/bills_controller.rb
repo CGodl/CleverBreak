@@ -46,14 +46,36 @@ class Api::BillsController < ApplicationController
   end
 
   def show
-    bill = Bill.find(params[:id])
+    @bill = Bill.find(params[:id])
 
-    if bill
+    if @bill
       render :show
     else
       render json: ["Unable to find bill"]
     end
 
+
+  end
+
+
+  def update
+    @bill = Bill.find(params[:id])
+
+    if (current_user.id === @bill.author_id || current_user.id === @bill.recipient_id ) && @bill.update(bill_params)
+      render :show
+    else
+      render json: ["Unable to update bill"]
+    end
+
+  end
+
+  def destroy
+    @bill = current_user.bills.find(params[:id])
+
+    if @bill.destroy
+      render :show
+    else
+      render json: ['Bill could not be deleted']
 
   end
 

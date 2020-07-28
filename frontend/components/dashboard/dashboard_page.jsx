@@ -57,17 +57,7 @@ class Dashboard extends React.Component {
 
           </nav>
 
-        
-
-
-
-
         </body>
-
-
-
-
-
 
       </html>
     )

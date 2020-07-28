@@ -1,7 +1,5 @@
-
 import React from 'react';
 import BillShow from './all_bill_show'
-
 
 class AllExpenses extends React.Component {
   constructor(props) {
@@ -41,14 +39,7 @@ class AllExpenses extends React.Component {
         </ul>
       </div>
     )
-
-
   }
-
-  
-
-
-
 };
 
 export default AllExpenses;

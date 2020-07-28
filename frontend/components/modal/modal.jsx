@@ -9,6 +9,8 @@ function Modal({modal, closeModal}) {
   switch (modal) {
     case 'bill':
       currentModalComponent = <BillPage />;
+    // case 'editBill':
+    //   currentModalComponent = <EditBillPage />;
       break;
     default:
       return null;
