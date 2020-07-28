@@ -1,7 +1,7 @@
 import React from 'react';
 import AllExpenses from './all_expenses';
 import { connect } from 'react-redux';
-import { requestBills } from "../../actions/bill_actions";
+import { requestBill, requestBills, deleteBill } from "../../actions/bill_actions";
 import { receiveAllUsers } from '../../actions/session_actions';
 import { requestFriends } from "../../actions/friend_actions";
 
@@ -25,6 +25,8 @@ const mDTP = dispatch => {
 
   return {
     requestBills: () => dispatch(requestBills()),
+    updateBill: (bill) => dispatch(updateBill(bill)),
+    deleteBill: (bill) => dispatch(deleteBill(bill)),
     receiveAllUsers: () => dispatch(receiveAllUsers()),
     requestFriends: () => dispatch(requestFriends())
   }

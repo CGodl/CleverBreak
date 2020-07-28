@@ -37,7 +37,12 @@ export const requestBills = () => dispatch => {
 
   return billApiUtil.fetchAllBills()
     .then((bills) => dispatch(receiveBills(bills)))
+}
 
+export const updateBill = bill => dispatch => {
+
+  return billApiUtil.updateBill(bill)
+    .then(bill => dispatch(receiveBill(bill)))
 }
 
 export const deleteBill = bill => dispatch => {

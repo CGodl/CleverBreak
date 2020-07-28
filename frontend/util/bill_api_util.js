@@ -15,6 +15,17 @@ export const destroyBill = () => {
     type: 'DELETE',
     url: '/api/bills',
   })
+};
+
+export const updateBill = (bill) => {
+
+  return $,ajax({
+    type: 'PATCH',
+    url: `/api/bills/${bill.id}`,
+    data: { bill }
+
+  })
+
 }
 
 export const fetchAllBills = () => {
@@ -25,4 +36,4 @@ export const fetchAllBills = () => {
 
   })
 
-}
+};
