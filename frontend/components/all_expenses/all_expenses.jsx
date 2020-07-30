@@ -37,7 +37,7 @@ class AllExpenses extends React.Component {
       <div className='recent-activity-main-container'>
         <ul>
             {
-              curUserBillIds.map(billId => (
+              curUserBillIds.map(billId => ( 
                 <li key={ billId }>
                   <BillShow 
                     bills={bills}

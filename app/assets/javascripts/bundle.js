@@ -1343,7 +1343,7 @@ var EditBillPage = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.state = {
-      description: 'Pickly Boy',
+      description: 'Wrong One for Dashboard',
       author_payor: true,
       cost: '',
       recipient_id: '',
@@ -2714,7 +2714,9 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _actions_bill_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/bill_actions */ "./frontend/actions/bill_actions.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -2729,6 +2731,20 @@ var usersReducer = function usersReducer() {
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_USERS"]:
       return action.users;
+
+    case _actions_bill_actions__WEBPACK_IMPORTED_MODULE_1__["REMOVE_BILL"]:
+      var newState = Object.assign({}, state);
+
+      for (var userId in newState) {
+        if (newState.hasOwnProperty(userId)) {
+          var user = newState[userId];
+          user.billIds = user.billIds.filter(function (billId) {
+            return billId !== action.billId;
+          });
+        }
+      }
+
+      return newState;
 
     default:
       return state;

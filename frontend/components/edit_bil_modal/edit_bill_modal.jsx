@@ -7,7 +7,7 @@ class EditBillPage extends React.Component {
     super(props);
 
       this.state = {
-        description: 'Pickly Boy',
+        description: 'Wrong One for Dashboard',
         author_payor: true,
         cost: '',
         recipient_id: '',
