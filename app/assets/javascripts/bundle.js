@@ -756,9 +756,6 @@ var AllExpenses = /*#__PURE__*/function (_React$Component) {
           bills = _this$props.bills,
           curUserBillIds = _this$props.curUserBillIds,
           openModal = _this$props.openModal;
-      window.allUsers = allUsers;
-      window.bills = bills;
-      window.curUserBillIds = curUserBillIds;
 
       if (!curUserBillIds || !bills) {
         return null;

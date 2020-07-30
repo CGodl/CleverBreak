@@ -6,7 +6,7 @@ class AllExpenses extends React.Component {
     super(props);
 
     this.state = { isButtonActive: false }
-    this.toggleBillDisplay = this.toggleBillDisplay.bind(this)
+    // this.toggleBillDisplay = this.toggleBillDisplay.bind(this)
     this.openTheModal = this.openTheModal.bind(this);
   }
 
@@ -15,23 +15,25 @@ class AllExpenses extends React.Component {
     this.props.receiveAllUsers();
   }
 
-  toggleBillDisplay() {
-    this.setState({isButtonActive: !this.state.isButtonActive})
-  };
+  // toggleBillDisplay() {
+  //   this.setState({isButtonActive: !this.state.isButtonActive})
+  // };
 
   openTheModal() {
     this.props.openModal('editBill')
   };
+
   
   render () {
     const { allUsers, bills, curUserBillIds, openModal } = this.props; 
-
+    window.allUsers = allUsers;
+    window.bills = bills;
+    window.curUserBillIds = curUserBillIds;
+    window.curUser = curUser;
 
     if (!curUserBillIds || !bills) {
       return null
     }
-
-
 
     return (
       <div className='recent-activity-main-container'>
@@ -42,7 +44,7 @@ class AllExpenses extends React.Component {
                   <BillShow 
                     bills={bills}
                     allUsers={allUsers}
-                   curUserBillIds={curUserBillIds}
+                    // curUserBillIds={curUserBillIds}
                     billId={billId}
                     openModal = {openModal}
                   />
