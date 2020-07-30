@@ -5,13 +5,13 @@ import React from 'react';
 class BillPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      description: 'Enter a Description',
-      author_payor: true,
-      cost: '',
-      recipient_id: '',
-      group_id: ''
-    };
+      this.state = {
+        description: 'Enter a Description',
+        author_payor: true,
+        cost: '',
+        recipient_id: '',
+        group_id: ''
+      };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.toggleBoolean = this.toggleBoolean.bind(this);

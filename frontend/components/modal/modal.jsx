@@ -1,5 +1,6 @@
 import React from 'react';
 import BillPage from '../bill/bill_modal_container'
+import EditBillPage from '../edit_bil_modal/edit_bill_modal_container'
 
 function Modal({modal, closeModal}) {
   if (!modal) {
@@ -9,8 +10,8 @@ function Modal({modal, closeModal}) {
   switch (modal) {
     case 'bill':
       currentModalComponent = <BillPage />;
-    // case 'editBill':
-    //   currentModalComponent = <EditBillPage />;
+    case 'editBill':
+      currentModalComponent = <EditBillPage />;
       break;
     default:
       return null;

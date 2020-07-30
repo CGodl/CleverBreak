@@ -1,20 +1,25 @@
 import React from 'react';
+import openModal from '../../actions/modal_actions';
+import billModal from '../bill/bill_modal_container';
 
 class BillShow extends React.Component {
   constructor(props) {
     super(props)
     this.state = { isButtonActive: false }
     this.toggleBillDisplay = this.toggleBillDisplay.bind(this)
+    this.openTheModal = this.openTheModal.bind(this);
   }
 
   toggleBillDisplay() {
     this.setState({isButtonActive: !this.state.isButtonActive})
   };
 
+  openTheModal() {
+    this.props.openModal('editBill')
+  }
+
   render () {
-    const { bills, deleteBill, allUsers, curUserBillIds, billId } = this.props;
-
-
+    const { bills, openModal, deleteBill, allUsers, billId } = this.props;
 
     return (
       <div className='all-bill-show-container'>
@@ -32,8 +37,8 @@ class BillShow extends React.Component {
             Added by {allUsers[bills[billId].author_id].name} on {bills[billId].created_at}
             <br/>
             Last updated on {bills[billId].updated_at}
-            <button onClick={() => deleteBill(billId)}>X</button>
-          </div>
+            <button onClick={this.openTheModal}>Edit</button>
+          </div> 
         </div>
       </div>
     )

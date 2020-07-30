@@ -19,6 +19,8 @@ const mDTP = (dispatch) => {
   return {
     closeModal: () => dispatch(closeModal()),
     addBill: (bill) => dispatch(addBill(bill)),
+    updateBill: (billId) => dispatch(updateBill(billId))
+
     // requestFriends: (friends) => dispatch(requestFriends(friends))
   };
 };
