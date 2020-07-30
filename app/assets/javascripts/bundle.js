@@ -706,57 +706,6 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-// import React from 'react';
-// import BillShow from './all_bill_show'
-// class AllExpenses extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = { isButtonActive: false }
-//     // this.toggleBillDisplay = this.toggleBillDisplay.bind(this)
-//     this.openTheModal = this.openTheModal.bind(this);
-//   }
-//   componentWillMount() {
-//     this.props.requestBills();
-//     this.props.receiveAllUsers();
-//   }
-//   // toggleBillDisplay() {
-//   //   this.setState({isButtonActive: !this.state.isButtonActive})
-//   // };
-//   openTheModal() {
-//     this.props.openModal('editBill')
-//   }
-//   render () {
-//     const { allUsers, bills, curUserBillIds, openModal } = this.props; 
-//     window.allUsers = allUsers;
-//     window.bills = bills;
-//     window.curUserBillIds = curUserBillIds;
-//     window.curUser = curUser;
-//     if (!curUserBillIds || !bills) {
-//       return null
-//     }
-//     return (
-//       <div className='recent-activity-main-container'>
-//         <ul>
-//             {
-//               curUserBillIds.map(billId => (
-//                 <li key={ billId }>
-//                   <BillShow 
-//                     bills={bills}
-//                     allUsers={allUsers}
-//                     // curUserBillIds={curUserBillIds}
-//                     billId={billId}
-//                     openModal = {openModal}
-//                   />
-//                   <button onClick={() => this.props.deleteBill(billId)}>X</button>
-//                 </li>
-//               ))
-//             }
-//         </ul>
-//       </div>
-//     )
-//   }
-// };
-// export default AllExpenses;
 
 
 
@@ -805,12 +754,13 @@ var AllExpenses = /*#__PURE__*/function (_React$Component) {
       var _this$props = this.props,
           allUsers = _this$props.allUsers,
           bills = _this$props.bills,
-          curUserBillIds = _this$props.curUserBillIds;
+          curUserBillIds = _this$props.curUserBillIds,
+          openModal = _this$props.openModal;
       window.allUsers = allUsers;
       window.bills = bills;
-      window.curUserbillIds = curUserBillIds;
+      window.curUserBillIds = curUserBillIds;
 
-      if (!curUserbillIds || !bills) {
+      if (!curUserBillIds || !bills) {
         return null;
       }
 
@@ -821,10 +771,10 @@ var AllExpenses = /*#__PURE__*/function (_React$Component) {
           key: billId
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_all_bill_show__WEBPACK_IMPORTED_MODULE_1__["default"], {
           bills: bills,
-          allUsers: allUsers // curUserBillIds={curUserBillIds}
-          ,
-          billId: billId // openModal = {openModal}
-
+          allUsers: allUsers,
+          curUserBillIds: curUserBillIds,
+          billId: billId,
+          openModal: openModal
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: function onClick() {
             return _this2.props.deleteBill(billId);
@@ -858,38 +808,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_bill_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/bill_actions */ "./frontend/actions/bill_actions.js");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
 /* harmony import */ var _actions_friend_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/friend_actions */ "./frontend/actions/friend_actions.js");
-// import React from 'react';
-// import AllExpenses from './all_expenses';
-// import { connect } from 'react-redux';
-// import { requestBill, requestBills, deleteBill } from "../../actions/bill_actions";
-// import { receiveAllUsers } from '../../actions/session_actions';
-// import { requestFriends } from "../../actions/friend_actions";
-// import { openModal } from '../../actions/modal_actions';
-// const mSTP = state => {
-//   // debugger
-//   const curUser = state.entities.users[state.session.id];
-//   // debugger
-//   const curUserBillIds = curUser.billIds;
-//   const bills = state.entities.bills;
-//   const allUsers = state.entities.users;
-//   return {
-//     curUserBillIds,
-//     bills,
-//     allUsers,
-//     curUser
-//   }
-// }
-// const mDTP = dispatch => {
-//   return {
-//     requestBills: () => dispatch(requestBills()),
-//     updateBill: (bill) => dispatch(updateBill(bill)),
-//     deleteBill: (bill) => dispatch(deleteBill(bill)),
-//     receiveAllUsers: () => dispatch(receiveAllUsers()),
-//     requestFriends: () => dispatch(requestFriends()),
-//     openModal: (modal) => dispatch(openModal(modal))
-//   }
-// }
-// export default connect(mSTP, mDTP)(AllExpenses);
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+
 
 
 
@@ -898,7 +818,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state) {
-  var curUser = state.entities.users[state.session.id];
+  // debugger
+  var curUser = state.entities.users[state.session.id]; // debugger
+
   var curUserBillIds = curUser.billIds;
   var bills = state.entities.bills;
   var allUsers = state.entities.users;
@@ -936,6 +858,9 @@ var mDTP = function mDTP(dispatch) {
     },
     requestFriends: function requestFriends() {
       return dispatch(Object(_actions_friend_actions__WEBPACK_IMPORTED_MODULE_5__["requestFriends"])());
+    },
+    openModal: function openModal(modal) {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_6__["openModal"])(modal));
     }
   };
 };
