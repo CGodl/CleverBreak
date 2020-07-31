@@ -16,10 +16,11 @@ class BillShow extends React.Component {
 
   openTheModal() {
     this.props.openModal('editBill')
+
   }
 
   render () {
-    const { bills, openModal, deleteBill, allUsers, billId } = this.props;
+    const { bills, openModal, deleteBill, allUsers, fetchBill, billId } = this.props;
 
     return (
       <div className='all-bill-show-container'>

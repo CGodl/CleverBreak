@@ -28,6 +28,7 @@ const mSTP = state => {
 const mDTP = dispatch => {
 
   return {
+    requestBill: () => dispatch(requestBill()),
     requestBills: () => dispatch(requestBills()),
     updateBill: (bill) => dispatch(updateBill(bill)),
     deleteBill: (bill) => dispatch(deleteBill(bill)),

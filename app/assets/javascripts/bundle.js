@@ -650,6 +650,7 @@ var BillShow = /*#__PURE__*/function (_React$Component) {
           openModal = _this$props.openModal,
           deleteBill = _this$props.deleteBill,
           allUsers = _this$props.allUsers,
+          fetchBill = _this$props.fetchBill,
           billId = _this$props.billId;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "all-bill-show-container"
@@ -755,6 +756,7 @@ var AllExpenses = /*#__PURE__*/function (_React$Component) {
           allUsers = _this$props.allUsers,
           bills = _this$props.bills,
           curUserBillIds = _this$props.curUserBillIds,
+          requestBill = _this$props.requestBill,
           openModal = _this$props.openModal;
 
       if (!curUserBillIds || !bills) {
@@ -771,7 +773,8 @@ var AllExpenses = /*#__PURE__*/function (_React$Component) {
           allUsers: allUsers,
           curUserBillIds: curUserBillIds,
           billId: billId,
-          openModal: openModal
+          openModal: openModal,
+          requestBill: requestBill
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: function onClick() {
             return _this2.props.deleteBill(billId);
@@ -831,6 +834,9 @@ var mSTP = function mSTP(state) {
 
 var mDTP = function mDTP(dispatch) {
   return {
+    requestBill: function requestBill() {
+      return dispatch(Object(_actions_bill_actions__WEBPACK_IMPORTED_MODULE_3__["requestBill"])());
+    },
     requestBills: function requestBills() {
       return dispatch(Object(_actions_bill_actions__WEBPACK_IMPORTED_MODULE_3__["requestBills"])());
     },
@@ -1354,7 +1360,7 @@ var EditBillPage = /*#__PURE__*/function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       var bill = Object.assign({}, this.state);
-      this.props.addBill(bill).then(this.props.closeModal);
+      this.props.updateBill(billId).then(this.props.closeModal);
     }
   }, {
     key: "toggleBoolean",
@@ -1383,7 +1389,9 @@ var EditBillPage = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this$props = this.props,
           friends = _this$props.friends,
-          closeModal = _this$props.closeModal;
+          closeModal = _this$props.closeModal,
+          billId = _this$props.billId;
+      console.log(billId);
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "bill-modal-container",
         onSubmit: this.handleSubmit
@@ -1442,7 +1450,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var mSTP = function mSTP(state) {
+var mSTP = function mSTP(state, ownProps) {
+  console.log('test');
+  console.log(state);
   return {
     friends: state.entities.friends // currentBill: state.entities.c
 

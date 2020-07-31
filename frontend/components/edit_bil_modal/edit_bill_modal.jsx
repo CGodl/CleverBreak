@@ -5,7 +5,7 @@ import React from 'react';
 class EditBillPage extends React.Component {
   constructor(props) {
     super(props);
-
+  
       this.state = {
         description: 'Wrong One for Dashboard',
         author_payor: true,
@@ -29,7 +29,7 @@ class EditBillPage extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const bill = Object.assign({}, this.state);
-    this.props.addBill(bill).then(this.props.closeModal);
+    this.props.updateBill(billId).then(this.props.closeModal);
   };
 
   toggleBoolean(e) {
@@ -48,7 +48,8 @@ class EditBillPage extends React.Component {
   }
 
   render () {
-    const { friends, closeModal } = this.props;
+    const { friends, closeModal, billId } = this.props;
+    console.log(billId)
  
    
       return (

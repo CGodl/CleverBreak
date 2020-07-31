@@ -20,6 +20,7 @@ const receiveBills = bills => {
   };
 }
 
+
 const removeBill = billId => {
 
   return {

@@ -24,7 +24,7 @@ class AllExpenses extends React.Component {
   };
   
   render () {
-    const { allUsers, bills, curUserBillIds, openModal } = this.props; 
+    const { allUsers, bills, curUserBillIds, requestBill, openModal } = this.props; 
 
 
     if (!curUserBillIds || !bills) {
@@ -45,6 +45,7 @@ class AllExpenses extends React.Component {
                    curUserBillIds={curUserBillIds}
                     billId={billId}
                     openModal = {openModal}
+                    requestBill = {requestBill}
                   />
                   <button onClick={() => this.props.deleteBill(billId)}>X</button>
                 </li>

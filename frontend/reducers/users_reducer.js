@@ -10,7 +10,6 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_ALL_USERS:
       return action.users
     case REMOVE_BILL:
-      
       const newState = Object.assign({}, state);
       for (const userId in newState) {
         if (newState.hasOwnProperty(userId)) {
