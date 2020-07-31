@@ -10,6 +10,7 @@ function Modal({modal, closeModal}) {
   switch (modal) {
     case 'bill':
       currentModalComponent = <BillPage />;
+      break;
     case 'editBill':
       currentModalComponent = <EditBillPage />;
       break;

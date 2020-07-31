@@ -1106,21 +1106,7 @@ var mDTP = function mDTP(dispatch) {
     },
     addBill: function addBill(bill) {
       return dispatch(Object(_actions_bill_actions__WEBPACK_IMPORTED_MODULE_5__["addBill"])(bill));
-    },
-    updateBill: function (_updateBill) {
-      function updateBill(_x) {
-        return _updateBill.apply(this, arguments);
-      }
-
-      updateBill.toString = function () {
-        return _updateBill.toString();
-      };
-
-      return updateBill;
-    }(function (billId) {
-      return dispatch(updateBill(billId));
-    }) // requestFriends: (friends) => dispatch(requestFriends(friends))
-
+    }
   };
 };
 
@@ -1849,6 +1835,7 @@ function Modal(_ref) {
   switch (modal) {
     case 'bill':
       currentModalComponent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_bill_bill_modal_container__WEBPACK_IMPORTED_MODULE_1__["default"], null);
+      break;
 
     case 'editBill':
       currentModalComponent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_edit_bil_modal_edit_bill_modal_container__WEBPACK_IMPORTED_MODULE_2__["default"], null);
