@@ -1,4 +1,6 @@
 import React from 'react';
+import { billId } from '../all_expenses/all_bill_show';
+
 
 
 
@@ -48,8 +50,7 @@ class EditBillPage extends React.Component {
   }
 
   render () {
-    const { friends, closeModal, billId } = this.props;
-    console.log(billId)
+    const { friends, closeModal} = this.props;
  
    
       return (

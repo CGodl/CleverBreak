@@ -35,6 +35,12 @@ export const addBill = bill => dispatch => {
     .then(bill => dispatch(receiveBill(bill)))
 }
 
+export const fetchBill = billId => dispatch => {
+
+  return billApiUtil.receiveBill(billId)
+    .then((bill) => dispatch(receiveBill(bill)))
+}
+
 export const requestBills = () => dispatch => {
 
   return billApiUtil.fetchAllBills()

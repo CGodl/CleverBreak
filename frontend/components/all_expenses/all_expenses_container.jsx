@@ -1,7 +1,7 @@
 import React from 'react';
 import AllExpenses from './all_expenses';
 import { connect } from 'react-redux';
-import { requestBill, requestBills, deleteBill } from "../../actions/bill_actions";
+import { fetchBill, requestBills, deleteBill } from "../../actions/bill_actions";
 import { receiveAllUsers } from '../../actions/session_actions';
 import { requestFriends } from "../../actions/friend_actions";
 import { openModal } from '../../actions/modal_actions';
@@ -28,7 +28,7 @@ const mSTP = state => {
 const mDTP = dispatch => {
 
   return {
-    requestBill: () => dispatch(requestBill()),
+    fetchBill: (billId) => dispatch(fetchBill(billId)),
     requestBills: () => dispatch(requestBills()),
     updateBill: (bill) => dispatch(updateBill(bill)),
     deleteBill: (bill) => dispatch(deleteBill(bill)),

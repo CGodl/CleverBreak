@@ -90,7 +90,7 @@
 /*!******************************************!*\
   !*** ./frontend/actions/bill_actions.js ***!
   \******************************************/
-/*! exports provided: RECEIVE_BILL, RECEIVE_ALL_BILLS, REMOVE_BILL, addBill, requestBills, updateBill, deleteBill */
+/*! exports provided: RECEIVE_BILL, RECEIVE_ALL_BILLS, REMOVE_BILL, addBill, fetchBill, requestBills, updateBill, deleteBill */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -99,6 +99,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ALL_BILLS", function() { return RECEIVE_ALL_BILLS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_BILL", function() { return REMOVE_BILL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addBill", function() { return addBill; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchBill", function() { return fetchBill; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "requestBills", function() { return requestBills; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateBill", function() { return updateBill; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteBill", function() { return deleteBill; });
@@ -132,6 +133,13 @@ var removeBill = function removeBill(billId) {
 var addBill = function addBill(bill) {
   return function (dispatch) {
     return _util_bill_api_util__WEBPACK_IMPORTED_MODULE_0__["createBill"](bill).then(function (bill) {
+      return dispatch(receiveBill(bill));
+    });
+  };
+};
+var fetchBill = function fetchBill(billId) {
+  return function (dispatch) {
+    return _util_bill_api_util__WEBPACK_IMPORTED_MODULE_0__["receiveBill"](billId).then(function (bill) {
       return dispatch(receiveBill(bill));
     });
   };
@@ -252,10 +260,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "closeModal", function() { return closeModal; });
 var OPEN_MODAL = 'OPEN_MODAL';
 var CLOSE_MODAL = 'CLOSE_MODAL';
-var openModal = function openModal(modal) {
+var openModal = function openModal(modal, billInfo) {
   return {
     type: OPEN_MODAL,
-    modal: modal
+    modal: modal,
+    billInfo: billInfo
   };
 };
 var closeModal = function closeModal() {
@@ -585,6 +594,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
 /* harmony import */ var _bill_bill_modal_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../bill/bill_modal_container */ "./frontend/components/bill/bill_modal_container.jsx");
+/* harmony import */ var _actions_bill_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/bill_actions */ "./frontend/actions/bill_actions.js");
+/* harmony import */ var _modal_modal_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../modal/modal_container */ "./frontend/components/modal/modal_container.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -606,6 +617,8 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
 
 
 
@@ -647,9 +660,8 @@ var BillShow = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this$props = this.props,
           bills = _this$props.bills,
-          openModal = _this$props.openModal,
-          deleteBill = _this$props.deleteBill,
           allUsers = _this$props.allUsers,
+          openModal = _this$props.openModal,
           fetchBill = _this$props.fetchBill,
           billId = _this$props.billId;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -773,8 +785,7 @@ var AllExpenses = /*#__PURE__*/function (_React$Component) {
           allUsers: allUsers,
           curUserBillIds: curUserBillIds,
           billId: billId,
-          openModal: openModal,
-          requestBill: requestBill
+          openModal: openModal
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: function onClick() {
             return _this2.props.deleteBill(billId);
@@ -834,8 +845,8 @@ var mSTP = function mSTP(state) {
 
 var mDTP = function mDTP(dispatch) {
   return {
-    requestBill: function requestBill() {
-      return dispatch(Object(_actions_bill_actions__WEBPACK_IMPORTED_MODULE_3__["requestBill"])());
+    fetchBill: function fetchBill(billId) {
+      return dispatch(Object(_actions_bill_actions__WEBPACK_IMPORTED_MODULE_3__["fetchBill"])(billId));
     },
     requestBills: function requestBills() {
       return dispatch(Object(_actions_bill_actions__WEBPACK_IMPORTED_MODULE_3__["requestBills"])());
@@ -1009,7 +1020,6 @@ var BillPage = /*#__PURE__*/function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       var bill = Object.assign({}, this.state);
-      console.log(bill);
       this.props.addBill(bill).then(this.props.closeModal);
     }
   }, {
@@ -1022,14 +1032,12 @@ var BillPage = /*#__PURE__*/function (_React$Component) {
           this.setState({
             author_payor: false
           });
-          console.log(this.state.author_payor);
           break;
 
         case false:
           this.setState({
             author_payor: true
           });
-          console.log(this.state.author_payor);
           break;
 
         default:
@@ -1165,8 +1173,8 @@ var mDTP = function mDTP(dispatch) {
     requestBills: function requestBills() {
       return dispatch(Object(_actions_bill_actions__WEBPACK_IMPORTED_MODULE_5__["requestBills"])());
     },
-    openModal: function openModal(modal) {
-      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_6__["openModal"])(modal));
+    openModal: function openModal(modal, billInfo) {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_6__["openModal"])(modal, billInfo));
     }
   };
 };
@@ -1247,7 +1255,7 @@ var Dashboard = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "openTheModal",
     value: function openTheModal() {
-      this.props.openModal('bill');
+      this.props.openModal('bill', null);
     }
   }, {
     key: "render",
@@ -1297,6 +1305,7 @@ var Dashboard = /*#__PURE__*/function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _all_expenses_all_bill_show__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../all_expenses/all_bill_show */ "./frontend/components/all_expenses/all_bill_show.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -1320,6 +1329,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
 
 
 
@@ -1360,7 +1370,7 @@ var EditBillPage = /*#__PURE__*/function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       var bill = Object.assign({}, this.state);
-      this.props.updateBill(billId).then(this.props.closeModal);
+      this.props.updateBill(_all_expenses_all_bill_show__WEBPACK_IMPORTED_MODULE_1__["billId"]).then(this.props.closeModal);
     }
   }, {
     key: "toggleBoolean",
@@ -1389,9 +1399,7 @@ var EditBillPage = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this$props = this.props,
           friends = _this$props.friends,
-          closeModal = _this$props.closeModal,
-          billId = _this$props.billId;
-      console.log(billId);
+          closeModal = _this$props.closeModal;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "bill-modal-container",
         onSubmit: this.handleSubmit
@@ -1451,8 +1459,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state, ownProps) {
-  console.log('test');
-  console.log(state);
   return {
     friends: state.entities.friends // currentBill: state.entities.c
 
@@ -1464,13 +1470,9 @@ var mDTP = function mDTP(dispatch) {
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__["closeModal"])());
     },
-    addBill: function addBill(bill) {
-      return dispatch(Object(_actions_bill_actions__WEBPACK_IMPORTED_MODULE_5__["addBill"])(bill));
-    },
     updateBill: function updateBill(billId) {
       return dispatch(Object(_util_bill_api_util__WEBPACK_IMPORTED_MODULE_6__["updateBill"])(billId));
-    } // requestFriends: (friends) => dispatch(requestFriends(friends))
-
+    }
   };
 };
 
@@ -1834,7 +1836,8 @@ __webpack_require__.r(__webpack_exports__);
 
 function Modal(_ref) {
   var modal = _ref.modal,
-      closeModal = _ref.closeModal;
+      closeModal = _ref.closeModal,
+      billInfo = _ref.billInfo;
 
   if (!modal) {
     return null;
@@ -1848,7 +1851,9 @@ function Modal(_ref) {
       break;
 
     case 'editBill':
-      currentModalComponent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_edit_bil_modal_edit_bill_modal_container__WEBPACK_IMPORTED_MODULE_2__["default"], null);
+      currentModalComponent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_edit_bil_modal_edit_bill_modal_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        billInfo: billInfo
+      });
       break;
 
     default:
@@ -1888,7 +1893,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    modal: state.ui.modal
+    modal: state.ui.modal,
+    billInfo: state.ui.billInfo
   };
 };
 
@@ -2423,6 +2429,36 @@ var mDTP = function mDTP(dispatch, ownProps) {
 
 /***/ }),
 
+/***/ "./frontend/reducers/billInfo_reducer.js":
+/*!***********************************************!*\
+  !*** ./frontend/reducers/billInfo_reducer.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return billInfoReducer; });
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+
+function billInfoReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case _actions_modal_actions__WEBPACK_IMPORTED_MODULE_0__["OPEN_MODAL"]:
+      return action.billInfo;
+
+    case _actions_modal_actions__WEBPACK_IMPORTED_MODULE_0__["CLOSE_MODAL"]:
+      return null;
+
+    default:
+      return state;
+  }
+}
+
+/***/ }),
+
 /***/ "./frontend/reducers/bills_reducer.js":
 /*!********************************************!*\
   !*** ./frontend/reducers/bills_reducer.js ***!
@@ -2693,10 +2729,13 @@ var sessionReducer = function sessionReducer() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _modal_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modal_reducer */ "./frontend/reducers/modal_reducer.js");
+/* harmony import */ var _billInfo_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./billInfo_reducer */ "./frontend/reducers/billInfo_reducer.js");
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  modal: _modal_reducer__WEBPACK_IMPORTED_MODULE_1__["default"]
+  modal: _modal_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
+  billInfo: _billInfo_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
 }));
 
 /***/ }),
@@ -2810,7 +2849,7 @@ var destroyBill = function destroyBill(billId) {
   });
 };
 var updateBill = function updateBill(bill) {
-  return $, ajax({
+  return $.ajax({
     type: 'PATCH',
     url: "/api/bills/".concat(bill.id),
     data: {

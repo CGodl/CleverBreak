@@ -11,8 +11,6 @@ import { updateBill } from '../../util/bill_api_util';
 
 
 const mSTP = (state, ownProps) => {
-  console.log('test')
-  console.log(state)
   return {
     friends: state.entities.friends,
     // currentBill: state.entities.c
@@ -22,9 +20,7 @@ const mSTP = (state, ownProps) => {
 const mDTP = (dispatch) => {
   return {
     closeModal: () => dispatch(closeModal()),
-    addBill: (bill) => dispatch(addBill(bill)),
     updateBill: (billId) => dispatch(updateBill(billId))
-    // requestFriends: (friends) => dispatch(requestFriends(friends))
   };
 };
 

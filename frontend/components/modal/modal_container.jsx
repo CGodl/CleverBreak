@@ -5,7 +5,8 @@ import Modal from './modal';
 
 const mapStateToProps = state => {
   return {
-    modal: state.ui.modal
+    modal: state.ui.modal,
+    billInfo: state.ui.billInfo
   }
 }
 

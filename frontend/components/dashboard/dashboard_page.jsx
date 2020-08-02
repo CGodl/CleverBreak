@@ -22,7 +22,7 @@ class Dashboard extends React.Component {
   }
 
   openTheModal() {
-    this.props.openModal('bill')
+    this.props.openModal('bill', null)
   }
 
   render () {

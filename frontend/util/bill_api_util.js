@@ -19,7 +19,7 @@ export const destroyBill = (billId) => {
 
 export const updateBill = (bill) => {
 
-  return $,ajax({
+  return $.ajax({
     type: 'PATCH',
     url: `/api/bills/${bill.id}`,
     data: { bill }

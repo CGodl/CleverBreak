@@ -20,6 +20,7 @@ class AllExpenses extends React.Component {
   };
 
   openTheModal() {
+    
     this.props.openModal('editBill')
   };
   
@@ -45,7 +46,7 @@ class AllExpenses extends React.Component {
                    curUserBillIds={curUserBillIds}
                     billId={billId}
                     openModal = {openModal}
-                    requestBill = {requestBill}
+          
                   />
                   <button onClick={() => this.props.deleteBill(billId)}>X</button>
                 </li>

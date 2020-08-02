@@ -28,7 +28,6 @@ class BillPage extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const bill = Object.assign({}, this.state);
-    console.log(bill);
     this.props.addBill(bill).then(this.props.closeModal);
   };
 
@@ -38,11 +37,9 @@ class BillPage extends React.Component {
     switch (this.state.author_payor) {
       case true:
         this.setState({author_payor: false})
-        console.log(this.state.author_payor);
         break;
       case false:
         this.setState({author_payor: true})
-        console.log(this.state.author_payor)
         break;
       default:
         break;

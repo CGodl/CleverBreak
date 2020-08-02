@@ -1,6 +1,8 @@
 import React from 'react';
 import openModal from '../../actions/modal_actions';
 import billModal from '../bill/bill_modal_container';
+import fetchBill from '../../actions/bill_actions';
+import Modal from '../modal/modal_container'
 
 class BillShow extends React.Component {
   constructor(props) {
@@ -15,12 +17,14 @@ class BillShow extends React.Component {
   };
 
   openTheModal() {
-    this.props.openModal('editBill')
+    
+    this.props.openModal('editBill');
 
   }
 
   render () {
-    const { bills, openModal, deleteBill, allUsers, fetchBill, billId } = this.props;
+    const { bills, allUsers, openModal, fetchBill, billId } = this.props;
+ 
 
     return (
       <div className='all-bill-show-container'>
