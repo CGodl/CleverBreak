@@ -58,7 +58,7 @@ class Api::BillsController < ApplicationController
   end
 
 
-  def update
+  def patch
     @bill = Bill.find(params[:id])
 
     if (current_user.id === @bill.author_id || current_user.id === @bill.recipient_id ) && @bill.update(bill_params)

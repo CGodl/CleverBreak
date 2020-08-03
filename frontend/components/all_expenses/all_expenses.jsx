@@ -25,7 +25,7 @@ class AllExpenses extends React.Component {
   };
   
   render () {
-    const { allUsers, bills, curUserBillIds, requestBill, openModal } = this.props; 
+    const { allUsers, bills, friends, curUserBillIds, requestBill, openModal } = this.props; 
 
 
     if (!curUserBillIds || !bills) {
@@ -41,11 +41,12 @@ class AllExpenses extends React.Component {
               curUserBillIds.map(billId => ( 
                 <li key={ billId }>
                   <BillShow 
-                    bills={bills}
                     allUsers={allUsers}
-                   curUserBillIds={curUserBillIds}
+                    bills={bills}
                     billId={billId}
+                    curUserBillIds={curUserBillIds}
                     openModal = {openModal}
+                    friends = {friends}
           
                   />
                   <button onClick={() => this.props.deleteBill(billId)}>X</button>

@@ -12,16 +12,18 @@ const mSTP = state => {
   const curUser = state.entities.users[state.session.id];
   // debugger
   const curUserBillIds = curUser.billIds;
+  const friends = state.entities.friends
   
   const bills = state.entities.bills;
   const allUsers = state.entities.users;
+  // const friends = state.entities.
 
   
   return {
-    curUserBillIds,
-    bills,
     allUsers,
-    curUser
+    bills,
+    curUser,
+    curUserBillIds
   }
 }
 

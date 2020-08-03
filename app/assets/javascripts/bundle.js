@@ -771,6 +771,7 @@ var AllExpenses = /*#__PURE__*/function (_React$Component) {
       var _this$props = this.props,
           allUsers = _this$props.allUsers,
           bills = _this$props.bills,
+          friends = _this$props.friends,
           curUserBillIds = _this$props.curUserBillIds,
           requestBill = _this$props.requestBill,
           openModal = _this$props.openModal;
@@ -785,11 +786,12 @@ var AllExpenses = /*#__PURE__*/function (_React$Component) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: billId
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_all_bill_show__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          bills: bills,
           allUsers: allUsers,
-          curUserBillIds: curUserBillIds,
+          bills: bills,
           billId: billId,
-          openModal: openModal
+          curUserBillIds: curUserBillIds,
+          openModal: openModal,
+          friends: friends
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: function onClick() {
             return _this2.props.deleteBill(billId);
@@ -837,13 +839,15 @@ var mSTP = function mSTP(state) {
   var curUser = state.entities.users[state.session.id]; // debugger
 
   var curUserBillIds = curUser.billIds;
+  var friends = state.entities.friends;
   var bills = state.entities.bills;
-  var allUsers = state.entities.users;
+  var allUsers = state.entities.users; // const friends = state.entities.
+
   return {
-    curUserBillIds: curUserBillIds,
-    bills: bills,
     allUsers: allUsers,
-    curUser: curUser
+    bills: bills,
+    curUser: curUser,
+    curUserBillIds: curUserBillIds
   };
 };
 
@@ -1350,7 +1354,7 @@ var EditBillPage = /*#__PURE__*/function (_React$Component) {
       description: _this.props.bills[_this.props.billInfo].description,
       author_payor: _this.props.bills[_this.props.billInfo].author_payor,
       cost: _this.props.bills[_this.props.billInfo].cost,
-      recipient_id: _this.props.bills[_this.props.billInfo].recipient_id,
+      recipient_id: _this.props.bills[_this.props.billInfo].recepient_id,
       group_id: _this.props.bills[_this.props.billInfo].group_id
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
@@ -1371,8 +1375,7 @@ var EditBillPage = /*#__PURE__*/function (_React$Component) {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
-      var bill = Object.assign({}, this.state);
-      this.props.updateBill(billId).then(this.props.closeModal);
+      this.props.updateBill(this.props.billInfo).then(this.props.closeModal);
     }
   }, {
     key: "toggleBoolean",
@@ -1403,7 +1406,11 @@ var EditBillPage = /*#__PURE__*/function (_React$Component) {
           friends = _this$props.friends,
           closeModal = _this$props.closeModal,
           billInfo = _this$props.billInfo;
-      console.log(billInfo);
+
+      if (!friends || !billInfo) {
+        return null;
+      }
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "bill-modal-container",
         onSubmit: this.handleSubmit

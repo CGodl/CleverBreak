@@ -9,7 +9,7 @@ class EditBillPage extends React.Component {
         description: this.props.bills[this.props.billInfo].description,
         author_payor: this.props.bills[this.props.billInfo].author_payor,
         cost: this.props.bills[this.props.billInfo].cost,
-        recipient_id: this.props.bills[this.props.billInfo].recipient_id,
+        recipient_id: this.props.bills[this.props.billInfo].recepient_id,
         group_id: this.props.bills[this.props.billInfo].group_id
       };
 
@@ -27,8 +27,7 @@ class EditBillPage extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const bill = Object.assign({}, this.state);
-    this.props.updateBill(billId).then(this.props.closeModal);
+    this.props.updateBill(this.props.billInfo).then(this.props.closeModal);
   };
 
   toggleBoolean(e) {
@@ -48,9 +47,11 @@ class EditBillPage extends React.Component {
 
   render () {
     const { friends, closeModal, billInfo} = this.props;
-    console.log(billInfo)
- 
-   
+    
+    if (!friends || !billInfo) {
+      return null;
+    }
+     
       return (
         <form className='bill-modal-container' onSubmit={this.handleSubmit}>
           <p>Add an expense</p>
@@ -79,7 +80,7 @@ class EditBillPage extends React.Component {
           {/* <label>Enter a group, if any:
             <input 
               type='text'
-              value={this.state.group_id}
+              value={this.state.group_id}.
               onChange={this.update('group_id')}
               />
           </label> */}

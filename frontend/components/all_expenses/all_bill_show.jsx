@@ -23,6 +23,8 @@ class BillShow extends React.Component {
 
   render () {
     const { bills, allUsers, openModal, fetchBill, billId } = this.props;
+
+    
  
 
     return (
