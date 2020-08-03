@@ -10,10 +10,10 @@ import { updateBill } from '../../util/bill_api_util';
 
 
 
-const mSTP = (state, ownProps) => {
+const mSTP = (state) => {
   return {
     friends: state.entities.friends,
-    // currentBill: state.entities.c
+    bills: state.entities.bills
   }
 }
 

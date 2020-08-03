@@ -34,7 +34,7 @@ const mDTP = dispatch => {
     deleteBill: (bill) => dispatch(deleteBill(bill)),
     receiveAllUsers: () => dispatch(receiveAllUsers()),
     requestFriends: () => dispatch(requestFriends()),
-    openModal: (modal) => dispatch(openModal(modal))
+    openModal: (modal, billInfo) => dispatch(openModal(modal, billInfo))
   }
 }
 

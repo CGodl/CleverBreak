@@ -1,7 +1,4 @@
 import React from 'react';
-import { billId } from '../all_expenses/all_bill_show';
-
-
 
 
 class EditBillPage extends React.Component {
@@ -9,11 +6,11 @@ class EditBillPage extends React.Component {
     super(props);
   
       this.state = {
-        description: 'Wrong One for Dashboard',
-        author_payor: true,
-        cost: '',
-        recipient_id: '',
-        group_id: ''
+        description: this.props.bills[this.props.billInfo].description,
+        author_payor: this.props.bills[this.props.billInfo].author_payor,
+        cost: this.props.bills[this.props.billInfo].cost,
+        recipient_id: this.props.bills[this.props.billInfo].recipient_id,
+        group_id: this.props.bills[this.props.billInfo].group_id
       };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -50,7 +47,8 @@ class EditBillPage extends React.Component {
   }
 
   render () {
-    const { friends, closeModal} = this.props;
+    const { friends, closeModal, billInfo} = this.props;
+    console.log(billInfo)
  
    
       return (

@@ -16,10 +16,9 @@ class BillShow extends React.Component {
     this.setState({isButtonActive: !this.state.isButtonActive})
   };
 
-  openTheModal() {
-    
-    this.props.openModal('editBill');
-
+  openTheModal(theBill) {
+  
+    this.props.openModal('editBill', theBill);
   }
 
   render () {
@@ -42,7 +41,7 @@ class BillShow extends React.Component {
             Added by {allUsers[bills[billId].author_id].name} on {bills[billId].created_at}
             <br/>
             Last updated on {bills[billId].updated_at}
-            <button onClick={this.openTheModal}>Edit</button>
+            <button onClick={() => this.openTheModal(billId)}>Edit</button>
           </div> 
         </div>
       </div>
