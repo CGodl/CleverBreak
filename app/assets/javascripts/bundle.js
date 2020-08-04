@@ -151,9 +151,10 @@ var requestBills = function requestBills() {
     });
   };
 };
-var updateBill = function updateBill(bill) {
+var updateBill = function updateBill(bill, id) {
   return function (dispatch) {
-    return _util_bill_api_util__WEBPACK_IMPORTED_MODULE_0__["updateBill"](bill).then(function (bill) {
+    debugger;
+    return _util_bill_api_util__WEBPACK_IMPORTED_MODULE_0__["updateBill"](bill, id).then(function (bill) {
       return dispatch(receiveBill(bill));
     });
   };
@@ -398,6 +399,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
  //////debugger;
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -428,6 +430,7 @@ document.addEventListener('DOMContentLoaded', function () {
   window.getFriends = _util_friend_api_util__WEBPACK_IMPORTED_MODULE_4__["getFriends"];
   window.fetchAllBills = _util_bill_api_util__WEBPACK_IMPORTED_MODULE_5__["fetchAllBills"];
   window.fetchAllUsers = _util_session_api_util__WEBPACK_IMPORTED_MODULE_6__["fetchAllUsers"];
+  window.updateBill = _util_bill_api_util__WEBPACK_IMPORTED_MODULE_5__["updateBill"];
   var root = document.getElementById('root');
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_2__["default"], {
     store: store
@@ -750,6 +753,7 @@ var AllExpenses = /*#__PURE__*/function (_React$Component) {
     value: function componentWillMount() {
       this.props.requestBills();
       this.props.receiveAllUsers();
+      this.props.requestFriends();
     }
   }, {
     key: "toggleBillDisplay",
@@ -836,10 +840,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mSTP = function mSTP(state) {
   // debugger
-  var curUser = state.entities.users[state.session.id]; // debugger
-
+  var curUser = state.entities.users[state.session.id];
   var curUserBillIds = curUser.billIds;
-  var friends = state.entities.friends;
   var bills = state.entities.bills;
   var allUsers = state.entities.users; // const friends = state.entities.
 
@@ -1349,14 +1351,15 @@ var EditBillPage = /*#__PURE__*/function (_React$Component) {
 
     _classCallCheck(this, EditBillPage);
 
-    _this = _super.call(this, props);
-    _this.state = {
-      description: _this.props.bills[_this.props.billInfo].description,
-      author_payor: _this.props.bills[_this.props.billInfo].author_payor,
-      cost: _this.props.bills[_this.props.billInfo].cost,
-      recipient_id: _this.props.bills[_this.props.billInfo].recepient_id,
-      group_id: _this.props.bills[_this.props.billInfo].group_id
-    };
+    _this = _super.call(this, props); // this.state = {
+    //   description: this.props.bills[this.props.billInfo].description,
+    //   author_payor: this.props.bills[this.props.billInfo].author_payor,
+    //   cost: this.props.bills[this.props.billInfo].cost,
+    //   recipient_id: this.props.bills[this.props.billInfo].recepient_id,
+    //   group_id: this.props.bills[this.props.billInfo].group_id
+    // };
+
+    _this.state = _this.props.bills[_this.props.billInfo];
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.toggleBoolean = _this.toggleBoolean.bind(_assertThisInitialized(_this));
     return _this;
@@ -1375,7 +1378,7 @@ var EditBillPage = /*#__PURE__*/function (_React$Component) {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
-      this.props.updateBill(this.props.billInfo).then(this.props.closeModal);
+      this.props.updateBill(this.state, this.props.billInfo).then(this.props.closeModal);
     }
   }, {
     key: "toggleBoolean",
@@ -1458,13 +1461,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_friend_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/friend_actions */ "./frontend/actions/friend_actions.js");
 /* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
 /* harmony import */ var _actions_bill_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/bill_actions */ "./frontend/actions/bill_actions.js");
-/* harmony import */ var _util_bill_api_util__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../util/bill_api_util */ "./frontend/util/bill_api_util.js");
 
  // import { logout, receiveAllUsers } from '../../actions/session_actions';
 
 
  // import { requestBills } from "../../actions/bill_actions";
-
 
 
 
@@ -1477,12 +1478,13 @@ var mSTP = function mSTP(state) {
 };
 
 var mDTP = function mDTP(dispatch) {
+  debugger;
   return {
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__["closeModal"])());
     },
-    updateBill: function updateBill(billId) {
-      return dispatch(Object(_util_bill_api_util__WEBPACK_IMPORTED_MODULE_6__["updateBill"])(billId));
+    updateBill: function updateBill(bill, id) {
+      return dispatch(Object(_actions_bill_actions__WEBPACK_IMPORTED_MODULE_5__["updateBill"])(bill, id));
     }
   };
 };
@@ -2859,12 +2861,13 @@ var destroyBill = function destroyBill(billId) {
     url: "/api/bills/".concat(billId)
   });
 };
-var updateBill = function updateBill(bill) {
+var updateBill = function updateBill(bills, id) {
+  debugger;
   return $.ajax({
     type: 'PATCH',
-    url: "/api/bills/".concat(bill.id),
+    url: "/api/bills/".concat(id),
     data: {
-      bill: bill
+      bills: bills
     }
   });
 };

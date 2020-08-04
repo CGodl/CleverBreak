@@ -5,6 +5,7 @@ import configureStore from './store/store';
 import { createFriend, getFriends, destroyFriend } from './util/friend_api_util'
 import { fetchAllBills } from './util/bill_api_util'
 import { fetchAllUsers } from './util/session_api_util'
+import { updateBill } from './util/bill_api_util'
 
 
 //////debugger;
@@ -33,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.getFriends = getFriends;
     window.fetchAllBills = fetchAllBills;
     window.fetchAllUsers = fetchAllUsers;
+    window.updateBill = updateBill;
 
     
   const root = document.getElementById('root');

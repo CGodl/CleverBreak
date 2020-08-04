@@ -13,6 +13,7 @@ class AllExpenses extends React.Component {
   componentWillMount() {
     this.props.requestBills();
     this.props.receiveAllUsers();
+    this.props.requestFriends();
   }
 
   toggleBillDisplay() {

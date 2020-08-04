@@ -17,12 +17,12 @@ export const destroyBill = (billId) => {
   })
 };
 
-export const updateBill = (bill) => {
-
+export const updateBill = (bills, id) => {
+  debugger
   return $.ajax({
     type: 'PATCH',
-    url: `/api/bills/${bill.id}`,
-    data: { bill }
+    url: `/api/bills/${id}`,
+    data: { bills }
 
   })
 

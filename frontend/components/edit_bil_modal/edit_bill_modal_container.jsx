@@ -5,8 +5,7 @@ import EditBillPage from './edit_bill_modal';
 import { requestFriends, requestFriend } from "../../actions/friend_actions";
 // import { requestBills } from "../../actions/bill_actions";
 import { closeModal } from '../../actions/modal_actions';
-import { addBill } from '../../actions/bill_actions'
-import { updateBill } from '../../util/bill_api_util';
+import { addBill, updateBill } from '../../actions/bill_actions';
 
 
 
@@ -18,9 +17,10 @@ const mSTP = (state) => {
 }
 
 const mDTP = (dispatch) => {
+  debugger
   return {
     closeModal: () => dispatch(closeModal()),
-    updateBill: (billId) => dispatch(updateBill(billId))
+    updateBill: (bill, id) => dispatch(updateBill(bill, id))
   };
 };
 

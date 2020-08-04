@@ -5,13 +5,15 @@ class EditBillPage extends React.Component {
   constructor(props) {
     super(props);
   
-      this.state = {
-        description: this.props.bills[this.props.billInfo].description,
-        author_payor: this.props.bills[this.props.billInfo].author_payor,
-        cost: this.props.bills[this.props.billInfo].cost,
-        recipient_id: this.props.bills[this.props.billInfo].recepient_id,
-        group_id: this.props.bills[this.props.billInfo].group_id
-      };
+      // this.state = {
+      //   description: this.props.bills[this.props.billInfo].description,
+      //   author_payor: this.props.bills[this.props.billInfo].author_payor,
+      //   cost: this.props.bills[this.props.billInfo].cost,
+      //   recipient_id: this.props.bills[this.props.billInfo].recepient_id,
+      //   group_id: this.props.bills[this.props.billInfo].group_id
+      // };
+
+      this.state = this.props.bills[this.props.billInfo];
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.toggleBoolean = this.toggleBoolean.bind(this);
@@ -27,12 +29,11 @@ class EditBillPage extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.updateBill(this.props.billInfo).then(this.props.closeModal);
+    this.props.updateBill(this.state, this.props.billInfo).then(this.props.closeModal);
   };
 
   toggleBoolean(e) {
     e.preventDefault();
-    
     switch (this.state.author_payor) {
       case true:
         this.setState({author_payor: false});

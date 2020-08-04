@@ -6,7 +6,7 @@
     json.author_payor bill.author_payor
     json.description bill.description
     json.cost bill.cost
-    json.recepient_id bill.recipient_id
+    json.recipient_id bill.recipient_id
     json.updated_at bill.updated_at
     json.created_at bill.created_at
     
