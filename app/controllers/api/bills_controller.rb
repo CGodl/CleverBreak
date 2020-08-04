@@ -1,9 +1,9 @@
 class Api::BillsController < ApplicationController 
 
   def create
-    recipients = User.find_by(email: [:email])
+    recipients = User.find_by(id: [:id])
 
-    if Bill.last.history_id == nil
+    if Bill.last == nil
       current_history_id = 0
     else
       current_history_id = Bill.last.history_id + 1
@@ -11,19 +11,18 @@ class Api::BillsController < ApplicationController
 
     current_user_id = current_user.id
 
-      # @bill = Bill.new(bill_params)
-      debugger
     @bill = Bill.new({author_id: current_user.id,
+                      author_payor: bill_params[:author_payor],
                      recipient_id: bill_params[:recipient_id],
                      history_id: current_history_id,
                      group_id: bill_params[:group_id],
                      cost: bill_params[:cost],
                      description: bill_params[:description],
-                     updated_at: bill_params[:updated_at]
+                     updated_at: bill_params[:updated_at],
+                     created_at: bill_params[:created_at]
                       })
 
       
-      debugger
     if @bill.save!
         render :show
     else
@@ -47,9 +46,9 @@ class Api::BillsController < ApplicationController
   end
 
   def show
-    bill = Bill.find(params[:id])
+    @bill = Bill.find(params[:id])
 
-    if bill
+    if @bill
       render :show
     else
       render json: ["Unable to find bill"]
@@ -59,10 +58,36 @@ class Api::BillsController < ApplicationController
   end
 
 
+  def update
+    @bill = Bill.find(params[:id])
+  
+  
+
+    if (current_user.id === @bill.author_id || current_user.id === @bill.recipient_id ) && @bill.update(bill_params)
+      render :show
+    else
+      render json: ["Unable to update bill"]
+    end
+
+  end
+
+  def destroy
+    # @bill = current_user.bills.find(params[:id])
+    @bill = Bill.find(params[:id])
+    # debugger
+    if @bill.destroy
+      render :show
+    else
+      render json: ['Bill could not be deleted']
+    end
+
+  end
+
+
   private
 
   def bill_params
-    params.require(:bills).permit(:author_id, :history_id, :recipient_id, :group_id, :cost, :description, :updated_at)
+    params.require(:bills).permit(:author_id, :history_id, :author_payor, :recipient_id, :group_id, :cost, :description, :updated_at, :created_at)
   end
 
 end

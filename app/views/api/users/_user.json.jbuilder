@@ -5,6 +5,6 @@ json.friendIds do
 end
 
 json.billIds do
-  # debugger 
+  # //debugger 
   json.array! user.bills.pluck(:id) 
 end

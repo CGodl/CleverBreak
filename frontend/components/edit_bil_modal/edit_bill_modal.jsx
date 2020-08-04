@@ -1,17 +1,19 @@
 import React from 'react';
 
 
-
-class BillPage extends React.Component {
+class EditBillPage extends React.Component {
   constructor(props) {
     super(props);
-      this.state = {
-        description: 'Enter a Description',
-        author_payor: true,
-        cost: '',
-        recipient_id: '',
-        group_id: ''
-      };
+  
+      // this.state = {
+      //   description: this.props.bills[this.props.billInfo].description,
+      //   author_payor: this.props.bills[this.props.billInfo].author_payor,
+      //   cost: this.props.bills[this.props.billInfo].cost,
+      //   recipient_id: this.props.bills[this.props.billInfo].recepient_id,
+      //   group_id: this.props.bills[this.props.billInfo].group_id
+      // };
+
+      this.state = this.props.bills[this.props.billInfo];
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.toggleBoolean = this.toggleBoolean.bind(this);
@@ -27,32 +29,30 @@ class BillPage extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const bill = Object.assign({}, this.state);
-    this.props.addBill(bill).then(this.props.closeModal);
+    this.props.updateBill(this.state, this.props.billInfo).then(this.props.closeModal);
   };
 
   toggleBoolean(e) {
     e.preventDefault();
-    
     switch (this.state.author_payor) {
       case true:
-        this.setState({author_payor: false})
+        this.setState({author_payor: false});
         break;
       case false:
-        this.setState({author_payor: true})
+        this.setState({author_payor: true});
         break;
       default:
         break;
     }
   }
 
-
-
-
   render () {
-    const { friends, closeModal } = this.props;
-    console.log(friends)
+    const { friends, closeModal, billInfo} = this.props;
     
+    if (!friends || !billInfo) {
+      return null;
+    }
+     
       return (
         <form className='bill-modal-container' onSubmit={this.handleSubmit}>
           <p>Add an expense</p>
@@ -81,7 +81,7 @@ class BillPage extends React.Component {
           {/* <label>Enter a group, if any:
             <input 
               type='text'
-              value={this.state.group_id}
+              value={this.state.group_id}.
               onChange={this.update('group_id')}
               />
           </label> */}
@@ -101,4 +101,4 @@ class BillPage extends React.Component {
 
 
 
-export default BillPage;
+export default EditBillPage;

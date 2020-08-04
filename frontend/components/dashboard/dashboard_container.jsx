@@ -19,7 +19,7 @@ const mDTP = (dispatch) => {
     receiveAllUsers: () => dispatch(receiveAllUsers()),
     requestFriends: () => dispatch(requestFriends()),
     requestBills: () => dispatch(requestBills()),
-    openModal: (modal) => dispatch(openModal(modal))
+    openModal: (modal, billInfo) => dispatch(openModal(modal, billInfo))
   };
 };
 

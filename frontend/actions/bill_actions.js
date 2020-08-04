@@ -5,7 +5,6 @@ export const RECEIVE_ALL_BILLS = 'RECEIVE_ALL_BILLS';
 export const REMOVE_BILL = 'REMOVE_BILL';
 
 const receiveBill = bill => {
-
   return {
     type: RECEIVE_BILL,
     bill
@@ -20,10 +19,12 @@ const receiveBills = bills => {
   };
 }
 
-const removeBill = () => {
+
+const removeBill = billId => {
 
   return {
     type: REMOVE_BILL,
+    billId
   };
 }
 
@@ -33,15 +34,26 @@ export const addBill = bill => dispatch => {
     .then(bill => dispatch(receiveBill(bill)))
 }
 
+export const fetchBill = billId => dispatch => {
+
+  return billApiUtil.receiveBill(billId)
+    .then((bill) => dispatch(receiveBill(bill)))
+}
+
 export const requestBills = () => dispatch => {
 
   return billApiUtil.fetchAllBills()
     .then((bills) => dispatch(receiveBills(bills)))
-
 }
 
-export const deleteBill = bill => dispatch => {
+export const updateBill = (bill, id) => dispatch => {
+  debugger
+  return billApiUtil.updateBill(bill, id)
+    .then((bill) => dispatch(receiveBill(bill)))
+}
 
-  return billApiUtil.destroyBill(friend)
-    .then(bill => dispatch(removeBill(bill)))
+export const deleteBill = billId => dispatch => {
+
+  return billApiUtil.destroyBill(billId)
+    .then(() => dispatch(removeBill(billId)))
 }

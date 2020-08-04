@@ -1,52 +1,63 @@
-
 import React from 'react';
+import BillShow from './all_bill_show'
 
 class AllExpenses extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
+    this.state = { isButtonActive: false }
+    this.toggleBillDisplay = this.toggleBillDisplay.bind(this)
+    this.openTheModal = this.openTheModal.bind(this);
   }
 
   componentWillMount() {
     this.props.requestBills();
     this.props.receiveAllUsers();
+    this.props.requestFriends();
   }
 
+  toggleBillDisplay() {
+    this.setState({isButtonActive: !this.state.isButtonActive})
+  };
+
+  openTheModal() {
+    
+    this.props.openModal('editBill')
+  };
   
   render () {
-    const { allUsers, bills, curUserBillIds } = this.props;
-    window.allUsers = allUsers;
-    window.bills = bills;
-    window.curUserbillIds = curUserBillIds;
+    const { allUsers, bills, friends, curUserBillIds, requestBill, openModal } = this.props; 
 
-    if (!curUserbillIds || !bills) {
+
+    if (!curUserBillIds || !bills) {
       return null
     }
+
+
 
     return (
       <div className='recent-activity-main-container'>
         <ul>
             {
-              curUserBillIds.map(billId => (
+              curUserBillIds.map(billId => ( 
                 <li key={ billId }>
-                 {allUsers[bills[billId].author_id].name} added 
-                "{bills[billId].description}"
-                The difference is {bills[billId].cost}
-                
+                  <BillShow 
+                    allUsers={allUsers}
+                    bills={bills}
+                    billId={billId}
+                    curUserBillIds={curUserBillIds}
+                    openModal = {openModal}
+                    friends = {friends}
+          
+                  />
+                  <button onClick={() => this.props.deleteBill(billId)}>X</button>
                 </li>
               ))
             }
         </ul>
       </div>
     )
-
-
   }
-
-  
-
-
-
 };
 
 export default AllExpenses;

@@ -2,6 +2,7 @@ import { RECEIVE_BILL, RECEIVE_ALL_BILLS, REMOVE_BILL } from '../actions/bill_ac
 
 
 const billsReducer = (state = {}, action) => {
+  
   Object.freeze(state)
   let newState = Object.assign({}, state)
   switch (action.type) {
@@ -10,8 +11,10 @@ const billsReducer = (state = {}, action) => {
     case RECEIVE_ALL_BILLS:
       return action.bills;
     case REMOVE_BILL:
-      return {}
+      delete newState[action.billId];
+      return newState;
     default:
+      
       return state;
   }
 
