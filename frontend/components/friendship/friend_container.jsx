@@ -5,13 +5,11 @@ import FriendForm from './friend_form';
 import { receiveAllUsers } from '../../actions/session_actions';
 
 const mSTP = state => {
-  ////debugger
+
   const curUser = state.entities.users[state.session.id] 
-  ////debugger
-  // const friends = curUser.friendIds.map(id => state.entities.users[id])
   const friends = curUser.friendIds
   const allUsers = state.entities.users
-  ////debugger
+  
   return {
       friends,
       allUsers
@@ -20,10 +18,9 @@ const mSTP = state => {
 
 
 const mDTP = dispatch => {
-  ////debugger
+  
   return {
     addFriend: friend => dispatch(addFriend(friend)),
-    // removeFriend: () => dispatch(removeFriend(friend)),
     receiveAllUsers: () => dispatch(receiveAllUsers()),
   }
 }

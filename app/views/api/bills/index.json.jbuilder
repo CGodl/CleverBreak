@@ -1,6 +1,6 @@
-# //debugger
+# //
 @bills.each do |bill|
-  # //debugger
+  # //
   json.set! bill.id do
     json.author_id bill.author_id
     json.author_payor bill.author_payor

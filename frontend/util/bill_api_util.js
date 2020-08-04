@@ -18,7 +18,7 @@ export const destroyBill = (billId) => {
 };
 
 export const updateBill = (bills, id) => {
-  debugger
+  
   return $.ajax({
     type: 'PATCH',
     url: `/api/bills/${id}`,

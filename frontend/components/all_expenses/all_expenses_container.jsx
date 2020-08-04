@@ -8,7 +8,7 @@ import { openModal } from '../../actions/modal_actions';
 
 
 const mSTP = state => {
-  // debugger
+  // 
   const curUser = state.entities.users[state.session.id];
   const curUserBillIds = curUser.billIds;
   const bills = state.entities.bills;

@@ -74,7 +74,7 @@ class Api::BillsController < ApplicationController
   def destroy
     # @bill = current_user.bills.find(params[:id])
     @bill = Bill.find(params[:id])
-    # debugger
+    # 
     if @bill.destroy
       render :show
     else

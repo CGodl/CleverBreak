@@ -47,7 +47,7 @@ export const requestBills = () => dispatch => {
 }
 
 export const updateBill = (bill, id) => dispatch => {
-  debugger
+  
   return billApiUtil.updateBill(bill, id)
     .then((bill) => dispatch(receiveBill(bill)))
 }

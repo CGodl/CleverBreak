@@ -8,25 +8,25 @@ import { fetchAllUsers } from './util/session_api_util'
 import { updateBill } from './util/bill_api_util'
 
 
-//////debugger;
+//////;
 document.addEventListener('DOMContentLoaded', () => {
     let store;
-    //////debugger;
+    //////;
     if (window.currentUser) {
-      //////debugger;
+      //////;
       const preloadedState = {
         entities: {
           users: { [window.currentUser.id]: window.currentUser }
         },
         session: { id: window.currentUser.id },
       };
-      //////debugger;
+      //////;
       store = configureStore(preloadedState);
       delete window.currentUser;
     } else {
       store = configureStore();
     }
-    //////debugger;
+    //////;
     window.getState = store.getState;
     window.dispatch = store.dispatch;
     window.createFriend = createFriend;
