@@ -23,7 +23,7 @@ export const getFriend = id => {
 };
 
 export const getFriends = () => {
-  ////
+
   return $.ajax ({  
     type: 'GET',
     url: '/api/friends'

@@ -25,7 +25,7 @@ class Api::CommentsController < ApplicationController
   end
 
   def index
-    @bills = current_user.bills
+    @comments = current_user.comments
   end
 
   def show

@@ -2908,7 +2908,6 @@ var getFriend = function getFriend(id) {
   });
 };
 var getFriends = function getFriends() {
-  ////
   return $.ajax({
     type: 'GET',
     url: '/api/friends'

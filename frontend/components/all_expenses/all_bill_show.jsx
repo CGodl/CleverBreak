@@ -44,6 +44,8 @@ class BillShow extends React.Component {
             <br/>
             Last updated on {bills[billId].updated_at}
             <button onClick={() => this.openTheModal(billId)}>Edit</button>
+
+          
           </div> 
         </div>
       </div>
