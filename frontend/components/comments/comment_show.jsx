@@ -8,10 +8,12 @@ const CommentBox = ({commentId, commentList}) => {
   if (!commentId || !commentList) {
     return null;
   }
+  console.log(commentList)
+  
   
     return (
       <div>
-        <p>{commentList[commentId]}</p>
+        {/* <p>{commentList[commentId]}</p> */}
       
 
 

@@ -18,6 +18,7 @@ class CommentsIndex extends React.Component {
     if (!billId || !commentIdList || !commentList) {
       return null
     }
+    // console.log(commentList)
   
     return (
       <div className='comments-index-container'>
@@ -27,8 +28,8 @@ class CommentsIndex extends React.Component {
                   <li key={commentId}>
 
                     <CommentBox 
-                      commentId = {commentId}
-                      commentList = {commentList}
+                      commentId={commentId}
+                      commentList={commentList}
                     />
         
                   </li>

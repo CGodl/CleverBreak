@@ -1285,7 +1285,8 @@ var CommentBox = function CommentBox(_ref) {
     return null;
   }
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, commentList[commentId]));
+  console.log(commentList);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (CommentBox);
@@ -1356,7 +1357,8 @@ var CommentsIndex = /*#__PURE__*/function (_React$Component) {
 
       if (!billId || !commentIdList || !commentList) {
         return null;
-      }
+      } // console.log(commentList)
+
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comments-index-container"
