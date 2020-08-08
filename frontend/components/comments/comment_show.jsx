@@ -1,15 +1,14 @@
+import React from 'react';
 
 
-
-const CommentBox = () => {
-
-
+const CommentBox = ({commentId}) => {
+  console.log('THE MONEY');
+  
     return (
       <div>
-
-
-        HELLO
-
+        {commentId}
+        <p>BRO</p>
+          {/* <div>{currentComment}</div> */}
 
 
 
@@ -19,5 +18,7 @@ const CommentBox = () => {
 
 
     )
+  }
 
-}
+
+export default CommentBox;

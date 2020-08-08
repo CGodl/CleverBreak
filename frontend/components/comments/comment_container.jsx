@@ -7,9 +7,8 @@ import CommentsIndex from './comments_index';
 const mSTP =( state, ownProps) => {
 
   return {
-    // commentsList: Object.values(state.entities.comments)
-    
-
+    commentIdList: state.entities.bills[ownProps.billId].commentIds,
+    commentList: state.entities.comments
   }
 }
 

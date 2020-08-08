@@ -90,7 +90,7 @@
 /*!******************************************!*\
   !*** ./frontend/actions/bill_actions.js ***!
   \******************************************/
-/*! exports provided: RECEIVE_BILL, RECEIVE_ALL_BILLS, REMOVE_BILL, addBill, fetchBill, requestBills, updateBill, deleteBill */
+/*! exports provided: RECEIVE_BILL, RECEIVE_ALL_BILLS, REMOVE_BILL, addBill, requestBills, updateBill, deleteBill */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -99,7 +99,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ALL_BILLS", function() { return RECEIVE_ALL_BILLS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_BILL", function() { return REMOVE_BILL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addBill", function() { return addBill; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchBill", function() { return fetchBill; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "requestBills", function() { return requestBills; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateBill", function() { return updateBill; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteBill", function() { return deleteBill; });
@@ -136,14 +135,11 @@ var addBill = function addBill(bill) {
       return dispatch(receiveBill(bill));
     });
   };
-};
-var fetchBill = function fetchBill(billId) {
-  return function (dispatch) {
-    return _util_bill_api_util__WEBPACK_IMPORTED_MODULE_0__["receiveBill"](billId).then(function (bill) {
-      return dispatch(receiveBill(bill));
-    });
-  };
-};
+}; // export const fetchBill = billId => dispatch => {
+//   return billApiUtil.receiveBill(billId)
+//     .then((bill) => dispatch(receiveBill(bill)))
+// }
+
 var requestBills = function requestBills() {
   return function (dispatch) {
     return _util_bill_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchAllBills"]().then(function (bills) {
@@ -758,7 +754,7 @@ var BillShow = /*#__PURE__*/function (_React$Component) {
         onClick: function onClick() {
           return _this2.openTheModal(billId);
         }
-      }, "Edit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comments_comment_container__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }, "Edit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comments_comment_container__WEBPACK_IMPORTED_MODULE_5__["default"], {
         billId: billId
       }))));
     }
@@ -1242,7 +1238,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state, ownProps) {
-  return {// commentsList: Object.values(state.entities.comments)
+  return {
+    commentIdList: state.entities.bills[ownProps.billId].commentIds,
+    commentList: state.entities.comments
   };
 };
 
@@ -1264,6 +1262,29 @@ var mDTP = function mDTP(dispatch) {
 
 /***/ }),
 
+/***/ "./frontend/components/comments/comment_show.jsx":
+/*!*******************************************************!*\
+  !*** ./frontend/components/comments/comment_show.jsx ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var CommentBox = function CommentBox(_ref) {
+  var commentId = _ref.commentId;
+  console.log('THE MONEY');
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, commentId, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "BRO"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (CommentBox);
+
+/***/ }),
+
 /***/ "./frontend/components/comments/comments_index.jsx":
 /*!*********************************************************!*\
   !*** ./frontend/components/comments/comments_index.jsx ***!
@@ -1275,6 +1296,7 @@ var mDTP = function mDTP(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _comment_show__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./comment_show */ "./frontend/components/comments/comment_show.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1297,8 +1319,8 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
- //Add billId to compare
-//CHeck map
+
+
 
 var CommentsIndex = /*#__PURE__*/function (_React$Component) {
   _inherits(CommentsIndex, _React$Component);
@@ -1309,29 +1331,28 @@ var CommentsIndex = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, CommentsIndex);
 
     return _super.call(this, props);
-  } // componentWillMount() {
-  //   this.props.fetchComments();
-  // };
-
+  }
 
   _createClass(CommentsIndex, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      this.props.fetchComments();
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,
           billId = _this$props.billId,
-          commentsList = _this$props.commentsList;
+          commentIdList = _this$props.commentIdList,
+          commentList = _this$props.commentList;
 
-      if (!billId || !commentsList) {
+      if (!billId || !commentIdList || !commentList) {
         return null;
       }
 
-      console.log('test');
-      console.log(commentsList);
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comments-index-container"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, commentsList.filter(function (comment) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, comment);
-      })));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "LETS SEE"));
     }
   }]);
 

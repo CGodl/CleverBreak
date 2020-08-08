@@ -1,9 +1,6 @@
 import React from 'react';
+import CommentBox from './comment_show';
 
-
-
-//Add billId to compare
-//CHeck map
 
 class CommentsIndex extends React.Component {
   constructor(props) {
@@ -11,49 +8,38 @@ class CommentsIndex extends React.Component {
 
   }
   
-  // componentWillMount() {
-  //   this.props.fetchComments();
-  // };
+  componentWillMount() {
+    this.props.fetchComments();
+  };
 
   render () {
-    const { billId, commentsList } = this.props;
+    const { billId, commentIdList, commentList } = this.props;
 
-    if (!billId || !commentsList) {
+    if (!billId || !commentIdList || !commentList) {
       return null
     }
-    console.log('test')
-    console.log(commentsList)
-
 
     return (
       <div className='comments-index-container'>
-         <ul>
+        <p>LETS SEE</p>
+         {/* <ul>
             {
-              commentsList.filter(comment => ( 
+              commentIdList.map(commentId => ( 
                   <li >
-                    {comment}
-
-                    {/* <button onClick={() => this.props.deleteBill(comment.id)}>X</button> */}
-                  </li>
+                    PICKLE
+                    {/* <CommentBox 
+                      commentId = {commentId}
+                      // currentComment = {commentList[commentId]}
+                    /> */}
+        
+                  {/* </li>
           
               ))
             }
-        </ul>
-
-
-
-
-
-
+        </ul> */}
       </div>
-
-
     )
-
-
   }
-
-
 }
 
-export default CommentsIndex
+export default CommentsIndex;
