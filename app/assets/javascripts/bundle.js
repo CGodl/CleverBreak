@@ -1238,9 +1238,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state, ownProps) {
+  var commentList = state.entities.comments;
   return {
     commentIdList: state.entities.bills[ownProps.billId].commentIds,
-    commentList: state.entities.comments
+    commentList: commentList
   };
 };
 
@@ -1276,9 +1277,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var CommentBox = function CommentBox(_ref) {
-  var commentId = _ref.commentId;
-  console.log('THE MONEY');
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, commentId, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "BRO"));
+  var commentId = _ref.commentId,
+      commentList = _ref.commentList;
+  console.log(commentList); // window.commentList = commentList
+
+  if (!commentId || !commentList) {
+    return null;
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, commentList[commentId]));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (CommentBox);
@@ -1340,6 +1347,7 @@ var CommentsIndex = /*#__PURE__*/function (_React$Component) {
     }
   }, {
     key: "render",
+    //STUCK HERE. CANT GET ALL VALUES OF THE COMMENT TO LOAD
     value: function render() {
       var _this$props = this.props,
           billId = _this$props.billId,
@@ -1352,7 +1360,14 @@ var CommentsIndex = /*#__PURE__*/function (_React$Component) {
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comments-index-container"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "LETS SEE"));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, commentIdList.map(function (commentId) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: commentId
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_show__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          commentId: commentId,
+          commentList: commentList
+        }));
+      })));
     }
   }]);
 

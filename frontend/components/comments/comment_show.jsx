@@ -1,14 +1,19 @@
 import React from 'react';
 
 
-const CommentBox = ({commentId}) => {
-  console.log('THE MONEY');
+const CommentBox = ({commentId, commentList}) => {
+  console.log(commentList)
+  // window.commentList = commentList
+
+  if (!commentId || !commentList) {
+    return null;
+  }
   
     return (
       <div>
-        {commentId}
-        <p>BRO</p>
-          {/* <div>{currentComment}</div> */}
+        <p>{commentList[commentId]}</p>
+      
+
 
 
 

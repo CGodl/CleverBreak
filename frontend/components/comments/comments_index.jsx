@@ -11,32 +11,31 @@ class CommentsIndex extends React.Component {
   componentWillMount() {
     this.props.fetchComments();
   };
-
+//STUCK HERE. CANT GET ALL VALUES OF THE COMMENT TO LOAD
   render () {
     const { billId, commentIdList, commentList } = this.props;
 
     if (!billId || !commentIdList || !commentList) {
       return null
     }
-
+  
     return (
       <div className='comments-index-container'>
-        <p>LETS SEE</p>
-         {/* <ul>
+         <ul>
             {
               commentIdList.map(commentId => ( 
-                  <li >
-                    PICKLE
-                    {/* <CommentBox 
+                  <li key={commentId}>
+
+                    <CommentBox 
                       commentId = {commentId}
-                      // currentComment = {commentList[commentId]}
-                    /> */}
+                      commentList = {commentList}
+                    />
         
-                  {/* </li>
+                  </li>
           
               ))
             }
-        </ul> */}
+        </ul>
       </div>
     )
   }

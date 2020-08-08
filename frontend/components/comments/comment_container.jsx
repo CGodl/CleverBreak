@@ -5,10 +5,11 @@ import CommentsIndex from './comments_index';
 
 
 const mSTP =( state, ownProps) => {
+  const commentList = state.entities.comments
 
   return {
     commentIdList: state.entities.bills[ownProps.billId].commentIds,
-    commentList: state.entities.comments
+    commentList
   }
 }
 
