@@ -25,7 +25,7 @@ class Api::CommentsController < ApplicationController
   end
 
   def index
-    @comments = current_user.comments
+    @comments = Comment.all
   end
 
   def show

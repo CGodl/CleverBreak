@@ -2,8 +2,9 @@ import React from 'react';
 
 
 const CommentBox = ({commentId, commentList}) => {
-  console.log(commentList)
-  // window.commentList = commentList
+
+  window.commentList = commentList
+  window.commentId = commentId
 
   if (!commentId || !commentList) {
     return null;
@@ -13,7 +14,7 @@ const CommentBox = ({commentId, commentList}) => {
   
     return (
       <div>
-        {/* <p>{commentList[commentId]}</p> */}
+        {commentList[commentId].author_id}
       
 
 

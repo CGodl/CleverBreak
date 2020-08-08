@@ -19,7 +19,7 @@ class CommentsIndex extends React.Component {
       return null
     }
     // console.log(commentList)
-  
+    window.commentIdList = commentIdList
     return (
       <div className='comments-index-container'>
          <ul>

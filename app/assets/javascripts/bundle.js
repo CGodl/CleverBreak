@@ -1279,14 +1279,15 @@ __webpack_require__.r(__webpack_exports__);
 var CommentBox = function CommentBox(_ref) {
   var commentId = _ref.commentId,
       commentList = _ref.commentList;
-  console.log(commentList); // window.commentList = commentList
+  window.commentList = commentList;
+  window.commentId = commentId;
 
   if (!commentId || !commentList) {
     return null;
   }
 
   console.log(commentList);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, commentList[commentId].author_id);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (CommentBox);
@@ -1360,6 +1361,7 @@ var CommentsIndex = /*#__PURE__*/function (_React$Component) {
       } // console.log(commentList)
 
 
+      window.commentIdList = commentIdList;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comments-index-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, commentIdList.map(function (commentId) {
