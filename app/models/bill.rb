@@ -25,7 +25,11 @@ class Bill < ApplicationRecord
 
   has_many :comments,
     foreign_key: :bill_id,
-    class_name: :Bill
+    class_name: :Comment
+
+  def associated_comments
+    comments
+  end
 
     
 

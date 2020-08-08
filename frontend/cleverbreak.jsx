@@ -6,6 +6,7 @@ import { createFriend, getFriends, destroyFriend } from './util/friend_api_util'
 import { fetchAllBills } from './util/bill_api_util'
 import { fetchAllUsers } from './util/session_api_util'
 import { updateBill } from './util/bill_api_util'
+import { getComments } from './util/comment_api_util'
 
 
 //////;
@@ -35,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.fetchAllBills = fetchAllBills;
     window.fetchAllUsers = fetchAllUsers;
     window.updateBill = updateBill;
+    window.getComments = getComments;
 
     
   const root = document.getElementById('root');

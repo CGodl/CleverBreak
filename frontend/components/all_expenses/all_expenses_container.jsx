@@ -5,17 +5,16 @@ import { fetchBill, requestBills, deleteBill } from "../../actions/bill_actions"
 import { receiveAllUsers } from '../../actions/session_actions';
 import { requestFriends } from "../../actions/friend_actions";
 import { openModal } from '../../actions/modal_actions';
+import { fetchComments } from '../../actions/comment_action';
 
 
 const mSTP = state => {
-  // 
+
   const curUser = state.entities.users[state.session.id];
   const curUserBillIds = curUser.billIds;
   const bills = state.entities.bills;
   const allUsers = state.entities.users;
-  // const friends = state.entities.
-
-  
+ 
   return {
     allUsers,
     bills,
@@ -33,7 +32,8 @@ const mDTP = dispatch => {
     deleteBill: (bill) => dispatch(deleteBill(bill)),
     receiveAllUsers: () => dispatch(receiveAllUsers()),
     requestFriends: () => dispatch(requestFriends()),
-    openModal: (modal, billInfo) => dispatch(openModal(modal, billInfo))
+    openModal: (modal, billInfo) => dispatch(openModal(modal, billInfo)),
+    fetchComments: () => dispatch(fetchComments())
   }
 }
 

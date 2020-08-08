@@ -7,19 +7,31 @@ import React from 'react';
 
 class CommentsIndex extends React.Component {
   constructor(props) {
+    super(props)
 
   }
+  
+  // componentWillMount() {
+  //   this.props.fetchComments();
+  // };
 
   render () {
-    const { billId } = this.props;
+    const { billId, commentsList } = this.props;
+
+    if (!billId || !commentsList) {
+      return null
+    }
+    console.log('test')
+    console.log(commentsList)
 
 
     return (
       <div className='comments-index-container'>
          <ul>
             {
-              commentsList.map(comment => ( 
-                  <li key={  }>
+              commentsList.filter(comment => ( 
+                  <li >
+                    {comment}
 
                     {/* <button onClick={() => this.props.deleteBill(comment.id)}>X</button> */}
                   </li>
@@ -43,3 +55,5 @@ class CommentsIndex extends React.Component {
 
 
 }
+
+export default CommentsIndex

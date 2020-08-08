@@ -1,21 +1,25 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import CommentsIndex from './comments_index'
+import { addComment, fetchComments, deleteComment } from '../../actions/comment_action';
+import CommentsIndex from './comments_index';
 
 
-// const mSTP = state => {
+const mSTP =( state, ownProps) => {
 
-  
-//   return {
+  return {
+    // commentsList: Object.values(state.entities.comments)
+    
 
-//   }
-// }
+  }
+}
 
-// const mDTP = dispatch => {
+const mDTP = dispatch => {
 
-//   return {
+  return {
+    addComment: (comment) => dispatch(addComment(bill)),
+    fetchComments: () => dispatch(fetchComments()),
+    deleteComment: (comment) => dispatch(deleteComment(comment))
+  }
+}
 
-//   }
-// }
-
-export default connect(null, null)(CommentsIndex);
+export default connect(mSTP, mDTP)(CommentsIndex);

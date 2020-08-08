@@ -54,8 +54,9 @@ class User < ApplicationRecord
 
   has_many :comments,
     foreign_key: :author_id,
-    class_name: :User
+    class_name: :Comment
 
+    
 
 
   def friends #ensures uniqueness by combining friendor and friendee

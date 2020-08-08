@@ -2,7 +2,8 @@ import React from 'react';
 import openModal from '../../actions/modal_actions';
 import billModal from '../bill/bill_modal_container';
 import fetchBill from '../../actions/bill_actions';
-import Modal from '../modal/modal_container'
+import Modal from '../modal/modal_container';
+import CommentsIndex from '../comments/comment_container';
 
 class BillShow extends React.Component {
   constructor(props) {
@@ -44,6 +45,10 @@ class BillShow extends React.Component {
             <br/>
             Last updated on {bills[billId].updated_at}
             <button onClick={() => this.openTheModal(billId)}>Edit</button>
+            <CommentsIndex 
+              billId = {billId}
+            />
+
 
           
           </div> 

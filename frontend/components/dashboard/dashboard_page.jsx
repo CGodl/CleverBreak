@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '../nav_bar/navbar';
 import FriendForm from '../friendship/friend_form';
 import FriendFormContainer from '../friendship/friend_container';
-import openModal from '../../actions/modal_actions'
+import openModal from '../../actions/modal_actions';
 // import FriendInviteBox from '../friendship/'
 import billModal from '../bill/bill_modal_container';
 
@@ -19,6 +19,7 @@ class Dashboard extends React.Component {
     this.props.receiveAllUsers();
     this.props.requestFriends();
     this.props.requestBills();
+    this.props.fetchComments();
   }
 
   openTheModal() {

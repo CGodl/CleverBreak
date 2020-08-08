@@ -14,6 +14,7 @@ class AllExpenses extends React.Component {
     this.props.requestBills();
     this.props.receiveAllUsers();
     this.props.requestFriends();
+    this.props.fetchComments();
   }
 
   toggleBillDisplay() {
