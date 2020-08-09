@@ -13,7 +13,7 @@ class CommentsIndex extends React.Component {
   };
 //STUCK HERE. CANT GET ALL VALUES OF THE COMMENT TO LOAD
   render () {
-    const { billId, commentIdList, commentList } = this.props;
+    const { billId, commentIdList, commentList, deleteComment } = this.props;
 
     if (!billId || !commentIdList || !commentList) {
       return null
@@ -30,6 +30,7 @@ class CommentsIndex extends React.Component {
                     <CommentBox 
                       commentId={commentId}
                       commentList={commentList}
+                      deleteComment={deleteComment}
                     />
         
                   </li>

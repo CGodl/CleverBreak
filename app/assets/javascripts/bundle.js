@@ -1278,7 +1278,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var CommentBox = function CommentBox(_ref) {
   var commentId = _ref.commentId,
-      commentList = _ref.commentList;
+      commentList = _ref.commentList,
+      deleteComment = _ref.deleteComment;
   window.commentList = commentList;
   window.commentId = commentId;
 
@@ -1287,7 +1288,11 @@ var CommentBox = function CommentBox(_ref) {
   }
 
   console.log(commentList);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, commentList[commentId].author_id);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, commentList[commentId].text_body, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: function onClick() {
+      return deleteComment(commentId);
+    }
+  }, "Delete Comment"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (CommentBox);
@@ -1354,7 +1359,8 @@ var CommentsIndex = /*#__PURE__*/function (_React$Component) {
       var _this$props = this.props,
           billId = _this$props.billId,
           commentIdList = _this$props.commentIdList,
-          commentList = _this$props.commentList;
+          commentList = _this$props.commentList,
+          deleteComment = _this$props.deleteComment;
 
       if (!billId || !commentIdList || !commentList) {
         return null;
@@ -1369,7 +1375,8 @@ var CommentsIndex = /*#__PURE__*/function (_React$Component) {
           key: commentId
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_show__WEBPACK_IMPORTED_MODULE_1__["default"], {
           commentId: commentId,
-          commentList: commentList
+          commentList: commentList,
+          deleteComment: deleteComment
         }));
       })));
     }
@@ -2725,7 +2732,9 @@ function billInfoReducer() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_bill_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/bill_actions */ "./frontend/actions/bill_actions.js");
+/* harmony import */ var _actions_comment_action__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/comment_action */ "./frontend/actions/comment_action.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -2744,6 +2753,19 @@ var billsReducer = function billsReducer() {
 
     case _actions_bill_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_BILL"]:
       delete newState[action.billId];
+      return newState;
+
+    case _actions_comment_action__WEBPACK_IMPORTED_MODULE_1__["REMOVE_COMMENT"]:
+      // const newState = Object.assign({}, state);
+      for (var billId in newState) {
+        if (newState.hasOwnProperty(billId)) {
+          var bill = newState[billId];
+          bill.commentIds = bill.commentIds.filter(function (commentId) {
+            return commentId !== action.commentId;
+          });
+        }
+      }
+
       return newState;
 
     default:
@@ -2773,6 +2795,7 @@ var commentsReducer = function commentsReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
+  var newState = Object.assign({}, state);
 
   switch (action.type) {
     case _actions_comment_action__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_COMMENT"]:

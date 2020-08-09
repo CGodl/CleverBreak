@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const CommentBox = ({commentId, commentList}) => {
+const CommentBox = ({commentId, commentList, deleteComment}) => {
 
   window.commentList = commentList
   window.commentId = commentId
@@ -14,12 +14,10 @@ const CommentBox = ({commentId, commentList}) => {
   
     return (
       <div>
-        {commentList[commentId].author_id}
+        {commentList[commentId].text_body}
+
+        <button onClick={() => deleteComment(commentId)}>Delete Comment</button>
       
-
-
-
-
 
       </div>
 
