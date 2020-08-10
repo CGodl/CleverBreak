@@ -33,7 +33,7 @@ const receiveUsers = users => {
 }
 
 export const signup = user => dispatch => {
-  ////debugger
+  ////
   return SessionAPIUtil.signup(user)
     .then(user => (dispatch(receiveCurrentUser(user))
     ), err => (dispatch(receiveErrors(err.responseJSON))))
@@ -60,7 +60,7 @@ export const clearErrors = () => ({
 export const receiveAllUsers = () => dispatch => {
   return SessionAPIUtil.fetchAllUsers()
     .then(users => {
-      ////debugger
+      ////
       dispatch(receiveUsers(users))
     })
 }

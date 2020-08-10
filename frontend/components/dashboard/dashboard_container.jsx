@@ -4,6 +4,7 @@ import { logout, receiveAllUsers } from '../../actions/session_actions';
 import Dashboard from './dashboard_page';
 import { requestFriends } from "../../actions/friend_actions";
 import { requestBills } from "../../actions/bill_actions";
+import { fetchComments } from '../../actions/comment_action';
 import { openModal } from '../../actions/modal_actions';
 
 
@@ -19,6 +20,7 @@ const mDTP = (dispatch) => {
     receiveAllUsers: () => dispatch(receiveAllUsers()),
     requestFriends: () => dispatch(requestFriends()),
     requestBills: () => dispatch(requestBills()),
+    fetchComments: () => dispatch(fetchComments()),
     openModal: (modal, billInfo) => dispatch(openModal(modal, billInfo))
   };
 };

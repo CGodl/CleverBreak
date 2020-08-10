@@ -5,7 +5,7 @@ export const RECEIVE_FRIENDSHIPS = 'RECEIVE_FRIENDSHIPS'
 export const REMOVE_FRIENDSHIP = 'REMOVE_FRIENDSHIP'
 
 const receiveFriend = friend => {
-  // ////debugger
+  // ////
   return {
     type: RECEIVE_FRIENDSHIP,
     friend
@@ -20,14 +20,14 @@ const receiveFriends = friends => {
 }
 
 const removeFriend = () => {
-  ////debugger
+  ////
   return {
     type: REMOVE_FRIENDSHIP,
   };
 }
 
 export const addFriend = friend => dispatch => {
-  ////debugger
+  ////
   return friendApiUtil.createFriend(friend)
     .then(friend => (dispatch(receiveFriend(friend))))
 }
@@ -44,7 +44,7 @@ export const requestFriends = () => dispatch => (
     ))
 
 export const deleteFriend = friend => dispatch => {
-  ////debugger
+  ////
   return friendApiUtil.destroyFriend(friend)
     .then(friend => (dispatch(removeFriend(friend))))
 }

@@ -34,11 +34,11 @@ export const addBill = bill => dispatch => {
     .then(bill => dispatch(receiveBill(bill)))
 }
 
-export const fetchBill = billId => dispatch => {
+// export const fetchBill = billId => dispatch => {
 
-  return billApiUtil.receiveBill(billId)
-    .then((bill) => dispatch(receiveBill(bill)))
-}
+//   return billApiUtil.receiveBill(billId)
+//     .then((bill) => dispatch(receiveBill(bill)))
+// }
 
 export const requestBills = () => dispatch => {
 
@@ -47,7 +47,7 @@ export const requestBills = () => dispatch => {
 }
 
 export const updateBill = (bill, id) => dispatch => {
-  debugger
+  
   return billApiUtil.updateBill(bill, id)
     .then((bill) => dispatch(receiveBill(bill)))
 }

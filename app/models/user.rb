@@ -36,8 +36,6 @@ class User < ApplicationRecord
     through: :received_friend_requests,
     source: :requested
 
-
-    
   has_many :sent_bill_requests,
     foreign_key: :author_id,
     class_name: :Bill
@@ -50,9 +48,15 @@ class User < ApplicationRecord
     through: :received_bill_requests,
     source: :author
     
-    has_many :billees,
-      through: :sent_bill_requests,
-      source: :recipients
+  has_many :billees,
+    through: :sent_bill_requests,
+    source: :recipients
+
+  has_many :comments,
+    foreign_key: :author_id,
+    class_name: :Comment
+
+    
 
 
   def friends #ensures uniqueness by combining friendor and friendee

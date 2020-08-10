@@ -6,27 +6,28 @@ import { createFriend, getFriends, destroyFriend } from './util/friend_api_util'
 import { fetchAllBills } from './util/bill_api_util'
 import { fetchAllUsers } from './util/session_api_util'
 import { updateBill } from './util/bill_api_util'
+import { getComments } from './util/comment_api_util'
 
 
-//////debugger;
+//////;
 document.addEventListener('DOMContentLoaded', () => {
     let store;
-    //////debugger;
+    //////;
     if (window.currentUser) {
-      //////debugger;
+      //////;
       const preloadedState = {
         entities: {
           users: { [window.currentUser.id]: window.currentUser }
         },
         session: { id: window.currentUser.id },
       };
-      //////debugger;
+      //////;
       store = configureStore(preloadedState);
       delete window.currentUser;
     } else {
       store = configureStore();
     }
-    //////debugger;
+    //////;
     window.getState = store.getState;
     window.dispatch = store.dispatch;
     window.createFriend = createFriend;
@@ -35,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.fetchAllBills = fetchAllBills;
     window.fetchAllUsers = fetchAllUsers;
     window.updateBill = updateBill;
+    window.getComments = getComments;
 
     
   const root = document.getElementById('root');

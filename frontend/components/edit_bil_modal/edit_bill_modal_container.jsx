@@ -17,7 +17,7 @@ const mSTP = (state) => {
 }
 
 const mDTP = (dispatch) => {
-  debugger
+  
   return {
     closeModal: () => dispatch(closeModal()),
     updateBill: (bill, id) => dispatch(updateBill(bill, id))
