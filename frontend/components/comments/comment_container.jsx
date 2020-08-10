@@ -6,15 +6,14 @@ import CommentsIndex from './comments_index';
 
 const mSTP = (state, ownProps) => {
   const commentList = state.entities.comments;
-  console.log("state below")
-  console.log(state)
-  console.log("TEA")
+  const curUser = state.session.id;
+  debugger
 
-  console.log(ownProps)
 
   return {
     commentIdList: state.entities.bills[ownProps.billId].commentIds,
-    commentList
+    commentList,
+    curUser
   }
 }
 

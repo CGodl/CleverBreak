@@ -1,6 +1,12 @@
 
 
-.comments-index-container{
+.comments-index-container {
   display: block;
   /* background-color: red; */
+}
+
+.not-comment-author {
+  display: none;
+
+
 }
