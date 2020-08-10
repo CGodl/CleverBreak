@@ -35,6 +35,7 @@ class CommentsIndex extends React.Component {
                       commentList={commentList}
                       deleteComment={deleteComment}
                       allUsers={allUsers}
+                      curUser={curUser}
                     />
         
                   </li>

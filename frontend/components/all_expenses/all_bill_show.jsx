@@ -23,10 +23,8 @@ class BillShow extends React.Component {
   }
 
   render () {
-    const { bills, curUser, allUsers, openModal, fetchBill, billId } = this.props;
-
-    
- 
+    const { bills, allUsers, openModal, fetchBill, billId } = this.props;
+  
 
     return (
       <div className='all-bill-show-container'>
@@ -49,7 +47,6 @@ class BillShow extends React.Component {
             <CommentsIndex 
               billId={billId}
               allUsers={allUsers}
-              curUser={curUser}
             />
           </div> 
         </div>

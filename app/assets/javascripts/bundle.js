@@ -739,7 +739,6 @@ var BillShow = /*#__PURE__*/function (_React$Component) {
 
       var _this$props = this.props,
           bills = _this$props.bills,
-          curUser = _this$props.curUser,
           allUsers = _this$props.allUsers,
           openModal = _this$props.openModal,
           fetchBill = _this$props.fetchBill,
@@ -757,8 +756,7 @@ var BillShow = /*#__PURE__*/function (_React$Component) {
         }
       }, "Edit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comments_comment_container__WEBPACK_IMPORTED_MODULE_5__["default"], {
         billId: billId,
-        allUsers: allUsers,
-        curUser: curUser
+        allUsers: allUsers
       }))));
     }
   }]);
@@ -1243,13 +1241,12 @@ __webpack_require__.r(__webpack_exports__);
 
 var mSTP = function mSTP(state, ownProps) {
   var commentList = state.entities.comments;
-  console.log("state below");
-  console.log(state);
-  console.log("TEA");
-  console.log(ownProps);
+  var curUser = state.session.id;
+  debugger;
   return {
     commentIdList: state.entities.bills[ownProps.billId].commentIds,
-    commentList: commentList
+    commentList: commentList,
+    curUser: curUser
   };
 };
 
@@ -1320,7 +1317,7 @@ var CommentForm = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.state = {
-      author_id: _this.props.curUser.id,
+      author_id: _this.props.curUser,
       bill_id: _this.props.billId,
       text_body: ''
     };
@@ -1389,17 +1386,18 @@ __webpack_require__.r(__webpack_exports__);
 
 var CommentBox = function CommentBox(_ref) {
   var allUsers = _ref.allUsers,
+      curUser = _ref.curUser,
       commentId = _ref.commentId,
       commentList = _ref.commentList,
       deleteComment = _ref.deleteComment;
-  window.commentList = commentList;
-  window.commentId = commentId;
+  debugger;
 
   if (!commentId || !commentList) {
     return null;
   }
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, allUsers[commentList[commentId].author_id].name, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), commentList[commentId].text_body, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: curUser === commentList[commentId].author_id ? 'is-comment-author' : 'not-comment-author',
     onClick: function onClick() {
       return deleteComment(commentId);
     }
@@ -1489,7 +1487,8 @@ var CommentsIndex = /*#__PURE__*/function (_React$Component) {
           commentId: commentId,
           commentList: commentList,
           deleteComment: deleteComment,
-          allUsers: allUsers
+          allUsers: allUsers,
+          curUser: curUser
         }));
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_form__WEBPACK_IMPORTED_MODULE_2__["default"], {
         billId: billId,
@@ -2879,7 +2878,6 @@ var billsReducer = function billsReducer() {
         }
       }
 
-      debugger;
       return newState;
 
     case _actions_comment_action__WEBPACK_IMPORTED_MODULE_1__["REMOVE_COMMENT"]:

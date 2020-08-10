@@ -1,10 +1,9 @@
 import React from 'react';
 
 
-const CommentBox = ({allUsers, commentId, commentList, deleteComment}) => {
+const CommentBox = ({allUsers, curUser, commentId, commentList, deleteComment}) => {
 
-  window.commentList = commentList
-  window.commentId = commentId
+  debugger
 
   if (!commentId || !commentList) {
     return null;
@@ -17,7 +16,7 @@ const CommentBox = ({allUsers, commentId, commentList, deleteComment}) => {
         <br/>
         {commentList[commentId].text_body}
 
-        <button onClick={() => deleteComment(commentId)}>Delete Comment</button>
+        <button className={(curUser === commentList[commentId].author_id) ? 'is-comment-author' : 'not-comment-author'} onClick={() => deleteComment(commentId)}>Delete Comment</button>
       
 
       </div>

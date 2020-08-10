@@ -29,7 +29,7 @@ class AllExpenses extends React.Component {
   };
   
   render () {
-    const { allUsers, curUser, bills, friends, curUserBillIds, requestBill, openModal } = this.props; 
+    const { allUsers, curUser, bills, friends, curUserBillIds, requestBill, openModal } = this.props;
 
 
     if (!curUserBillIds || !bills) {

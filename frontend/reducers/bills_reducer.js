@@ -21,10 +21,7 @@ const billsReducer = (state = {}, action) => {
 
       }
     }
-    debugger
       return newState;
-
-
     case REMOVE_COMMENT:
         // const newState = Object.assign({}, state);
       for (const billId in newState) {
