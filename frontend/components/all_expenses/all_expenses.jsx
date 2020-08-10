@@ -21,13 +21,15 @@ class AllExpenses extends React.Component {
     this.setState({isButtonActive: !this.state.isButtonActive})
   };
 
+
+
   openTheModal() {
     
     this.props.openModal('editBill')
   };
   
   render () {
-    const { allUsers, bills, friends, curUserBillIds, requestBill, openModal } = this.props; 
+    const { allUsers, curUser, bills, friends, curUserBillIds, requestBill, openModal } = this.props; 
 
 
     if (!curUserBillIds || !bills) {
@@ -46,6 +48,7 @@ class AllExpenses extends React.Component {
                     allUsers={allUsers}
                     bills={bills}
                     billId={billId}
+                    curUser={curUser}
                     curUserBillIds={curUserBillIds}
                     openModal = {openModal}
                     friends = {friends}

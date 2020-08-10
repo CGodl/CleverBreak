@@ -51,7 +51,7 @@ class BillPage extends React.Component {
 
   render () {
     const { friends, closeModal } = this.props;
-    console.log(friends)
+    
     
       return (
         <form className='bill-modal-container' onSubmit={this.handleSubmit}>

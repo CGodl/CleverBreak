@@ -23,7 +23,7 @@ class BillShow extends React.Component {
   }
 
   render () {
-    const { bills, allUsers, openModal, fetchBill, billId } = this.props;
+    const { bills, curUser, allUsers, openModal, fetchBill, billId } = this.props;
 
     
  
@@ -47,7 +47,9 @@ class BillShow extends React.Component {
             <button onClick={() => this.openTheModal(billId)}>Edit</button>
             <br/>
             <CommentsIndex 
-              billId = {billId}
+              billId={billId}
+              allUsers={allUsers}
+              curUser={curUser}
             />
           </div> 
         </div>

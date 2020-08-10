@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const CommentBox = ({commentId, commentList, deleteComment}) => {
+const CommentBox = ({allUsers, commentId, commentList, deleteComment}) => {
 
   window.commentList = commentList
   window.commentId = commentId
@@ -9,11 +9,12 @@ const CommentBox = ({commentId, commentList, deleteComment}) => {
   if (!commentId || !commentList) {
     return null;
   }
-  console.log(commentList)
   
   
     return (
       <div>
+        {allUsers[commentList[commentId].author_id].name}
+        <br/>
         {commentList[commentId].text_body}
 
         <button onClick={() => deleteComment(commentId)}>Delete Comment</button>

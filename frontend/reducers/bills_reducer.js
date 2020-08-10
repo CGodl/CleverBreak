@@ -1,5 +1,5 @@
 import { RECEIVE_BILL, RECEIVE_ALL_BILLS, REMOVE_BILL } from '../actions/bill_actions'
-import {REMOVE_COMMENT } from '../actions/comment_action'
+import {RECEIVE_COMMENT, REMOVE_COMMENT } from '../actions/comment_action'
 
 
 const billsReducer = (state = {}, action) => {
@@ -14,6 +14,17 @@ const billsReducer = (state = {}, action) => {
     case REMOVE_BILL:
       delete newState[action.billId];
       return newState;
+    case RECEIVE_COMMENT: 
+      for (const billId in newState) {
+        if (!newState[billId].commentIds.includes(action.comment.id)) {
+          newState[billId].commentIds.push(action.comment.id)
+
+      }
+    }
+    debugger
+      return newState;
+
+
     case REMOVE_COMMENT:
         // const newState = Object.assign({}, state);
       for (const billId in newState) {

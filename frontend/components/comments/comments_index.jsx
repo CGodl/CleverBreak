@@ -1,25 +1,28 @@
 import React from 'react';
 import CommentBox from './comment_show';
+import CommentForm from './comment_form';
 
 
 class CommentsIndex extends React.Component {
   constructor(props) {
     super(props)
+    
 
   }
   
-  componentWillMount() {
-    this.props.fetchComments();
-  };
-//STUCK HERE. CANT GET ALL VALUES OF THE COMMENT TO LOAD
-  render () {
-    const { billId, commentIdList, commentList, deleteComment } = this.props;
+  // componentWillMount() {
+  //   this.props.fetchComments();
+  // };
 
+  
+
+  render () {
+    const { billId, curUser, addComment, commentIdList, commentList, deleteComment, allUsers } = this.props;
     if (!billId || !commentIdList || !commentList) {
       return null
     }
-    // console.log(commentList)
     window.commentIdList = commentIdList
+   
     return (
       <div className='comments-index-container'>
          <ul>
@@ -31,13 +34,19 @@ class CommentsIndex extends React.Component {
                       commentId={commentId}
                       commentList={commentList}
                       deleteComment={deleteComment}
+                      allUsers={allUsers}
                     />
         
                   </li>
           
-              ))
-            }
+          ))
+        }
         </ul>
+        <CommentForm 
+          billId={billId}
+          curUser={curUser}
+          addComment={addComment}
+        />
       </div>
     )
   }

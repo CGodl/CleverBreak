@@ -3,7 +3,7 @@ class Api::CommentsController < ApplicationController
   def create
     recipients = User.find_by(id: [:id])
 
-    @comment = Comment.new(comments_param)
+    @comment = Comment.new(comment_params)
 
       
     if @comment.save!
