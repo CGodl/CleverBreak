@@ -1,6 +1,6 @@
 import React from 'react';
 import BillPage from '../bill/bill_modal_container'
-import EditBillPage from '../edit_bil_modal/edit_bill_modal_container'
+import EditBillPage from '../edit_bill_modal/edit_bill_modal_container'
 
 
 function Modal({modal, closeModal, billInfo}) {
@@ -15,6 +15,8 @@ function Modal({modal, closeModal, billInfo}) {
     case 'editBill':
       currentModalComponent = <EditBillPage billInfo={billInfo}/>;
       break;
+    // case 'inviteFriend':
+
     default:
       return null;
   }

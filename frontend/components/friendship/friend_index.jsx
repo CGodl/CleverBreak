@@ -1,6 +1,6 @@
 import React from 'react';
 
-class FriendForm extends React.Component {
+class FriendIndex extends React.Component {
   constructor(props) {
     super(props)
 
@@ -41,4 +41,4 @@ class FriendForm extends React.Component {
   }
 }
 
-export default FriendForm
+export default FriendIndex;

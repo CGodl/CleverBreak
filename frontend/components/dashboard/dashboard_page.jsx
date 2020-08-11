@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../nav_bar/navbar';
-import FriendForm from '../friendship/friend_form';
-import FriendFormContainer from '../friendship/friend_container';
+import FriendIndex from '../friendship/friend_index';
+import FriendContainer from '../friendship/friend_container';
 import openModal from '../../actions/modal_actions';
 // import FriendInviteBox from '../friendship/'
 import billModal from '../bill/bill_modal_container';
@@ -38,7 +38,7 @@ class Dashboard extends React.Component {
 
         <body className='dashboard-main'>
           <nav className='dashboard-main-nav-left'>
-            <p><FriendFormContainer /></p>
+            <p><FriendContainer /></p>
             {/* <p><FriendInviteBox /></p> */}
           </nav>
           <main className='dashboard-main-center'>

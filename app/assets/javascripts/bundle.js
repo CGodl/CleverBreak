@@ -1575,7 +1575,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _nav_bar_navbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../nav_bar/navbar */ "./frontend/components/nav_bar/navbar.jsx");
-/* harmony import */ var _friendship_friend_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../friendship/friend_form */ "./frontend/components/friendship/friend_form.jsx");
+/* harmony import */ var _friendship_friend_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../friendship/friend_index */ "./frontend/components/friendship/friend_index.jsx");
 /* harmony import */ var _friendship_friend_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../friendship/friend_container */ "./frontend/components/friendship/friend_container.jsx");
 /* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
 /* harmony import */ var _bill_bill_modal_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../bill/bill_modal_container */ "./frontend/components/bill/bill_modal_container.jsx");
@@ -1675,10 +1675,10 @@ var Dashboard = /*#__PURE__*/function (_React$Component) {
 
 /***/ }),
 
-/***/ "./frontend/components/edit_bil_modal/edit_bill_modal.jsx":
-/*!****************************************************************!*\
-  !*** ./frontend/components/edit_bil_modal/edit_bill_modal.jsx ***!
-  \****************************************************************/
+/***/ "./frontend/components/edit_bill_modal/edit_bill_modal.jsx":
+/*!*****************************************************************!*\
+  !*** ./frontend/components/edit_bill_modal/edit_bill_modal.jsx ***!
+  \*****************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1816,10 +1816,10 @@ var EditBillPage = /*#__PURE__*/function (_React$Component) {
 
 /***/ }),
 
-/***/ "./frontend/components/edit_bil_modal/edit_bill_modal_container.jsx":
-/*!**************************************************************************!*\
-  !*** ./frontend/components/edit_bil_modal/edit_bill_modal_container.jsx ***!
-  \**************************************************************************/
+/***/ "./frontend/components/edit_bill_modal/edit_bill_modal_container.jsx":
+/*!***************************************************************************!*\
+  !*** ./frontend/components/edit_bill_modal/edit_bill_modal_container.jsx ***!
+  \***************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1828,7 +1828,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _edit_bill_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit_bill_modal */ "./frontend/components/edit_bil_modal/edit_bill_modal.jsx");
+/* harmony import */ var _edit_bill_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit_bill_modal */ "./frontend/components/edit_bill_modal/edit_bill_modal.jsx");
 /* harmony import */ var _actions_friend_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/friend_actions */ "./frontend/actions/friend_actions.js");
 /* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
 /* harmony import */ var _actions_bill_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/bill_actions */ "./frontend/actions/bill_actions.js");
@@ -1876,7 +1876,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _actions_friend_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/friend_actions */ "./frontend/actions/friend_actions.js");
-/* harmony import */ var _friend_form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./friend_form */ "./frontend/components/friendship/friend_form.jsx");
+/* harmony import */ var _friend_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./friend_index */ "./frontend/components/friendship/friend_index.jsx");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
 
 
@@ -1905,14 +1905,14 @@ var mDTP = function mDTP(dispatch) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_friend_form__WEBPACK_IMPORTED_MODULE_3__["default"])); // get pojos of servers
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_friend_index__WEBPACK_IMPORTED_MODULE_3__["default"])); // get pojos of servers
 
 /***/ }),
 
-/***/ "./frontend/components/friendship/friend_form.jsx":
-/*!********************************************************!*\
-  !*** ./frontend/components/friendship/friend_form.jsx ***!
-  \********************************************************/
+/***/ "./frontend/components/friendship/friend_index.jsx":
+/*!*********************************************************!*\
+  !*** ./frontend/components/friendship/friend_index.jsx ***!
+  \*********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1944,18 +1944,18 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-var FriendForm = /*#__PURE__*/function (_React$Component) {
-  _inherits(FriendForm, _React$Component);
+var FriendIndex = /*#__PURE__*/function (_React$Component) {
+  _inherits(FriendIndex, _React$Component);
 
-  var _super = _createSuper(FriendForm);
+  var _super = _createSuper(FriendIndex);
 
-  function FriendForm(props) {
-    _classCallCheck(this, FriendForm);
+  function FriendIndex(props) {
+    _classCallCheck(this, FriendIndex);
 
     return _super.call(this, props);
   }
 
-  _createClass(FriendForm, [{
+  _createClass(FriendIndex, [{
     key: "componentWillMount",
     value: function componentWillMount() {
       this.props.receiveAllUsers();
@@ -1982,10 +1982,10 @@ var FriendForm = /*#__PURE__*/function (_React$Component) {
     }
   }]);
 
-  return FriendForm;
+  return FriendIndex;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (FriendForm);
+/* harmony default export */ __webpack_exports__["default"] = (FriendIndex);
 
 /***/ }),
 
@@ -2206,7 +2206,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _bill_bill_modal_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../bill/bill_modal_container */ "./frontend/components/bill/bill_modal_container.jsx");
-/* harmony import */ var _edit_bil_modal_edit_bill_modal_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../edit_bil_modal/edit_bill_modal_container */ "./frontend/components/edit_bil_modal/edit_bill_modal_container.jsx");
+/* harmony import */ var _edit_bill_modal_edit_bill_modal_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../edit_bill_modal/edit_bill_modal_container */ "./frontend/components/edit_bill_modal/edit_bill_modal_container.jsx");
 
 
 
@@ -2228,10 +2228,11 @@ function Modal(_ref) {
       break;
 
     case 'editBill':
-      currentModalComponent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_edit_bil_modal_edit_bill_modal_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      currentModalComponent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_edit_bill_modal_edit_bill_modal_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
         billInfo: billInfo
       });
       break;
+    // case 'inviteFriend':
 
     default:
       return null;
