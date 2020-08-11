@@ -3,7 +3,6 @@ import React from 'react';
 
 const CommentBox = ({allUsers, curUser, commentId, commentList, deleteComment}) => {
 
-  debugger
 
   if (!commentId || !commentList) {
     return null;

@@ -1242,7 +1242,6 @@ __webpack_require__.r(__webpack_exports__);
 var mSTP = function mSTP(state, ownProps) {
   var commentList = state.entities.comments;
   var curUser = state.session.id;
-  debugger;
   return {
     commentIdList: state.entities.bills[ownProps.billId].commentIds,
     commentList: commentList,
@@ -1390,7 +1389,6 @@ var CommentBox = function CommentBox(_ref) {
       commentId = _ref.commentId,
       commentList = _ref.commentList,
       deleteComment = _ref.deleteComment;
-  debugger;
 
   if (!commentId || !commentList) {
     return null;

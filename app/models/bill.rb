@@ -23,7 +23,7 @@ class Bill < ApplicationRecord
     foreign_key: :recipient_id,
     class_name: :User
 
-  has_many :comments,
+  has_many :comments, dependent: :destroy,
     foreign_key: :bill_id,
     class_name: :Comment
 
