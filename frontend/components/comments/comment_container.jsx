@@ -7,7 +7,7 @@ import CommentsIndex from './comments_index';
 const mSTP = (state, ownProps) => {
   const commentList = state.entities.comments;
   const curUser = state.session.id;
-  debugger
+  
 
 
   return {

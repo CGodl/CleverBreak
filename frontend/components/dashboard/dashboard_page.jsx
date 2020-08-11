@@ -1,10 +1,11 @@
 import React from 'react';
 import Navbar from '../nav_bar/navbar';
-import FriendForm from '../friendship/friend_form';
-import FriendFormContainer from '../friendship/friend_container';
+import FriendIndex from '../friendship/friend_index';
+import FriendContainer from '../friendship/friend_container';
 import openModal from '../../actions/modal_actions';
-// import FriendInviteBox from '../friendship/'
+import FriendInviteBox from '../friendship/friend_invite_box_main'
 import billModal from '../bill/bill_modal_container';
+import { Link } from 'react-router-dom';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -27,7 +28,7 @@ class Dashboard extends React.Component {
   }
 
   render () {
-    const { user, logout } = this.props;
+    const { user, logout, curUser, addFriend } = this.props;
     
     return (
       <html>
@@ -38,8 +39,13 @@ class Dashboard extends React.Component {
 
         <body className='dashboard-main'>
           <nav className='dashboard-main-nav-left'>
-            <p><FriendFormContainer /></p>
-            {/* <p><FriendInviteBox /></p> */}
+          <Link to={'/activity'}><button type='button'>Activity</button></Link>
+          <Link to={'/all'}><button type='button'>Expenses</button></Link>
+            <p><FriendContainer /></p>
+            <p><FriendInviteBox 
+              curUser={curUser}
+              addFriend={addFriend}
+            /></p>
           </nav>
           <main className='dashboard-main-center'>
             <div className ='dashboard-main-center-top'>

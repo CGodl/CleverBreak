@@ -2,18 +2,21 @@ class Api::FriendsController < ApplicationController
   before_action :require_logged_in
   
   def create
+    debugger
     requested_friend = User.find_by(email: [:email])
-    already_friend = Friend.find_by({requestor_id: current_user.id, requested_id: requested_friend.id })
-    #Make sure the opposite also returns false
 
+    # requested_friend = User.find_by(user_params[:email])
+    debugger
+    already_friend = Friend.find_by({requestor_id: current_user.id, requested_id: requested_friend.id })
+  
     if requested_friend && !already_friend
+      
       friend = Friend.new({requestor_id: current_user.id, requested_id: requested_friend.id })
-      # ////
+
       if friend.save
         render 'api/friends/show'
       end
     else
-      # ////
       render json: ["Unable to establish friendship"]
     end
   end
@@ -37,6 +40,16 @@ class Api::FriendsController < ApplicationController
   def index
     @friends = current_user.friends
   end
+
+  private
+
+  def friend_params
+    params.require(:friend).permit(:requestor_id, :requested_id, :email)
+  end
+
+  # def user_params
+  #   params.require(:user).permit(:email, :password, :name)
+  # end
 
 
 end
