@@ -90,7 +90,7 @@
 /*!******************************************!*\
   !*** ./frontend/actions/bill_actions.js ***!
   \******************************************/
-/*! exports provided: RECEIVE_BILL, RECEIVE_ALL_BILLS, REMOVE_BILL, addBill, requestBills, updateBill, deleteBill */
+/*! exports provided: RECEIVE_BILL, RECEIVE_ALL_BILLS, REMOVE_BILL, addBill, fetchBill, requestBills, updateBill, deleteBill */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -99,6 +99,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ALL_BILLS", function() { return RECEIVE_ALL_BILLS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_BILL", function() { return REMOVE_BILL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addBill", function() { return addBill; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchBill", function() { return fetchBill; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "requestBills", function() { return requestBills; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateBill", function() { return updateBill; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteBill", function() { return deleteBill; });
@@ -135,11 +136,14 @@ var addBill = function addBill(bill) {
       return dispatch(receiveBill(bill));
     });
   };
-}; // export const fetchBill = billId => dispatch => {
-//   return billApiUtil.receiveBill(billId)
-//     .then((bill) => dispatch(receiveBill(bill)))
-// }
-
+};
+var fetchBill = function fetchBill(billId) {
+  return function (dispatch) {
+    return _util_bill_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchBill"](billId).then(function (bill) {
+      return dispatch(receiveBill(bill));
+    });
+  };
+};
 var requestBills = function requestBills() {
   return function (dispatch) {
     return _util_bill_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchAllBills"]().then(function (bills) {
@@ -3390,7 +3394,7 @@ var configureStore = function configureStore() {
 /*!****************************************!*\
   !*** ./frontend/util/bill_api_util.js ***!
   \****************************************/
-/*! exports provided: createBill, destroyBill, updateBill, fetchAllBills */
+/*! exports provided: createBill, destroyBill, updateBill, fetchBill, fetchAllBills */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3398,6 +3402,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createBill", function() { return createBill; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "destroyBill", function() { return destroyBill; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateBill", function() { return updateBill; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchBill", function() { return fetchBill; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllBills", function() { return fetchAllBills; });
 var createBill = function createBill(bills) {
   return $.ajax({
@@ -3422,6 +3427,12 @@ var updateBill = function updateBill(bills, id) {
     data: {
       bills: bills
     }
+  });
+};
+var fetchBill = function fetchBill(id) {
+  return $.ajax({
+    type: 'GET',
+    url: "/api/bills/".concat(id)
   });
 };
 var fetchAllBills = function fetchAllBills() {
