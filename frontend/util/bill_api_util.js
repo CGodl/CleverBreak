@@ -28,6 +28,19 @@ export const updateBill = (bills, id) => {
 
 }
 
+export const fetchBill = (id) => {
+  
+  return $.ajax({
+    type: 'GET',
+    url: `/api/bills/${id}`,
+
+  })
+
+}
+
+
+
+
 export const fetchAllBills = () => {
 
   return $.ajax({
