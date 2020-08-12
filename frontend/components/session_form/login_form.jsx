@@ -25,7 +25,7 @@ class LoginForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.login(user)
     .then(() => this.props.history.push('/dashboard'))
-    .catch(err => { console.log(err) })
+    // .catch(err => { console.log(err) })
   }
 
   componentDidMount() {

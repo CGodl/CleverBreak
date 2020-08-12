@@ -265,7 +265,6 @@ var RECEIVE_FRIENDSHIPS = 'RECEIVE_FRIENDSHIPS';
 var REMOVE_FRIENDSHIP = 'REMOVE_FRIENDSHIP';
 
 var receiveFriend = function receiveFriend(friend) {
-  debugger;
   return {
     type: RECEIVE_FRIENDSHIP,
     friend: friend
@@ -2076,7 +2075,6 @@ var FriendInviteBox = /*#__PURE__*/function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       var friend = Object.assign({}, this.state);
-      debugger;
       this.props.addFriend(friend);
     }
   }, {
@@ -2599,9 +2597,7 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
       var user = Object.assign({}, this.state);
       this.props.login(user).then(function () {
         return _this3.props.history.push('/dashboard');
-      })["catch"](function (err) {
-        console.log(err);
-      });
+      }); // .catch(err => { console.log(err) })
     }
   }, {
     key: "componentDidMount",
@@ -3502,7 +3498,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getFriend", function() { return getFriend; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getFriends", function() { return getFriends; });
 var createFriend = function createFriend(friend) {
-  debugger;
   return $.ajax({
     type: 'POST',
     url: '/api/friends',

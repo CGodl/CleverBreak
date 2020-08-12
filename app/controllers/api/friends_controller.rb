@@ -2,11 +2,11 @@ class Api::FriendsController < ApplicationController
   before_action :require_logged_in
   
   def create
-    debugger
+    
     requested_friend = User.find_by(email: [:email])
 
     # requested_friend = User.find_by(user_params[:email])
-    debugger
+    
     already_friend = Friend.find_by({requestor_id: current_user.id, requested_id: requested_friend.id })
   
     if requested_friend && !already_friend

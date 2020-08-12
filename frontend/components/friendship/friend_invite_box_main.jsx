@@ -13,7 +13,7 @@ class FriendInviteBox extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const friend = Object.assign({}, this.state);
-    debugger
+    
     this.props.addFriend(friend);
   };
 

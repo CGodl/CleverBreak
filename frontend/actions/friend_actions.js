@@ -5,7 +5,6 @@ export const RECEIVE_FRIENDSHIPS = 'RECEIVE_FRIENDSHIPS'
 export const REMOVE_FRIENDSHIP = 'REMOVE_FRIENDSHIP'
 
 const receiveFriend = friend => {
-  debugger
   return {
     type: RECEIVE_FRIENDSHIP,
     friend
