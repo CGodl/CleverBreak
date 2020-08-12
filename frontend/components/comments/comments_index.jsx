@@ -21,7 +21,7 @@ class CommentsIndex extends React.Component {
     if (!billId || !commentIdList || !commentList) {
       return null
     }
-    window.commentIdList = commentIdList
+    // window.commentIdList = commentIdList
    
     return (
       <div className='comments-index-container'>

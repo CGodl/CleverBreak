@@ -14,10 +14,10 @@ class Activity extends React.Component {
   
   render () {
     const { allUsers, bills, curUser, curUserBillIds } = this.props;
-    window.allUsers = allUsers;
-    window.bills = bills;
-    window.curUserbillIds = curUserBillIds;
-    window.curUser = curUser;
+    // window.allUsers = allUsers;
+    // window.bills = bills;
+    // window.curUserbillIds = curUserBillIds;
+    // window.curUser = curUser;
 
     if (!curUserbillIds || !bills) {
       return null

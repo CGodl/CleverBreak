@@ -28,15 +28,15 @@ document.addEventListener('DOMContentLoaded', () => {
       store = configureStore();
     }
     //////;
-    window.getState = store.getState;
-    window.dispatch = store.dispatch;
-    window.createFriend = createFriend;
-    window.destroyFriend = destroyFriend;
-    window.getFriends = getFriends;
-    window.fetchAllBills = fetchAllBills;
-    window.fetchAllUsers = fetchAllUsers;
-    window.updateBill = updateBill;
-    window.getComments = getComments;
+    // window.getState = store.getState;
+    // window.dispatch = store.dispatch;
+    // window.createFriend = createFriend;
+    // window.destroyFriend = destroyFriend;
+    // window.getFriends = getFriends;
+    // window.fetchAllBills = fetchAllBills;
+    // window.fetchAllUsers = fetchAllUsers;
+    // window.updateBill = updateBill;
+    // window.getComments = getComments;
 
     
   const root = document.getElementById('root');

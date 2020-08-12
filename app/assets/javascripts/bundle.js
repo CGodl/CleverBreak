@@ -495,17 +495,17 @@ document.addEventListener('DOMContentLoaded', function () {
   } else {
     store = Object(_store_store__WEBPACK_IMPORTED_MODULE_3__["default"])();
   } //////;
+  // window.getState = store.getState;
+  // window.dispatch = store.dispatch;
+  // window.createFriend = createFriend;
+  // window.destroyFriend = destroyFriend;
+  // window.getFriends = getFriends;
+  // window.fetchAllBills = fetchAllBills;
+  // window.fetchAllUsers = fetchAllUsers;
+  // window.updateBill = updateBill;
+  // window.getComments = getComments;
 
 
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  window.createFriend = _util_friend_api_util__WEBPACK_IMPORTED_MODULE_4__["createFriend"];
-  window.destroyFriend = _util_friend_api_util__WEBPACK_IMPORTED_MODULE_4__["destroyFriend"];
-  window.getFriends = _util_friend_api_util__WEBPACK_IMPORTED_MODULE_4__["getFriends"];
-  window.fetchAllBills = _util_bill_api_util__WEBPACK_IMPORTED_MODULE_5__["fetchAllBills"];
-  window.fetchAllUsers = _util_session_api_util__WEBPACK_IMPORTED_MODULE_6__["fetchAllUsers"];
-  window.updateBill = _util_bill_api_util__WEBPACK_IMPORTED_MODULE_5__["updateBill"];
-  window.getComments = _util_comment_api_util__WEBPACK_IMPORTED_MODULE_7__["getComments"];
   var root = document.getElementById('root');
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_2__["default"], {
     store: store
@@ -575,11 +575,10 @@ var Activity = /*#__PURE__*/function (_React$Component) {
           allUsers = _this$props.allUsers,
           bills = _this$props.bills,
           curUser = _this$props.curUser,
-          curUserBillIds = _this$props.curUserBillIds;
-      window.allUsers = allUsers;
-      window.bills = bills;
-      window.curUserbillIds = curUserBillIds;
-      window.curUser = curUser;
+          curUserBillIds = _this$props.curUserBillIds; // window.allUsers = allUsers;
+      // window.bills = bills;
+      // window.curUserbillIds = curUserBillIds;
+      // window.curUser = curUser;
 
       if (!curUserbillIds || !bills) {
         return null;
@@ -1476,9 +1475,9 @@ var CommentsIndex = /*#__PURE__*/function (_React$Component) {
 
       if (!billId || !commentIdList || !commentList) {
         return null;
-      }
+      } // window.commentIdList = commentIdList
 
-      window.commentIdList = commentIdList;
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comments-index-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, commentIdList.map(function (commentId) {
