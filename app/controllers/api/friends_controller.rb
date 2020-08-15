@@ -2,11 +2,10 @@ class Api::FriendsController < ApplicationController
   before_action :require_logged_in
   
   def create
+    friend_email = params[:friend][:email]
     
-    requested_friend = User.find_by(email: [:email])
-
-    # requested_friend = User.find_by(user_params[:email])
-    
+    requested_friend = User.find_by(email: friend_email)
+        
     already_friend = Friend.find_by({requestor_id: current_user.id, requested_id: requested_friend.id })
   
     if requested_friend && !already_friend
@@ -29,8 +28,8 @@ class Api::FriendsController < ApplicationController
   end
 
   def show
-    friend = Friend.find(params[:id])
-    if friend
+    @friend = Friend.find(params[:id])
+    if @friend
       render :show
     else
       render json: ["Unable to find user"]

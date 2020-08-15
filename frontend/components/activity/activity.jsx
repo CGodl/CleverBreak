@@ -18,8 +18,9 @@ class Activity extends React.Component {
     // window.bills = bills;
     // window.curUserbillIds = curUserBillIds;
     // window.curUser = curUser;
+    debugger
 
-    if (!curUserbillIds || !bills) {
+    if (!curUserBillIds || !bills) {
       return null
     }
 
