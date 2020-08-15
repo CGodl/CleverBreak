@@ -28,8 +28,8 @@ class Api::FriendsController < ApplicationController
   end
 
   def show
-    friend = Friend.find(params[:id])
-    if friend
+    @friend = Friend.find(params[:id])
+    if @friend
       render :show
     else
       render json: ["Unable to find user"]
