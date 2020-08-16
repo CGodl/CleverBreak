@@ -6,6 +6,7 @@ import openModal from '../../actions/modal_actions';
 import FriendInviteBox from '../friendship/friend_invite_box_main'
 import billModal from '../bill/bill_modal_container';
 import { Link } from 'react-router-dom';
+import AllExpenses from '../all_expenses/all_expenses_container'
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -39,8 +40,16 @@ class Dashboard extends React.Component {
 
         <body className='dashboard-main'>
           <nav className='dashboard-main-nav-left'>
-          <Link to={'/activity'}><button type='button'>Activity</button></Link>
-          <Link to={'/all'}><button type='button'>Expenses</button></Link>
+            <button>Dashboard</button>
+            <button>Recent activity</button>
+            <button>All expenses</button>
+
+
+
+
+          <Link to={'/dashboard'}><button type='button'> Dashboard</button></Link>
+          <Link to={'/activity'}><button type='button'>Recent activity</button></Link>
+          <Link to={'/all'}><button type='button'>All expenses</button></Link>
             <p><FriendContainer /></p>
             <p><FriendInviteBox 
               curUser={curUser}
@@ -48,10 +57,26 @@ class Dashboard extends React.Component {
             /></p>
           </nav>
           <main className='dashboard-main-center'>
+          switch (modal) {
+      //   case 'bill':
+      //     currentModalComponent = <BillPage />;
+      //     break;
+      //   case 'editBill':
+      //     currentModalComponent = <EditBillPage billInfo={billInfo}/>;
+      //     break;
+      //   // case 'inviteFriend':
+
+      //   default:
+      //     return null;
+      //    }
+
             <div className ='dashboard-main-center-top'>
               <label>Dashboard</label>
               <button className='expense-btn' onClick={this.openTheModal}>Add an expense</button>
               <button className='settle-btn'>Settle up</button>
+            </div>
+            <div>
+                
             </div>
           </main>
           <nav className='dashboard-main-nav-right'>
