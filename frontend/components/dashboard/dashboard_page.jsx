@@ -57,18 +57,7 @@ class Dashboard extends React.Component {
             /></p>
           </nav>
           <main className='dashboard-main-center'>
-          switch (modal) {
-      //   case 'bill':
-      //     currentModalComponent = <BillPage />;
-      //     break;
-      //   case 'editBill':
-      //     currentModalComponent = <EditBillPage billInfo={billInfo}/>;
-      //     break;
-      //   // case 'inviteFriend':
-
-      //   default:
-      //     return null;
-      //    }
+            
 
             <div className ='dashboard-main-center-top'>
               <label>Dashboard</label>

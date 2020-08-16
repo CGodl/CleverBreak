@@ -8,8 +8,6 @@ export default function dashboardReducer(state = null, action) {
       return action.activity;
     case OPEN_EXPENSES:
       return action.expenses;
-    // case OPEN_GROUP:
-    // case OPEN_FRIENDS:
     default:
       return state;
   }
