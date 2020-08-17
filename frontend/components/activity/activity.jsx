@@ -18,7 +18,6 @@ class Activity extends React.Component {
     // window.bills = bills;
     // window.curUserbillIds = curUserBillIds;
     // window.curUser = curUser;
-    debugger
 
     if (!curUserBillIds || !bills) {
       return null
@@ -32,12 +31,15 @@ class Activity extends React.Component {
               (curUserBillIds.length != 0) ?
                 curUserBillIds.map(billId => (
                   <li key={ billId } >
-                    <Link to={'/all'}><button onClick={console.log('button Works')}>
-                  {curUser.id === bills[billId].author_id ? 'You' : allUsers[bills[billId].author_id].name} added 
-                  "{bills[billId].description}"
-                  The difference is {bills[billId].cost}
+                    <button className='activity-item' onClick={console.log('button Works')}>
+                  {curUser.id === bills[billId].author_id ? 'You' : allUsers[bills[billId].author_id].name} added "{bills[billId].description}"
+                  <br />
+                  {curUser.id === bills[billId].author_id ? 'You get back ' : `${allUsers[bills[billId].author_id].name} owes you `}
+
+
+                  {bills[billId].cost}
                     </button>
-                    </Link>
+
                   
                   </li>
                   

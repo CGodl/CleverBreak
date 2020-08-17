@@ -4,23 +4,23 @@ export const OPEN_EXPENSES = 'OPEN_EXPENSES';
 // export const OPEN_GROUP = 'OPEN_GROUP';
 // export const OPEN_FRIEND = 'OPEN_FRIENDS';
 
-export const openDashboard = dashboard => {
+export const openDashboard = () => {
   return {
     type: OPEN_DASHBOARD,
-    dashboard
+    dashboard: 'dashboard'
   }
 };
 
-export const openActivity = activity => {
+export const openActivity = () => {
   return {
     type: OPEN_ACTIVITY,
-    activity
+    activity: 'activity'
   }
 };
 
-export const openExpenses = expenses => {
+export const openExpenses = () => {
   return {
     type: OPEN_EXPENSES,
-    expenses
+    expenses: 'expenses'
   }
 };

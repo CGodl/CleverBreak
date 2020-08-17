@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { logout, receiveAllUsers } from '../../actions/session_actions';
-import Dashboard from './dashboard_page';
+import Dashboard from './dashboard_frame';
 import { addFriend, requestFriends } from "../../actions/friend_actions";
 import { requestBills } from "../../actions/bill_actions";
 import { fetchComments } from '../../actions/comment_action';
 import { openModal } from '../../actions/modal_actions';
+import { openDashboard, openActivity, openExpenses } from '../../actions/dashboard_actions'
 
 
 const mSTP = (state) => {
@@ -13,6 +14,7 @@ const mSTP = (state) => {
 
   return {
     user: state.entities.users[state.session.id],
+    dashView: state.ui.dashView,
     curUser
   }
 }
@@ -25,7 +27,10 @@ const mDTP = (dispatch) => {
     addFriend: (friend) => dispatch(addFriend(friend)),
     requestBills: () => dispatch(requestBills()),
     fetchComments: () => dispatch(fetchComments()),
-    openModal: (modal, billInfo) => dispatch(openModal(modal, billInfo))
+    openModal: (modal, billInfo) => dispatch(openModal(modal, billInfo)),
+    openDashboard: (dashboard) => dispatch(openDashboard(dashboard)),
+    openActivity: (activity) => dispatch(openActivity(activity)),
+    openExpenses: (expenses) => dispatch(openExpenses(expenses))
   };
 };
 

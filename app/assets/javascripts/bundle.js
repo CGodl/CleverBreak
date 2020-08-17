@@ -262,22 +262,22 @@ var OPEN_ACTIVITY = 'OPEN_ACTIVITY';
 var OPEN_EXPENSES = 'OPEN_EXPENSES'; // export const OPEN_GROUP = 'OPEN_GROUP';
 // export const OPEN_FRIEND = 'OPEN_FRIENDS';
 
-var openDashboard = function openDashboard(dashboard) {
+var openDashboard = function openDashboard() {
   return {
     type: OPEN_DASHBOARD,
-    dashboard: dashboard
+    dashboard: 'dashboard'
   };
 };
-var openActivity = function openActivity(activity) {
+var openActivity = function openActivity() {
   return {
     type: OPEN_ACTIVITY,
-    activity: activity
+    activity: 'activity'
   };
 };
-var openExpenses = function openExpenses(expenses) {
+var openExpenses = function openExpenses() {
   return {
     type: OPEN_EXPENSES,
-    expenses: expenses
+    expenses: 'expenses'
   };
 };
 
@@ -536,8 +536,9 @@ document.addEventListener('DOMContentLoaded', function () {
   } else {
     store = Object(_store_store__WEBPACK_IMPORTED_MODULE_3__["default"])();
   } //////;
-  // window.getState = store.getState;
-  // window.dispatch = store.dispatch;
+
+
+  window.getState = store.getState; // window.dispatch = store.dispatch;
   // window.createFriend = createFriend;
   // window.destroyFriend = destroyFriend;
   // window.getFriends = getFriends;
@@ -545,7 +546,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // window.fetchAllUsers = fetchAllUsers;
   // window.updateBill = updateBill;
   // window.getComments = getComments;
-
 
   var root = document.getElementById('root');
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -621,8 +621,6 @@ var Activity = /*#__PURE__*/function (_React$Component) {
       // window.curUserbillIds = curUserBillIds;
       // window.curUser = curUser;
 
-      debugger;
-
       if (!curUserBillIds || !bills) {
         return null;
       }
@@ -632,11 +630,10 @@ var Activity = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, curUserBillIds.length != 0 ? curUserBillIds.map(function (billId) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: billId
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: '/all'
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          className: "activity-item",
           onClick: console.log('button Works')
-        }, curUser.id === bills[billId].author_id ? 'You' : allUsers[bills[billId].author_id].name, " added \"", bills[billId].description, "\" The difference is ", bills[billId].cost)));
+        }, curUser.id === bills[billId].author_id ? 'You' : allUsers[bills[billId].author_id].name, " added \"", bills[billId].description, "\"", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), curUser.id === bills[billId].author_id ? 'You get back ' : "".concat(allUsers[bills[billId].author_id].name, " owes you "), bills[billId].cost));
       }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "No Bills Found")));
     }
   }]);
@@ -1561,11 +1558,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
-/* harmony import */ var _dashboard_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dashboard_page */ "./frontend/components/dashboard/dashboard_page.jsx");
+/* harmony import */ var _dashboard_frame__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dashboard_frame */ "./frontend/components/dashboard/dashboard_frame.jsx");
 /* harmony import */ var _actions_friend_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/friend_actions */ "./frontend/actions/friend_actions.js");
 /* harmony import */ var _actions_bill_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/bill_actions */ "./frontend/actions/bill_actions.js");
 /* harmony import */ var _actions_comment_action__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/comment_action */ "./frontend/actions/comment_action.js");
 /* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+/* harmony import */ var _actions_dashboard_actions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../actions/dashboard_actions */ "./frontend/actions/dashboard_actions.js");
+
 
 
 
@@ -1579,6 +1578,7 @@ var mSTP = function mSTP(state) {
   var curUser = state.entities.users[state.session.id];
   return {
     user: state.entities.users[state.session.id],
+    dashView: state.ui.dashView,
     curUser: curUser
   };
 };
@@ -1605,18 +1605,27 @@ var mDTP = function mDTP(dispatch) {
     },
     openModal: function openModal(modal, billInfo) {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_7__["openModal"])(modal, billInfo));
+    },
+    openDashboard: function openDashboard(dashboard) {
+      return dispatch(Object(_actions_dashboard_actions__WEBPACK_IMPORTED_MODULE_8__["openDashboard"])(dashboard));
+    },
+    openActivity: function openActivity(activity) {
+      return dispatch(Object(_actions_dashboard_actions__WEBPACK_IMPORTED_MODULE_8__["openActivity"])(activity));
+    },
+    openExpenses: function openExpenses(expenses) {
+      return dispatch(Object(_actions_dashboard_actions__WEBPACK_IMPORTED_MODULE_8__["openExpenses"])(expenses));
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, mDTP)(_dashboard_page__WEBPACK_IMPORTED_MODULE_3__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, mDTP)(_dashboard_frame__WEBPACK_IMPORTED_MODULE_3__["default"]));
 
 /***/ }),
 
-/***/ "./frontend/components/dashboard/dashboard_page.jsx":
-/*!**********************************************************!*\
-  !*** ./frontend/components/dashboard/dashboard_page.jsx ***!
-  \**********************************************************/
+/***/ "./frontend/components/dashboard/dashboard_frame.jsx":
+/*!***********************************************************!*\
+  !*** ./frontend/components/dashboard/dashboard_frame.jsx ***!
+  \***********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1629,9 +1638,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _friendship_friend_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../friendship/friend_container */ "./frontend/components/friendship/friend_container.jsx");
 /* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
 /* harmony import */ var _friendship_friend_invite_box_main__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../friendship/friend_invite_box_main */ "./frontend/components/friendship/friend_invite_box_main.jsx");
-/* harmony import */ var _bill_bill_modal_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../bill/bill_modal_container */ "./frontend/components/bill/bill_modal_container.jsx");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _all_expenses_all_expenses_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../all_expenses/all_expenses_container */ "./frontend/components/all_expenses/all_expenses_container.jsx");
+/* harmony import */ var _all_expenses_all_expenses_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../all_expenses/all_expenses_container */ "./frontend/components/all_expenses/all_expenses_container.jsx");
+/* harmony import */ var _activity_activity_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../activity/activity_container */ "./frontend/components/activity/activity_container.jsx");
+/* harmony import */ var _bill_bill_modal_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../bill/bill_modal_container */ "./frontend/components/bill/bill_modal_container.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1664,6 +1674,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var Dashboard = /*#__PURE__*/function (_React$Component) {
   _inherits(Dashboard, _React$Component);
 
@@ -1675,14 +1686,13 @@ var Dashboard = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, Dashboard);
 
     _this = _super.call(this, props);
-    _this.state = _this.props.user;
     _this.openTheModal = _this.openTheModal.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(Dashboard, [{
-    key: "componentWillMount",
-    value: function componentWillMount() {
+    key: "componentDidMount",
+    value: function componentDidMount() {
       this.props.receiveAllUsers();
       this.props.requestFriends();
       this.props.requestBills();
@@ -1694,6 +1704,32 @@ var Dashboard = /*#__PURE__*/function (_React$Component) {
       this.props.openModal('bill', null);
     }
   }, {
+    key: "currentView",
+    value: function currentView() {
+      // e.preventDefault();
+      // if (this.state.ui.dashView == undefined) {
+      //   return null;
+      // }
+      switch (this.props.dashView) {
+        case 'dashboard':
+          console.log("Moses");
+          break;
+
+        case 'expenses':
+          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_all_expenses_all_expenses_container__WEBPACK_IMPORTED_MODULE_6__["default"], null);
+          break;
+
+        case 'activity':
+          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_activity_activity_container__WEBPACK_IMPORTED_MODULE_7__["default"], null);
+          break;
+
+        default:
+          console.log("DEFAULT");
+          console.log(this.props);
+          break;
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,
@@ -1701,26 +1737,20 @@ var Dashboard = /*#__PURE__*/function (_React$Component) {
           logout = _this$props.logout,
           curUser = _this$props.curUser,
           addFriend = _this$props.addFriend;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("html", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_bar_navbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        name: this.state.name,
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("html", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_bar_navbar__WEBPACK_IMPORTED_MODULE_1__["default"] // name={this.state.name}
+      , {
         logout: this.props.logout
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("body", {
         className: "dashboard-main"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "dashboard-main-nav-left"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Dashboard"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Recent activity"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "All expenses"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__["Link"], {
-        to: '/dashboard'
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        type: "button"
-      }, " Dashboard")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__["Link"], {
-        to: '/activity'
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        type: "button"
-      }, "Recent activity")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__["Link"], {
-        to: '/all'
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        type: "button"
-      }, "All expenses")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friendship_friend_container__WEBPACK_IMPORTED_MODULE_3__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friendship_friend_invite_box_main__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        onClick: this.props.openDashboard
+      }, "Dashboard"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.props.openActivity
+      }, "Recent activity"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.props.openExpenses
+      }, "All expenses"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friendship_friend_container__WEBPACK_IMPORTED_MODULE_3__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friendship_friend_invite_box_main__WEBPACK_IMPORTED_MODULE_5__["default"], {
         curUser: curUser,
         addFriend: addFriend
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
@@ -1732,7 +1762,7 @@ var Dashboard = /*#__PURE__*/function (_React$Component) {
         onClick: this.openTheModal
       }, "Add an expense"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "settle-btn"
-      }, "Settle up")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+      }, "Settle up")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.currentView())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "dashboard-main-nav-right"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Get Splitwise Pro!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "splitwise-purple-logo"
@@ -3411,6 +3441,7 @@ var usersReducer = function usersReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
+  var newState = Object.assign({}, state);
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
@@ -3419,12 +3450,21 @@ var usersReducer = function usersReducer() {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_USERS"]:
       return action.users;
 
-    case _actions_bill_actions__WEBPACK_IMPORTED_MODULE_1__["REMOVE_BILL"]:
-      var newState = Object.assign({}, state);
+    case _actions_bill_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_BILL"]:
+      debugger;
 
       for (var userId in newState) {
-        if (newState.hasOwnProperty(userId)) {
-          var user = newState[userId];
+        if (!newState[userId].billIds.includes(action.bill.id)) {
+          newState[userId].billIds.push(action.bill.id);
+        }
+      }
+
+      return newState;
+
+    case _actions_bill_actions__WEBPACK_IMPORTED_MODULE_1__["REMOVE_BILL"]:
+      for (var _userId in newState) {
+        if (newState.hasOwnProperty(_userId)) {
+          var user = newState[_userId];
           user.billIds = user.billIds.filter(function (billId) {
             return billId !== action.billId;
           });
