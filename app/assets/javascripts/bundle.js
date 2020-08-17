@@ -616,10 +616,11 @@ var Activity = /*#__PURE__*/function (_React$Component) {
           allUsers = _this$props.allUsers,
           bills = _this$props.bills,
           curUser = _this$props.curUser,
-          curUserBillIds = _this$props.curUserBillIds; // window.allUsers = allUsers;
-      // window.bills = bills;
-      // window.curUserbillIds = curUserBillIds;
-      // window.curUser = curUser;
+          curUserBillIds = _this$props.curUserBillIds;
+      window.allUsers = allUsers;
+      window.bills = bills;
+      window.curUserbillIds = curUserBillIds;
+      window.curUser = curUser;
 
       if (!curUserBillIds || !bills) {
         return null;
@@ -631,9 +632,12 @@ var Activity = /*#__PURE__*/function (_React$Component) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: billId
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          className: "activity-item",
-          onClick: console.log('button Works')
-        }, curUser.id === bills[billId].author_id ? 'You' : allUsers[bills[billId].author_id].name, " added \"", bills[billId].description, "\"", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), curUser.id === bills[billId].author_id ? 'You get back ' : "".concat(allUsers[bills[billId].author_id].name, " owes you "), bills[billId].cost));
+          className: "activity-item"
+        }, curUser.id === bills[billId].author_id ? 'You' : allUsers[bills[billId].author_id].name, " added \"", bills[billId].description, "\"", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), console.log(bills[billId].author_payor), curUser.id === bills[billId].author_id && bills[billId].author_payor === true ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "activity-payor"
+        }, "$", allUsers[bills[billId].author_id].name, " owes you $", bills[billId].cost) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "activity-payee"
+        }, "You get back $", bills[billId].cost)));
       }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "No Bills Found")));
     }
   }]);
@@ -3451,8 +3455,6 @@ var usersReducer = function usersReducer() {
       return action.users;
 
     case _actions_bill_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_BILL"]:
-      debugger;
-
       for (var userId in newState) {
         if (!newState[userId].billIds.includes(action.bill.id)) {
           newState[userId].billIds.push(action.bill.id);

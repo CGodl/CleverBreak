@@ -14,10 +14,10 @@ class Activity extends React.Component {
   
   render () {
     const { allUsers, bills, curUser, curUserBillIds } = this.props;
-    // window.allUsers = allUsers;
-    // window.bills = bills;
-    // window.curUserbillIds = curUserBillIds;
-    // window.curUser = curUser;
+    window.allUsers = allUsers;
+    window.bills = bills;
+    window.curUserbillIds = curUserBillIds;
+    window.curUser = curUser;
 
     if (!curUserBillIds || !bills) {
       return null
@@ -31,13 +31,15 @@ class Activity extends React.Component {
               (curUserBillIds.length != 0) ?
                 curUserBillIds.map(billId => (
                   <li key={ billId } >
-                    <button className='activity-item' onClick={console.log('button Works')}>
+                    <button className='activity-item'>
                   {curUser.id === bills[billId].author_id ? 'You' : allUsers[bills[billId].author_id].name} added "{bills[billId].description}"
                   <br />
-                  {curUser.id === bills[billId].author_id ? 'You get back ' : `${allUsers[bills[billId].author_id].name} owes you `}
+                 { console.log(bills[billId].author_payor)}
+                  
+                  {(curUser.id === bills[billId].author_id && bills[billId].author_payor === true) ? <div className='activity-payor'>${allUsers[bills[billId].author_id].name} owes you ${bills[billId].cost}</div> : <div className='activity-payee'>You get back ${bills[billId].cost}</div>}
 
 
-                  {bills[billId].cost}
+                  
                     </button>
 
                   

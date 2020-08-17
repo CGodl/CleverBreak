@@ -11,7 +11,6 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_ALL_USERS:
       return action.users;
     case RECEIVE_BILL: 
-      debugger
       for (const userId in newState) {
         if (!newState[userId].billIds.includes(action.bill.id)) {
           newState[userId].billIds.push(action.bill.id)
