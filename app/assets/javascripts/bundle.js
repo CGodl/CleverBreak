@@ -635,7 +635,7 @@ var Activity = /*#__PURE__*/function (_React$Component) {
           className: "activity-item"
         }, curUser.id === bills[billId].author_id ? 'You' : allUsers[bills[billId].author_id].name, " added \"", bills[billId].description, "\"", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), console.log(bills[billId].author_payor), curUser.id === bills[billId].author_id && bills[billId].author_payor === true ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "activity-payor"
-        }, "$", allUsers[bills[billId].author_id].name, " owes you $", bills[billId].cost) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, "You owe $", bills[billId].cost) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "activity-payee"
         }, "You get back $", bills[billId].cost)));
       }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "No Bills Found")));

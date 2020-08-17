@@ -36,7 +36,7 @@ class Activity extends React.Component {
                   <br />
                  { console.log(bills[billId].author_payor)}
                   
-                  {(curUser.id === bills[billId].author_id && bills[billId].author_payor === true) ? <div className='activity-payor'>${allUsers[bills[billId].author_id].name} owes you ${bills[billId].cost}</div> : <div className='activity-payee'>You get back ${bills[billId].cost}</div>}
+                  {(curUser.id === bills[billId].author_id && bills[billId].author_payor === true) ? <div className='activity-payor'>You owe ${bills[billId].cost}</div> : <div className='activity-payee'>You get back ${bills[billId].cost}</div>}
 
 
                   
