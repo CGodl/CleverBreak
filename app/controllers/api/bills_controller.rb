@@ -4,7 +4,6 @@ class Api::BillsController < ApplicationController
     recipient = params[:bills][:name]
 
     recipient_found_id = User.find_by(name: recipient).id
-    debugger
 
 
 
