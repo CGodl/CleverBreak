@@ -1,7 +1,12 @@
 class Api::BillsController < ApplicationController 
 
   def create
-    recipients = User.find_by(id: [:id])
+    recipient = params[:bills][:name]
+
+    recipient_found_id = User.find_by(name: recipient).id
+    debugger
+
+
 
     if Bill.last == nil
       current_history_id = 0
@@ -13,7 +18,7 @@ class Api::BillsController < ApplicationController
 
     @bill = Bill.new({author_id: current_user.id,
                       author_payor: bill_params[:author_payor],
-                     recipient_id: bill_params[:recipient_id],
+                     recipient_id: recipient_found_id,
                      history_id: current_history_id,
                      group_id: bill_params[:group_id],
                      cost: bill_params[:cost],

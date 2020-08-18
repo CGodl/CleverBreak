@@ -18,6 +18,23 @@
   margin-top: 3px;
 }
 
+.dash-click {
+  color: gray;
+  background-color: transparent;
+  border: none;
+  height: 19px;
+
+}
+
+.dash-click:hover { 
+  background: #f8f8f8;
+}
+
+.dash-click:focus {
+  font-weight: bold;
+  color: #5bc5a7;
+  border-left: #5bc5a7 solid 6px;
+}
 
 .dashboard-main-center {
   background-color: none;

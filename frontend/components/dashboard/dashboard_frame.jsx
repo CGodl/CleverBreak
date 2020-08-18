@@ -66,9 +66,11 @@ class Dashboard extends React.Component {
 
         <body className='dashboard-main'>
           <nav className='dashboard-main-nav-left'>
-            <button onClick={this.props.openDashboard}>Dashboard</button>
-            <button onClick={this.props.openActivity}>Recent activity</button>
-            <button onClick={this.props.openExpenses}>All expenses</button>
+            <button className='dash-click' onClick={this.props.openDashboard}>Dashboard</button>
+            <br/>
+            <button className='dash-click' onClick={this.props.openActivity}>Recent activity</button>
+            <br/>
+            <button className='dash-click' onClick={this.props.openExpenses}>All expenses</button>
 
 
 
