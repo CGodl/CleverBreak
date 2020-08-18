@@ -55,7 +55,7 @@ class BillPage extends React.Component {
     
       return (
         <form className='bill-modal-container' onSubmit={this.handleSubmit}>
-          <p>Add an expense</p>
+          <p className='bill-modal-title'>Add an expense</p>
           <label>With you and:
             <input 
               type='text'
@@ -63,6 +63,7 @@ class BillPage extends React.Component {
               onChange={this.update('recipient_id')}
               />
           </label>
+          <br />
           <label>
             <input 
               type='text'
@@ -70,6 +71,7 @@ class BillPage extends React.Component {
               onChange={this.update('description')}
               />
           </label>
+          <br />
           <label>$
             <input 
               type='text'
@@ -77,6 +79,7 @@ class BillPage extends React.Component {
               onChange={this.update('cost')}
               />
           </label>
+          <br />
       <p>Paid by <button className='payor-btn' onClick={this.toggleBoolean}>{this.state.author_payor ? 'You' : (this.state.recipient_id ? friends[this.state.recipient_id].name : 'No Name Provided')}</button></p>
           {/* <label>Enter a group, if any:
             <input 

@@ -1,9 +1,71 @@
+
+.all-expenses-btn {
+  background-color: transparent;
+  height: 55px;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #eee;
+}
+
+.all-expenses-btn:hover {
+  background: #f8f8f8;
+  text-decoration: underline;
+}
+
+.expense-delete-button {
+  border: none;
+  background-color: transparent;
+  color: red;
+
+}
+
+.expense-delete-button:hover {
+  text-decoration: underline;
+  
+}
+
+.bill-button-title {
+
+  font-size: 16px;
+  font-weight: bold;
+
+}
+
+.bill-lended {
+  color: red;
+}
+
+.bill-lent {
+  color: green;
+}
+
+.bill-edit-expense-btn {
+  background: #ff652f;
+  color: #fff;
+  text-shadow: 0 -1px 0 #c83400;
+  padding: 2px 6px;
+  font-size: 11px;
+  line-height: 14px;
+}
+
+/* .recent-activity-main-container {
+  background-color: red;
+} */
+/* 
+.bill-list-container {
+  color: red;
+}
+
+.all-bill-show-container {
+  background-color: red;
+} */
+
 .bill-show-toggle-on {
+  
   display: block;
+  background-color: #f8f8f8;
 }
 
 .bill-show-toggle-off {
   display: none;
-
-
 }

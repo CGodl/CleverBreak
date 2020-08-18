@@ -90,11 +90,9 @@ class Dashboard extends React.Component {
               <button className='expense-btn' onClick={this.openTheModal}>Add an expense</button>
               <button className='settle-btn'>Settle up</button>
             </div>
+
             <div>
-             
-              { 
-                  this.currentView()
-                  }
+              {this.currentView()}
             </div>
           </main>
           <nav className='dashboard-main-nav-right'>

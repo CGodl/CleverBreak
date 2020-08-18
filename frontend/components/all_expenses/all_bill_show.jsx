@@ -23,15 +23,17 @@ class BillShow extends React.Component {
   }
 
   render () {
-    const { bills, allUsers, openModal, fetchBill, billId } = this.props;
+    const { bills, allUsers, curUser, openModal, fetchBill, billId, deleteBill } = this.props;
   
 
     return (
       <div className='all-bill-show-container'>
         <button onClick={this.toggleBillDisplay} className='all-expenses-btn'>
-          {bills[billId].description}
-          {allUsers[bills[billId].author_id].name} added 
-          The difference is {bills[billId].cost}       
+          <span className='bill-button-title'>{bills[billId].description}</span>
+    {(curUser.id === bills[billId].author_id && bills[billId].author_payor === true) ? <span className='bill-lended'>{allUsers[bills[billId].recipient_id].name} lent you <br/> ${bills[billId].cost}</span> : <span className='bill-lent'>You lent {allUsers[bills[billId].recipient_id].name} ${bills[billId].cost}</span>}
+
+
+          <button className='expense-delete-button' onClick={() => this.props.deleteBill(billId)}>X</button> 
         </button>
         <div className={this.state.isButtonActive ? 'bill-show-toggle-on' : 'bill-show-toggle-off'}>
           <div>
@@ -42,7 +44,8 @@ class BillShow extends React.Component {
             Added by {allUsers[bills[billId].author_id].name} on {bills[billId].created_at}
             <br/>
             Last updated on {bills[billId].updated_at}
-            <button onClick={() => this.openTheModal(billId)}>Edit</button>
+            <br/>
+            <button className='bill-edit-expense-btn' onClick={() => this.openTheModal(billId)}>Edit expense</button>
             <br/>
             <CommentsIndex 
               billId={billId}
