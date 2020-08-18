@@ -4,7 +4,8 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background-color: #eee;
+  opacity: .8;
   z-index: 10;
 }
 

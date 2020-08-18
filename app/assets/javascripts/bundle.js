@@ -242,6 +242,47 @@ var deleteComment = function deleteComment(commentId) {
 
 /***/ }),
 
+/***/ "./frontend/actions/dashboard_actions.js":
+/*!***********************************************!*\
+  !*** ./frontend/actions/dashboard_actions.js ***!
+  \***********************************************/
+/*! exports provided: OPEN_DASHBOARD, OPEN_ACTIVITY, OPEN_EXPENSES, openDashboard, openActivity, openExpenses */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OPEN_DASHBOARD", function() { return OPEN_DASHBOARD; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OPEN_ACTIVITY", function() { return OPEN_ACTIVITY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OPEN_EXPENSES", function() { return OPEN_EXPENSES; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "openDashboard", function() { return openDashboard; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "openActivity", function() { return openActivity; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "openExpenses", function() { return openExpenses; });
+var OPEN_DASHBOARD = 'OPEN_DASHBOARD';
+var OPEN_ACTIVITY = 'OPEN_ACTIVITY';
+var OPEN_EXPENSES = 'OPEN_EXPENSES'; // export const OPEN_GROUP = 'OPEN_GROUP';
+// export const OPEN_FRIEND = 'OPEN_FRIENDS';
+
+var openDashboard = function openDashboard() {
+  return {
+    type: OPEN_DASHBOARD,
+    dashboard: 'dashboard'
+  };
+};
+var openActivity = function openActivity() {
+  return {
+    type: OPEN_ACTIVITY,
+    activity: 'activity'
+  };
+};
+var openExpenses = function openExpenses() {
+  return {
+    type: OPEN_EXPENSES,
+    expenses: 'expenses'
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/friend_actions.js":
 /*!********************************************!*\
   !*** ./frontend/actions/friend_actions.js ***!
@@ -495,8 +536,9 @@ document.addEventListener('DOMContentLoaded', function () {
   } else {
     store = Object(_store_store__WEBPACK_IMPORTED_MODULE_3__["default"])();
   } //////;
-  // window.getState = store.getState;
-  // window.dispatch = store.dispatch;
+
+
+  window.getState = store.getState; // window.dispatch = store.dispatch;
   // window.createFriend = createFriend;
   // window.destroyFriend = destroyFriend;
   // window.getFriends = getFriends;
@@ -504,7 +546,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // window.fetchAllUsers = fetchAllUsers;
   // window.updateBill = updateBill;
   // window.getComments = getComments;
-
 
   var root = document.getElementById('root');
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -575,12 +616,11 @@ var Activity = /*#__PURE__*/function (_React$Component) {
           allUsers = _this$props.allUsers,
           bills = _this$props.bills,
           curUser = _this$props.curUser,
-          curUserBillIds = _this$props.curUserBillIds; // window.allUsers = allUsers;
-      // window.bills = bills;
-      // window.curUserbillIds = curUserBillIds;
-      // window.curUser = curUser;
-
-      debugger;
+          curUserBillIds = _this$props.curUserBillIds;
+      window.allUsers = allUsers;
+      window.bills = bills;
+      window.curUserbillIds = curUserBillIds;
+      window.curUser = curUser;
 
       if (!curUserBillIds || !bills) {
         return null;
@@ -591,11 +631,13 @@ var Activity = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, curUserBillIds.length != 0 ? curUserBillIds.map(function (billId) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: billId
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: '/all'
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          onClick: console.log('button Works')
-        }, curUser.id === bills[billId].author_id ? 'You' : allUsers[bills[billId].author_id].name, " added \"", bills[billId].description, "\" The difference is ", bills[billId].cost)));
+          className: "activity-item"
+        }, curUser.id === bills[billId].author_id ? 'You' : allUsers[bills[billId].author_id].name, " added \"", bills[billId].description, "\"", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), console.log(bills[billId].author_payor), curUser.id === bills[billId].author_id && bills[billId].author_payor === true ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "activity-payor"
+        }, "You owe $", bills[billId].cost) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "activity-payee"
+        }, "You get back $", bills[billId].cost)));
       }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "No Bills Found")));
     }
   }]);
@@ -744,21 +786,35 @@ var BillShow = /*#__PURE__*/function (_React$Component) {
       var _this$props = this.props,
           bills = _this$props.bills,
           allUsers = _this$props.allUsers,
+          curUser = _this$props.curUser,
           openModal = _this$props.openModal,
           fetchBill = _this$props.fetchBill,
-          billId = _this$props.billId;
+          billId = _this$props.billId,
+          deleteBill = _this$props.deleteBill;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "all-bill-show-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.toggleBillDisplay,
         className: "all-expenses-btn"
-      }, bills[billId].description, allUsers[bills[billId].author_id].name, " added The difference is ", bills[billId].cost), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "bill-button-title"
+      }, bills[billId].description), curUser.id === bills[billId].author_id && bills[billId].author_payor === true ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "bill-lended"
+      }, allUsers[bills[billId].recipient_id].name, " lent you ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), " $", bills[billId].cost) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "bill-lent"
+      }, "You lent ", allUsers[bills[billId].recipient_id].name, " $", bills[billId].cost), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "expense-delete-button",
+        onClick: function onClick() {
+          return _this2.props.deleteBill(billId);
+        }
+      }, "X")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: this.state.isButtonActive ? 'bill-show-toggle-on' : 'bill-show-toggle-off'
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, bills[billId].description, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), bills[billId].cost, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Added by ", allUsers[bills[billId].author_id].name, " on ", bills[billId].created_at, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Last updated on ", bills[billId].updated_at, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, bills[billId].description, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), bills[billId].cost, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Added by ", allUsers[bills[billId].author_id].name, " on ", bills[billId].created_at, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Last updated on ", bills[billId].updated_at, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "bill-edit-expense-btn",
         onClick: function onClick() {
           return _this2.openTheModal(billId);
         }
-      }, "Edit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comments_comment_container__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }, "Edit expense"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comments_comment_container__WEBPACK_IMPORTED_MODULE_5__["default"], {
         billId: billId,
         allUsers: allUsers
       }))));
@@ -852,8 +908,6 @@ var AllExpenses = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
-
       var _this$props = this.props,
           allUsers = _this$props.allUsers,
           curUser = _this$props.curUser,
@@ -861,7 +915,8 @@ var AllExpenses = /*#__PURE__*/function (_React$Component) {
           friends = _this$props.friends,
           curUserBillIds = _this$props.curUserBillIds,
           requestBill = _this$props.requestBill,
-          openModal = _this$props.openModal;
+          openModal = _this$props.openModal,
+          deleteBill = _this$props.deleteBill;
 
       if (!curUserBillIds || !bills) {
         return null;
@@ -879,12 +934,9 @@ var AllExpenses = /*#__PURE__*/function (_React$Component) {
           curUser: curUser,
           curUserBillIds: curUserBillIds,
           openModal: openModal,
-          friends: friends
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          onClick: function onClick() {
-            return _this2.props.deleteBill(billId);
-          }
-        }, "X"));
+          friends: friends,
+          deleteBill: deleteBill
+        }));
       })));
     }
   }]);
@@ -1095,7 +1147,8 @@ var BillPage = /*#__PURE__*/function (_React$Component) {
       description: 'Enter a Description',
       author_payor: true,
       cost: '',
-      recipient_id: '',
+      name: '',
+      // recipient_id: '',
       group_id: ''
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
@@ -1150,22 +1203,24 @@ var BillPage = /*#__PURE__*/function (_React$Component) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "bill-modal-container",
         onSubmit: this.handleSubmit
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Add an expense"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "With you and:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "bill-modal-title"
+      }, "Add an expense"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "With you and:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
-        value: this.state.recipient_id,
-        onChange: this.update('recipient_id')
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        value: this.state.name,
+        onChange: this.update('name')
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.description,
         onChange: this.update('description')
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "$", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "$", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.cost,
         onChange: this.update('cost')
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Paid by ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Paid by ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "payor-btn",
         onClick: this.toggleBoolean
-      }, this.state.author_payor ? 'You' : this.state.recipient_id ? friends[this.state.recipient_id].name : 'No Name Provided')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, this.state.author_payor ? 'You' : this.state.name != '' ? this.state.name : 'No Name Provided')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: closeModal
       }, "Cancel"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Save"));
     }
@@ -1520,11 +1575,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
-/* harmony import */ var _dashboard_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dashboard_page */ "./frontend/components/dashboard/dashboard_page.jsx");
+/* harmony import */ var _dashboard_frame__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dashboard_frame */ "./frontend/components/dashboard/dashboard_frame.jsx");
 /* harmony import */ var _actions_friend_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/friend_actions */ "./frontend/actions/friend_actions.js");
 /* harmony import */ var _actions_bill_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/bill_actions */ "./frontend/actions/bill_actions.js");
 /* harmony import */ var _actions_comment_action__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/comment_action */ "./frontend/actions/comment_action.js");
 /* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+/* harmony import */ var _actions_dashboard_actions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../actions/dashboard_actions */ "./frontend/actions/dashboard_actions.js");
+
 
 
 
@@ -1538,6 +1595,7 @@ var mSTP = function mSTP(state) {
   var curUser = state.entities.users[state.session.id];
   return {
     user: state.entities.users[state.session.id],
+    dashView: state.ui.dashView,
     curUser: curUser
   };
 };
@@ -1564,18 +1622,27 @@ var mDTP = function mDTP(dispatch) {
     },
     openModal: function openModal(modal, billInfo) {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_7__["openModal"])(modal, billInfo));
+    },
+    openDashboard: function openDashboard(dashboard) {
+      return dispatch(Object(_actions_dashboard_actions__WEBPACK_IMPORTED_MODULE_8__["openDashboard"])(dashboard));
+    },
+    openActivity: function openActivity(activity) {
+      return dispatch(Object(_actions_dashboard_actions__WEBPACK_IMPORTED_MODULE_8__["openActivity"])(activity));
+    },
+    openExpenses: function openExpenses(expenses) {
+      return dispatch(Object(_actions_dashboard_actions__WEBPACK_IMPORTED_MODULE_8__["openExpenses"])(expenses));
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, mDTP)(_dashboard_page__WEBPACK_IMPORTED_MODULE_3__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, mDTP)(_dashboard_frame__WEBPACK_IMPORTED_MODULE_3__["default"]));
 
 /***/ }),
 
-/***/ "./frontend/components/dashboard/dashboard_page.jsx":
-/*!**********************************************************!*\
-  !*** ./frontend/components/dashboard/dashboard_page.jsx ***!
-  \**********************************************************/
+/***/ "./frontend/components/dashboard/dashboard_frame.jsx":
+/*!***********************************************************!*\
+  !*** ./frontend/components/dashboard/dashboard_frame.jsx ***!
+  \***********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1588,8 +1655,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _friendship_friend_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../friendship/friend_container */ "./frontend/components/friendship/friend_container.jsx");
 /* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
 /* harmony import */ var _friendship_friend_invite_box_main__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../friendship/friend_invite_box_main */ "./frontend/components/friendship/friend_invite_box_main.jsx");
-/* harmony import */ var _bill_bill_modal_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../bill/bill_modal_container */ "./frontend/components/bill/bill_modal_container.jsx");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _all_expenses_all_expenses_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../all_expenses/all_expenses_container */ "./frontend/components/all_expenses/all_expenses_container.jsx");
+/* harmony import */ var _activity_activity_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../activity/activity_container */ "./frontend/components/activity/activity_container.jsx");
+/* harmony import */ var _bill_bill_modal_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../bill/bill_modal_container */ "./frontend/components/bill/bill_modal_container.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1621,6 +1690,8 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
+
 var Dashboard = /*#__PURE__*/function (_React$Component) {
   _inherits(Dashboard, _React$Component);
 
@@ -1632,14 +1703,13 @@ var Dashboard = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, Dashboard);
 
     _this = _super.call(this, props);
-    _this.state = _this.props.user;
     _this.openTheModal = _this.openTheModal.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(Dashboard, [{
-    key: "componentWillMount",
-    value: function componentWillMount() {
+    key: "componentDidMount",
+    value: function componentDidMount() {
       this.props.receiveAllUsers();
       this.props.requestFriends();
       this.props.requestBills();
@@ -1651,6 +1721,32 @@ var Dashboard = /*#__PURE__*/function (_React$Component) {
       this.props.openModal('bill', null);
     }
   }, {
+    key: "currentView",
+    value: function currentView() {
+      // e.preventDefault();
+      // if (this.state.ui.dashView == undefined) {
+      //   return null;
+      // }
+      switch (this.props.dashView) {
+        case 'dashboard':
+          console.log("Moses");
+          break;
+
+        case 'expenses':
+          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_all_expenses_all_expenses_container__WEBPACK_IMPORTED_MODULE_6__["default"], null);
+          break;
+
+        case 'activity':
+          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_activity_activity_container__WEBPACK_IMPORTED_MODULE_7__["default"], null);
+          break;
+
+        default:
+          console.log("DEFAULT");
+          console.log(this.props);
+          break;
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,
@@ -1658,22 +1754,23 @@ var Dashboard = /*#__PURE__*/function (_React$Component) {
           logout = _this$props.logout,
           curUser = _this$props.curUser,
           addFriend = _this$props.addFriend;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("html", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_bar_navbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        name: this.state.name,
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("html", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_bar_navbar__WEBPACK_IMPORTED_MODULE_1__["default"] // name={this.state.name}
+      , {
         logout: this.props.logout
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("body", {
         className: "dashboard-main"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "dashboard-main-nav-left"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__["Link"], {
-        to: '/activity'
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        type: "button"
-      }, "Activity")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__["Link"], {
-        to: '/all'
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        type: "button"
-      }, "Expenses")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friendship_friend_container__WEBPACK_IMPORTED_MODULE_3__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friendship_friend_invite_box_main__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        className: "dash-click",
+        onClick: this.props.openDashboard
+      }, "Dashboard"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "dash-click",
+        onClick: this.props.openActivity
+      }, "Recent activity"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "dash-click",
+        onClick: this.props.openExpenses
+      }, "All expenses"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friendship_friend_container__WEBPACK_IMPORTED_MODULE_3__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friendship_friend_invite_box_main__WEBPACK_IMPORTED_MODULE_5__["default"], {
         curUser: curUser,
         addFriend: addFriend
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
@@ -1685,7 +1782,7 @@ var Dashboard = /*#__PURE__*/function (_React$Component) {
         onClick: this.openTheModal
       }, "Add an expense"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "settle-btn"
-      }, "Settle up"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+      }, "Settle up")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.currentView())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "dashboard-main-nav-right"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Get Splitwise Pro!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "splitwise-purple-logo"
@@ -3064,6 +3161,39 @@ var commentsReducer = function commentsReducer() {
 
 /***/ }),
 
+/***/ "./frontend/reducers/dashboard_reducer.js":
+/*!************************************************!*\
+  !*** ./frontend/reducers/dashboard_reducer.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return dashboardReducer; });
+/* harmony import */ var _actions_dashboard_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/dashboard_actions */ "./frontend/actions/dashboard_actions.js");
+
+function dashboardReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case _actions_dashboard_actions__WEBPACK_IMPORTED_MODULE_0__["OPEN_DASHBOARD"]:
+      return action.dashboard;
+
+    case _actions_dashboard_actions__WEBPACK_IMPORTED_MODULE_0__["OPEN_ACTIVITY"]:
+      return action.activity;
+
+    case _actions_dashboard_actions__WEBPACK_IMPORTED_MODULE_0__["OPEN_EXPENSES"]:
+      return action.expenses;
+
+    default:
+      return state;
+  }
+}
+
+/***/ }),
+
 /***/ "./frontend/reducers/entities_reducer.js":
 /*!***********************************************!*\
   !*** ./frontend/reducers/entities_reducer.js ***!
@@ -3298,12 +3428,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _modal_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modal_reducer */ "./frontend/reducers/modal_reducer.js");
 /* harmony import */ var _billInfo_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./billInfo_reducer */ "./frontend/reducers/billInfo_reducer.js");
+/* harmony import */ var _dashboard_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dashboard_reducer */ "./frontend/reducers/dashboard_reducer.js");
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   modal: _modal_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
-  billInfo: _billInfo_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
+  billInfo: _billInfo_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
+  dashView: _dashboard_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
 }));
 
 /***/ }),
@@ -3328,6 +3461,7 @@ var usersReducer = function usersReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
+  var newState = Object.assign({}, state);
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
@@ -3336,12 +3470,19 @@ var usersReducer = function usersReducer() {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_USERS"]:
       return action.users;
 
-    case _actions_bill_actions__WEBPACK_IMPORTED_MODULE_1__["REMOVE_BILL"]:
-      var newState = Object.assign({}, state);
-
+    case _actions_bill_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_BILL"]:
       for (var userId in newState) {
-        if (newState.hasOwnProperty(userId)) {
-          var user = newState[userId];
+        if (!newState[userId].billIds.includes(action.bill.id)) {
+          newState[userId].billIds.push(action.bill.id);
+        }
+      }
+
+      return newState;
+
+    case _actions_bill_actions__WEBPACK_IMPORTED_MODULE_1__["REMOVE_BILL"]:
+      for (var _userId in newState) {
+        if (newState.hasOwnProperty(_userId)) {
+          var user = newState[_userId];
           user.billIds = user.billIds.filter(function (billId) {
             return billId !== action.billId;
           });

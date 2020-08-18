@@ -1,0 +1,20 @@
+.bill-modal-container {
+  background-color: white;
+  width: 30vw;
+
+  border-radius: 1%;
+  border: 1px solid #999;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.3);
+  
+}
+
+.bill-modal-title {
+  border-top-left-radius: 1%;
+  border-top-right-radius: 1%;
+  background-color: #5cc5a7;
+  color: #fff;
+  border-bottom: 1px solid #36977b;
+  text-shadow: 0 -1px 0 #318a71;
+  font-size: 18px;
+  font-weight: bold;
+}

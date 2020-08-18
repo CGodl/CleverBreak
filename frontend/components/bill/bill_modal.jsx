@@ -9,7 +9,8 @@ class BillPage extends React.Component {
         description: 'Enter a Description',
         author_payor: true,
         cost: '',
-        recipient_id: '',
+        name: '',
+        // recipient_id: '',
         group_id: ''
       };
 
@@ -55,14 +56,15 @@ class BillPage extends React.Component {
     
       return (
         <form className='bill-modal-container' onSubmit={this.handleSubmit}>
-          <p>Add an expense</p>
+          <p className='bill-modal-title'>Add an expense</p>
           <label>With you and:
             <input 
               type='text'
-              value={this.state.recipient_id}
-              onChange={this.update('recipient_id')}
+              value={this.state.name}
+              onChange={this.update('name')}
               />
           </label>
+          <br />
           <label>
             <input 
               type='text'
@@ -70,6 +72,7 @@ class BillPage extends React.Component {
               onChange={this.update('description')}
               />
           </label>
+          <br />
           <label>$
             <input 
               type='text'
@@ -77,7 +80,8 @@ class BillPage extends React.Component {
               onChange={this.update('cost')}
               />
           </label>
-      <p>Paid by <button className='payor-btn' onClick={this.toggleBoolean}>{this.state.author_payor ? 'You' : (this.state.recipient_id ? friends[this.state.recipient_id].name : 'No Name Provided')}</button></p>
+          <br />
+      <p>Paid by <button className='payor-btn' onClick={this.toggleBoolean}>{this.state.author_payor ? 'You' : (this.state.name != '' ? this.state.name : 'No Name Provided')}</button></p>
           {/* <label>Enter a group, if any:
             <input 
               type='text'
