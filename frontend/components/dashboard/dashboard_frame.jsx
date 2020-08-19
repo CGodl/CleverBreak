@@ -6,6 +6,7 @@ import openModal from '../../actions/modal_actions';
 import FriendInviteBox from '../friendship/friend_invite_box_main';
 import AllExpenses from '../all_expenses/all_expenses_container';
 import Activity from '../activity/activity_container'
+import DashPage from './dashboard_page'
 import billModal from '../bill/bill_modal_container';
 import { Link } from 'react-router-dom';
 
@@ -36,7 +37,7 @@ class Dashboard extends React.Component {
 
     switch (this.props.dashView) {
       case 'dashboard':
-        console.log("Moses");
+        return <DashPage />
         break;
       case 'expenses':
         return <AllExpenses />

@@ -14,6 +14,8 @@ User.create([{name: 'TestAcct', email: 'TestEmail@hmail.com', password: 'abc1234
             {name: 'Billy Joel', email: 'BillyJ@gmail.com', password: 'abc12345'}
             ])
 
+Friend.destroy_all
+
 Friend.create([{requestor_id: 1, requested_id: 2},
                 {requestor_id: 1, requested_id: 3},
                 {requestor_id: 1, requested_id: 4},
