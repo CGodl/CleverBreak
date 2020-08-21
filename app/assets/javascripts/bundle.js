@@ -633,7 +633,7 @@ var Activity = /*#__PURE__*/function (_React$Component) {
           key: billId
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "activity-item"
-        }, curUser.id === bills[billId].author_id ? 'You' : allUsers[bills[billId].author_id].name, " added \"", bills[billId].description, "\"", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), console.log(bills[billId].author_payor), curUser.id === bills[billId].author_id && bills[billId].author_payor === true ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, curUser.id === bills[billId].author_id ? 'You' : allUsers[bills[billId].author_id].name, " added \"", bills[billId].description, "\"", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), curUser.id === bills[billId].author_id && bills[billId].author_payor === true ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "activity-payor"
         }, "You owe $", bills[billId].cost) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "activity-payee"
@@ -1592,7 +1592,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state) {
-  var curUser = state.entities.users[state.session.id];
+  var curUser = state.entities.users[state.session.id]; // debugger
+  // const curUserBillIds = curUser.billIds;
+  // const bills = state.entities.bills;
+  // let authorOwes = 0;
+  // let authorOwed = 0;
+  // curUserBillIds.forEach(billId => {
+  //   if ((bills[billId].author_id === curUser.id && bills[billId].author_payor) || (bills[billId].author_id != curUser.id && !bills[billId].author_payor)) {
+  //     authorOwes += (bills[billId].cost)
+  //   } else {
+  //     authorOwed += (bills[billId].cost)
+  //   }
+  // })
+
   return {
     user: state.entities.users[state.session.id],
     dashView: state.ui.dashView,
@@ -1657,7 +1669,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _friendship_friend_invite_box_main__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../friendship/friend_invite_box_main */ "./frontend/components/friendship/friend_invite_box_main.jsx");
 /* harmony import */ var _all_expenses_all_expenses_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../all_expenses/all_expenses_container */ "./frontend/components/all_expenses/all_expenses_container.jsx");
 /* harmony import */ var _activity_activity_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../activity/activity_container */ "./frontend/components/activity/activity_container.jsx");
-/* harmony import */ var _dashboard_page__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./dashboard_page */ "./frontend/components/dashboard/dashboard_page.jsx");
+/* harmony import */ var _dashboard_page_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./dashboard_page_container */ "./frontend/components/dashboard/dashboard_page_container.jsx");
 /* harmony import */ var _bill_bill_modal_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../bill/bill_modal_container */ "./frontend/components/bill/bill_modal_container.jsx");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -1731,7 +1743,7 @@ var Dashboard = /*#__PURE__*/function (_React$Component) {
       // }
       switch (this.props.dashView) {
         case 'dashboard':
-          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dashboard_page__WEBPACK_IMPORTED_MODULE_8__["default"], null);
+          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dashboard_page_container__WEBPACK_IMPORTED_MODULE_8__["default"], null);
           break;
 
         case 'expenses':
@@ -1743,8 +1755,7 @@ var Dashboard = /*#__PURE__*/function (_React$Component) {
           break;
 
         default:
-          console.log("DEFAULT");
-          console.log(this.props);
+          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_all_expenses_all_expenses_container__WEBPACK_IMPORTED_MODULE_6__["default"], null);
           break;
       }
     }
@@ -1786,9 +1797,11 @@ var Dashboard = /*#__PURE__*/function (_React$Component) {
         className: "settle-btn"
       }, "Settle up")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.currentView())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "dashboard-main-nav-right"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Get Splitwise Pro!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "splitwise-purple-logo"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Subscribe to Splitwise Pro for no ads, currency conversion, charts, search, and more."))));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "About Me"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://www.linkedin.com/in/carl-godlewski-b64b0512/"
+      }, "Linkedin")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://github.com/CGodl/"
+      }, "Github")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Personal")))));
     }
   }]);
 
@@ -1848,9 +1861,34 @@ var DashPage = /*#__PURE__*/function (_React$Component) {
   _createClass(DashPage, [{
     key: "render",
     value: function render() {
+      var _this$props = this.props,
+          authorOwes = _this$props.authorOwes,
+          authorOwed = _this$props.authorOwed,
+          balance = _this$props.balance;
+
+      if (!authorOwes || !authorOwed) {
+        return null;
+      }
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "dashpage-container"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Total Balance", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "+$500.00"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "you owe", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "-$500.00"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "you are owed", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "+$1000.00"));
+      }, authorOwed - authorOwes > 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Total Balance", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: {
+          color: "lightgreen"
+        }
+      }, "$", authorOwed - authorOwes.toFixed(2))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Total Balance", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: {
+          color: "red"
+        }
+      }, "-$", (authorOwed - authorOwes).toFixed(2) * -1)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "you owe", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: {
+          color: "red"
+        }
+      }, "$", authorOwes)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "you are owed", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: {
+          color: "lightgreen"
+        }
+      }, "$", authorOwed.toFixed(2))));
     }
   }]);
 
@@ -1858,6 +1896,70 @@ var DashPage = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (DashPage);
+
+/***/ }),
+
+/***/ "./frontend/components/dashboard/dashboard_page_container.jsx":
+/*!********************************************************************!*\
+  !*** ./frontend/components/dashboard/dashboard_page_container.jsx ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _dashboard_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dashboard_page */ "./frontend/components/dashboard/dashboard_page.jsx");
+/* harmony import */ var _actions_bill_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/bill_actions */ "./frontend/actions/bill_actions.js");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+/* harmony import */ var _actions_dashboard_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/dashboard_actions */ "./frontend/actions/dashboard_actions.js");
+
+
+
+
+
+
+
+
+var mSTP = function mSTP(state) {
+  var curUser = state.entities.users[state.session.id];
+  var curUserBillIds = curUser.billIds;
+  var bills = state.entities.bills;
+  var authorOwes = 0;
+  var authorOwed = 0;
+  curUserBillIds.forEach(function (billId) {
+    if (bills[billId].author_id === curUser.id && bills[billId].author_payor || bills[billId].author_id != curUser.id && !bills[billId].author_payor) {
+      authorOwes += parseFloat(bills[billId].cost);
+    } else {
+      authorOwed += parseFloat(bills[billId].cost);
+    }
+  });
+  return {
+    user: state.entities.users[state.session.id],
+    curUser: curUser,
+    authorOwes: authorOwes,
+    authorOwed: authorOwed
+  };
+}; // const mDTP = (dispatch) => {
+//   return {
+//     logout: () => dispatch(logout()),
+//     receiveAllUsers: () => dispatch(receiveAllUsers()),
+//     requestFriends: () => dispatch(requestFriends()),
+//     addFriend: (friend) => dispatch(addFriend(friend)),
+//     requestBills: () => dispatch(requestBills()),
+//     fetchComments: () => dispatch(fetchComments()),
+//     openModal: (modal, billInfo) => dispatch(openModal(modal, billInfo)),
+//     openDashboard: (dashboard) => dispatch(openDashboard(dashboard)),
+//     openActivity: (activity) => dispatch(openActivity(activity)),
+//     openExpenses: (expenses) => dispatch(openExpenses(expenses))
+//   };
+// };
+
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, null)(_dashboard_page__WEBPACK_IMPORTED_MODULE_3__["default"]));
 
 /***/ }),
 
@@ -2424,7 +2526,7 @@ var Greeting = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "A totally ad-free experience"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Currency conversion"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Receipt scanning"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Itemization"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Charts and graphs"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Expense search"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Save default splits"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Early access to new features"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "core-pro-features"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Core features"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Pro features"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "www.google.com"
+        href: "https://www.linkedin.com/in/carl-godlewski-b64b0512/"
       }, "Linkedin")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https://github.com/CGodl/"
       }, "Github"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {

@@ -6,7 +6,7 @@ import openModal from '../../actions/modal_actions';
 import FriendInviteBox from '../friendship/friend_invite_box_main';
 import AllExpenses from '../all_expenses/all_expenses_container';
 import Activity from '../activity/activity_container'
-import DashPage from './dashboard_page'
+import DashPage from './dashboard_page_container'
 import billModal from '../bill/bill_modal_container';
 import { Link } from 'react-router-dom';
 
@@ -46,8 +46,7 @@ class Dashboard extends React.Component {
         return <Activity />
         break;
       default:
-        console.log("DEFAULT");
-        console.log(this.props)
+        return <AllExpenses />
         break;
 
     }
@@ -99,11 +98,19 @@ class Dashboard extends React.Component {
             </div>
           </main>
           <nav className='dashboard-main-nav-right'>
-            <label>Get Splitwise Pro!</label>
+            <label>About Me</label>
+            <ul>
+              <li><a href='https://www.linkedin.com/in/carl-godlewski-b64b0512/'>Linkedin</a></li>
+              <li><a href='https://github.com/CGodl/'>Github</a></li>
+              <li>Personal</li>
+
+
+            </ul>
+            {/* <label>Get Splitwise Pro!</label>
             <p className ='splitwise-purple-logo'></p>
 
 
-            <p>Subscribe to Splitwise Pro for no ads, currency conversion, charts, search, and more.</p>
+            <p>Subscribe to Splitwise Pro for no ads, currency conversion, charts, search, and more.</p> */}
 
 
           </nav>

@@ -93,7 +93,7 @@ class Greeting extends React.Component {
             <ul className='core-pro-features'>
               <li>Core features</li>
               <li>Pro features</li>
-              <li><a href='www.google.com'>Linkedin</a></li>
+              <li><a href='https://www.linkedin.com/in/carl-godlewski-b64b0512/'>Linkedin</a></li>
               <li><a href='https://github.com/CGodl/'>Github</a></li>
             </ul>
           </nav>

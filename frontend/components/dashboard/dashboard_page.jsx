@@ -10,23 +10,39 @@ class DashPage extends React.Component {
 
 
   render () {
+    const { authorOwes, authorOwed, balance } = this.props;
+      
+      if (!authorOwes || !authorOwed) {
+        return null;
+      }
 
     return (
       <ul className='dashpage-container'>
-        <li>
-          Total Balance
-          <br />
-          +$500.00
-        </li>
+        {
+          (authorOwed - authorOwes > 0 ? 
+            <li>
+              Total Balance
+              <br/>
+              <div style={{color: "lightgreen"}}>${authorOwed - authorOwes.toFixed(2)}</div>
+            </li>
+            :
+            <li>
+              Total Balance
+              <br/>
+              <div style={{color: "red"}}>-${(authorOwed - authorOwes).toFixed(2) * -1}</div>
+            </li>
+          )
+        }
+
         <li>
           you owe
           <br/>
-          -$500.00
+          <div style={{color: "red"}}>${authorOwes}</div>
         </li>
         <li>
           you are owed
           <br/>
-          +$1000.00
+          <div style={{color: "lightgreen"}}>${authorOwed.toFixed(2)}</div>
         </li>
       </ul>
     )

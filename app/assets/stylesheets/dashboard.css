@@ -131,3 +131,22 @@
   padding-bottom: 10px;
 
 }
+
+
+
+/* Dash Page */
+
+.dashpage-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color:rgb(238, 238, 238);
+  height: 38px;
+  padding-top: 7px;
+  padding-bottom: 2px;
+
+}
+
+.dashpage-container li {
+  /* background-color: ; */
+}

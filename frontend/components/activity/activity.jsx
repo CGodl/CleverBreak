@@ -34,7 +34,7 @@ class Activity extends React.Component {
                     <button className='activity-item'>
                   {curUser.id === bills[billId].author_id ? 'You' : allUsers[bills[billId].author_id].name} added "{bills[billId].description}"
                   <br />
-                 { console.log(bills[billId].author_payor)}
+                 
                   
                   {(curUser.id === bills[billId].author_id && bills[billId].author_payor === true) ? <div className='activity-payor'>You owe ${bills[billId].cost}</div> : <div className='activity-payee'>You get back ${bills[billId].cost}</div>}
 
