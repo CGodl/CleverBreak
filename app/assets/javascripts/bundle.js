@@ -798,18 +798,22 @@ var BillShow = /*#__PURE__*/function (_React$Component) {
         className: "all-expenses-btn"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "bill-button-title"
-      }, bills[billId].description), curUser.id === bills[billId].author_id && bills[billId].author_payor === true ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "bill-lended"
-      }, allUsers[bills[billId].recipient_id].name, " lent you ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), " $", bills[billId].cost) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "bill-lent"
-      }, "You lent ", allUsers[bills[billId].recipient_id].name, " $", bills[billId].cost), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, bills[billId].description), curUser.id === bills[billId].author_id && bills[billId].author_payor === true ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, allUsers[bills[billId].recipient_id].name, " lent you ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: {
+          color: "#ff652f"
+        }
+      }, "$", bills[billId].cost)) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "You lent ", allUsers[bills[billId].recipient_id].name, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: {
+          color: "lightgreen"
+        }
+      }, "$", bills[billId].cost)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "expense-delete-button",
         onClick: function onClick() {
           return _this2.props.deleteBill(billId);
         }
       }, "X")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: this.state.isButtonActive ? 'bill-show-toggle-on' : 'bill-show-toggle-off'
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, bills[billId].description, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), bills[billId].cost, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Added by ", allUsers[bills[billId].author_id].name, " on ", bills[billId].created_at, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Last updated on ", bills[billId].updated_at, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, bills[billId].description, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "$", bills[billId].cost, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Added by ", allUsers[bills[billId].author_id].name, " on ", bills[billId].created_at, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Last updated on ", bills[billId].updated_at, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "bill-edit-expense-btn",
         onClick: function onClick() {
           return _this2.openTheModal(billId);
@@ -1878,11 +1882,11 @@ var DashPage = /*#__PURE__*/function (_React$Component) {
         }
       }, "$", authorOwed - authorOwes.toFixed(2))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Total Balance", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         style: {
-          color: "red"
+          color: "#ff652f"
         }
       }, "-$", (authorOwed - authorOwes).toFixed(2) * -1)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "you owe", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         style: {
-          color: "red"
+          color: "#ff652f"
         }
       }, "$", authorOwes)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "you are owed", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         style: {

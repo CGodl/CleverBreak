@@ -5,17 +5,19 @@
   /* padding:  */
   width: 100%;
 
-
   background-color: transparent;
 
 }
 
 .activity-payee {
   color: green;
-
 }
 
 .activity-payor {
-  color: red;
+  color: #ff652f;
+}
 
+.title-bold-text {
+  font-weight: bold !important;
+  color: red;
 }

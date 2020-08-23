@@ -5,6 +5,9 @@
   width: 100%;
   border: none;
   border-bottom: 1px solid #eee;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .all-expenses-btn:hover {
@@ -16,6 +19,10 @@
   border: none;
   background-color: transparent;
   color: red;
+  /* float: right; */
+  font-size: 24px;
+  top: 50%;
+  bottom: 50%;
 
 }
 
@@ -25,14 +32,18 @@
 }
 
 .bill-button-title {
+  /* float: left;
+  margin-left: 50px; */
+  top: 50%;
+  
+  text-rendering: optimizeLegibility;
 
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
 
 }
-
 .bill-lended {
-  color: red;
+  color: #ff652f;
 }
 
 .bill-lent {

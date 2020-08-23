@@ -30,8 +30,7 @@ class BillShow extends React.Component {
       <div className='all-bill-show-container'>
         <button onClick={this.toggleBillDisplay} className='all-expenses-btn'>
           <span className='bill-button-title'>{bills[billId].description}</span>
-    {(curUser.id === bills[billId].author_id && bills[billId].author_payor === true) ? <span className='bill-lended'>{allUsers[bills[billId].recipient_id].name} lent you <br/> ${bills[billId].cost}</span> : <span className='bill-lent'>You lent {allUsers[bills[billId].recipient_id].name} ${bills[billId].cost}</span>}
-
+          {(curUser.id === bills[billId].author_id && bills[billId].author_payor === true) ? <span>{allUsers[bills[billId].recipient_id].name} lent you <div style={{color: "#ff652f"}}>${bills[billId].cost}</div></span> : <span>You lent {allUsers[bills[billId].recipient_id].name} <div style={{color: "lightgreen"}}>${bills[billId].cost}</div></span>}
 
           <button className='expense-delete-button' onClick={() => this.props.deleteBill(billId)}>X</button> 
         </button>
@@ -39,7 +38,7 @@ class BillShow extends React.Component {
           <div>
             {bills[billId].description}
             <br/>
-            {bills[billId].cost}
+            ${bills[billId].cost}
             <br/>
             Added by {allUsers[bills[billId].author_id].name} on {bills[billId].created_at}
             <br/>
