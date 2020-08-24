@@ -1,5 +1,6 @@
 .friend-main-container {
-  width: 100px; 
+  width: 100px;
+
 
 
 
@@ -13,7 +14,6 @@
   font-size: 12px;
   min-width: 100%;
 
-
 }
 
 .friend-title button{
@@ -26,5 +26,11 @@
 .friend-title button:hover{
   color: #5bc5a7;
   
+}
+
+.friend-name {
+ 
+  margin-top: 1px;
+  margin-bottom: 2px;
 }
 

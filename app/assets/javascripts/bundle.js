@@ -633,7 +633,7 @@ var Activity = /*#__PURE__*/function (_React$Component) {
           key: billId
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "activity-item"
-        }, curUser.id === bills[billId].author_id ? 'You' : allUsers[bills[billId].author_id].name, " added \"", bills[billId].description, "\"", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), curUser.id === bills[billId].author_id && bills[billId].author_payor === true ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, curUser.id === bills[billId].author_id ? 'You' : allUsers[bills[billId].author_id].name, " added \"", bills[billId].description, ".\"", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), curUser.id === bills[billId].author_id && bills[billId].author_payor === true ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "activity-payor"
         }, "You owe $", bills[billId].cost) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "activity-payee"
@@ -784,12 +784,11 @@ var BillShow = /*#__PURE__*/function (_React$Component) {
       var _this2 = this;
 
       var _this$props = this.props,
-          bills = _this$props.bills,
           allUsers = _this$props.allUsers,
+          bills = _this$props.bills,
+          billId = _this$props.billId,
           curUser = _this$props.curUser,
           openModal = _this$props.openModal,
-          fetchBill = _this$props.fetchBill,
-          billId = _this$props.billId,
           deleteBill = _this$props.deleteBill;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "all-bill-show-container"
@@ -1771,6 +1770,11 @@ var Dashboard = /*#__PURE__*/function (_React$Component) {
           logout = _this$props.logout,
           curUser = _this$props.curUser,
           addFriend = _this$props.addFriend;
+
+      if (!user || !logout || !curUser || !addFriend) {
+        return null;
+      }
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("html", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_bar_navbar__WEBPACK_IMPORTED_MODULE_1__["default"] // name={this.state.name}
       , {
         logout: this.props.logout
@@ -2270,6 +2274,7 @@ var FriendIndex = /*#__PURE__*/function (_React$Component) {
         className: "friend-title"
       }, "FRIENDS ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "add")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, friends.map(function (friend) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "friend-name",
           key: friend
         }, "\uD83D\uDC64 ", allUsers[friend].name);
       })));

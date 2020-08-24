@@ -23,8 +23,8 @@ class BillShow extends React.Component {
   }
 
   render () {
-    const { bills, allUsers, curUser, openModal, fetchBill, billId, deleteBill } = this.props;
-  
+    const { allUsers, bills, billId, curUser, openModal, deleteBill } = this.props;
+    
 
     return (
       <div className='all-bill-show-container'>

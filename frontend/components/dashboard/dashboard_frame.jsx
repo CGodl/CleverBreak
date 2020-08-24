@@ -56,6 +56,12 @@ class Dashboard extends React.Component {
 
   render () {
     const { user, logout, curUser, addFriend } = this.props;
+
+    if (!user || !logout || !curUser || !addFriend) {
+      return null;
+    }
+
+
     
     return (
       <html>
