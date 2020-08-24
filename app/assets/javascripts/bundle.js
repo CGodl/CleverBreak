@@ -763,6 +763,7 @@ var BillShow = /*#__PURE__*/function (_React$Component) {
     };
     _this.toggleBillDisplay = _this.toggleBillDisplay.bind(_assertThisInitialized(_this));
     _this.openTheModal = _this.openTheModal.bind(_assertThisInitialized(_this));
+    _this.displayDate = _this.displayDate.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -772,6 +773,17 @@ var BillShow = /*#__PURE__*/function (_React$Component) {
       this.setState({
         isButtonActive: !this.state.isButtonActive
       });
+    }
+  }, {
+    key: "displayDate",
+    value: function displayDate(date) {
+      var convertDateType = new Date(date);
+      var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      return {
+        month: monthNames[convertDateType.getMonth()],
+        day: convertDateType.getDate(),
+        year: convertDateType.getFullYear()
+      };
     }
   }, {
     key: "openTheModal",
@@ -801,18 +813,28 @@ var BillShow = /*#__PURE__*/function (_React$Component) {
         style: {
           color: "#ff652f"
         }
-      }, "$", bills[billId].cost)) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "You lent ", allUsers[bills[billId].recipient_id].name, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "$", parseFloat(bills[billId].cost).toFixed(2))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "You lent ", allUsers[bills[billId].recipient_id].name, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         style: {
           color: "lightgreen"
         }
-      }, "$", bills[billId].cost)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "$", parseFloat(bills[billId].cost).toFixed(2))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "expense-delete-button",
         onClick: function onClick() {
           return _this2.props.deleteBill(billId);
         }
       }, "X")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: this.state.isButtonActive ? 'bill-show-toggle-on' : 'bill-show-toggle-off'
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, bills[billId].description, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "$", bills[billId].cost, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Added by ", allUsers[bills[billId].author_id].name, " on ", bills[billId].created_at, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Last updated on ", bills[billId].updated_at, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "bill-show-dropdown-body"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "bill-show-title"
+      }, bills[billId].description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "bill-show-cost"
+      }, "$", parseFloat(bills[billId].cost).toFixed(2)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "bill-show-add-update"
+      }, "Added by ", allUsers[bills[billId].author_id].name, " on ", this.displayDate(bills[billId].created_at).month, " ", this.displayDate(bills[billId].created_at).day, ", ", this.displayDate(bills[billId].created_at).year, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "bill-show-add-update"
+      }, "Last updated on ", this.displayDate(bills[billId].updated_at).month, " ", this.displayDate(bills[billId].updated_at).day, ", ", this.displayDate(bills[billId].updated_at).year, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "bill-edit-expense-btn",
         onClick: function onClick() {
           return _this2.openTheModal(billId);

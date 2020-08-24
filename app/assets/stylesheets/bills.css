@@ -80,3 +80,21 @@
 .bill-show-toggle-off {
   display: none;
 }
+
+.bill-show-title {
+  font-size: 16px;
+}
+
+.bill-show-cost {
+ 
+  font-weight: 700;
+}
+
+.bill-show-add-update {
+  font-size: 12px;
+  
+}
+
+.bill-show-dropdown-body {
+  padding-left: 6px;
+}
