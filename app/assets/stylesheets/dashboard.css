@@ -19,10 +19,12 @@
 }
 
 .dash-click {
+  font-size: 16px;
   color: gray;
   background-color: transparent;
   border: none;
   height: 19px;
+  margin-top: 4px;
 
 }
 
@@ -139,14 +141,30 @@
 .dashpage-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   background-color:rgb(238, 238, 238);
   height: 38px;
   padding-top: 7px;
   padding-bottom: 2px;
+  border-bottom: 1px solid #ddd;
 
 }
 
 .dashpage-container li {
-  /* background-color: ; */
+  border-left: 1px solid #ddd;
+  color: #999999;
+  padding-left: 40px;
+  margin-left: 10px;
+  font-size: 13px;
+}
+
+.dashpage-container li div {
+  margin-left: 3px;
+}
+
+.dashpage-container li:first-child {
+  border-left: none;
+  padding-left: 10px;
+  margin-left: 25px;
+  
 }

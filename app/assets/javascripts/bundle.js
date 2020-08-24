@@ -1904,7 +1904,7 @@ var DashPage = /*#__PURE__*/function (_React$Component) {
         className: "dashpage-container"
       }, authorOwed - authorOwes > 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Total Balance", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         style: {
-          color: "lightgreen"
+          color: "#5BC5A7"
         }
       }, "$", authorOwed - authorOwes.toFixed(2))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Total Balance", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         style: {
@@ -1916,7 +1916,7 @@ var DashPage = /*#__PURE__*/function (_React$Component) {
         }
       }, "$", authorOwes)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "you are owed", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         style: {
-          color: "lightgreen"
+          color: "#5BC5A7"
         }
       }, "$", authorOwed.toFixed(2))));
     }

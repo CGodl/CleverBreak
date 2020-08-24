@@ -23,7 +23,7 @@ class DashPage extends React.Component {
             <li>
               Total Balance
               <br/>
-              <div style={{color: "lightgreen"}}>${authorOwed - authorOwes.toFixed(2)}</div>
+              <div style={{color: "#5BC5A7"}}>${authorOwed - authorOwes.toFixed(2)}</div>
             </li>
             :
             <li>
@@ -42,7 +42,7 @@ class DashPage extends React.Component {
         <li>
           you are owed
           <br/>
-          <div style={{color: "lightgreen"}}>${authorOwed.toFixed(2)}</div>
+          <div style={{color: "#5BC5A7"}}>${authorOwed.toFixed(2)}</div>
         </li>
       </ul>
     )
