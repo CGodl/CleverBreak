@@ -26,7 +26,7 @@ class CommentForm extends React.Component {
   }
 
   render () {
-    const {billId, addComment, curUser, handleSubmit} = this.props;
+    const {billId, addComment, curUser} = this.props;
 
 
     if (!billId || !addComment || !curUser) {
@@ -41,7 +41,9 @@ class CommentForm extends React.Component {
           onChange={this.update('text_body')}
         
         />
-        <input type='submit'/>
+        <br />
+        
+        <input  className='comment-submit-btn' type='submit'/>
       </form>
 
     )

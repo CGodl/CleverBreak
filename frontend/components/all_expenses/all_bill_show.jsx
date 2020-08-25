@@ -45,22 +45,27 @@ class BillShow extends React.Component {
       <div className='all-bill-show-container'>
         <button onClick={this.toggleBillDisplay} className='all-expenses-btn'>
           <span className='bill-button-title'>{bills[billId].description}</span>
-          {(curUser.id === bills[billId].author_id && bills[billId].author_payor === true) ? <span>{allUsers[bills[billId].recipient_id].name} lent you <div style={{color: "#ff652f"}}>${parseFloat(bills[billId].cost).toFixed(2)}</div></span> : <span>You lent {allUsers[bills[billId].recipient_id].name} <div style={{color: "lightgreen"}}>${parseFloat(bills[billId].cost).toFixed(2)}</div></span>}
+          {(curUser.id === bills[billId].author_id && bills[billId].author_payor === true) ?
+           <span className='bill-show-lending'>{allUsers[bills[billId].recipient_id].name} lent you <div style={{color: "#ff652f"}}>${parseFloat(bills[billId].cost).toFixed(2)}</div></span> 
+           : 
+          <span className='bill-show-lending'>You lent {allUsers[bills[billId].recipient_id].name} <div style={{color: "#5BC5A7"}}>${parseFloat(bills[billId].cost).toFixed(2)}</div></span>}
 
           <button className='expense-delete-button' onClick={() => this.props.deleteBill(billId)}>X</button> 
         </button>
         <div className={this.state.isButtonActive ? 'bill-show-toggle-on' : 'bill-show-toggle-off'}>
           <div className='bill-show-dropdown-body'>
-            <span className="bill-show-title">{bills[billId].description}</span>
-            <br/>
-            <span className="bill-show-cost">${parseFloat(bills[billId].cost).toFixed(2)}</span>
-            <br/>
-            <span className='bill-show-add-update'>Added by {allUsers[bills[billId].author_id].name} on {this.displayDate(bills[billId].created_at).month} {this.displayDate(bills[billId].created_at).day}, {this.displayDate(bills[billId].created_at).year} </span>
-            <br/>
-            <span className='bill-show-add-update'>Last updated on {this.displayDate(bills[billId].updated_at).month} {this.displayDate(bills[billId].updated_at).day}, {this.displayDate(bills[billId].updated_at).year} </span>
-            <br/>
-            <button className='bill-edit-expense-btn' onClick={() => this.openTheModal(billId)}>Edit expense</button>
-            <br/>
+            <div className='bill-show-top'>
+              <span className="bill-show-title">{bills[billId].description}</span>
+              <br/>
+              <span className="bill-show-cost">${parseFloat(bills[billId].cost).toFixed(2)}</span>
+              <br/>
+              <span className='bill-show-add-update'>Added by {allUsers[bills[billId].author_id].name} on {this.displayDate(bills[billId].created_at).month} {this.displayDate(bills[billId].created_at).day}, {this.displayDate(bills[billId].created_at).year} </span>
+              <br/>
+              <span className='bill-show-add-update'>Last updated on {this.displayDate(bills[billId].updated_at).month} {this.displayDate(bills[billId].updated_at).day}, {this.displayDate(bills[billId].updated_at).year} </span>
+              <br/>
+              <button className='bill-edit-expense-btn' onClick={() => this.openTheModal(billId)}>Edit expense</button>
+              <br/>
+            </div>
             <CommentsIndex 
               billId={billId}
               allUsers={allUsers}
