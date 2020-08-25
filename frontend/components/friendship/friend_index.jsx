@@ -24,7 +24,9 @@ class FriendIndex extends React.Component {
     return (
       <span className='friend-main-container'>
         <label className='friend-title'>
+            <br/>
             FRIENDS <button>add</button>
+            
         </label>
           <ul>
             {

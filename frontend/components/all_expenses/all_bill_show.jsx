@@ -43,7 +43,7 @@ class BillShow extends React.Component {
 
     return (
       <div className='all-bill-show-container'>
-        <button onClick={this.toggleBillDisplay} className='all-expenses-btn'>
+        <div onClick={this.toggleBillDisplay} className='all-expenses-btn'>
           <span className='bill-button-title'>{bills[billId].description}</span>
           {(curUser.id === bills[billId].author_id && bills[billId].author_payor === true) ?
            <span className='bill-show-lending'>{allUsers[bills[billId].recipient_id].name} lent you <div style={{color: "#ff652f"}}>${parseFloat(bills[billId].cost).toFixed(2)}</div></span> 
@@ -51,7 +51,7 @@ class BillShow extends React.Component {
           <span className='bill-show-lending'>You lent {allUsers[bills[billId].recipient_id].name} <div style={{color: "#5BC5A7"}}>${parseFloat(bills[billId].cost).toFixed(2)}</div></span>}
 
           <button className='expense-delete-button' onClick={() => this.props.deleteBill(billId)}>X</button> 
-        </button>
+        </div>
         <div className={this.state.isButtonActive ? 'bill-show-toggle-on' : 'bill-show-toggle-off'}>
           <div className='bill-show-dropdown-body'>
             <div className='bill-show-top'>

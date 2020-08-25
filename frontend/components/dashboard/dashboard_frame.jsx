@@ -64,13 +64,13 @@ class Dashboard extends React.Component {
 
     
     return (
-      <html>
+      <div>
         <Navbar 
             // name={this.state.name}
             logout={this.props.logout}
         />
 
-        <body className='dashboard-main'>
+        <div className='dashboard-main'>
           <nav className='dashboard-main-nav-left'>
             <button className='dash-click' onClick={this.props.openDashboard}>Dashboard</button>
             <br/>
@@ -84,11 +84,11 @@ class Dashboard extends React.Component {
           {/* <Link to={'/dashboard'}><button type='button'> Dashboard</button></Link>
           <Link to={'/activity'}><button type='button'>Recent activity</button></Link>
           <Link to={'/all'}><button type='button'>All expenses</button></Link> */}
-            <p><FriendContainer /></p>
-            <p><FriendInviteBox 
+            <FriendContainer />
+            <FriendInviteBox 
               curUser={curUser}
               addFriend={addFriend}
-            /></p>
+            />
           </nav>
           <main className='dashboard-main-center'>
             
@@ -121,9 +121,9 @@ class Dashboard extends React.Component {
 
           </nav>
 
-        </body>
+        </div>
 
-      </html>
+      </div>
     )
 
 

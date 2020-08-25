@@ -53,14 +53,14 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className="login-form-container">
-        <header className='login-page-btn-container'>
+        <div className='login-page-btn-container'>
           <Link to={'/'}><p className='green-logo'></p></Link>
           <nav className='login-page-btns'>
             <Link to={'/login'}><button className='log-page-login-btn' type='button'>Log in</button></Link>
             &nbsp;or&nbsp;
             <Link to={'/signup'}><button className='log-page-signup-btn' type='button'>Sign up</button></Link>
           </nav>
-        </header>
+        </div>
         <Link to={'/'} className='login-main-logo'></Link>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <label 
