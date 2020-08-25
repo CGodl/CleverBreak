@@ -15,11 +15,11 @@ class Greeting extends React.Component {
   render () {
     return (
       <div className='greeting-container'>
-        <header className='splash-nav'>
+        <div className='splash-nav'>
           <Link to={'/signup'}><button className='signup-btn' type='button'>Sign up</button></Link>
           <Link to={'/login'}><button className='login-btn' type='button'>Log in</button></Link>
           <Link to={'/'} className='logo-link'></Link>
-        </header>
+        </div>
         
         <div className = 'greeting-body'>
           <nav className='greeting-body-top'>
@@ -93,7 +93,7 @@ class Greeting extends React.Component {
             <ul className='core-pro-features'>
               <li>Core features</li>
               <li>Pro features</li>
-              <li><a href='www.google.com'>Linkedin</a></li>
+              <li><a href='https://www.linkedin.com/in/carl-godlewski-b64b0512/'>Linkedin</a></li>
               <li><a href='https://github.com/CGodl/'>Github</a></li>
             </ul>
           </nav>

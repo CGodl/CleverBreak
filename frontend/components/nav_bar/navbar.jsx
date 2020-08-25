@@ -12,7 +12,7 @@ class Navbar extends React.Component {
 
   render () {
     return (
-      <header>
+      <div>
         <nav className='nav-wrapper'>
           <ul className="nav-container">
             <li><Link to={'/'}><p className='splitwise-logo'></p></Link></li>
@@ -26,7 +26,7 @@ class Navbar extends React.Component {
               </ul> */}
           </ul>
         </nav>
-      </header>
+      </div>
     )
   }
 }

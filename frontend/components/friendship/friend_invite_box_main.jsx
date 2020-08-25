@@ -29,15 +29,16 @@ class FriendInviteBox extends React.Component {
     const {curUser, addFriend} = this.props;
 
     return (
-      <span className='friend-invite-box-container'>
-        <form onSubmit={this.handleSubmit}>
-          <p>Invite friends</p>
+      // <span className='friend-invite-box-container'>
+      <span>
+        <p className='friend-invite-box-title'>Add friend via email</p>
+        <form className='friend-invite-box-container' onSubmit={this.handleSubmit}>
           <input 
             type='text'
             value={this.state.email}
             onChange={this.update('email')}
           />
-          <button type='submit'>Send invite</button>
+          <button className = 'friend-find-btn' type='submit'>Send invite</button>
         </form>
       </span>
 

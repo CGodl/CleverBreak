@@ -24,12 +24,14 @@ class FriendIndex extends React.Component {
     return (
       <span className='friend-main-container'>
         <label className='friend-title'>
+            <br/>
             FRIENDS <button>add</button>
+            
         </label>
           <ul>
             {
               friends.map(friend => (
-                <li key={friend}>👤 {allUsers[friend].name}</li>
+                <li className ="friend-name" key={friend}>👤 {allUsers[friend].name}</li>
               ))
             }
           </ul>

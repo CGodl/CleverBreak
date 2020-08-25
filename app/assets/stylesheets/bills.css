@@ -5,6 +5,9 @@
   width: 100%;
   border: none;
   border-bottom: 1px solid #eee;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .all-expenses-btn:hover {
@@ -16,6 +19,10 @@
   border: none;
   background-color: transparent;
   color: red;
+  /* float: right; */
+  font-size: 24px;
+  top: 50%;
+  bottom: 50%;
 
 }
 
@@ -25,18 +32,22 @@
 }
 
 .bill-button-title {
+  /* float: left;
+  margin-left: 50px; */
+  top: 50%;
+  
+  text-rendering: optimizeLegibility;
 
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
 
 }
-
 .bill-lended {
-  color: red;
+  color: #ff652f;
 }
 
 .bill-lent {
-  color: green;
+  color: #5BC5A7;
 }
 
 .bill-edit-expense-btn {
@@ -44,8 +55,17 @@
   color: #fff;
   text-shadow: 0 -1px 0 #c83400;
   padding: 2px 6px;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 14px;
+  margin-top: 5px;
+  border-width: 1px;
+  border-radius: 4px;
+  border-color: 1px;
+  border-top-color: rgba(0, 0, 0, 0.1);
+  border-right-color: rgba(0, 0, 0, 0.1);
+  border-bottom-color: rgba(0, 0, 0, 0.25);
+  border-left-color: rgba(0, 0, 0, 0.1);
+  padding: 4px;
 }
 
 /* .recent-activity-main-container {
@@ -54,9 +74,9 @@
 /* 
 .bill-list-container {
   color: red;
-}
+} */
 
-.all-bill-show-container {
+/* .all-bill-show-container {
   background-color: red;
 } */
 
@@ -68,4 +88,37 @@
 
 .bill-show-toggle-off {
   display: none;
+}
+
+.bill-show-top {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+.bill-show-title {
+  font-size: 16px;
+}
+
+.bill-show-cost {
+ 
+  font-weight: 700;
+}
+
+.bill-show-add-update {
+  font-size: 12px;
+  
+}
+
+.bill-show-lending {
+  position: absolute;
+  left: 260px;
+}
+
+.bill-show-lending div {
+  position: absolute;
+  left: 15px;
+}
+
+.bill-show-dropdown-body {
+  padding-left: 10px;
 }

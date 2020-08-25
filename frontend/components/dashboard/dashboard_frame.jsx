@@ -6,6 +6,7 @@ import openModal from '../../actions/modal_actions';
 import FriendInviteBox from '../friendship/friend_invite_box_main';
 import AllExpenses from '../all_expenses/all_expenses_container';
 import Activity from '../activity/activity_container'
+import DashPage from './dashboard_page_container'
 import billModal from '../bill/bill_modal_container';
 import { Link } from 'react-router-dom';
 
@@ -36,17 +37,18 @@ class Dashboard extends React.Component {
 
     switch (this.props.dashView) {
       case 'dashboard':
-        console.log("Moses");
+        return <DashPage />
         break;
       case 'expenses':
+     
         return <AllExpenses />
         break;
       case 'activity':
+       
         return <Activity />
         break;
       default:
-        console.log("DEFAULT");
-        console.log(this.props)
+        return <AllExpenses />
         break;
 
     }
@@ -56,15 +58,22 @@ class Dashboard extends React.Component {
 
   render () {
     const { user, logout, curUser, addFriend } = this.props;
+    let DashTitle;
+
+    if (!user || !logout || !curUser || !addFriend) {
+      return null;
+    }
+
+
     
     return (
-      <html>
+      <div>
         <Navbar 
             // name={this.state.name}
             logout={this.props.logout}
         />
 
-        <body className='dashboard-main'>
+        <div className='dashboard-main'>
           <nav className='dashboard-main-nav-left'>
             <button className='dash-click' onClick={this.props.openDashboard}>Dashboard</button>
             <br/>
@@ -78,19 +87,19 @@ class Dashboard extends React.Component {
           {/* <Link to={'/dashboard'}><button type='button'> Dashboard</button></Link>
           <Link to={'/activity'}><button type='button'>Recent activity</button></Link>
           <Link to={'/all'}><button type='button'>All expenses</button></Link> */}
-            <p><FriendContainer /></p>
-            <p><FriendInviteBox 
+            <FriendContainer />
+            <FriendInviteBox 
               curUser={curUser}
               addFriend={addFriend}
-            /></p>
+            />
           </nav>
           <main className='dashboard-main-center'>
             
 
             <div className ='dashboard-main-center-top'>
-              <label>Dashboard</label>
+              <label>{this.props.dashView}</label>
               <button className='expense-btn' onClick={this.openTheModal}>Add an expense</button>
-              <button className='settle-btn'>Settle up</button>
+              {/* <button className='settle-btn'>Settle up</button> */}
             </div>
 
             <div>
@@ -98,18 +107,26 @@ class Dashboard extends React.Component {
             </div>
           </main>
           <nav className='dashboard-main-nav-right'>
-            <label>Get Splitwise Pro!</label>
+            <label>About Me</label>
+            <ul className='dashboard-about-me-list'>
+              <li><a href='https://www.linkedin.com/in/carl-godlewski-b64b0512/'>Linkedin</a></li>
+              <li><a href='https://github.com/CGodl/'>Github</a></li>
+              <li><a href='https://cgodl.github.io/'>Personal</a></li>
+
+
+            </ul>
+            {/* <label>Get Splitwise Pro!</label>
             <p className ='splitwise-purple-logo'></p>
 
 
-            <p>Subscribe to Splitwise Pro for no ads, currency conversion, charts, search, and more.</p>
+            <p>Subscribe to Splitwise Pro for no ads, currency conversion, charts, search, and more.</p> */}
 
 
           </nav>
 
-        </body>
+        </div>
 
-      </html>
+      </div>
     )
 
 

@@ -25,6 +25,7 @@ class CommentsIndex extends React.Component {
    
     return (
       <div className='comments-index-container'>
+        Comments
          <ul>
             {
               commentIdList.map(commentId => ( 

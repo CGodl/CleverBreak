@@ -10,12 +10,27 @@ import { openDashboard, openActivity, openExpenses } from '../../actions/dashboa
 
 
 const mSTP = (state) => {
-  const curUser = state.entities.users[state.session.id]
+  
+  const curUser = state.entities.users[state.session.id];
+  // debugger
+  // const curUserBillIds = curUser.billIds;
+  // const bills = state.entities.bills;
+
+  // let authorOwes = 0;
+  // let authorOwed = 0;
+
+  // curUserBillIds.forEach(billId => {
+  //   if ((bills[billId].author_id === curUser.id && bills[billId].author_payor) || (bills[billId].author_id != curUser.id && !bills[billId].author_payor)) {
+  //     authorOwes += (bills[billId].cost)
+  //   } else {
+  //     authorOwed += (bills[billId].cost)
+  //   }
+  // })
 
   return {
     user: state.entities.users[state.session.id],
     dashView: state.ui.dashView,
-    curUser
+    curUser,
   }
 }
 

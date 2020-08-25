@@ -1,21 +1,33 @@
+.recent-activity-main-container {
+  position: relative;
+  
+}
+
+
+
 
 .activity-item {
   min-height: 40px;
   height: 59px;
-  /* padding:  */
+  font-size: 17px;
   width: 100%;
-
+  border: none;
+  border-bottom: 1px solid #ddd;
+  
 
   background-color: transparent;
 
 }
 
 .activity-payee {
-  color: green;
-
+  color: #5BC5A7;
 }
 
 .activity-payor {
-  color: red;
+  color: #ff652f;
+}
 
+.title-bold-text {
+  font-weight: bold !important;
+  color: red;
 }
