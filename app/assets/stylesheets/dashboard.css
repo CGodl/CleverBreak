@@ -54,15 +54,18 @@
   background-color: rgb(238, 238, 238);;
   border-bottom: 1px solid #ddd;
   height: 60px;
+  position: relative;
 
 }
 
 .dashboard-main-center-top label {
+  position: absolute;
+  text-transform: capitalize;
   font-size: 24px;
   text-emphasis: bold;
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin-left: 15px;
-
+  margin-top: 15px;
 }
 
 .expense-btn {
@@ -82,8 +85,10 @@
   border-bottom-color: rgba(0, 0, 0, 0.25);
   border-left-color: rgba(0, 0, 0, 0.1);
   padding-bottom: 1px;
-  margin-right: 4px;
-  margin-left: 180px;
+  
+  /* margin-left: 290px; */
+  position: absolute;
+  right: 15px;
 
 }
 
@@ -113,14 +118,43 @@
   margin-top: 3px;
   position: inline-block;
   width: 13vw;
-  padding-top: 25px;
+  padding-top: 5px;
 }
 
 .dashboard-main-nav-right label {
   color: gray;
   text-emphasis: bold;
-  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  /* font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
+  font-family: Arial;
   margin-left: 15px;
+  font-size: 16px;
+
+}
+
+.dashboard-about-me-list li {
+  color: black;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-left: 18px;
+  
+
+
+}
+
+.dashboard-about-me-list li a {
+  text-decoration: none;
+  color: #808080;
+
+
+
+}
+
+.dashboard-about-me-list li a:hover {
+  text-decoration: none;
+  color: #318970;
+
+
+
 
 }
 
@@ -168,3 +202,5 @@
   margin-left: 25px;
   
 }
+
+

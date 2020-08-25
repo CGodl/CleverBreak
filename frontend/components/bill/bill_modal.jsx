@@ -57,41 +57,43 @@ class BillPage extends React.Component {
       return (
         <form className='bill-modal-container' onSubmit={this.handleSubmit}>
           <p className='bill-modal-title'>Add an expense</p>
-          <label>With you and:
-            <input 
-              type='text'
-              value={this.state.name}
-              onChange={this.update('name')}
-              />
-          </label>
-          <br />
-          <label>
-            <input 
-              type='text'
-              value={this.state.description}
-              onChange={this.update('description')}
-              />
-          </label>
-          <br />
-          <label>$
-            <input 
-              type='text'
-              value={this.state.cost}
-              onChange={this.update('cost')}
-              />
-          </label>
-          <br />
-      <p>Paid by <button className='payor-btn' onClick={this.toggleBoolean}>{this.state.author_payor ? 'You' : (this.state.name != '' ? this.state.name : 'No Name Provided')}</button></p>
-          {/* <label>Enter a group, if any:
-            <input 
-              type='text'
-              value={this.state.group_id}
-              onChange={this.update('group_id')}
-              />
-          </label> */}
+          <div className='bill-modal-body'>
+            <label>With you and:
+              <input 
+                type='text'
+                value={this.state.name}
+                onChange={this.update('name')}
+                />
+            </label>
+            <br />
+            <label>
+              <input 
+                type='text'
+                value={this.state.description}
+                onChange={this.update('description')}
+                />
+            </label>
+            <br />
+            <label>$
+              <input 
+                type='text'
+                value={this.state.cost}
+                onChange={this.update('cost')}
+                />
+            </label>
+            <br />
+        <p>Paid by <button className='payor-btn' onClick={this.toggleBoolean}>{this.state.author_payor ? 'You' : (this.state.name != '' ? this.state.name : 'No Name Provided')}</button></p>
+            {/* <label>Enter a group, if any:
+              <input 
+                type='text'
+                value={this.state.group_id}
+                onChange={this.update('group_id')}
+                />
+            </label> */}
 
-          <button onClick={closeModal}>Cancel</button>
-          <button>Save</button>
+            <button className='bill-modal-cancel-btn' onClick={closeModal}>Cancel</button>
+            <button className='bill-modal-submit-btn' >Save</button>
+          </div>
         </form>
 
     );

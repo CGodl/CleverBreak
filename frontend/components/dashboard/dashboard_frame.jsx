@@ -40,9 +40,11 @@ class Dashboard extends React.Component {
         return <DashPage />
         break;
       case 'expenses':
+     
         return <AllExpenses />
         break;
       case 'activity':
+       
         return <Activity />
         break;
       default:
@@ -56,6 +58,7 @@ class Dashboard extends React.Component {
 
   render () {
     const { user, logout, curUser, addFriend } = this.props;
+    let DashTitle;
 
     if (!user || !logout || !curUser || !addFriend) {
       return null;
@@ -94,9 +97,9 @@ class Dashboard extends React.Component {
             
 
             <div className ='dashboard-main-center-top'>
-              <label>Dashboard</label>
+              <label>{this.props.dashView}</label>
               <button className='expense-btn' onClick={this.openTheModal}>Add an expense</button>
-              <button className='settle-btn'>Settle up</button>
+              {/* <button className='settle-btn'>Settle up</button> */}
             </div>
 
             <div>
@@ -105,10 +108,10 @@ class Dashboard extends React.Component {
           </main>
           <nav className='dashboard-main-nav-right'>
             <label>About Me</label>
-            <ul>
+            <ul className='dashboard-about-me-list'>
               <li><a href='https://www.linkedin.com/in/carl-godlewski-b64b0512/'>Linkedin</a></li>
               <li><a href='https://github.com/CGodl/'>Github</a></li>
-              <li>Personal</li>
+              <li><a href='https://cgodl.github.io/'>Personal</a></li>
 
 
             </ul>
