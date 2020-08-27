@@ -604,8 +604,8 @@ var Activity = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(Activity, [{
-    key: "componentWillMount",
-    value: function componentWillMount() {
+    key: "componentDidMount",
+    value: function componentDidMount() {
       this.props.requestBills();
       this.props.receiveAllUsers();
     }
@@ -802,6 +802,12 @@ var BillShow = /*#__PURE__*/function (_React$Component) {
           curUser = _this$props.curUser,
           openModal = _this$props.openModal,
           deleteBill = _this$props.deleteBill;
+
+      if (!allUsers || !bills || !billId) {
+        return null;
+      }
+
+      debugger;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "all-bill-show-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -917,8 +923,8 @@ var AllExpenses = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(AllExpenses, [{
-    key: "componentWillMount",
-    value: function componentWillMount() {
+    key: "componentDidMount",
+    value: function componentDidMount() {
       this.props.requestBills();
       this.props.receiveAllUsers();
       this.props.requestFriends();
@@ -2296,8 +2302,8 @@ var FriendIndex = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(FriendIndex, [{
-    key: "componentWillMount",
-    value: function componentWillMount() {
+    key: "componentDidMount",
+    value: function componentDidMount() {
       this.props.receiveAllUsers();
     }
   }, {

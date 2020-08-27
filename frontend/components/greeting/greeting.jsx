@@ -10,6 +10,7 @@ class Greeting extends React.Component {
 
   componentDidMount() {
     this.props.receiveAllUsers();
+
   }
 
   render () {

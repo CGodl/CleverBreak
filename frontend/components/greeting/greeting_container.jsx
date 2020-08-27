@@ -16,6 +16,7 @@ const mDTP = dispatch => {
   return {
   logout: () => dispatch(logout()),
   receiveAllUsers: () => dispatch(receiveAllUsers()),
+
   }
 };
 
