@@ -7,7 +7,7 @@ class Activity extends React.Component {
 
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.requestBills();
     this.props.receiveAllUsers();
   }

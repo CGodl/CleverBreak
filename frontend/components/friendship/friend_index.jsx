@@ -7,7 +7,7 @@ class FriendIndex extends React.Component {
     
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.receiveAllUsers()
 
   }

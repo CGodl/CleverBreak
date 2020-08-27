@@ -32,6 +32,7 @@ class BillShow extends React.Component {
   }
 
 
+
   openTheModal(theBill) {
   
     this.props.openModal('editBill', theBill);
@@ -39,7 +40,13 @@ class BillShow extends React.Component {
 
   render () {
     const { allUsers, bills, billId, curUser, openModal, deleteBill } = this.props;
-    
+      
+
+      if (!allUsers || !bills || !billId) {
+        return null;
+      }
+      debugger
+
 
     return (
       <div className='all-bill-show-container'>

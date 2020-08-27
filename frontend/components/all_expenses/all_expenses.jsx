@@ -10,7 +10,7 @@ class AllExpenses extends React.Component {
     this.openTheModal = this.openTheModal.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.requestBills();
     this.props.receiveAllUsers();
     this.props.requestFriends();
