@@ -30,6 +30,8 @@ class LoginForm extends React.Component {
 
   componentDidMount() {
     this.props.clearErrors();
+    this.props.requestBills();
+    this.props.fetchComments();
   }
 
   demoAcct(e) {
