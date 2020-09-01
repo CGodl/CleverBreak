@@ -46,7 +46,8 @@ class Api::BillsController < ApplicationController
   end
 
   def index
-    @bills = current_user.bills
+    # @bills = current_user.bills
+    @bills = Bill.all
   end
 
   def show

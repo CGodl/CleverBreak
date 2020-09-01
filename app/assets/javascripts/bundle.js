@@ -2932,6 +2932,8 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.clearErrors();
+      this.props.requestBills();
+      this.props.fetchComments();
     }
   }, {
     key: "demoAcct",
@@ -3041,6 +3043,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
 /* harmony import */ var _login_form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./login_form */ "./frontend/components/session_form/login_form.jsx");
+/* harmony import */ var _actions_bill_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/bill_actions */ "./frontend/actions/bill_actions.js");
+/* harmony import */ var _actions_comment_action__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/comment_action */ "./frontend/actions/comment_action.js");
+
+
 
 
 
@@ -3063,6 +3069,12 @@ var mDTP = function mDTP(dispatch) {
     },
     clearErrors: function clearErrors() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["clearErrors"])());
+    },
+    requestBills: function requestBills() {
+      return dispatch(Object(_actions_bill_actions__WEBPACK_IMPORTED_MODULE_4__["requestBills"])());
+    },
+    fetchComments: function fetchComments() {
+      return dispatch(Object(_actions_comment_action__WEBPACK_IMPORTED_MODULE_5__["fetchComments"])());
     }
   };
 };
