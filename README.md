@@ -20,9 +20,22 @@ Currently, Cleverbreak has the following features implemented:
 ### User Authentication
 New users have the ability to register an account on the sign-in page.
 New user accounts require a minimum of a name, an email address, and a password
+Email confirmation is sent to new users after successful registration
 Users can log-in and log out
 
 ![Signin Example](./readme_images/Signin.png)
+
+### Add friends
+Users can quickly find and add friends on the platform via their email address
+
+### Draft Bills
+Users can draft, edit, and delete bills between themselves and other cleverbreak members. 
+
+### Comments
+Users can create and delete comments on associated bills
+
+
+
 
 
 
