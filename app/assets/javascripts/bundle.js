@@ -807,7 +807,6 @@ var BillShow = /*#__PURE__*/function (_React$Component) {
         return null;
       }
 
-      debugger;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "all-bill-show-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -1640,8 +1639,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state) {
-  var curUser = state.entities.users[state.session.id]; // debugger
-  // const curUserBillIds = curUser.billIds;
+  var curUser = state.entities.users[state.session.id]; // const curUserBillIds = curUser.billIds;
   // const bills = state.entities.bills;
   // let authorOwes = 0;
   // let authorOwed = 0;
@@ -2535,7 +2533,7 @@ var Greeting = /*#__PURE__*/function (_React$Component) {
         className: "greeting-bottom-main-section"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "core-pro-features"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Core features"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Pro features"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https://www.linkedin.com/in/carl-godlewski-b64b0512/"
       }, "Linkedin")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https://github.com/CGodl/"
@@ -3279,19 +3277,13 @@ var billsReducer = function billsReducer() {
       return newState;
 
     case _actions_comment_action__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_COMMENT"]:
-      for (var billId in newState) {
-        if (!newState[billId].commentIds.includes(action.comment.id)) {
-          newState[billId].commentIds.push(action.comment.id);
-        }
-      }
-
+      newState[action.comment.bill_id].commentIds.push(action.comment.id);
       return newState;
 
     case _actions_comment_action__WEBPACK_IMPORTED_MODULE_1__["REMOVE_COMMENT"]:
-      // const newState = Object.assign({}, state);
-      for (var _billId in newState) {
-        if (newState.hasOwnProperty(_billId)) {
-          var bill = newState[_billId];
+      for (var billId in newState) {
+        if (newState.hasOwnProperty(billId)) {
+          var bill = newState[billId];
           bill.commentIds = bill.commentIds.filter(function (commentId) {
             return commentId !== action.commentId;
           });

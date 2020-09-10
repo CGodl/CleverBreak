@@ -15,21 +15,9 @@ const billsReducer = (state = {}, action) => {
       delete newState[action.billId];
       return newState;
     case RECEIVE_COMMENT:
-      debugger;
-      // for (const billId in newState) {
-        newState[action.comment.bill_id].commentIds.push(action.comment.id)
-
-
-      
-      //   if (!newState[billId].commentIds.includes(action.comment.id)) {
-      //     newState[billId].commentIds.push(action.comment.id)
-
-      // }
-    // }
-      debugger;
+      newState[action.comment.bill_id].commentIds.push(action.comment.id)
       return newState;
     case REMOVE_COMMENT:
-        // const newState = Object.assign({}, state);
       for (const billId in newState) {
         if (newState.hasOwnProperty(billId)) {
           const bill = newState[billId]
