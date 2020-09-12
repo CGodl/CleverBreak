@@ -26,7 +26,7 @@ Users can log-in and log out
 ![Signin Example](./readme_images/Signin.png)
 
 ### Add friends
-Users can quickly find and add friends on the platform via their email address
+Users can quickly find and add friends on the platform via their email address. Add the email of a fellow user and click 'Send Invite'
 
 ### Draft Bills
 Users can draft, edit, and delete bills between themselves and other cleverbreak members. 
@@ -34,18 +34,14 @@ Users can draft, edit, and delete bills between themselves and other cleverbreak
 ### Comments
 Users can create and delete comments on associated bills
 
-
-
-
-
-
 ## Demo Account
 As an alternative to registering, a demo account feature is implemented on the login page
 
 ![Demo Example](./readme_images/demoEx.png)
 
-## Friends
-Users can view list of friends
+![Demo Example Gif](./readme_images/DemoSigninExample.gif)
+
+
 
 ---------------
 Things you may want to cover:
