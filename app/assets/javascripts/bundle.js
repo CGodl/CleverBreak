@@ -1180,7 +1180,7 @@ var BillPage = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.state = {
-      description: 'Enter a Description',
+      description: '',
       author_payor: true,
       cost: '',
       name: '',
@@ -1248,6 +1248,7 @@ var BillPage = /*#__PURE__*/function (_React$Component) {
         value: this.state.name,
         onChange: this.update('name')
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        placeholder: "Enter a description",
         type: "text",
         value: this.state.description,
         onChange: this.update('description')
