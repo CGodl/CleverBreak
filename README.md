@@ -31,8 +31,12 @@ Users can quickly find and add friends on the platform via their email address. 
 ### Draft Bills
 Users can draft, edit, and delete bills between themselves and other cleverbreak members. 
 
+![Bill Example](./readme_images/MakeBillDemo.gif)
+
 ### Comments
-Users can create and delete comments on associated bills
+Users can create and delete comments on associated bills. Go to the relevant bill, go under the comments section of the bill page, type in your comment, and click 'Submit' to add comment.
+
+![Comment Example](./readme_images/commentVideoG.gif)
 
 ## Demo Account
 As an alternative to registering, a demo account feature is implemented on the login page
