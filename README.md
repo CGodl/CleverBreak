@@ -20,38 +20,30 @@ Currently, Cleverbreak has the following features implemented:
 ### User Authentication
 New users have the ability to register an account on the sign-in page.
 New user accounts require a minimum of a name, an email address, and a password
+Email confirmation is sent to new users after successful registration
 Users can log-in and log out
 
 ![Signin Example](./readme_images/Signin.png)
 
+### Add friends
+Users can quickly find and add friends on the platform via their email address. Add the email of a fellow user and click 'Send Invite'
 
+### Draft Bills
+Users can draft, edit, and delete bills between themselves and other cleverbreak members. 
+
+![Bill Example](./readme_images/MakeBillDemo.gif)
+
+### Comments
+Users can create and delete comments on associated bills. Go to the relevant bill, go under the comments section of the bill page, type in your comment, and click 'Submit' to add comment.
+
+![Comment Example](./readme_images/commentVideoG.gif)
 
 ## Demo Account
 As an alternative to registering, a demo account feature is implemented on the login page
 
 ![Demo Example](./readme_images/demoEx.png)
 
-## Friends
-Users can view list of friends
+![Demo Example Gif](./readme_images/DemoSigninExample.gif)
 
----------------
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 

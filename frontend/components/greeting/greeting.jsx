@@ -29,7 +29,7 @@ class Greeting extends React.Component {
             <p className='main-logo-front-page'></p>
             <Link to={'/signup'}><button className='signup-btn-body'>Sign up</button></Link>
           </nav>
-          <nav className='greeting-body-mid-left'>
+          {/* <nav className='greeting-body-mid-left'>
             <h2 className='greeting-body-title'>Track balances</h2>
             <p className='greeting-body-text'>Keep track of shared expenses, balances, and who owes who.</p>
             <p className='greeting-body-img-top-left'></p>
@@ -48,19 +48,19 @@ class Greeting extends React.Component {
             <h2 className='greeting-body-title'>Pay friends back</h2>
             <p className='greeting-body-text'>Settle up with a friend and record any cash or online payment.</p>
             <p className='greeting-body-img-mid-right'></p>
-          </nav>
-          <nav className='greeting-body-bottom'>
-            <div className ='greeting-bottom-body-text'>
+          </nav> */}
+          {/* <nav className='greeting-body-bottom'>
+            {/* <div className ='greeting-bottom-body-text'>
               <p className= 'greeting-bottom-body-title'>Get even more with PRO</p>
               <p className='greeting-bottom-body-textbody'>Get even more organized with receipt scanning, charts and graphs, currency conversion, and more!</p>
               <Link to={'/signup'}><button className='bottom-signup-btn' type='button'>Sign up</button></Link>
             </div>
             <p className='greeting-body-img-bottom'></p>
-          </nav>
+          </nav> */}
           <nav className='greeting-bottom-list-container'>
-          <p className='greeting-bottom-title'>The whole nine yards</p>
+          {/* <p className='greeting-bottom-title'>The whole nine yards</p> */}
             <nav className='greeting-bottom-main-section'>
-              <ul className='greeting-bottom-list-left'>
+              {/* <ul className='greeting-bottom-list-left'>
                 <li>Add groups and friends</li>
                 <li>Split expenses, record debts</li>
                 <li>Equal or unequal splits</li>
@@ -69,8 +69,8 @@ class Greeting extends React.Component {
                 <li>Suggested repayments</li>
                 <li>Simplify debts</li>
                 <li>Recurring expenses</li>
-              </ul>
-              <ul className='greeting-bottom-list-center'>
+              </ul> */}
+              {/* <ul className='greeting-bottom-list-center'>
                 <li>Offline mode</li>
                 <li>Cloud sync</li>
                 <li>Spending totals</li>
@@ -89,11 +89,11 @@ class Greeting extends React.Component {
                 <li>Expense search</li>
                 <li>Save default splits</li>
                 <li>Early access to new features</li>
-              </ul>
+              </ul> */}
             </nav>
             <ul className='core-pro-features'>
-              <li>Core features</li>
-              <li>Pro features</li>
+              {/* <li>Core features</li>
+              <li>Pro features</li> */}
               <li><a href='https://www.linkedin.com/in/carl-godlewski-b64b0512/'>Linkedin</a></li>
               <li><a href='https://github.com/CGodl/'>Github</a></li>
             </ul>

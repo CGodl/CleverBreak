@@ -12,7 +12,6 @@ import { openDashboard, openActivity, openExpenses } from '../../actions/dashboa
 const mSTP = (state) => {
   
   const curUser = state.entities.users[state.session.id];
-  // debugger
   // const curUserBillIds = curUser.billIds;
   // const bills = state.entities.bills;
 

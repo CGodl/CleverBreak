@@ -8,7 +8,7 @@ class Api::BillsController < ApplicationController
 
 
     if Bill.last == nil
-      current_history_id = 0
+      current_history_id = 1
     else
       current_history_id = Bill.last.history_id + 1
     end

@@ -45,7 +45,6 @@ class BillShow extends React.Component {
       if (!allUsers || !bills || !billId) {
         return null;
       }
-      debugger
 
 
     return (
