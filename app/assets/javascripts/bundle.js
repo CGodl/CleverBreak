@@ -320,7 +320,6 @@ var receiveFriends = function receiveFriends(friends) {
 };
 
 var removeFriend = function removeFriend() {
-  ////
   return {
     type: REMOVE_FRIENDSHIP
   };
@@ -328,7 +327,6 @@ var removeFriend = function removeFriend() {
 
 var addFriend = function addFriend(friend) {
   return function (dispatch) {
-    ////
     return _util_friend_api_util__WEBPACK_IMPORTED_MODULE_0__["createFriend"](friend).then(function (friend) {
       return dispatch(receiveFriend(friend));
     });
@@ -350,7 +348,6 @@ var requestFriends = function requestFriends() {
 };
 var deleteFriend = function deleteFriend(friend) {
   return function (dispatch) {
-    ////
     return _util_friend_api_util__WEBPACK_IMPORTED_MODULE_0__["destroyFriend"](friend).then(function (friend) {
       return dispatch(removeFriend(friend));
     });
@@ -3446,6 +3443,7 @@ var friendsReducer = function friendsReducer() {
 
   switch (action.type) {
     case _actions_friend_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_FRIENDSHIP"]:
+      debugger;
       return Object.assign({}, newState, _defineProperty({}, action.friend.id, action.friend));
 
     case _actions_friend_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_FRIENDSHIPS"]:
@@ -3632,8 +3630,10 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
-/* harmony import */ var _actions_bill_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/bill_actions */ "./frontend/actions/bill_actions.js");
+/* harmony import */ var _actions_friend_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/friend_actions */ "./frontend/actions/friend_actions.js");
+/* harmony import */ var _actions_bill_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/bill_actions */ "./frontend/actions/bill_actions.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -3651,7 +3651,14 @@ var usersReducer = function usersReducer() {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_USERS"]:
       return action.users;
 
-    case _actions_bill_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_BILL"]:
+    case _actions_friend_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_FRIENDSHIP"]:
+      debugger; // for (const userId in newState) {
+      //   if (!newState[userId].friendIds.includes(action))
+      // }
+
+      return newState;
+
+    case _actions_bill_actions__WEBPACK_IMPORTED_MODULE_2__["RECEIVE_BILL"]:
       for (var userId in newState) {
         if (!newState[userId].billIds.includes(action.bill.id)) {
           newState[userId].billIds.push(action.bill.id);
@@ -3660,7 +3667,7 @@ var usersReducer = function usersReducer() {
 
       return newState;
 
-    case _actions_bill_actions__WEBPACK_IMPORTED_MODULE_1__["REMOVE_BILL"]:
+    case _actions_bill_actions__WEBPACK_IMPORTED_MODULE_2__["REMOVE_BILL"]:
       for (var _userId in newState) {
         if (newState.hasOwnProperty(_userId)) {
           var user = newState[_userId];
@@ -3821,6 +3828,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getFriend", function() { return getFriend; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getFriends", function() { return getFriends; });
 var createFriend = function createFriend(friend) {
+  debugger;
   return $.ajax({
     type: 'POST',
     url: '/api/friends',

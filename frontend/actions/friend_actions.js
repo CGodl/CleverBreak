@@ -19,14 +19,14 @@ const receiveFriends = friends => {
 }
 
 const removeFriend = () => {
-  ////
+
   return {
     type: REMOVE_FRIENDSHIP,
   };
 }
 
 export const addFriend = friend => dispatch => {
-  ////
+ 
   return friendApiUtil.createFriend(friend)
     .then(friend => (dispatch(receiveFriend(friend))))
 }
@@ -43,7 +43,7 @@ export const requestFriends = () => dispatch => (
     ))
 
 export const deleteFriend = friend => dispatch => {
-  ////
+
   return friendApiUtil.destroyFriend(friend)
     .then(friend => (dispatch(removeFriend(friend))))
 }

@@ -10,10 +10,13 @@ class Api::FriendsController < ApplicationController
   
     if requested_friend && !already_friend
       
-      friend = Friend.new({requestor_id: current_user.id, requested_id: requested_friend.id })
+      @friend = Friend.new({requestor_id: current_user.id, requested_id: requested_friend.id })
 
-      if friend.save
-        render 'api/friends/show'
+      if @friend.save
+        debugger
+        render :show
+        # render 'api/friends/index'
+        puts 'It passed'
       end
     else
       render json: ["Unable to establish friendship"]
