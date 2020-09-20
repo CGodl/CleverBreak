@@ -3443,7 +3443,6 @@ var friendsReducer = function friendsReducer() {
 
   switch (action.type) {
     case _actions_friend_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_FRIENDSHIP"]:
-      debugger;
       return Object.assign({}, newState, _defineProperty({}, action.friend.id, action.friend));
 
     case _actions_friend_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_FRIENDSHIPS"]:
@@ -3652,25 +3651,27 @@ var usersReducer = function usersReducer() {
       return action.users;
 
     case _actions_friend_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_FRIENDSHIP"]:
-      debugger; // for (const userId in newState) {
-      //   if (!newState[userId].friendIds.includes(action))
-      // }
+      for (var userId in newState) {
+        if (!newState[userId].friendIds.includes(action.friend.id)) {
+          newState[userId].friendIds.push(action.friend.id);
+        }
+      }
 
       return newState;
 
     case _actions_bill_actions__WEBPACK_IMPORTED_MODULE_2__["RECEIVE_BILL"]:
-      for (var userId in newState) {
-        if (!newState[userId].billIds.includes(action.bill.id)) {
-          newState[userId].billIds.push(action.bill.id);
+      for (var _userId in newState) {
+        if (!newState[_userId].billIds.includes(action.bill.id)) {
+          newState[_userId].billIds.push(action.bill.id);
         }
       }
 
       return newState;
 
     case _actions_bill_actions__WEBPACK_IMPORTED_MODULE_2__["REMOVE_BILL"]:
-      for (var _userId in newState) {
-        if (newState.hasOwnProperty(_userId)) {
-          var user = newState[_userId];
+      for (var _userId2 in newState) {
+        if (newState.hasOwnProperty(_userId2)) {
+          var user = newState[_userId2];
           user.billIds = user.billIds.filter(function (billId) {
             return billId !== action.billId;
           });

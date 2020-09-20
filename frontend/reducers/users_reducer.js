@@ -14,13 +14,16 @@ const usersReducer = (state = {}, action) => {
       return action.users;
     
     case RECEIVE_FRIENDSHIP:
-      debugger;
-      // for (const userId in newState) {
-      //   if (!newState[userId].friendIds.includes(action))
 
 
-
-      // }
+    
+      for (const userId in newState) {
+        
+        if (!newState[userId].friendIds.includes(action.friend.id)) {
+          newState[userId].friendIds.push(action.friend.id)
+      }
+    }
+      
       return newState;
     case RECEIVE_BILL: 
       for (const userId in newState) {
