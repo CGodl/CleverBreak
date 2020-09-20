@@ -39,7 +39,24 @@
   margin-bottom: 2px;
 }
 
-.friend-invite-box-title {
+
+.friend-outer-container {
+  width: 90%;
+
+}
+
+.friend-outer-container p {
+  background: #5bc5a7;
+  color: #fff;
+  border: 1px solid #39a385;
+  font-weight: bold;
+  font-size: 14px;
+  text-shadow: 0 -1px 0 #3eaf8f;
+  width: 100%;
+  padding: 3px;
+}
+
+/* .friend-invite-box-title {
   background: #5bc5a7;
   color: #fff;
   border: 1px solid #39a385;
@@ -47,17 +64,36 @@
   font-size: 14px;
   padding: 3px;
   text-shadow: 0 -1px 0 #3eaf8f;
-  width: 84%;
-}
+  width: 100%;
 
-.friend-invite-box-container {
+} */
 
+.friend-outer-container form {
+  width: 100%;
   border: 1px solid #ccc;
   border-top: none;
-  margin-right: 22px;
+  margin-right: 0px;
   padding-top: 10px;
   padding-bottom: 5px;
   padding-left: 2px;
+  padding-right: 4px;
+
+}
+
+/* .friend-invite-box-container {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-top: none;
+  margin-right: 0px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-left: 2px;
+
+} */
+
+.friend-invite-input {
+  width: 80%;
+
 
 }
 

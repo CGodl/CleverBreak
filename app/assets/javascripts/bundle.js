@@ -2411,23 +2411,22 @@ var FriendInviteBox = /*#__PURE__*/function (_React$Component) {
       var _this$props = this.props,
           curUser = _this$props.curUser,
           addFriend = _this$props.addFriend;
-      return (
-        /*#__PURE__*/
-        // <span className='friend-invite-box-container'>
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-          className: "friend-invite-box-title"
-        }, "Add friend via email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-          className: "friend-invite-box-container",
-          onSubmit: this.handleSubmit
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-          type: "text",
-          value: this.state.email,
-          onChange: this.update('email')
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          className: "friend-find-btn",
-          type: "submit"
-        }, "Send invite")))
-      );
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "friend-outer-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "friend-invite-box-title"
+      }, "Add friend via email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "friend-invite-box-container",
+        onSubmit: this.handleSubmit
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "friend-invite-input",
+        type: "text",
+        value: this.state.email,
+        onChange: this.update('email')
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "friend-find-btn",
+        type: "submit"
+      }, "Send invite")));
     }
   }]);
 
