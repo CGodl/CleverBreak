@@ -3101,7 +3101,7 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
       var user = Object.assign({}, this.state);
       this.props.signup(user).then(function () {
         return _this3.props.history.push('/dashboard');
-      }); // .catch(this.errorCheck = true)
+      });
     }
   }, {
     key: "renderErrors",

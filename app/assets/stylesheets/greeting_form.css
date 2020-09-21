@@ -504,7 +504,9 @@ margin-right: 4px;
 background-image: url('./images/Greeting_bottom.png');
 background-size: cover;
 
-width: 100%; 
+max-width: 100%; 
 background-color: black;
+/* height: 16.02vh; */
+height: auto;
 min-height: 16.02vh;
 }
