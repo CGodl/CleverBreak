@@ -1,3 +1,35 @@
+
+
+.session-form-container {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  margin-left: 35%;
+}
+
+.sign-in-logo-location {
+  /* position: fixed;
+  left: 445px;
+  top: 100px; */
+  margin-top: 20%;
+  margin-right: 5px;
+
+  height: 204px;
+  width: 204px;
+
+}
+
+.sign-in-logo {
+  background-image: url('./images/login-main-logo');
+  background-size: contain;
+  background-repeat: none;
+  height: 100%;
+  width: 100%;
+
+  cursor: pointer;
+  border: black 1px;
+}
+
 .signup-introduce-welcome {
   margin-top: 33%;
   font-size: 16px;
@@ -7,28 +39,13 @@
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-.sign-in-logo {
-  background-image: url('./images/login-main-logo');
-  background-size: contain;
-  background-repeat: none;
-  height: 205px;
-  width: 200px;
 
-  cursor: pointer;
-  border: black 1px;
-}
 
-.sign-in-logo-location {
-  position: fixed;
-  left: 445px;
-  top: 100px;
 
-}
 
-.session-form-container {
-  position: absolute;
-  margin-left: 46%;
-  margin-right: 54%;
+.session-form-box {
+
+
 }
 
 .signup-title {
@@ -95,5 +112,4 @@
 .session-submit:hover {
   outline: none;
   box-shadow: none;
-
 }

@@ -320,7 +320,6 @@ var receiveFriends = function receiveFriends(friends) {
 };
 
 var removeFriend = function removeFriend() {
-  ////
   return {
     type: REMOVE_FRIENDSHIP
   };
@@ -328,7 +327,6 @@ var removeFriend = function removeFriend() {
 
 var addFriend = function addFriend(friend) {
   return function (dispatch) {
-    ////
     return _util_friend_api_util__WEBPACK_IMPORTED_MODULE_0__["createFriend"](friend).then(function (friend) {
       return dispatch(receiveFriend(friend));
     });
@@ -350,7 +348,6 @@ var requestFriends = function requestFriends() {
 };
 var deleteFriend = function deleteFriend(friend) {
   return function (dispatch) {
-    ////
     return _util_friend_api_util__WEBPACK_IMPORTED_MODULE_0__["destroyFriend"](friend).then(function (friend) {
       return dispatch(removeFriend(friend));
     });
@@ -2414,23 +2411,22 @@ var FriendInviteBox = /*#__PURE__*/function (_React$Component) {
       var _this$props = this.props,
           curUser = _this$props.curUser,
           addFriend = _this$props.addFriend;
-      return (
-        /*#__PURE__*/
-        // <span className='friend-invite-box-container'>
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-          className: "friend-invite-box-title"
-        }, "Add friend via email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-          className: "friend-invite-box-container",
-          onSubmit: this.handleSubmit
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-          type: "text",
-          value: this.state.email,
-          onChange: this.update('email')
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          className: "friend-find-btn",
-          type: "submit"
-        }, "Send invite")))
-      );
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "friend-outer-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "friend-invite-box-title"
+      }, "Add friend via email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "friend-invite-box-container",
+        onSubmit: this.handleSubmit
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "friend-invite-input",
+        type: "text",
+        value: this.state.email,
+        onChange: this.update('email')
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "friend-find-btn",
+        type: "submit"
+      }, "Send invite")));
     }
   }]);
 
@@ -2497,11 +2493,9 @@ var Greeting = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "greeting-container"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash-nav"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: '/signup'
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "signup-btn",
@@ -2511,24 +2505,27 @@ var Greeting = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "login-btn",
         type: "button"
-      }, "Log in")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, "Log in"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: '/',
         className: "logo-link"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "greeting-body"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "greeting-body-top"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "greeting-body-top-left"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "top-title"
       }, "Less stress when sharing expenses ON ANYTHING"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "top-text"
-      }, "Keep track of your shared expenses and balances with housemates, trips, groups, friends, and family."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "main-logo-front-page"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, "Keep track of your shared expenses and balances with housemates, trips, groups, friends, and family."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        className: "signup-btn-body-container",
         to: '/signup'
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "signup-btn-body"
-      }, "Sign up"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+      }, "Sign up"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-logo-front-page"
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "greeting-bottom-list-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "greeting-bottom-main-section"
@@ -3105,7 +3102,7 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
       var user = Object.assign({}, this.state);
       this.props.signup(user).then(function () {
         return _this3.props.history.push('/dashboard');
-      }); // .catch(this.errorCheck = true)
+      });
     }
   }, {
     key: "renderErrors",
@@ -3632,8 +3629,10 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
-/* harmony import */ var _actions_bill_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/bill_actions */ "./frontend/actions/bill_actions.js");
+/* harmony import */ var _actions_friend_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/friend_actions */ "./frontend/actions/friend_actions.js");
+/* harmony import */ var _actions_bill_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/bill_actions */ "./frontend/actions/bill_actions.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -3651,19 +3650,28 @@ var usersReducer = function usersReducer() {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_USERS"]:
       return action.users;
 
-    case _actions_bill_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_BILL"]:
+    case _actions_friend_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_FRIENDSHIP"]:
       for (var userId in newState) {
-        if (!newState[userId].billIds.includes(action.bill.id)) {
-          newState[userId].billIds.push(action.bill.id);
+        if (!newState[userId].friendIds.includes(action.friend.id)) {
+          newState[userId].friendIds.push(action.friend.id);
         }
       }
 
       return newState;
 
-    case _actions_bill_actions__WEBPACK_IMPORTED_MODULE_1__["REMOVE_BILL"]:
+    case _actions_bill_actions__WEBPACK_IMPORTED_MODULE_2__["RECEIVE_BILL"]:
       for (var _userId in newState) {
-        if (newState.hasOwnProperty(_userId)) {
-          var user = newState[_userId];
+        if (!newState[_userId].billIds.includes(action.bill.id)) {
+          newState[_userId].billIds.push(action.bill.id);
+        }
+      }
+
+      return newState;
+
+    case _actions_bill_actions__WEBPACK_IMPORTED_MODULE_2__["REMOVE_BILL"]:
+      for (var _userId2 in newState) {
+        if (newState.hasOwnProperty(_userId2)) {
+          var user = newState[_userId2];
           user.billIds = user.billIds.filter(function (billId) {
             return billId !== action.billId;
           });
@@ -3821,6 +3829,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getFriend", function() { return getFriend; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getFriends", function() { return getFriends; });
 var createFriend = function createFriend(friend) {
+  debugger;
   return $.ajax({
     type: 'POST',
     url: '/api/friends',
