@@ -15,20 +15,24 @@ class Greeting extends React.Component {
 
   render () {
     return (
-      <div className='greeting-container'>
+      <div>
         <div className='splash-nav'>
-          <Link to={'/signup'}><button className='signup-btn' type='button'>Sign up</button></Link>
-          <Link to={'/login'}><button className='login-btn' type='button'>Log in</button></Link>
+          <div>
+            <Link to={'/signup'}><button className='signup-btn' type='button'>Sign up</button></Link>
+            <Link to={'/login'}><button className='login-btn' type='button'>Log in</button></Link>
+          </div>
           <Link to={'/'} className='logo-link'></Link>
         </div>
         
         <div className = 'greeting-body'>
-          <nav className='greeting-body-top'>
-            <p className='top-title'>Less stress when sharing expenses ON ANYTHING</p>
-            <p className='top-text'>Keep track of your shared expenses and balances with housemates, trips, groups, friends, and family.</p>
-            <p className='main-logo-front-page'></p>
-            <Link to={'/signup'}><button className='signup-btn-body'>Sign up</button></Link>
-          </nav>
+          <div className='greeting-body-top'>
+            <div className='greeting-body-top-left'>
+              <p className='top-title'>Less stress when sharing expenses ON ANYTHING</p>
+              <p className='top-text'>Keep track of your shared expenses and balances with housemates, trips, groups, friends, and family.</p>
+              <Link className='signup-btn-body-container' to={'/signup'}><button className='signup-btn-body'>Sign up</button></Link>
+            </div>
+            <div className='main-logo-front-page'></div>
+          </div>
           {/* <nav className='greeting-body-mid-left'>
             <h2 className='greeting-body-title'>Track balances</h2>
             <p className='greeting-body-text'>Keep track of shared expenses, balances, and who owes who.</p>
