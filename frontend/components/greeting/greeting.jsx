@@ -30,6 +30,7 @@ class Greeting extends React.Component {
               <Link className='signup-btn-body-container' to={'/signup'}><button className='signup-btn-body'>Sign up</button></Link>
             </div>
             <div className='main-logo-front-page'></div>
+            {/* <img src={window.backgroundImage} /> */}
             
 
           </div>
