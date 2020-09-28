@@ -17,9 +17,18 @@
         "id": <%= current_user.id %>,
         "email": "<%= current_user.email %>"
       }
+
+  
     </script>
   <% end %>
- 
+
+  <script>
+    window.backgroundImage = '<%= asset_url('login-main-logo')%>'
+    console.log(window.backgroundImage)
+
+  </script>
+
+
 
   </head>
 

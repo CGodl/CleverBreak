@@ -9,6 +9,7 @@ import { updateBill } from './util/bill_api_util'
 import { getComments } from './util/comment_api_util'
 
 
+
 //////;
 document.addEventListener('DOMContentLoaded', () => {
     let store;
