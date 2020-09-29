@@ -16,6 +16,7 @@ class CommentForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.addComment(this.state);
+    this.setState({text_body: ''});
   };
 
   update(field) {

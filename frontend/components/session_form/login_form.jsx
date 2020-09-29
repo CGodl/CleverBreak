@@ -63,12 +63,15 @@ class LoginForm extends React.Component {
             <Link to={'/signup'}><button className='log-page-signup-btn' type='button'>Sign up</button></Link>
           </nav>
         </div>
+        
         <Link to={'/'} className='login-main-logo'></Link>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <label 
             className={this.props.errors.length > 0 ? 'error-msgs' : ''}>{ this.renderErrors()} 
               {/* <Link className='x-button'>x</Link> */}
           </label>
+
+          
           <label className='login-introduce-welcome'>Welcome to Splitwise</label>
           
           <div className="login-form">

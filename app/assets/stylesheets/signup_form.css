@@ -1,37 +1,28 @@
 
 
 .session-form-container {
-  position: absolute;
   display: flex;
   flex-direction: row;
-  margin-left: 35%;
+  margin-left: 30%;
+  align-items: center;
+  margin-top: 6%;
 }
 
-.sign-in-logo-location {
-  /* position: fixed;
-  left: 445px;
-  top: 100px; */
-  margin-top: 20%;
-  margin-right: 5px;
-
-  height: 204px;
-  width: 204px;
-
-}
 
 .sign-in-logo {
   background-image: url('./images/login-main-logo');
   background-size: contain;
   background-repeat: none;
-  height: 100%;
-  width: 100%;
-
+  min-height: 204px;
+  min-width: 204px;
   cursor: pointer;
   border: black 1px;
+  margin-right: 2%;
+  margin-bottom: 4%;
 }
 
 .signup-introduce-welcome {
-  margin-top: 33%;
+  /* margin-top: 33%; */
   font-size: 16px;
   font-weight: 600;
   text-transform: uppercase;
@@ -40,16 +31,12 @@
 }
 
 
-
-
-
-.session-form-box {
-
-
+.sign-up-center-box {
+  display: flex;
+  flex-direction: row;
 }
 
 .signup-title {
-  position: fixed;
   font-size: 23px;
   color: #333333;
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -87,6 +74,11 @@
 
 .signup-errors label ul li {
   margin-left: 30px;
+}
+
+.signup-btn-container {
+  display: flex;
+  flex-direction: row;
 
 }
 
@@ -113,3 +105,47 @@
   outline: none;
   box-shadow: none;
 }
+
+.signup-demo-btn {
+  background-color: #5bc5a7;
+  text-shadow: 0 -1px 0 #5bc5a7;
+  color: white;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 23px;
+  height: 60px;
+  width: 150px;
+  border-width: 1px;
+  border-radius: 4px;
+  border-color: 1px;
+  border-top-color: rgba(0, 0, 0, 0.1);
+  border-right-color: rgba(0, 0, 0, 0.1);
+  border-bottom-color: rgba(0, 0, 0, 0.25);
+  border-left-color: rgba(0, 0, 0, 0.1);
+  padding-bottom: 5px;
+  margin-left: 8px;
+
+}
+
+
+
+
+@media screen and (max-width: 800px) {
+
+  .session-form-container {
+    flex-direction: column;
+    margin-left: 18%;
+  }
+
+  .sign-in-logo {
+    min-height: 150px;
+    min-width: 150px;
+    margin-bottom: 5%;
+    margin-right: none;
+  }
+
+  .session-form {
+    margin-top: 0px;
+  }
+
+}
+
