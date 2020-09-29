@@ -5,6 +5,8 @@
   height: 48px;
   position: fixed;
   top: 0;
+  display: flex;
+  justify-content: space-around;
 }
 
 .green-logo {
@@ -12,13 +14,13 @@
   background-size: contain;
   height: 32px;
   width: 123px;
-  float: left;
+  /* float: left; */
   margin-top: 9px;
-  margin-left: 248px;
+  /* margin-left: 248px; */
 }
 
 .login-page-btns {
-  position: relative;
+  /* position: relative; */
   width: 200px;
   float: right;
   right: 200px;
@@ -27,6 +29,9 @@
   color: white;
   height: 100%;
 }
+
+
+
 
 .log-page-login-btn {
   background-color: #5bc5a7;
