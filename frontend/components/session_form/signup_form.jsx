@@ -13,6 +13,13 @@ class SignupForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.demoAcct = this.demoAcct.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.clearErrors();
+    this.props.requestBills();
+    this.props.fetchComments();
   }
 
   update(field) {
@@ -26,7 +33,6 @@ class SignupForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.signup(user)
       .then(() => this.props.history.push('/dashboard'))
-
   }
 
   renderErrors() {
@@ -45,8 +51,10 @@ class SignupForm extends React.Component {
     );
   }
 
-  componentDidMount() {
-    this.props.clearErrors();
+  demoAcct(e) {
+    e.preventDefault();
+    const logUser = { email: 'TestEmail@hmail.com', password: 'abc12345' }
+    this.props.login(logUser);
   }
 
 
@@ -54,7 +62,9 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div className="session-form-container">
-        <Link to={'/'} className={'sign-in-logo-location'}><p className='sign-in-logo'></p></Link>
+        {/* <Link to={'/'} className={'sign-in-logo-location'}><p className='sign-in-logo'></p></Link> */}
+        <Link to={'/'} className={'sign-in-logo'} />
+
         
         <form onSubmit={this.handleSubmit} className="session-form-box">
           <p className='signup-introduce-welcome'>Introduce Yourself</p>
@@ -88,7 +98,10 @@ class SignupForm extends React.Component {
               />
             </label>
             <br/>
-            <button className="session-submit" type='submit'>Sign me up!</button>
+            <div classname='signup-btn-container'>
+              <button className="session-submit" type='submit'>Sign me up!</button>
+              <button className='signup-demo-btn' onClick={this.demoAcct}>Demo login</button>
+            </div>
           </div>
         </form>      
       </div>

@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
-
 class Greeting extends React.Component {
   constructor(props) {
     super(props)
@@ -32,6 +30,9 @@ class Greeting extends React.Component {
               <Link className='signup-btn-body-container' to={'/signup'}><button className='signup-btn-body'>Sign up</button></Link>
             </div>
             <div className='main-logo-front-page'></div>
+            {/* <img src={window.backgroundImage} /> */}
+            
+
           </div>
           {/* <nav className='greeting-body-mid-left'>
             <h2 className='greeting-body-title'>Track balances</h2>

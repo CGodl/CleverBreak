@@ -15,6 +15,7 @@ class FriendInviteBox extends React.Component {
     const friend = Object.assign({}, this.state);
     
     this.props.addFriend(friend);
+    this.setState({email: ''});
   };
 
   update(field) {
