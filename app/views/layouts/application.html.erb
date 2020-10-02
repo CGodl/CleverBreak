@@ -4,7 +4,7 @@
     <title>Cleverbreak</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <meta name="image" property="og:image" content=" <%= image_url('cleverbreak-header-image-linkedin.png')%>%">
+    <meta name="image" property="og:image" content='<%= image_url('cleverbreak-header-image-linkedin.png') %>' />
 
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -25,8 +25,11 @@
   <% end %>
 
   <script>
-    window.backgroundImage = '<%= asset_url('login-main-logo')%>'
-    console.log(window.backgroundImage)
+    // window.backgroundImage = '<%= asset_url('login-main-logo')%>'
+    // window.testThis = '<%= image_url('cleverbreak-header-image-linkedin.png') %>'
+
+    // console.log(window.backgroundImage)
+    // console.log(window.testThis)
 
   </script>
 
