@@ -31,12 +31,20 @@
   
 }
 
+
 .friend-name {
-  /* color: #999999; */
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
   font-size: 14px;
 
-  margin-top: 1px;
-  margin-bottom: 2px;
+  padding-top: 1px;
+  padding-bottom: 3px;
+  width: 92%;
+}
+
+.friend-name:hover {
+  background-color: #E8E8E8;
+
+
 }
 
 
