@@ -22,9 +22,8 @@ const mDTP = dispatch => {
   return {
     addFriend: friend => dispatch(addFriend(friend)),
     receiveAllUsers: () => dispatch(receiveAllUsers()),
-  }
-}
+    removeFriend: () => dispatch(removeFriend(friendId))
+  };
+};
 
-export default connect(mSTP, mDTP)(FriendIndex)
-
-// get pojos of servers
+export default connect(mSTP, mDTP)(FriendIndex);

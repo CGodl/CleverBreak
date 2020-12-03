@@ -1,5 +1,7 @@
 .nav-wrapper {
   background-color: #5bc5a7;
+  /* background-color: #005792; */
+ 
   box-shadow: 0 0 3px rgba(0,0,0,0.5);
   height: 34px;
   
@@ -10,9 +12,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 3px 17%;
-  z-index: 10;
-  
-  
 }
 
 .splitwise-logo{

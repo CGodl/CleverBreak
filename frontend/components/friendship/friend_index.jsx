@@ -14,8 +14,6 @@ class FriendIndex extends React.Component {
 
   render () {
     const { allUsers, friends } = this.props;
-    // window.allUsers = allUsers
-    // window.friends = friends
 
     if (!friends) {
       return null
@@ -23,15 +21,16 @@ class FriendIndex extends React.Component {
 
     return (
       <span className='friend-main-container'>
-        <label className='friend-title'>
-            <br/>
-            FRIENDS <button>add</button>
+        <div className='friend-title'>
+            FRIENDS 
+            {/* <button>add</button> */}
             
-        </label>
+        </div>
           <ul>
             {
               friends.map(friend => (
-                <li className ="friend-name" key={friend}>👤 {allUsers[friend].name}</li>
+                <li className ="friend-name" key={friend}>👤 {allUsers[friend].name} 
+                </li>
               ))
             }
           </ul>

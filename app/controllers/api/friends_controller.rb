@@ -22,7 +22,6 @@ class Api::FriendsController < ApplicationController
 
   def destroy
     friend = Friend.find(requestor_id: current_user.id, requested_id: params[:id])
-      # @friend = current_user.Friend.find_by(requested_id: params[:id])
     friend.destroy
     render 'api/friends/index'
   end

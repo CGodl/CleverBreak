@@ -319,7 +319,7 @@ var receiveFriends = function receiveFriends(friends) {
   };
 };
 
-var removeFriend = function removeFriend() {
+var removeFriend = function removeFriend(friendId) {
   return {
     type: REMOVE_FRIENDSHIP
   };
@@ -346,10 +346,10 @@ var requestFriends = function requestFriends() {
     });
   };
 };
-var deleteFriend = function deleteFriend(friend) {
+var deleteFriend = function deleteFriend(billId) {
   return function (dispatch) {
-    return _util_friend_api_util__WEBPACK_IMPORTED_MODULE_0__["destroyFriend"](friend).then(function (friend) {
-      return dispatch(removeFriend(friend));
+    return _util_friend_api_util__WEBPACK_IMPORTED_MODULE_0__["destroyFriend"](billId).then(function () {
+      return dispatch(removeFriend(billId));
     });
   };
 };
@@ -1784,10 +1784,6 @@ var Dashboard = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "currentView",
     value: function currentView() {
-      // e.preventDefault();
-      // if (this.state.ui.dashView == undefined) {
-      //   return null;
-      // }
       switch (this.props.dashView) {
         case 'dashboard':
           return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dashboard_page_container__WEBPACK_IMPORTED_MODULE_8__["default"], null);
@@ -2246,11 +2242,14 @@ var mDTP = function mDTP(dispatch) {
     },
     receiveAllUsers: function receiveAllUsers() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["receiveAllUsers"])());
+    },
+    removeFriend: function removeFriend() {
+      return dispatch(Object(_actions_friend_actions__WEBPACK_IMPORTED_MODULE_2__["removeFriend"])(friendId));
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_friend_index__WEBPACK_IMPORTED_MODULE_3__["default"])); // get pojos of servers
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_friend_index__WEBPACK_IMPORTED_MODULE_3__["default"]));
 
 /***/ }),
 
@@ -2310,8 +2309,7 @@ var FriendIndex = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this$props = this.props,
           allUsers = _this$props.allUsers,
-          friends = _this$props.friends; // window.allUsers = allUsers
-      // window.friends = friends
+          friends = _this$props.friends;
 
       if (!friends) {
         return null;
@@ -2319,9 +2317,9 @@ var FriendIndex = /*#__PURE__*/function (_React$Component) {
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "friend-main-container"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "friend-title"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "FRIENDS ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "add")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, friends.map(function (friend) {
+      }, "FRIENDS"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, friends.map(function (friend) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "friend-name",
           key: friend
@@ -3769,8 +3767,7 @@ var createBill = function createBill(bills) {
     url: '/api/bills',
     data: {
       bills: bills
-    } //Needs to match
-
+    }
   });
 };
 var destroyBill = function destroyBill(billId) {

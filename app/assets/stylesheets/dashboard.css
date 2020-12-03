@@ -8,13 +8,13 @@
   min-height: 100vh;
 }
 
-
 .dashboard-main-nav-left {
   background-color: white;
   height: 100%;
   position: inline-block;
-  width: 13vw;
   margin-top: 3px;
+  padding-right: 15px;
+  max-width: 180px;
 }
 
 .dash-click {
@@ -48,7 +48,6 @@
   border-right: 1px solid #ccc;
   box-shadow: 0 0 12px rgba(0,0,0,0.2);
 
-  z-index: -10;
 }
 
 .dashboard-main-center-top {
@@ -87,7 +86,7 @@
   border-left-color: rgba(0, 0, 0, 0.1);
   padding-bottom: 1px;
   
-  /* margin-left: 290px; */
+
   position: absolute;
   right: 15px;
 
@@ -125,7 +124,7 @@
 .dashboard-main-nav-right label {
   color: gray;
   text-emphasis: bold;
-  /* font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-family: Arial;
   margin-left: 15px;
   font-size: 16px;
@@ -168,6 +167,8 @@
   padding-bottom: 10px;
 
 }
+
+
 
 
 
