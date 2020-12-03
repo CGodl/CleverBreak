@@ -10,9 +10,6 @@ class CommentsIndex extends React.Component {
 
   }
   
-  // componentWillMount() {
-  //   this.props.fetchComments();
-  // };
 
   
 

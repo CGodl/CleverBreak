@@ -29,7 +29,8 @@ class FriendIndex extends React.Component {
           <ul>
             {
               friends.map(friend => (
-                <li className ="friend-name" key={friend}>👤 {allUsers[friend].name} 
+                <li className ="friend-name" key={friend}>👤 {allUsers[friend].name}
+                <span className='delete-friend-btn'>X</span>
                 </li>
               ))
             }

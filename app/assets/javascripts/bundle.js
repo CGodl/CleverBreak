@@ -1561,10 +1561,7 @@ var CommentsIndex = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, CommentsIndex);
 
     return _super.call(this, props);
-  } // componentWillMount() {
-  //   this.props.fetchComments();
-  // };
-
+  }
 
   _createClass(CommentsIndex, [{
     key: "render",
@@ -2323,7 +2320,9 @@ var FriendIndex = /*#__PURE__*/function (_React$Component) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "friend-name",
           key: friend
-        }, "\uD83D\uDC64 ", allUsers[friend].name);
+        }, "\uD83D\uDC64 ", allUsers[friend].name, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "delete-friend-btn"
+        }, "X"));
       })));
     }
   }]);

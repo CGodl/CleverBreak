@@ -90,3 +90,15 @@
   padding: 3px 8px 3px 8px;
 }
 
+
+.delete-friend-btn {
+  display: none;
+
+}
+
+.friend-name:hover .delete-friend-btn {
+  display: block;
+  color: red;
+  float: right;
+  margin-right: 4px;
+}

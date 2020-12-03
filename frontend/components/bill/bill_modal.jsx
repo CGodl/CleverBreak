@@ -93,7 +93,7 @@ class BillPage extends React.Component {
             </label> */}
 
             <button className='bill-modal-cancel-btn' onClick={closeModal}>Cancel</button>
-            <button className='bill-modal-submit-btn' >Save</button>
+            <button className='bill-modal-submit-btn'>Save</button>
           </div>
         </form>
 
