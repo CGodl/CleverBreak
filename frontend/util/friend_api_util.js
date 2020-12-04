@@ -9,12 +9,11 @@ export const createFriend = friend => {
 export const destroyFriend = (friendId) => {
   return $.ajax({
     type: 'DELETE',
-    url: '/api/friends',
+    url: `/api/friends/${friendId}`,
   })
 };
 
 export const getFriend = id => {
-  ////
   return $.ajax ({  
     type: 'GET',
     url: `/api/friends/${id}`

@@ -2327,7 +2327,7 @@ var FriendIndex = /*#__PURE__*/function (_React$Component) {
         }, "\uD83D\uDC64 ", allUsers[friend].name, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "delete-friend-btn",
           onClick: function onClick() {
-            return removeFriend();
+            return removeFriend(friend);
           }
         }, "X"));
       })));
@@ -3486,10 +3486,6 @@ var friendsReducer = function friendsReducer() {
       return action.friends;
 
     case _actions_friend_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_FRIENDSHIP"]:
-      console.log(action);
-      debugger;
-      return {};
-
     default:
       return state;
   }
@@ -3878,11 +3874,10 @@ var createFriend = function createFriend(friend) {
 var destroyFriend = function destroyFriend(friendId) {
   return $.ajax({
     type: 'DELETE',
-    url: '/api/friends'
+    url: "/api/friends/".concat(friendId)
   });
 };
 var getFriend = function getFriend(id) {
-  ////
   return $.ajax({
     type: 'GET',
     url: "/api/friends/".concat(id)
