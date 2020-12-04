@@ -93,11 +93,11 @@
 
 .delete-friend-btn {
   display: none;
-
 }
 
 .friend-name:hover .delete-friend-btn {
   display: block;
+  text-emphasis: bold;
   color: red;
   float: right;
   margin-right: 4px;

@@ -22,6 +22,7 @@ const removeFriend = friendId => {
 
   return {
     type: REMOVE_FRIENDSHIP,
+    friendId
   };
 }
 
@@ -42,8 +43,8 @@ export const requestFriends = () => dispatch => (
     .then(((friends) => dispatch(receiveFriends(friends)))
     ))
 
-export const deleteFriend = billId => dispatch => {
+export const deleteFriend = friendId => dispatch => {
 
-  return friendApiUtil.destroyFriend(billId)
-    .then(() => (dispatch(removeFriend(billId))))
+  return friendApiUtil.destroyFriend(friendId)
+    .then(() => (dispatch(removeFriend(friendId))))
 }

@@ -321,7 +321,8 @@ var receiveFriends = function receiveFriends(friends) {
 
 var removeFriend = function removeFriend(friendId) {
   return {
-    type: REMOVE_FRIENDSHIP
+    type: REMOVE_FRIENDSHIP,
+    friendId: friendId
   };
 };
 
@@ -346,10 +347,10 @@ var requestFriends = function requestFriends() {
     });
   };
 };
-var deleteFriend = function deleteFriend(billId) {
+var deleteFriend = function deleteFriend(friendId) {
   return function (dispatch) {
-    return _util_friend_api_util__WEBPACK_IMPORTED_MODULE_0__["destroyFriend"](billId).then(function () {
-      return dispatch(removeFriend(billId));
+    return _util_friend_api_util__WEBPACK_IMPORTED_MODULE_0__["destroyFriend"](friendId).then(function () {
+      return dispatch(removeFriend(friendId));
     });
   };
 };
@@ -2228,7 +2229,8 @@ var mSTP = function mSTP(state) {
   var allUsers = state.entities.users;
   return {
     friends: friends,
-    allUsers: allUsers
+    allUsers: allUsers,
+    curUser: curUser
   };
 };
 
@@ -2240,8 +2242,8 @@ var mDTP = function mDTP(dispatch) {
     receiveAllUsers: function receiveAllUsers() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["receiveAllUsers"])());
     },
-    removeFriend: function removeFriend() {
-      return dispatch(Object(_actions_friend_actions__WEBPACK_IMPORTED_MODULE_2__["removeFriend"])(friendId));
+    removeFriend: function removeFriend(friendId) {
+      return dispatch(Object(_actions_friend_actions__WEBPACK_IMPORTED_MODULE_2__["deleteFriend"])(friendId));
     }
   };
 };
@@ -2306,7 +2308,9 @@ var FriendIndex = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this$props = this.props,
           allUsers = _this$props.allUsers,
-          friends = _this$props.friends;
+          friends = _this$props.friends,
+          curUser = _this$props.curUser,
+          removeFriend = _this$props.removeFriend;
 
       if (!friends) {
         return null;
@@ -2321,7 +2325,10 @@ var FriendIndex = /*#__PURE__*/function (_React$Component) {
           className: "friend-name",
           key: friend
         }, "\uD83D\uDC64 ", allUsers[friend].name, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "delete-friend-btn"
+          className: "delete-friend-btn",
+          onClick: function onClick() {
+            return removeFriend();
+          }
         }, "X"));
       })));
     }
@@ -3479,6 +3486,8 @@ var friendsReducer = function friendsReducer() {
       return action.friends;
 
     case _actions_friend_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_FRIENDSHIP"]:
+      console.log(action);
+      debugger;
       return {};
 
     default:
@@ -3857,7 +3866,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getFriend", function() { return getFriend; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getFriends", function() { return getFriends; });
 var createFriend = function createFriend(friend) {
-  debugger;
   return $.ajax({
     type: 'POST',
     url: '/api/friends',
@@ -3867,7 +3875,7 @@ var createFriend = function createFriend(friend) {
 
   });
 };
-var destroyFriend = function destroyFriend() {
+var destroyFriend = function destroyFriend(friendId) {
   return $.ajax({
     type: 'DELETE',
     url: '/api/friends'

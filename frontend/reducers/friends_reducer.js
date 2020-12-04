@@ -11,6 +11,8 @@ const friendsReducer = (state = {}, action) => {
     case RECEIVE_FRIENDSHIPS:
       return action.friends;
     case REMOVE_FRIENDSHIP:
+      console.log(action);
+      debugger;
       return {}
     default:
       return state;
