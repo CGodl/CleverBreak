@@ -16,12 +16,12 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_FRIENDSHIP:
 
       for (const userId in newState) {
-        
-        if (!newState[userId].friendIds.includes(action.friend.id)) {
-          newState[userId].friendIds.push(action.friend.id)
-      }
-    }
-      
+          if (!newState[userId].friendIds.includes(action.friend.requested_id)) {
+
+          newState[userId].friendIds.push(action.friend.requested_id)
+        };
+
+      };
       return newState;
     case RECEIVE_BILL: 
       for (const userId in newState) {
@@ -31,9 +31,9 @@ const usersReducer = (state = {}, action) => {
       }
       return newState;
     case REMOVE_BILL:
-      debugger;
+
       for (const userId in newState) {
-        debugger;
+
         if (newState.hasOwnProperty(userId)) {
           const user = newState[userId]
           user.billIds = user.billIds.filter((billId) => billId !== action.billId
@@ -44,7 +44,7 @@ const usersReducer = (state = {}, action) => {
     return newState;
 
     case REMOVE_FRIENDSHIP:
-      debugger;
+   
       for (const userId in newState) {
         if (newState.hasOwnProperty(userId)) {
           const user = newState[userId]

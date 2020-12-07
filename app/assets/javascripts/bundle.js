@@ -534,9 +534,8 @@ document.addEventListener('DOMContentLoaded', function () {
   } else {
     store = Object(_store_store__WEBPACK_IMPORTED_MODULE_3__["default"])();
   } //////;
-
-
-  window.getState = store.getState; // window.dispatch = store.dispatch;
+  // window.getState = store.getState;
+  // window.dispatch = store.dispatch;
   // window.createFriend = createFriend;
   // window.destroyFriend = destroyFriend;
   // window.getFriends = getFriends;
@@ -544,6 +543,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // window.fetchAllUsers = fetchAllUsers;
   // window.updateBill = updateBill;
   // window.getComments = getComments;
+
 
   var root = document.getElementById('root');
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -3690,11 +3690,14 @@ var usersReducer = function usersReducer() {
 
     case _actions_friend_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_FRIENDSHIP"]:
       for (var userId in newState) {
-        if (!newState[userId].friendIds.includes(action.friend.id)) {
-          newState[userId].friendIds.push(action.friend.id);
+        if (!newState[userId].friendIds.includes(action.friend.requested_id)) {
+          newState[userId].friendIds.push(action.friend.requested_id);
         }
+
+        ;
       }
 
+      ;
       return newState;
 
     case _actions_bill_actions__WEBPACK_IMPORTED_MODULE_2__["RECEIVE_BILL"]:
@@ -3707,11 +3710,7 @@ var usersReducer = function usersReducer() {
       return newState;
 
     case _actions_bill_actions__WEBPACK_IMPORTED_MODULE_2__["REMOVE_BILL"]:
-      debugger;
-
       for (var _userId2 in newState) {
-        debugger;
-
         if (newState.hasOwnProperty(_userId2)) {
           var user = newState[_userId2];
           user.billIds = user.billIds.filter(function (billId) {
@@ -3723,8 +3722,6 @@ var usersReducer = function usersReducer() {
       return newState;
 
     case _actions_friend_actions__WEBPACK_IMPORTED_MODULE_1__["REMOVE_FRIENDSHIP"]:
-      debugger;
-
       for (var _userId3 in newState) {
         if (newState.hasOwnProperty(_userId3)) {
           var _user = newState[_userId3];
@@ -3766,7 +3763,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var configureStore = function configureStore() {
   var preloadedState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_root_reducer__WEBPACK_IMPORTED_MODULE_3__["default"], preloadedState, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_1__["default"], redux_logger__WEBPACK_IMPORTED_MODULE_2___default.a));
+  return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_root_reducer__WEBPACK_IMPORTED_MODULE_3__["default"], preloadedState, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_1__["default"] // logger
+  ));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);

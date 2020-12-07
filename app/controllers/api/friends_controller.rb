@@ -21,7 +21,6 @@ class Api::FriendsController < ApplicationController
   end
 
   def destroy
-    # debugger;
     @friend = Friend.find_by({requestor_id: current_user.id, requested_id: params[:id]}) || Friend.find_by({requestor_id: params[:id], requested_id: current_user.id})
 
 
