@@ -21,9 +21,17 @@ class Api::FriendsController < ApplicationController
   end
 
   def destroy
-    @friend = Friend.find(requestor_id: current_user.id, requested_id: params[:id])
-    @friend.destroy
-    render 'api/friends/index'
+    # debugger;
+    @friend = Friend.find_by({requestor_id: current_user.id, requested_id: params[:id]}) || Friend.find_by({requestor_id: params[:id], requested_id: current_user.id})
+
+
+    if @friend.destroy
+      render :show
+    else
+      render json: ['Frienship could not be deleted']
+    end
+    # @friend.destroy
+    # render 'api/friends/index'
   end
 
   def show
