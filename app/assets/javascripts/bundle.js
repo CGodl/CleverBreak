@@ -3486,11 +3486,8 @@ var friendsReducer = function friendsReducer() {
       return action.friends;
 
     case _actions_friend_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_FRIENDSHIP"]:
-      debugger; // for (const friendId in newState) {
-      //   if newState.hasOwnProperty
-      // }
-
-      return action;
+      delete newState[action.friendId];
+      return newState;
 
     default:
       return state;
@@ -3710,11 +3707,29 @@ var usersReducer = function usersReducer() {
       return newState;
 
     case _actions_bill_actions__WEBPACK_IMPORTED_MODULE_2__["REMOVE_BILL"]:
+      debugger;
+
       for (var _userId2 in newState) {
+        debugger;
+
         if (newState.hasOwnProperty(_userId2)) {
           var user = newState[_userId2];
           user.billIds = user.billIds.filter(function (billId) {
             return billId !== action.billId;
+          });
+        }
+      }
+
+      return newState;
+
+    case _actions_friend_actions__WEBPACK_IMPORTED_MODULE_1__["REMOVE_FRIENDSHIP"]:
+      debugger;
+
+      for (var _userId3 in newState) {
+        if (newState.hasOwnProperty(_userId3)) {
+          var _user = newState[_userId3];
+          _user.friendIds = _user.friendIds.filter(function (friendId) {
+            return friendId !== action.friendId;
           });
         }
       }

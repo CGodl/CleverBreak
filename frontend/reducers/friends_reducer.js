@@ -11,16 +11,8 @@ const friendsReducer = (state = {}, action) => {
     case RECEIVE_FRIENDSHIPS:
       return action.friends;
     case REMOVE_FRIENDSHIP:
-      debugger;
-
-      // for (const friendId in newState) {
-      //   if newState.hasOwnProperty
-
-
-      // }
-
-
-      return action
+      delete newState[action.friendId];
+      return newState;
     default:
       return state;
   }

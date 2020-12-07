@@ -1,5 +1,5 @@
 import { RECEIVE_CURRENT_USER, RECEIVE_ALL_USERS } from '../actions/session_actions';
-import { RECEIVE_FRIENDSHIP } from '../actions/friend_actions'
+import { RECEIVE_FRIENDSHIP, REMOVE_FRIENDSHIP } from '../actions/friend_actions'
 
 import { RECEIVE_BILL, REMOVE_BILL } from '../actions/bill_actions';
 
@@ -15,8 +15,6 @@ const usersReducer = (state = {}, action) => {
     
     case RECEIVE_FRIENDSHIP:
 
-
-    
       for (const userId in newState) {
         
         if (!newState[userId].friendIds.includes(action.friend.id)) {
@@ -29,12 +27,13 @@ const usersReducer = (state = {}, action) => {
       for (const userId in newState) {
         if (!newState[userId].billIds.includes(action.bill.id)) {
           newState[userId].billIds.push(action.bill.id)
+        }
       }
-    }
       return newState;
     case REMOVE_BILL:
-      
+      debugger;
       for (const userId in newState) {
+        debugger;
         if (newState.hasOwnProperty(userId)) {
           const user = newState[userId]
           user.billIds = user.billIds.filter((billId) => billId !== action.billId
@@ -43,6 +42,18 @@ const usersReducer = (state = {}, action) => {
 
     }
     return newState;
+
+    case REMOVE_FRIENDSHIP:
+      debugger;
+      for (const userId in newState) {
+        if (newState.hasOwnProperty(userId)) {
+          const user = newState[userId]
+          user.friendIds = user.friendIds.filter((friendId) => friendId !== action.friendId
+        )
+      }}
+
+
+      return newState;
     default:
       return state;
   }
