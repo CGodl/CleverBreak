@@ -29,11 +29,6 @@ class Dashboard extends React.Component {
   }
 
   currentView() {
-    // e.preventDefault();
-    // if (this.state.ui.dashView == undefined) {
-    //   return null;
-    // }
-    
 
     switch (this.props.dashView) {
       case 'dashboard':
@@ -68,7 +63,7 @@ class Dashboard extends React.Component {
     
     return (
       <div>
-        <Navbar 
+        <Navbar
             // name={this.state.name}
             logout={this.props.logout}
         />
@@ -80,22 +75,15 @@ class Dashboard extends React.Component {
             <button className='dash-click' onClick={this.props.openActivity}>Recent activity</button>
             <br/>
             <button className='dash-click' onClick={this.props.openExpenses}>All expenses</button>
-
-
-
-
-          {/* <Link to={'/dashboard'}><button type='button'> Dashboard</button></Link>
-          <Link to={'/activity'}><button type='button'>Recent activity</button></Link>
-          <Link to={'/all'}><button type='button'>All expenses</button></Link> */}
             <FriendContainer />
             <FriendInviteBox 
               curUser={curUser}
               addFriend={addFriend}
             />
           </nav>
-          <main className='dashboard-main-center'>
-            
 
+
+          <main className='dashboard-main-center'>
             <div className ='dashboard-main-center-top'>
               <label>{this.props.dashView}</label>
               <button className='expense-btn' onClick={this.openTheModal}>Add an expense</button>

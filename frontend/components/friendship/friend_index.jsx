@@ -13,26 +13,31 @@ class FriendIndex extends React.Component {
   }
 
   render () {
-    const { allUsers, friends } = this.props;
-    // window.allUsers = allUsers
-    // window.friends = friends
+    const { allUsers, friends, curUser, removeFriend } = this.props;
 
     if (!friends) {
       return null
     }
+    
+    
 
     return (
       <span className='friend-main-container'>
-        <label className='friend-title'>
-            <br/>
-            FRIENDS <button>add</button>
+        <div className='friend-title'>
+            FRIENDS 
+            {/* <button>add</button> */}
             
-        </label>
+        </div>
           <ul>
             {
-              friends.map(friend => (
-                <li className ="friend-name" key={friend}>👤 {allUsers[friend].name}</li>
-              ))
+              friends.map(friendId => {
+                
+                return (
+                  <li className ="friend-name" key={friendId}>👤 {allUsers[friendId].name}
+                    <span className='delete-friend-btn' onClick={() => removeFriend(friendId)}>X</span>
+                  </li>
+                )
+              })
             }
           </ul>
           

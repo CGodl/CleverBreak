@@ -1,20 +1,21 @@
-.friend-main-container {
-  width: 100px;
-}
 
-.friend-main-container ul {
-  margin-bottom: 5px;
 
-}
+
 
 .friend-title {
   background-color: #f6f6f6;
-  border-top: 1px #eee solid;
+  border: 1px #eee solid;
+  /* border-top: 1px #eee solid;
   border-bottom: 1px #eee solid;
-  color: #ccc;
-  font-size: 12px;
-  min-width: 100%;
-  
+  border-right: 1px #eee solid;; */
+  /* color: #ccc; */
+  color: gray;
+  font-size: 14px;
+  text-emphasis: bold;
+  padding-top: 3px;
+  padding-bottom: 2px;
+  padding-left: 2px;
+  margin-top: 2px;
 
 }
 
@@ -31,19 +32,19 @@
   
 }
 
+
 .friend-name {
-  /* color: #999999; */
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
   font-size: 14px;
-
-  margin-top: 1px;
-  margin-bottom: 2px;
+  padding-top: 1px;
+  padding-bottom: 3px;
+  
 }
 
-
-.friend-outer-container {
-  width: 90%;
-
+.friend-name:hover {
+  background-color: #E8E8E8;
 }
+
 
 .friend-outer-container p {
   background: #5bc5a7;
@@ -52,24 +53,10 @@
   font-weight: bold;
   font-size: 14px;
   text-shadow: 0 -1px 0 #3eaf8f;
-  width: 100%;
   padding: 3px;
 }
 
-/* .friend-invite-box-title {
-  background: #5bc5a7;
-  color: #fff;
-  border: 1px solid #39a385;
-  font-weight: bold;
-  font-size: 14px;
-  padding: 3px;
-  text-shadow: 0 -1px 0 #3eaf8f;
-  width: 100%;
-
-} */
-
 .friend-outer-container form {
-  width: 100%;
   border: 1px solid #ccc;
   border-top: none;
   margin-right: 0px;
@@ -80,21 +67,8 @@
 
 }
 
-/* .friend-invite-box-container {
-  width: 100%;
-  border: 1px solid #ccc;
-  border-top: none;
-  margin-right: 0px;
-  padding-top: 10px;
-  padding-bottom: 5px;
-  padding-left: 2px;
-
-} */
-
 .friend-invite-input {
   width: 80%;
-
-
 }
 
 .friend-find-btn {
@@ -114,8 +88,17 @@
   border-bottom-color: rgba(0, 0, 0, 0.25);
   border-left-color: rgba(0, 0, 0, 0.1);
   padding: 3px 8px 3px 8px;
- 
-
-
 }
 
+
+.delete-friend-btn {
+  display: none;
+}
+
+.friend-name:hover .delete-friend-btn {
+  display: block;
+  text-emphasis: bold;
+  color: red;
+  float: right;
+  margin-right: 4px;
+}
