@@ -8,6 +8,7 @@
     "babel-loader": "^8.1.0",
     "bootstrap": "^4.5.0",
     "jquery": "^3.5.1",
+    "node-sass": "^5.0.0",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
@@ -28,7 +29,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --watch --mode=development",
+    "sass": "node-sass -w scss/ -o css/ --recursive",
+    "webpack": "webpack --watch --mode=development --sass",
     "postinstall": "webpack"
   },
   "repository": {
