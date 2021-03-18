@@ -49,6 +49,10 @@
   background-color: #E8E8E8;
 }
 
+.delete-friend-btn:hover {
+  cursor: pointer;
+}
+
 .friend-outer-container p {
   background: $mainThemePurpleColor;
   color: #fff;
