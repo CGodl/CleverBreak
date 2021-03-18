@@ -1,3 +1,5 @@
+@import './global/partials';
+
 
 .dashboard-main {
   position: inline-block;
@@ -33,8 +35,12 @@
 
 .dash-click:focus {
   font-weight: bold;
-  color: #5bc5a7;
-  border-left: #5bc5a7 solid 6px;
+  // color: #5bc5a7;
+  // border-left: #5bc5a7 solid 6px;
+  color: $mainThemePurpleColor;
+  border-left: $mainThemePurpleColor solid 6px;
+
+
 }
 
 .dashboard-main-center {

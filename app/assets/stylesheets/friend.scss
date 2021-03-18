@@ -1,3 +1,7 @@
+@import './global/partials';
+
+
+
 
 
 
@@ -45,14 +49,13 @@
   background-color: #E8E8E8;
 }
 
-
 .friend-outer-container p {
-  background: #5bc5a7;
+  background: $mainThemePurpleColor;
   color: #fff;
-  border: 1px solid #39a385;
+  border: 1px solid $secondaryPurpleColor;
   font-weight: bold;
   font-size: 14px;
-  text-shadow: 0 -1px 0 #3eaf8f;
+  text-shadow: 0 -1px 0 #333;
   padding: 3px;
 }
 
