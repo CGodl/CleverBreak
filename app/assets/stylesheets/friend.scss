@@ -1,11 +1,5 @@
 @import './global/partials';
 
-
-
-
-
-
-
 .friend-title {
   background-color: #f6f6f6;
   border: 1px #eee solid;
@@ -59,7 +53,8 @@
   border: 1px solid $secondaryPurpleColor;
   font-weight: bold;
   font-size: 14px;
-  text-shadow: 0 -1px 0 #333;
+  // text-shadow: 0 -1px 0 #333;
+  text-shadow: 0 -1px 0 $mainThemePurpleColor;
   padding: 3px;
 }
 
@@ -81,11 +76,13 @@
 .friend-find-btn {
   margin-top: 2px;
 
-  background-color: #5bc5a7;
+  // background-color: #5bc5a7;
+  background-color: $mainThemePurpleColor;
   color: white;
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-  text-shadow: 0 -1px 0 #318970;
+  // text-shadow: 0 -1px 0 #318970;
+  text-shadow: 0 -1px 0 $mainThemePurpleColor;
 
   border-width: 1px;
   border-radius: 4px;
