@@ -24,7 +24,7 @@ class FriendIndex extends React.Component {
     return (
       <span className='friend-main-container'>
         <div className='friend-title'>
-            FRIENDS 
+            Friends 
             {/* <button>add</button> */}
             
         </div>
