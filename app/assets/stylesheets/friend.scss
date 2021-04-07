@@ -1,24 +1,8 @@
 @import './global/partials';
 
 .friend-title {
-  // background-color: #f6f6f6;
-  background-color: $mainThemePurpleColor;
-  border: 1px $secondaryPurpleColor solid;
-  color: #fff;
-  font-weight: bold;
-  /* border-top: 1px #eee solid;
-  border-bottom: 1px #eee solid;
-  border-right: 1px #eee solid;; */
-  /* color: #ccc; */
-  text-shadow: 0 -1px 0 $mainThemePurpleColor;
-  font-size: 14px;
-  text-emphasis: bold;
-  padding-top: 3px;
-  padding-bottom: 2px;
-  padding-left: 2px;
-  margin-top: 2px;
-
-}
+@include dashTitleStyles
+};
 
 .friend-title button{
   color: inherit;
@@ -50,15 +34,8 @@
   cursor: pointer;
 }
 
-.friend-outer-container p {
-  background: $mainThemePurpleColor;
-  color: #fff;
-  border: 1px solid $secondaryPurpleColor;
-  font-weight: bold;
-  font-size: 14px;
-  // text-shadow: 0 -1px 0 #333;
-  text-shadow: 0 -1px 0 $mainThemePurpleColor;
-  padding: 3px;
+.friend-invite-box-title {
+  @include dashTitleStyles;
 }
 
 .friend-outer-container form {
@@ -73,6 +50,8 @@
 
 .friend-invite-input {
   width: 80%;
+  border: 1px solid $secondaryPurpleColor;
+  border-radius: 3px;
 }
 
 .friend-find-btn {
