@@ -56,7 +56,8 @@
 }
 
 .dashboard-main-center-top {
-  background-color: rgb(238, 238, 238);;
+  background-color: rgb(238, 238, 238);
+  // background-color: #cedbe2;
   border-bottom: 1px solid #ddd;
   height: 60px;
   position: relative;
@@ -156,7 +157,6 @@
 
 .dashboard-about-me-list li a:hover {
   text-decoration: none;
-  // color: #318970;
   color: $mainThemePurpleColor;
 
 
