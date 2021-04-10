@@ -1,3 +1,5 @@
+@import './global/partials';
+
 
 .all-expenses-btn {
   background-color: transparent;
@@ -51,9 +53,13 @@
 }
 
 .bill-edit-expense-btn {
-  background: #ff652f;
+  text-shadow: 0 -1px 0 $mainThemePurpleColor;
+
+
+
+  background: $mainThemePurpleColor;
   color: #fff;
-  text-shadow: 0 -1px 0 #c83400;
+  text-shadow: 0 -1px 0 $mainThemePurpleColor;
   padding: 2px 6px;
   font-size: 12px;
   line-height: 14px;
