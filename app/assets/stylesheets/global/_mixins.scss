@@ -13,3 +13,26 @@
   padding-left: 2px;
   margin-top: 2px;
 };
+
+
+@mixin blueBtn {
+background-color: $mainThemeBlueColor;
+text-shadow: 0 -1px 0 $mainThemeBlueColor;
+color: white;
+font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  
+}
+
+@mixin purpleBtn {
+  background-color: $mainThemePurpleColor;
+  text-shadow: 0 -1px 0 $mainThemePurpleColor;
+  color: white;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+@mixin redBtn {
+  background-color: $mainRedColor;
+  text-shadow: 0 -1px 0 $mainRedColor;
+  color: white;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+};

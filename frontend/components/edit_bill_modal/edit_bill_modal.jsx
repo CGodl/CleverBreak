@@ -90,8 +90,8 @@ class EditBillPage extends React.Component {
           />
       </label> */}
 
-      <button onClick={closeModal}>Cancel</button>
-      <button>Save</button>
+      <button className='bill-modal-cancel-btn' onClick={closeModal}>Cancel</button>
+      <button className='bill-modal-submit-btn'>Save</button>
     </form>
 
     );

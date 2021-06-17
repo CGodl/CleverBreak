@@ -15,7 +15,7 @@ class Navbar extends React.Component {
       <div>
         <nav className='nav-wrapper'>
           <ul className="nav-container">
-            <li><Link to={'/'}><p className='splitwise-logo'></p></Link></li>
+            <li><Link to={'/'}><p className='splitwise-logo'>CleverBreak</p></Link></li>
             {/* <li><button className='nav-btn nav-right'>{this.state.name}</button></li> */}
             <li><button  onClick={this.props.logout} className='nav-btn'>Log Out</button></li>
               {/* <ul className="nav-dropdown">

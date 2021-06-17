@@ -34,8 +34,6 @@
 
 .dash-click:focus {
   font-weight: bold;
-  // color: #5bc5a7;
-  // border-left: #5bc5a7 solid 6px;
   color: $mainThemePurpleColor;
   border-left: $mainThemePurpleColor solid 6px;
 
@@ -89,7 +87,7 @@
   border-top-color: rgba(0, 0, 0, 0.1);
   border-right-color: rgba(0, 0, 0, 0.1);
   border-bottom-color: rgba(0, 0, 0, 0.25);
-  border-left-color: rgba(0, 0, 0, 0.1);
+  border-left-color: rgba(8, 6, 6, 0.1);
   padding-bottom: 1px;
   
 

@@ -1,5 +1,5 @@
 {
-  "name": "Cleverbreak",
+  "name": "cleverbreak",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.10.2",

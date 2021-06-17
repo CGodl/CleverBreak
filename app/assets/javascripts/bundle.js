@@ -812,19 +812,19 @@ var BillShow = /*#__PURE__*/function (_React$Component) {
         className: "all-expenses-btn"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "bill-button-title"
-      }, bills[billId].description), curUser.id === bills[billId].author_id && bills[billId].author_payor === true ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, bills[billId].description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, curUser.id === bills[billId].author_id && bills[billId].author_payor === true ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "bill-show-lending"
-      }, allUsers[bills[billId].recipient_id].name, " lent you ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, allUsers[bills[billId].recipient_id].name, " lent you", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         style: {
           color: "#ff652f"
         }
       }, "$", parseFloat(bills[billId].cost).toFixed(2))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "bill-show-lending"
-      }, "You lent ", allUsers[bills[billId].recipient_id].name, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "You lent ", allUsers[bills[billId].recipient_id].name, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         style: {
           color: "#5BC5A7"
         }
-      }, "$", parseFloat(bills[billId].cost).toFixed(2))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "$", parseFloat(bills[billId].cost).toFixed(2)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "expense-delete-button",
         onClick: function onClick() {
           return _this2.props.deleteBill(billId);
@@ -2143,8 +2143,11 @@ var EditBillPage = /*#__PURE__*/function (_React$Component) {
         className: "payor-btn",
         onClick: this.toggleBoolean
       }, this.state.author_payor ? 'You' : this.state.name != '' ? this.state.name : 'No Name Provided')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "bill-modal-cancel-btn",
         onClick: closeModal
-      }, "Cancel"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Save"));
+      }, "Cancel"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "bill-modal-submit-btn"
+      }, "Save"));
     }
   }]);
 
@@ -2755,7 +2758,7 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
         to: '/'
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "splitwise-logo"
-      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "CleverBreak"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.props.logout,
         className: "nav-btn"
       }, "Log Out")))));
